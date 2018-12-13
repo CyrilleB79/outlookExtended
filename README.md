@@ -1,6 +1,6 @@
 # Outlook extended
 
-*   Author: Cyrille Bougot, Ralf Kefferpuetz
+* Authors: Cyrille Bougot, Ralf Kefferpuetz
 * Download [stable version][1]
 * Download [development version][2]
 
@@ -19,14 +19,14 @@ This addon improves the use of Microsoft Outlook by vocalizing some commands and
 ## Notes
 
 All the gestures can be modified in the NVDA command gestures dialog. You may want to modify them especially in the following situations:
-*   The default gestures to mark messages as read or unread are the ones for Outlook english version. If they differ from the ones of your Outlook local version, you will have to change these gestures accordingly.
-*   The default gestures to read headers correspond to Alt combined with the keys of the first row of the alpha-numeric keyboard. You may want to re-map the gestures tor read header 11 and 12 if they do not match your local keyboard layout.
+* The default gestures to mark messages as read or unread are the ones for Outlook english version. If they differ from the ones of your Outlook local version, you will have to change them accordingly.
+* The default gestures to read headers correspond to Alt combined with the keys of the first row of the alpha-numeric keyboard. You may need to re-map the gestures tor read header 11 and 12 if they do not match your local keyboard layout.
 
 ## Change log
 
 ### Version 1.0
 
-*   Initial release.
+* Initial release.
 
 [1]: http://TBD
 
