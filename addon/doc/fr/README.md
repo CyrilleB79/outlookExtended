@@ -33,6 +33,6 @@ Ce module complémentaire a été testé avec Microsoft Outlook 2016 et 2013.
 
 * Version initiale
 
-[1]: http://TBD
+[1]: https://github.com/CyrilleB79/OutlookExtended/releases/download/V1.0dev/OutlookExtended-1.0-dev.nvda-addon
 
-[2]: http://TBD
+[2]: https://github.com/CyrilleB79/OutlookExtended/releases/download/V1.0dev/OutlookExtended-1.0-dev.nvda-addon

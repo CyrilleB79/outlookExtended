@@ -28,6 +28,6 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 * Initial release.
 
-[1]: http://TBD
+[1]: https://github.com/CyrilleB79/OutlookExtended/releases/download/V1.0dev/OutlookExtended-1.0-dev.nvda-addon
 
-[2]: http://TBD
+[2]: https://github.com/CyrilleB79/OutlookExtended/releases/download/V1.0dev/OutlookExtended-1.0-dev.nvda-addon
