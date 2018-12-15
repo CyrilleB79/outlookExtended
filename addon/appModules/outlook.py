@@ -561,7 +561,7 @@ class AppModule(outlook.AppModule):
 	@script(
 		# Translators: Documentation for report info bar script.
 		description=_("Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."),	
-		gesture = "kb:NVDA+shift+I"
+		gestures = ["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"]
 		)
 	def script_reportInfoBar(self, gesture):
 		obj = self.getInfoBarObj()
@@ -574,7 +574,8 @@ class AppModule(outlook.AppModule):
 	@script(
 		# Translators: Documentation for move to message body script.
 		description=_("Moves the focus to the message body"),
-		gesture="kb:NVDA+shift+M")
+		gestures = ["kb(desktop):NVDA+shift+M", "kb(laptop):NVDA+control+shift+M"]
+		)
 	def script_focusToMessageBody(self, gesture):
 		try:
 			obj = getNVDAObjectFromEvent(
@@ -589,7 +590,8 @@ class AppModule(outlook.AppModule):
 	@script(
 		# Translators: Documentation for Attachments script.
 		description=_("Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it."),
-		gesture="kb:NVDA+shift+A")
+		gestures = ["kb(desktop):NVDA+shift+A", "kb(laptop):NVDA+control+shift+A"]
+		)
 	def script_attachments(self, gesture):
 		obj = api.getFocusObject()
 		appVersionMaj = int(obj.appModule.productVersion.split('.')[0])
