@@ -624,13 +624,13 @@ class AppModule(outlook.AppModule):
 			o = obj
 			while o.role != controlTypes.ROLE_BUTTON:
 				o = o.firstChild
-			attachmentsList = [a for a in o.parent.children if o.role == controlTypes.ROLE_BUTTON]
+			attachmentsList = [a for a in o.parent.children if a.role == controlTypes.ROLE_BUTTON]
 		except AttributeError:
 			attachmentsList = []
 		namesGen = (child.firstChild.getChild(1).name for child in attachmentsList)
 		return attachmentsList,handle,namesGen,obj.name
 		
-	def getAttachmentInfo2013(self):
+	def getAttachmentInfos2013(self):
 		fg = api.getForegroundObject()
 		cidAttachments=4623
 		bFoundWindow = False
