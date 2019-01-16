@@ -10,9 +10,9 @@ This addon improves the use of Microsoft Outlook by vocalizing some commands and
 ## Commands
 
 * Alt+1 to Alt+9, Alt+0, Alt+_, alt+=: Reports the header field 1 to 12 in a message, calendar item or task window. If pressed twice, moves the focus to this field if possible. If pressed three times, copies its content to the clipboard.
-* NVDA+shift+I: Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
-* NVDA+shift+A: Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it.
-* NVDA+shift+M: Moves the focus to the message body
+* NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout): Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
+* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout): Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it.
+* NVDA+shift+M (desktop layout) / NVDA+shift+M (laptop layout): Moves the focus to the message body
 * Control+Alt+Left and Control+Alt+Right: in the address book search result list, navigate between the fields of the currently selected line
 * Control+Q: in the message list, mark the selected message or group of messages as read
 * Control+U: in the message list, mark the selected message or group of messages as unread

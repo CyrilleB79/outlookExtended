@@ -125,7 +125,7 @@ class OutlookItemWindow(object):
 
 	def __init__(self):
 		self.rootDialog = self.getRootDialog()
-		windowTypeList = ['Message', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'Task', 'Journal']
+		windowTypeList = ['Message', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
 		self.windowType = [wt for wt in windowTypeList if getattr(self, 'is' + wt)()]
 		log.debug('Window types: ' + unicode(self.windowType))
 		if len(self.windowType) != 1:
@@ -207,6 +207,25 @@ class OutlookItemWindow(object):
 			]
 		return self.hasHeaderFieldsInThisOrder(lstCID)
 		
+	def isCalendarAttendeesList(self):
+		lstCID = [
+			4866, 4098, #Start date
+			4865, 4096, #Start date
+			]
+		#zzz del prima
+		lstCID = [
+			4542, #All attendees list
+			4720, #All attendees status
+			]
+		return self.hasHeaderFieldsInThisOrder(lstCID)
+		
+	def isCalendarAttendeesTrackingList(self):
+		lstCID = [
+			4542, #Attendees tracking list
+			4870, #Attendees replies
+			]
+		return self.hasHeaderFieldsInThisOrder(lstCID)
+	
 	def isTask(self):
 		lstCID = [
 			4521, 4097, #Subject
@@ -361,6 +380,30 @@ class OutlookItemWindow(object):
 				7: (4226, 'AllDay')
 				})
 		return dic
+	
+	def getCalendarAttendeesListHeaderFields(self):
+		dic = {
+			1: (4542, 'AttendeesList'),
+			2: (4720, 'AllAttendeesStatus'),
+			}
+		#Test if item is a unique meeting by Checking if start date is visible
+		isUniqueMeetingInstance = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		if isUniqueMeetingInstance:
+			dic.update({
+				3: (4098, 'StartDate'),
+				4: (4096, 'StartTime'),
+				5: (4099, 'EndDate'),
+				6: (4097, 'EndTime'),
+				})
+		else:
+			dic.update(
+				{3: (4104, '')})
+		return dic
+		
+	def getCalendarAttendeesTrackingListHeaderFields(self):
+		dic = {1: (4542, 'AttendeesTrackingList')}
+		return dic
+		#zzz return self.getCalendarHeaderFields()
 	
 	def getTaskHeaderFields(self):
 		dic = {
