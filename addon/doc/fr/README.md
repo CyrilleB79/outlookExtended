@@ -2,7 +2,6 @@
 
 * Auteurs: Cyrille Bougot, Ralf Kefferpuetz
 * Compatibilité NVDA: 2018.3 à 2019.1
-* Télécharger [version stable][1]
 * Télécharger [version de développement][2]
 
 Ce module complémentaire améliore l'utilisation de Microsoft Outlook par la vocalisation de certaines commandes et l'ajout de commandes supplémentaires.
@@ -34,6 +33,4 @@ Ce module complémentaire a été testé avec Microsoft Outlook 2016 et 2013.
 
 * Version initiale
 
-[1]: https://github.com/CyrilleB79/OutlookExtended/releases/download/V1.0dev/OutlookExtended-1.0-dev.nvda-addon
-
-[2]: https://github.com/CyrilleB79/OutlookExtended/releases/download/V1.0dev/OutlookExtended-1.0-dev.nvda-addon
+[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended

@@ -2,7 +2,6 @@
 
 * Authors: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA compatibility: 2018.3 to 2019.1
-* Download [stable version][1]
 * Download [development version][2]
 
 This addon improves the use of Microsoft Outlook by vocalizing some commands and adding extra commands.
@@ -29,6 +28,4 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 * Initial release.
 
-[1]: https://github.com/CyrilleB79/OutlookExtended/releases/download/V1.0dev/OutlookExtended-1.0-dev.nvda-addon
-
-[2]: https://github.com/CyrilleB79/OutlookExtended/releases/download/V1.0dev/OutlookExtended-1.0-dev.nvda-addon
+[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended
