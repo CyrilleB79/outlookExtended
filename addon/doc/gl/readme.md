@@ -19,8 +19,8 @@ engadindo atallos adicionais.
   mensaxe. Se se preme dúas veces, move o foco cara eles.
 * NVDA+shift+M: Move o foco ó corpo da mensaxe
 * Control+Alt+Esquerda e Control+Alt+Dereita: Na lista de resultados de
-  busca na libreta de direccións, navegar entre os campos da liña
-  actualmente seleccionada.
+  busca na libreta de enderezos, navegar entre os campos da liña actualmente
+  seleccionada.
 * Control+Q: Na lista de mensaxes, marcar como lida a mensaxe ou o grupo de
   mensaxes seleccionado.
 * Control+U: Na lista de mensaxes, marcar como non lida a mensaxe ou o grupo
