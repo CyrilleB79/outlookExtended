@@ -11,13 +11,19 @@ engadindo atallos adicionais.
 ## Ordes de teclado
 
 * Alt+1 a Alt+9, Alt+0, alt+_, alt+=: Anuncia o campo de cabeceira 1 a 12
-  nunha xanela de mensaxe, elemento de calendario ou tarefa.
-* NVDA+shift+I: Anuncia a barra de información nunha xanela de mensaxe,
-  elemento de calendario ou tarefa. Se se preme dúas veces, move o foco cara
-  ela. Se se preme tres veces, copia os seus contidos ao portapapeis.
-* NVDA+shift+A: Anuncia o número e os nomes dos adxuntos nunha xanela de
-  mensaxe. Se se preme dúas veces, move o foco cara eles.
-* NVDA+shift+M: Move o foco ó corpo da mensaxe
+  nunha xanela de mensaxe, elemento de calendario ou tarefa. Se se preme
+  dúas veces, move o foco a este campo se é posible. Se se preme tres veces,
+  copia os seus contidos ao portapapeis.
+* NVDA+shift+I (distribución de escritorio) / NVDA+control+shift+I
+  (distribución portátil): Anuncia a barra de información nunha xanela de
+  mensaxe, elemento de calendario ou tarefa. Se se preme dúas veces, move o
+  foco cara ela. Se se preme tres veces, copia os seus contidos ao
+  portapapeis.
+* NVDA+shift+A (distribución de escritorio) / NVDA+control+shift+A
+  (distribución portátil): Anuncia o número e os nomes dos adxuntos nunha
+  xanela de mensaxe. Se se preme dúas veces, move o foco cara eles.
+* NVDA+shift+M (distribución de escritorio) / NVDA+control+shift+M
+  (distribución portátil): Move o foco ó corpo da mensaxe
 * Control+Alt+Esquerda e Control+Alt+Dereita: Na lista de resultados de
   busca na libreta de enderezos, navegar entre os campos da liña actualmente
   seleccionada.

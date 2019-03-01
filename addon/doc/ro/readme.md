@@ -10,19 +10,19 @@ comenzi și adăugând altele suplimentare.
 
 ## Comenzi
 
-* Alt în combinație cu tastele pornind de la 1 până la 9, Alt+0, Alt+_,
-  alt+=: Raportează câmpurile de tip antet de la 1 la 12 într-un singur
-  mesaj, elementul calendar sau fereastra de activități. Dacă e apăsat de
-  două ori, mută focalizarea la câmpuri de acest gen dacă este posibil. Dacă
-  e apăsat de trei ori, copiază conținutul pe planșetă.
-* NVDA+shift+I: Raportează bara de informații într-un singur mesaj,
-  elementul calendar sau fereastra de activități. Dacă e apăsat de două ori,
-  mută focalizarea la ea. Dacă e apăsat de trei ori, copiază conținutul
-  acestea pe planșetă.
-* NVDA+shift+A: Spune numărul și numele fișierelor atașate într-un
-  mesaj. Dacă e apăsat de două ori, mută focalizarea la fereastra mesajului
-  de e-mail ce urmează a fi trimis.
-* NVDA+shift+M: Mută focalizarea la corpul mesajului
+* Alt+1 to Alt+9, Alt+0, Alt+-, Alt+=: Reports the header field 1 to 12 in a
+  message, calendar item or task window. If pressed twice, moves the focus
+  to this field if possible. If pressed three times, copies its content to
+  the clipboard.
+* NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout):
+  Reports the information bar in a message, calendar item or task window. If
+  pressed twice, moves the focus to it. If pressed three times, copies its
+  content to the clipboard.
+* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+  Reports the number and the names of attachments in a message window. If
+  pressed twice, moves the focus to it.
+* NVDA+shift+M (desktop layout) / NVDA+shift+M (laptop layout): Moves the
+  focus to the message body
 * Control+Alt+Stânga și Control+Alt+Dreapta: în lista rezultatelor de
   căutare din agenda de contacte, navighează printre câmpurile rândului
   selectat

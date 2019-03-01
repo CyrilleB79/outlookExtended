@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-02-24 15:57+0800\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2019-02-22 11:00+0100\n"
+"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"Language-Team: NVDA French Translation Team <LL@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: dingpengyu <dingpengyu06@gmail.com>\n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 1.8.12\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 msgid "-"
-msgstr "-"
+msgstr ")"
 
 #. Translators: The key just ont the left of the backspace key
 msgid "="
@@ -27,55 +27,55 @@ msgstr "="
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
-msgstr "将邮件标记为已读"
+msgstr "Marquer un message comme lu"
 
 #. Translators: Documentation for mark as unread script.
 msgid "Mark a message as unread"
-msgstr "将邮件标记为未读"
+msgstr "Marquer un message comme non lu"
 
 #. Translators: To what the mark as read/unread applies to
 #, python-format
 msgid "Messages group: %s"
-msgstr "消息组: %s"
+msgstr "Groupe de messages : %s"
 
 #. Translators: To what the mark as read/unread applies to
 #, python-format
 msgid "Messages: %s"
-msgstr "消息: %s"
+msgstr "Messages : %s"
 
 #. Translators: Error when mark as read/unread shortcut is called with no message selected
 msgid "No message selected"
-msgstr "没有选定消息"
+msgstr "Aucun message n'est sélectionné"
 
 #. Translators: To announce the message or group status: unread
 msgid "unread"
-msgstr "未读"
+msgstr "non lu"
 
 #. Translators: To announce the message or group status: read
 msgid "read"
-msgstr "已读"
+msgstr "lu"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
 #. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
 #. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 msgid "Column navigation not supported in the address book"
-msgstr "地址簿中不支持列导航"
+msgstr "Navigation par colonnes non supportée dans le carnet d'adresses"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
-msgstr "不在消息窗口中"
+msgstr "Pas dans une fenêtre de message"
 
 #. Translators: When user double press Alt+Number to copy a header's field to clipboard
 msgid "Copied to clipboard"
-msgstr "复制到剪贴板"
+msgstr "Copié dans le presse-papiers"
 
 #. Translators: A checkbox state
 msgid "checked"
-msgstr "选中"
+msgstr "coché"
 
 msgid "unchecked"
-msgstr "未选中"
+msgstr "non coché"
 
 #. Translators: To report name and value of a heaeder's field
 #, python-brace-format
@@ -88,22 +88,25 @@ msgid ""
 "pressed twice, moves the focus to it. If pressed three times, copies its "
 "content to the clipboard."
 msgstr ""
-"案一次，朗读消息，日历项目或任务窗口中的信息栏。按两次，将焦点移动到信息"
-"栏。按三次，将其内容复制到剪贴板。"
+"Annonce la barre d'information dans un message, un élément de calendrier ou "
+"une fenêtre de tâche. Une double pression y amène le focus. Une triple "
+"pression copie son contenu dans le presse-papiers."
 
 #. Translators: When the info bar is not present
 msgid "No information bar"
-msgstr "没有信息栏"
+msgstr "Barre d'information non présente"
 
 #. Translators: Documentation for move to message body script.
 msgid "Moves the focus to the message body"
-msgstr "将焦点移动到邮件正文"
+msgstr "Déplace le focus dans le corps du message"
 
 #. Translators: Documentation for Attachments script.
 msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
-msgstr "案一次，在消息窗口中朗读附件的编号和名称。按两次，将焦点移动到附件。"
+msgstr ""
+"Annonce le nombre et le nom des pièces jointes dans une fenêtre de message. "
+"Une double pression y amène le focus."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
@@ -112,13 +115,14 @@ msgid ""
 "pressed twice, moves the focus to this field if possible. If pressed three "
 "times, copies its content to the clipboard."
 msgstr ""
-"朗读标题字段 %s在消息，日历项目或任务窗口中。按两次，将焦点移动到字段。按三"
-"次，将其内容复制到剪贴板。"
+"Annonce le champ d'en-tête %s dans un message, un élément de calendrier ou "
+"une fenêtre de tâche. Une double pression amène le focus dans ce champ si "
+"possible. Une tripe pression copie son contenu dans le presse-papiers."
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
 msgid "Outlook Extended"
-msgstr "Outlook扩展"
+msgstr "Outlook Extended"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
@@ -129,6 +133,9 @@ msgid ""
 "- Improve result reading in address book.\n"
 "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
 msgstr ""
-"主要扩展了Microsoft Outlook的支持和功能： - 提供手势以读取和导航到邮件，日"
-"历项目，任务中的标题，信息栏和附件。 - 改善地址簿中的结果读数。 - Vocalize"
-"标记为已读/未读 快捷键 ctrl + q / ctrl + u。"
+"Support et fonctionnalités étendus pour Microsoft Outlook :\n"
+"- fournit des gestes de commande pour lire et se rendre aux en-têtes, à la "
+"barre d'information et aux pièces jointes dans un message, un élément de "
+"calendrier ou une tâche.\n"
+"- Améliore la lecture des résultats dans le carnet d'adresses.\n"
+"- Vocalise les commandes marquer comme lu/non lu ctrl+q/ctrl+u."

@@ -10,17 +10,20 @@ näppäinkomentoja sekä lisäämällä uusia.
 
 ## Näppäinkomennot
 
-* Alt+1 - Alt+9, Alt+0, Alt+_, alt+=: Puhuu otsakekentät 1:stä 12:een
-  viestissä, kalenterimerkinnässä tai tehtäväikkunassa. Kahdesti
-  painettaessa kohdistus siirretään kyseiseen kenttään, mikäli
-  mahdollista. Kolmesti painettaessa sen sisältö kopioidaan leikepöydälle.
-* NVDA+Vaihto+I: Puhuu viestin, kalenterimerkinnän tai tehtäväikkunan
-  tietopalkin. Kahdesti painettaessa kohdistus siirretään siihen. Kolmesti
-  painettaessa sen sisältö kopioidaan leikepöydälle.
-* NVDA+Vaihto+A: Lukee viesti-ikkunassa liitteiden lukumäärän ja
-  nimet. Kahdesti painettaessa kohdistus siirretään liitetiedostojen
-  luetteloon.
-* NVDA+Vaihto+M: Siirtää kohdistimen viestirunkoon.
+* Alt+1 - Alt+9, Alt+0, Alt+-, alt+=: Puhuu otsakekentät 1-12 viestissä,
+  kalenterimerkinnässä tai tehtäväikkunassa. Kahdesti painettaessa kohdistus
+  siirretään kyseiseen kenttään, mikäli mahdollista. Kolmesti painettaessa
+  sen sisältö kopioidaan leikepöydälle.
+* NVDA+Vaihto+I (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+Vaihto+I
+  (kannettavan näppäimistöasettelu): Puhuu viestin, kalenterimerkinnän tai
+  tehtäväikkunan tietopalkin. Kahdesti painettaessa kohdistus siirretään
+  siihen. Kolmesti painettaessa sen sisältö kopioidaan leikepöydälle.
+* NVDA+Vaihto+A (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+Vaihto+A
+  (kannettavan näppäimistöasettelu): Lukee viesti-ikkunassa liitteiden
+  lukumäärän ja nimet. Kahdesti painettaessa kohdistus siirretään
+  liitetiedostojen luetteloon.
+* NVDA+Vaihto+M (pöytäkoneen näppäimistöasettelu) / NVDA+Vaihto+M
+  (kannettavan näppäimistöasettelu): Siirtää kohdistuksen viestirunkoon.
 * Ctrl+Alt+Nuoli vasemmalle ja Ctrl+Alt+Nuoli oikealle: Liikkuu valittuna
   olevan rivin kenttien välillä osoitekirjan hakutulosten luettelossa.
 * Ctrl+Q: Merkitsee valitun viestin/valitut viestit luetuiksi

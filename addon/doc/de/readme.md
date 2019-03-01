@@ -10,19 +10,19 @@ indem es einige Tastenbefehle meldet und zusätzliche Befehle hinzufügt.
 
 ## Befehle
 
-* Alt+1 bis Alt+9, Alt+0, Alt+-, alt+=: meldet die Kopfspalte 1 bis 12 in
-  einer Nachricht, einem Kalenderelement oder einem
-  Aufgabenfenster. Zweimaliges Drücken verschiebt den Systemfokus nach
-  Möglichkeit auf das entsprechende Feld. Dreimaliges Drücken kopiert den
-  Inhalt der Kopfspalte in die Zwischenablage.
-* NVDA+Umschalt+I: meldet die Informationsleiste in einer Nachricht, einem
-  Kalenderelement oder einem Aufgabenfenster. Zweimaliges Drücken verschiebt
-  den Fokus auf das Informationsfeld. Dreimaliges Drücken kopiert den Inhalt
-  des Feldes in die Zwischenablage.
-* NVDA+Umschalt+A: Meldet die Anzahl und die Namen der Anlagen in einem
-  Nachrichtenfenster. Zweimaliges Drücken verschiebt den Fokus auf Liste der
-  Anlagen .
-* NVDA+Umschalt+M: Verschiebt den Fokus auf den Nachrichtentext
+* Alt+1 to Alt+9, Alt+0, Alt+-, Alt+=: Reports the header field 1 to 12 in a
+  message, calendar item or task window. If pressed twice, moves the focus
+  to this field if possible. If pressed three times, copies its content to
+  the clipboard.
+* NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout):
+  Reports the information bar in a message, calendar item or task window. If
+  pressed twice, moves the focus to it. If pressed three times, copies its
+  content to the clipboard.
+* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+  Reports the number and the names of attachments in a message window. If
+  pressed twice, moves the focus to it.
+* NVDA+shift+M (desktop layout) / NVDA+shift+M (laptop layout): Moves the
+  focus to the message body
 * STRG+Alt+Pfeil links und STRG+Alt+Pfeil rechts: navigiert zwischen den
   Spalten der aktuell ausgewählten Zeile in der Ergebnisliste der
   Adressbuchsuche

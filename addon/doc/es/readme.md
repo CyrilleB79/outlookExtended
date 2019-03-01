@@ -14,12 +14,16 @@ Este complemento mejora el uso de Microsoft Outlook verbalizando algunas
   del 1 al 12 en un mensaje, elemento del calendario o ventana de tarea. Si
   se pulsa dos veces, mueve el foco a ese campo si es posible. Si se pulsa
   tres veces, copia sus contenidos al portapapeles.
-* NVDA+shift+i: verbaliza la barra de información en un mensaje, elemento
-  del calendario o ventana de tarea. Si se pulsa dos veces, mueve el foco
-  hasta allí. Si se pulsa tres veces, copia su contenido al portapapeles.
-* NVDA+shift+a: indica el número y los nombres de los adjuntos en una
-  ventana de mensaje. Si se pulsa dos veces, mueve el foco hasta allí.
-* NVDA+shift+m: mueve el foco al cuerpo del mensaje
+* NVDA+shift+I (distribución de escritorio) / NVDA+control+shift+I
+  (distribución portátil): verbaliza la barra de información en un mensaje,
+  elemento del calendario o ventana de tarea. Si se pulsa dos veces, mueve
+  el foco hasta allí. Si se pulsa tres veces, copia su contenido al
+  portapapeles.
+* NVDA+shift+A (distribución de escritorio) / NVDA+control+shift+A
+  (distribución portátil): indica el número y los nombres de los adjuntos en
+  una ventana de mensaje. Si se pulsa dos veces, mueve el foco hasta allí.
+* NVDA+shift+M (distribución de escritorio) / NVDA+control+shift+M
+  (distribución portátil): mueve el foco al cuerpo del mensaje
 * Ctrl+alt+flechas izquierda y derecha: en la lista de resultados de
   búsqueda de la libreta de direcciones, navega entre los campos de la línea
   seleccionada actualmente

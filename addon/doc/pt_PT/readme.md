@@ -14,12 +14,15 @@ comandos e adicionando alguns novos.
   12 numa mensagem, item de calendário ou janela de tarefas. Se pressionados
   duas vezes, movem o foco para este campo, se possível. Se pressionados
   três vezes, copiam o seu conteúdo para a área de transferência.
-* NVDA+shift+I: lê a barra de informações numa mensagem, item de calendário
-  ou janela de tarefas. Se pressionado duas vezes, move o foco para ela. Se
+* NVDA+shift+I (Computador de secretária) / NVDA+control+shift+I (computador
+  portátil): lê a barra de informações numa mensagem, item de calendário ou
+  janela de tarefas. Se pressionado duas vezes, move o foco para ela. Se
   pressionado três vezes, copia o seu conteúdo para a área de transferência.
-* NVDA+shift+A: Reports the number and the names of attachments in a message
-  window. If pressed twice, moves the focus to it.
-* NVDA+shift+M: Move o foco para o corpo da mensagem.
+* NVDA+shift+A (computador de secretária) / NVDA+control+shift+A (computador
+  portátil): Lê o número e os nomes dos anexos, numa janela de mensagem. Se
+  pressionado duas vezes, move o foco os anexos.
+* NVDA+shift+M (Computador de secretária) / NVDA+shift+M (computador
+  portátil): Move o foco para o corpo da mensagem.
 * Control+Alt+setaEsquerda e Control+Alt+setaDireita: na lista de resultados
   da pesquisa do livro de endereços, deslocam-se entre os campos da linha
   seleccionada

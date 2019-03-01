@@ -14,12 +14,18 @@ vocalisation de certaines commandes et l’ajout de commandes supplémentaires.
   un message, un élément de calendrier ou une tâche. Une double pression
   déplace le focus dans ce champ si possible. Une tripe pression copie son
   contenu dans le presse-papiers.
-* NVDA+Maj+I: Annonce la barre d’information dans un message, un élément de
-  calendrier ou une fenêtre de tâche. Une double pression y déplace le
-  focus. Une tripe pression copie son contenu dans le presse-papiers.
-* NVDA+Maj+A: Annonce le nombre et le nom des pièces jointes dans une
-  fenêtre de message. Une double pression y déplace le focus.
-* NVDA+Maj+M: Déplace le focus dans le corps du message.
+* NVDA+Maj+I (disposition ordinateur de bureau) / NVDA+control+maj+I
+  (disposition ordinateur portable): Annonce la barre d'information dans un
+  message, un élément de calendrier ou une fenêtre de tâche. Une double
+  pression y déplace le focus. Une tripe pression copie son contenu dans le
+  presse-papiers.
+* NVDA+maj+A (disposition ordinateur de bureau) / NVDA+control+maj+A
+  (disposition ordinateur portable): Annonce le nombre et le nom des pièces
+  jointes dans une fenêtre de message. Une double pression y déplace le
+  focus.
+* * NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
+  (disposition ordinateur portable): Déplace le focus dans le corps du
+  message.
 * Control+Alt+Gauche and Control+Alt+Droite: Dans la liste des résultats de
   recherche du carnet d’adresses, navigue entre les champs de la ligne
   sélectionnée.
