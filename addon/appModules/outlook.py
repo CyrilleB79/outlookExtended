@@ -47,9 +47,9 @@ addonHandler.initTranslation()
 
 ADDON_SUMMARY = addonHandler.getCodeAddon ().manifest["summary"]
 
-# Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+# Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 KEY_HEADER_FIELD11 = _("-")
-# Translators: The key just ont the left of the backspace key
+# Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 KEY_HEADER_FIELD12 = _("=")
 
 class HeaderFieldNotFoundeError(LookupError):
@@ -522,6 +522,7 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, outlook.Add
 	def _moveToRow(self, row):
 		#Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
 		#when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
+		
 		# Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 		ui.message(_('Column navigation not supported in the address book'))
 
