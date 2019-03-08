@@ -5,7 +5,7 @@
 * Télécharger [version stable][1]
 * Télécharger [version de développement][2]
 
-Ce module complémentaire améliore l’utilisation de Microsoft Outlook par la
+Cette extension améliore l’utilisation de Microsoft Outlook par la
 vocalisation de certaines commandes et l’ajout de commandes supplémentaires.
 
 ## Commandes

@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-03-01 07:52+0100\n"
-"Last-Translator: Bachir BENANOU <ben_bach@yahoo.fr>\n"
-"Language-Team: NVDA French Translation Team <LL@li.org>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2019-03-02 10:37+0100\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.6\n"
+"Last-Translator: Nicolai Svendsen <chojiro1990@gmail.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 msgid "-"
-msgstr ")"
+msgstr "-"
 
 #. Translators: The key just ont the left of the backspace key
 msgid "="
@@ -27,55 +27,55 @@ msgstr "="
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
-msgstr "Marquer un message comme lu"
+msgstr "Markér en meddelelse som læst"
 
 #. Translators: Documentation for mark as unread script.
 msgid "Mark a message as unread"
-msgstr "Marquer un message comme non lu"
+msgstr "Marker en meddelelse som ulæst"
 
 #. Translators: To what the mark as read/unread applies to
 #, python-format
 msgid "Messages group: %s"
-msgstr "Groupe de messages : %s"
+msgstr "Meddelelsesgruppe: %s"
 
 #. Translators: To what the mark as read/unread applies to
 #, python-format
 msgid "Messages: %s"
-msgstr "Messages : %s"
+msgstr "Meddelelser: %s"
 
 #. Translators: Error when mark as read/unread shortcut is called with no message selected
 msgid "No message selected"
-msgstr "Aucun message n'est sélectionné"
+msgstr "Ingen meddelelse valgt"
 
 #. Translators: To announce the message or group status: unread
 msgid "unread"
-msgstr "non lu"
+msgstr "Ulæst"
 
 #. Translators: To announce the message or group status: read
 msgid "read"
-msgstr "lu"
+msgstr "Læst"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
 #. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
 #. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 msgid "Column navigation not supported in the address book"
-msgstr "Navigation par colonnes non supportée dans le carnet d'adresses"
+msgstr "Kolonnenavigation understøttes ikke i adressebogen"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
-msgstr "Pas dans une fenêtre de message"
+msgstr "Ikke i et meddelelsesvindue"
 
 #. Translators: When user double press Alt+Number to copy a header's field to clipboard
 msgid "Copied to clipboard"
-msgstr "Copié dans le presse-papiers"
+msgstr "Kopieret til udklipsholder"
 
 #. Translators: A checkbox state
 msgid "checked"
-msgstr "coché"
+msgstr "markeret"
 
 msgid "unchecked"
-msgstr "non coché"
+msgstr "Ikke markeret"
 
 #. Translators: To report name and value of a heaeder's field
 #, python-brace-format
@@ -88,25 +88,26 @@ msgid ""
 "pressed twice, moves the focus to it. If pressed three times, copies its "
 "content to the clipboard."
 msgstr ""
-"Annonce la barre d'information dans un message, un élément de calendrier ou "
-"une fenêtre de tâche. Un double-appui y amène le focus. Un triple-appui "
-"copie son contenu dans le presse-papiers."
+"Rapporterer informationslinjen i en besked, kalenderobjekt eller "
+"opgavevindue. Hvis du trykker to gange, flyttes fokus til den. Hvis du "
+"trykker tre gange, kopierer du indholdet til udklipsholderen."
 
 #. Translators: When the info bar is not present
 msgid "No information bar"
-msgstr "Barre d'information non présente"
+msgstr "Ingen informationslinje"
 
 #. Translators: Documentation for move to message body script.
 msgid "Moves the focus to the message body"
-msgstr "Déplace le focus dans le corps du message"
+msgstr "Flytter fokus til meddelelsesteksten"
 
 #. Translators: Documentation for Attachments script.
 msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
 msgstr ""
-"Annonce le nombre et le nom des pièces jointes dans une fenêtre de message. "
-"Un double-appui y amène le focus."
+"Rapporterer nummeret og navnene på vedhæftede filer i et "
+"meddelelsesvindue. Hvis du trykker to gange, flyttes fokus til det "
+"pågældende område."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
@@ -115,14 +116,15 @@ msgid ""
 "pressed twice, moves the focus to this field if possible. If pressed three "
 "times, copies its content to the clipboard."
 msgstr ""
-"Annonce le champ d'en-tête %s dans un message, un élément de calendrier ou "
-"une fenêtre de tâche. Un double-appui amène le focus dans ce champ si "
-"possible. Un tripe-appui copie son contenu dans le presse-papiers."
+"Rapporterer overskriftsfeltet %s i en besked, kalenderobjekt eller "
+"opgavevindue. Hvis du trykker to gange, flytter fokuset til dette felt, "
+"hvis det er muligt. Hvis du trykker tre gange, kopierer du indholdet til "
+"udklipsholderen."
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
 msgid "Outlook Extended"
-msgstr "Outlook Extended"
+msgstr "Udvidelse til Outlook"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
@@ -133,9 +135,9 @@ msgid ""
 "- Improve result reading in address book.\n"
 "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
 msgstr ""
-"Support et fonctionnalités étendus pour Microsoft Outlook :\n"
-"- fournit des gestes de commande pour lire et se rendre aux en-têtes, à la "
-"barre d'information et aux pièces jointes dans un message, un élément de "
-"calendrier ou une tâche.\n"
-"- Améliore la lecture des résultats dans le carnet d'adresses.\n"
-"- Vocalise les commandes marquer comme lu/non lu ctrl+q/ctrl+u."
+"udvidet funktionalitet for Microsoft Outlook:\n"
+"- angiver kommandoer til brug af læsning og navigering til overskrifter, "
+"informationslinjen og vedhæftede filer i meddelelser, kalenderobjekter og "
+"opgavevisning.\n"
+"- Forbedret læsning af resultater i adressebogen.\n"
+"- Oplæser kommandoer, når meddelelser markeres som læst eller ulæst."

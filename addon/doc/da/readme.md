@@ -1,4 +1,4 @@
-# Outlook extended (Udvidelse til Outlook) #
+# Udvidelse til Outlook #
 
 * Forfattere: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA-kompatibilitet: 2018.3 til 2019.1
@@ -10,19 +10,20 @@ kommandoer og tilføje ekstra kommandoer.
 
 ## Kommandoer
 
-* Alt+1 to Alt+9, Alt+0, Alt+-, Alt+=: Reports the header field 1 to 12 in a
-  message, calendar item or task window. If pressed twice, moves the focus
-  to this field if possible. If pressed three times, copies its content to
-  the clipboard.
-* NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout):
-  Reports the information bar in a message, calendar item or task window. If
-  pressed twice, moves the focus to it. If pressed three times, copies its
-  content to the clipboard.
-* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  Reports the number and the names of attachments in a message window. If
-  pressed twice, moves the focus to it.
-* NVDA+shift+M (desktop layout) / NVDA+shift+M (laptop layout): Moves the
-  focus to the message body
+* Alt+1 til Alt+9, Alt+0, Alt+-, alt+=: Rapporterer felterne fra 1 til 12 i
+  overskrifterne i en besked, kalenderobjekt eller opgavevindue. Hvis denne
+  kommando trykkes to gange, flyttes fokus til det pågældende felt hvis
+  muligt. Hvis kommandoen trykkes to gange, kopieres indholdet til
+  udklipsholderen.
+* NVDA+shift+I (desktoplayout) NVDA+Shift+Ctrl+I (Laptoplayout): Rapporterer
+  informationslinjen i en besked, kalenderobjekt eller opgavevindue. Hvis du
+  trykker to gange, flyttes fokus til den. Hvis du trykker tre gange,
+  kopierer du indholdet til udklipsholderen.
+* NVDA+shift+A (Desktoplayout) NVDA+Shift+Ctrl+A (Laptoplayout): Rapporterer
+  nummeret og navnene på vedhæftede filer i et meddelelsesvindue. Hvis du
+  trykker to gange, flyttes fokus til det pågældende område.
+* NVDA+Shift+M (Desktoplayout) NVDA+Shift+M (Laptoplayout): flytter fokus
+  til beskedområdet.
 * Ctrl+Alt+Venstre og Ctrl+Alt+Højre: I adressebogens søgeresultatliste vil
   kommandoen navigere mellem felterne for den aktuelt valgte linje.
 * Ctrl+Q: Markerer den valgte besked eller gruppe af meddelelser som læst i
