@@ -219,6 +219,42 @@ class AppModule(outlook.AppModule):
 		self.tcNumber = 0
 		self.initializeTestCases
 		
+	def event_NVDAObject_init(self, obj):
+		if obj.value is None:
+			if obj.windowControlID in [4101, 4102] and obj.role == controlTypes.ROLE_EDITABLETEXT:
+			#For Date/Time and Location fields in meeting request, get value from name and name from name of static text just before.
+				obj.value = obj.name
+				obj.name = obj.parent.previous.name
+		if obj.name is None:
+			if obj.windowControlID == 4097 and obj.role == controlTypes.ROLE_EDITABLETEXT:
+			#Get name from static text label
+				obj.name = self.getNameFromObject(4297)
+			elif obj.windowControlID == 4098 and obj.role == controlTypes.ROLE_EDITABLETEXT:
+			#Get name from static text label
+				obj.name = self.getNameFromObject(4299)
+			elif obj.windowControlID == 4263 and obj.role == controlTypes.ROLE_EDITABLETEXT:
+			#For from field in mail editing, get the name from the button just before.
+				obj.name = obj.parent.previous.name
+			elif obj.windowControlID == 4109 and obj.role == controlTypes.ROLE_EDITABLETEXT:
+				#For Proposal field in meeting reply with new time proposal, get the name from the static text just after.
+				obj.name = obj.parent.next.name
+		elif obj.name == 'PersonaControl':
+			if obj.windowControlID == 4097 and obj.role == controlTypes.ROLE_EDITABLETEXT:
+				#Get name from static text label
+				obj.name = self.getNameFromObject(4299)
+			
+		
+	def getNameFromObject(self, cid):
+		try:
+			obj = getNVDAObjectFromEvent(
+			findDescendantWindow(api.getForegroundObject().windowHandle, visible=True, className=None, controlID=cid),
+			winUser.OBJID_CLIENT, 0)
+			return obj.name
+		except LookupError:
+			log.debug('No name found for object cid=' + str(cid))
+			return None
+		
+		
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		super(AppModule, self).chooseNVDAObjectOverlayClasses(obj, clsList)
 		if obj.role==controlTypes.ROLE_LISTITEM and obj.windowClassName=="OUTEXVLB":
