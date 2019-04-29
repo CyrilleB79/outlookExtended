@@ -162,6 +162,15 @@ class OutlookItemWindow(object):
 			4518, 4102, #Date/time
 			4517, 4101, #Location
 			]
+		if self.hasHeaderFieldsInThisOrder(lstCID):
+			return True
+		#Test meeting request forwarding
+		lstCID = [
+			4098, #To
+			4516, 4100, #Subject
+			4517, 4101, #Location
+			4518, 4102, #Date/time
+			]
 		return self.hasHeaderFieldsInThisOrder(lstCID)
 	
 	def isMeetingReply(self):
