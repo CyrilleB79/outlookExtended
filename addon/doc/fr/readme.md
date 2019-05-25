@@ -59,4 +59,4 @@ modifier dans les situations suivantes :
 
 [1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
 
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended
+[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
