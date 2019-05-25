@@ -26,6 +26,11 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 1.2
+
+* Fix header reading when forwarding meeting.
+* Added localizations.
+
 ### Version 1.1
 
 * Added localizations.
@@ -36,4 +41,4 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 [1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
 
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended
+[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
