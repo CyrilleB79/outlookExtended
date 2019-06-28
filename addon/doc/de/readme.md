@@ -1,9 +1,9 @@
 # Erweiterte Outlook-Funktionen #
 
 * Autoren: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2019.1
+* NVDA-Kompatibilität: 2018.3 bis 2019.2
 * [stabile version herunterladen][1]
-* Download [development version][2]
+* [Entwicklerversion][2] herunterladen
 
 Diese Erweiterung verbessert die Verwendung von Microsoft Outlook mit NVDA,
 indem es einige Tastenbefehle meldet und zusätzliche Befehle hinzufügt.
