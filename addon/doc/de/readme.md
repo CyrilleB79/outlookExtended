@@ -14,15 +14,16 @@ indem es einige Tastenbefehle meldet und zusätzliche Befehle hinzufügt.
   message, calendar item or task window. If pressed twice, moves the focus
   to this field if possible. If pressed three times, copies its content to
   the clipboard.
-* NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout):
-  Reports the information bar in a message, calendar item or task window. If
-  pressed twice, moves the focus to it. If pressed three times, copies its
-  content to the clipboard.
-* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  Reports the number and the names of attachments in a message window. If
-  pressed twice, moves the focus to it.
-* NVDA+shift+M (desktop layout) / NVDA+shift+M (laptop layout): Moves the
-  focus to the message body
+* NVDA+Umschalt+I (Desktop-Schema) / NVDA+Strg+Umschalt+I (Laptop-Schema):
+  meldet die Informationsleiste in einer Nachricht, einem Kalenderelement
+  oder einem Aufgabenfenster. Zweimaliges Drücken verschiebt den Fokus auf
+  das Informationsfeld. Dreimaliges Drücken kopiert den Inhalt des Feldes in
+  die Zwischenablage.
+* NVDA+Umschalt+A (Desktop-Schema)  / NVDA+Strg+Umschalt+A (Laptop-Schema):
+  Meldet die Anzahl und die Namen der Anlagen in einem
+  Nachrichtenfenster. Zweimaliges Drücken verschiebt den Fokus auf die Liste
+  der Anlagen .
+* NVDA+Umschalt+M: Verschiebt den Fokus auf den Nachrichtentext
 * STRG+Alt+Pfeil links und STRG+Alt+Pfeil rechts: navigiert zwischen den
   Spalten der aktuell ausgewählten Zeile in der Ergebnisliste der
   Adressbuchsuche
@@ -37,9 +38,10 @@ Alle Tastenbefehle können im Dialogfeld "Eingaben" geändert
 werden. Insbesondere in den folgenden Situationen könnte die Änderung der
 Befehle sinnvoll sein:
 
-* The default gestures to mark messages as read or unread are the ones for
-  Outlook english version. If they differ from the ones of your Outlook
-  local version, you will have to change them accordingly.
+* Die Standardgesten, um Nachrichten als gelesen oder ungelesen zu
+  markieren, sind die für die englische Outlook-Version. Wenn sie von denen
+  Ihrer lokalen Outlook-Version abweichen, müssen Sie sie entsprechend
+  ändern.
 * Die Standardgesten für das Lesen der Kopfspalten entsprechen Alt in
   Kombination mit den Tasten der ersten Zeile der alphanumerischen
   Tastatur. Möglicherweise müssen Sie die Gesten für die gelesenen Header 11
