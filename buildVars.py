@@ -22,7 +22,7 @@ addon_info = {
 - Improve result reading in address book.
 - Vocalize mark as read/unread ctrl+q/ctrl+u commands."""),
 	# version
-	"addon_version" : "1.2-dev",
+	"addon_version" : "1.2",
 	# Author(s)
 	"addon_author" : u"Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>",
 	# URL for the add-on documentation support
@@ -32,7 +32,7 @@ addon_info = {
 	# Minimum NVDA version supported (e.g. "2018.3")
 	"addon_minimumNVDAVersion" : "2018.3.0",
 	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion" : "2019.1.0",
+	"addon_lastTestedNVDAVersion" : "2019.2.0",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel" : None,
 }

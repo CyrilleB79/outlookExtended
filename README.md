@@ -1,7 +1,7 @@
 # Outlook extended
 
 * Authors: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2019.1
+* NVDA compatibility: 2018.3 to 2019.2
 * Download [stable version][1]
 * Download [development version][2]
 
