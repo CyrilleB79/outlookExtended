@@ -54,7 +54,7 @@ KEY_HEADER_FIELD12 = _("=")
 
 class HeaderFieldNotFoundeError(LookupError):
 	pass
-class NotInMessageWindowError(StandardError):
+class NotInMessageWindowError(Exception):
 	pass
 	
 class ElemWithReadStatus:
@@ -127,7 +127,7 @@ class OutlookItemWindow(object):
 		self.rootDialog = self.getRootDialog()
 		windowTypeList = ['Message', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
 		self.windowType = [wt for wt in windowTypeList if getattr(self, 'is' + wt)()]
-		log.debug('Window types: ' + unicode(self.windowType))
+		log.debug('Window types: ' + str(self.windowType))
 		if len(self.windowType) != 1:
 			raise NotInMessageWindowError()
 		self.windowType = self.windowType[0]

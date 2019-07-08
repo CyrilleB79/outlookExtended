@@ -22,7 +22,7 @@ addon_info = {
 - Improve result reading in address book.
 - Vocalize mark as read/unread ctrl+q/ctrl+u commands."""),
 	# version
-	"addon_version" : "1.2",
+	"addon_version" : "1.3-dev",
 	# Author(s)
 	"addon_author" : u"Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>",
 	# URL for the add-on documentation support
