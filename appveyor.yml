@@ -8,8 +8,10 @@ install:
     py -m pip install scons
 
     py -m pip install markdown
+before_build:
+- ps: $env:IS_DEV = ($env:APPVEYOR_REPO_TAG -eq "false") -or ($env:APPVEYOR_REPO_TAG_NAME -match "dev")
 build_script:
-- cmd: scons
+- cmd: scons dev=%IS_DEV%
 
 artifacts:
 - path: '*.nvda-addon'
