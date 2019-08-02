@@ -3,17 +3,18 @@
 * Autoren: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA-Kompatibilität: 2018.3 bis 2019.2
 * [stabile version herunterladen][1]
-* [Entwicklerversion][2] herunterladen
+* [Entwicklerversion herunterladen][2]
 
 Diese Erweiterung verbessert die Verwendung von Microsoft Outlook mit NVDA,
 indem es einige Tastenbefehle meldet und zusätzliche Befehle hinzufügt.
 
 ## Befehle
 
-* Alt+1 to Alt+9, Alt+0, Alt+-, Alt+=: Reports the header field 1 to 12 in a
-  message, calendar item or task window. If pressed twice, moves the focus
-  to this field if possible. If pressed three times, copies its content to
-  the clipboard.
+* Alt+1 bis Alt+9, Alt+0, Alt+-, alt+=: meldet die Kopfspalte 1 bis 12 in
+  einer Nachricht, einem Kalenderelement oder einem
+  Aufgabenfenster. Zweimaliges Drücken verschiebt den Systemfokus nach
+  Möglichkeit auf das entsprechende Feld. Dreimaliges Drücken kopiert den
+  Inhalt der Kopfspalte in die Zwischenablage.
 * NVDA+Umschalt+I (Desktop-Schema) / NVDA+Strg+Umschalt+I (Laptop-Schema):
   meldet die Informationsleiste in einer Nachricht, einem Kalenderelement
   oder einem Aufgabenfenster. Zweimaliges Drücken verschiebt den Fokus auf

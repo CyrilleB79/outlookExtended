@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
-"Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
 "PO-Revision-Date: 2019-02-21 17:21+0200\n"
 "Language: bg\n"
