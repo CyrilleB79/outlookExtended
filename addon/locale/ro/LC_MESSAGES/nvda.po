@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-03-16 09:51+0200\n"
+"PO-Revision-Date: 2019-07-09 17:39+0300\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: Florian Ionașcu <florianionascu@hotmail.com>\n"
 "Language-Team: \n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 msgid "-"
@@ -31,7 +31,7 @@ msgstr "Marchează un mesaj ca citit"
 
 #. Translators: Documentation for mark as unread script.
 msgid "Mark a message as unread"
-msgstr "Marchrază un mesaj ca necitit"
+msgstr "Marchează un mesaj ca necitit"
 
 #. Translators: To what the mark as read/unread applies to
 #, python-format
