@@ -1,7 +1,7 @@
 # Outlook extended
 
 * Authors: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2019.2
+* NVDA compatibility: 2018.3 to 2019.3
 * Download [stable version][1]
 * Download [development version][2]
 
@@ -25,6 +25,13 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 * The default gestures to read headers correspond to Alt combined with the keys of the first row of the alpha-numeric keyboard. You may need to re-map the gestures tor read header 11 and 12 if they do not match your local keyboard layout.
 
 ## Change log
+
+### Version 1.3
+
+* Fix message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible)
+* Added localizations.
+* Releases performed now with appveyor
 
 ### Version 1.2
 
