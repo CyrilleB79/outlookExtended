@@ -125,9 +125,10 @@ class OutlookItemWindow(object):
 
 	def __init__(self):
 		self.rootDialog = self.getRootDialog()
-		windowTypeList = ['Message', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
+		windowTypeList = ['Message', 'Message2', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
 		self.windowType = [wt for wt in windowTypeList if getattr(self, 'is' + wt)()]
 		log.debug('Window types: ' + str(self.windowType))
+		log.debug(self.listHeaderFields())
 		if len(self.windowType) != 1:
 			raise NotInMessageWindowError()
 		self.windowType = self.windowType[0]
@@ -148,10 +149,20 @@ class OutlookItemWindow(object):
 		return obj
 	
 	def isMessage(self):
+		#These fields are always present even if not visible (according to reduced/developped headers state)
 		lstCID= [
 			4099, #'To'
-			4100,
-			4103, 
+			4100, #CC
+			4103, #BCC 
+			]
+		return self.hasHeaderFieldsInThisOrder(lstCID)
+		
+	def isMessage2(self):
+		#Fields in office 365 update (32-bit) as reported by Ralf and user.
+		lstCID= [
+			4117, #To
+			4126, #Cc
+			4104 #Bcc
 			]
 		return self.hasHeaderFieldsInThisOrder(lstCID)
 		
@@ -254,6 +265,16 @@ class OutlookItemWindow(object):
 			]
 		return self.hasHeaderFieldsInThisOrder(lstCID)
 		
+	def listHeaderFields(self):
+		ls1 = [obj for obj in self.rootDialog.children]
+		return [{
+				'name': o.name,
+				'value': o.value,
+				'role': o.role,
+				'states': o.states,
+				'cid': o.windowControlID
+				}
+			for o in ls1]
 	def hasHeaderFieldsInThisOrder(self, lstCID):
 		ls1 = [obj.windowControlID for obj in self.rootDialog.children if obj.windowControlID in lstCID]
 		return ls1 == lstCID
@@ -272,7 +293,8 @@ class OutlookItemWindow(object):
 			6: (4101, 'Subject'),
 			7: (4346, 'SignedBy'),
 			})
-		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4292 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		#hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4292 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
 		if hasFromReduced:
 			dic.update({
 				1: (4292, 'From'),
@@ -284,6 +306,32 @@ class OutlookItemWindow(object):
 				})
 		return dic
 		
+	def getMessage2HeaderFields(self):
+		#Fields in office 365 update (32-bit) as reported by Ralf and user.
+		hasFromEditing = len([o for o in self.rootDialog.children if o.windowControlID==4263 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		if hasFromEditing:
+			dic = {1: (4263, 'From')}
+		else:
+			dic = {1: (4292, 'From')}
+		dic.update({
+			2: (4315, 'Sent'),
+			3: (4117, 'To'),
+			4: (4126, 'Cc'),
+			5: (4104, 'Bcc'),
+			6: (4294, 'Subject'),
+			7: (4346, 'SignedBy') })
+		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		if hasFromReduced:
+			dic.update({
+				1: (4292, 'From'),
+				2: (4293, 'Sent'),
+				3: (4295, 'ToCc'),
+				4: (None, 'Cc'),
+				5: (None, 'Bcc'),
+				6: (4294, 'Subject')
+				})
+		return dic
+			
 	def getReportHeaderFields(self):
 		dic = {
 			1: (4096, 'From'),
