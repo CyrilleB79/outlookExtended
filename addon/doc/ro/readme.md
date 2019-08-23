@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilitate NVDA: 2018.3 - 2019.1
+* NVDA compatibility: 2018.3 to 2019.3
 * Descărcați [versiunea stabilă][1]
 * Descărcați [versiunea în dezvoltare][2]
 
@@ -47,6 +47,22 @@ NVDA. Puteți opta pentru modificarea acestora în următoarele situații:
   potrivesc cu aspectul local al tastaturii.
 
 ## Jurnal de modificări
+
+### Version 1.3
+
+* Fix message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible)
+* Added localizations.
+* Releases performed now with appveyor
+
+### Version 1.2
+
+* Fix header reading when forwarding meeting.
+* Added localizations.
+
+### Version 1.1
+
+* Added localizations.
 
 ### Versiunea 1.0
 

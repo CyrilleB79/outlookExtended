@@ -1,7 +1,7 @@
 # Erweiterte Outlook-Funktionen #
 
 * Autoren: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA-Kompatibilität: 2018.3 bis 2019.2
+* NVDA compatibility: 2018.3 to 2019.3
 * [stabile version herunterladen][1]
 * [Entwicklerversion herunterladen][2]
 
@@ -50,6 +50,22 @@ Befehle sinnvoll sein:
   übereinstimmen.
 
 ## Änderungsprotokoll
+
+### Version 1.3
+
+* Fix message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible)
+* Added localizations.
+* Releases performed now with appveyor
+
+### Version 1.2
+
+* Fix header reading when forwarding meeting.
+* Added localizations.
+
+### Version 1.1
+
+* Added localizations.
 
 ### Version 1.0
 

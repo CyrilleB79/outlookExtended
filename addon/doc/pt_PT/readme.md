@@ -1,7 +1,7 @@
 # Outlook mais acessível #
 
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilidade com NVDA: 2018.3 a 2019.1
+* NVDA compatibility: 2018.3 to 2019.3
 * Baixar [Versão estável][1]
 * Baixar [Versão de desenvolvimento][2]
 
@@ -45,6 +45,22 @@ NVDA. Pode querer alterá-los especialmente nas seguintes situações:
   se eles não corresponderem ao esquema do teclado local.
 
 ## Modificações:
+
+### Version 1.3
+
+* Fix message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible)
+* Added localizations.
+* Releases performed now with appveyor
+
+### Version 1.2
+
+* Fix header reading when forwarding meeting.
+* Added localizations.
+
+### Version 1.1
+
+* Added localizations.
 
 ### Versão 1.0
 

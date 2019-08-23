@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilidade con NVDA: da 2018.3 á 2019.1
+* Compatibilidade con NVDA: da 2018.3 á 2019.3
 * Descargar [versión estable][1]
 * Descargar [versión de desenvolvemento][2]
 
@@ -46,6 +46,24 @@ NVDA. Poderías querer modificalos especialmente nas seguintes situacións:
   túa distribución de teclado local.
 
 ## Rexistro de trocos
+
+### Versión 1.3
+
+* Arranxada a lectura de encabezados de mensaxes para compilacións máis
+  novas de Office 365.
+* Actualizacións para soportar versións máis novas do NVDA (compatible con
+  Python 2 e 3)
+* Traducións engadidas.
+* As liberacións realízanse agora con Appveyor
+
+### Versión 1.2
+
+* Arranxada a lectura de encabezamentos ao reenviar reunións.
+* Traducións engadidas.
+
+### Versión 1.1
+
+* Traducións engadidas.
 
 ### Versión 1.0
 

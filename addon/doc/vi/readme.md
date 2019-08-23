@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Tác giả: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA tương thích: 2018.3 đến 2019.1
+* NVDA compatibility: 2018.3 to 2019.3
 * Tải về [phiên bản chính thức][1]
 * Tải về [phiên bản thử nghiệm][2]
 
@@ -44,6 +44,22 @@ NVDA. Có thể bạn muốn thay đổi nó trong các tình huống sau:
   bạn.
 
 ## Bản ghi các thay đổi
+
+### Version 1.3
+
+* Fix message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible)
+* Added localizations.
+* Releases performed now with appveyor
+
+### Version 1.2
+
+* Fix header reading when forwarding meeting.
+* Added localizations.
+
+### Version 1.1
+
+* Added localizations.
 
 ### Phiên bản 1.0
 
