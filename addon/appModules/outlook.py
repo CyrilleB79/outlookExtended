@@ -37,6 +37,7 @@ from NVDAObjects.behaviors import RowWithoutCellObjects, RowWithFakeNavigation
 from NVDAObjects.UIA import UIA
 from windowUtils import findDescendantWindow
 import tones
+import globalVars
 import re
 
 from nvdaBuiltin.appModules import outlook
@@ -128,7 +129,14 @@ class OutlookItemWindow(object):
 		windowTypeList = ['Message', 'Message2', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
 		self.windowType = [wt for wt in windowTypeList if getattr(self, 'is' + wt)()]
 		log.debug('Window types: ' + str(self.windowType))
-		log.debug(self.listHeaderFields())
+		#Log to investigate for new types of windows.
+		#This log is disabled by default because it takes processing time and has thus side effect.
+		#To activate it, open NVDA console and type:
+		# import globalVars
+		# globalVars.olexDebug = True
+		globalVars.olexDebug = getattr(globalVars, 'olexDebug', False)
+		if globalVars.olexDebug:
+			log.debug(self.listHeaderFields())
 		if len(self.windowType) != 1:
 			raise NotInMessageWindowError()
 		self.windowType = self.windowType[0]
@@ -616,18 +624,22 @@ class AppModule(outlook.AppModule):
 		#Calendar view: Alt+digit is used command to set up number of days in the view
 			gesture.send()
 			return
-		try:
-			oItemWindow = OutlookItemWindow()
-		except NotInMessageWindowError:
+		nRepeat = getLastScriptRepeatCount()
+		if nRepeat == 0:
+			try:
+				self.olItemWindow = OutlookItemWindow()
+			except NotInMessageWindowError:
+				self.olItemWindow = None
+		if self.olItemWindow is None:
 			# Translators: When trying to use Alt+Number shortcut but not in message.
 			ui.message(_("Not in a message window"))
 			return
 		try:
-			obj, name = oItemWindow.getHeaderFieldObject(nField)
+			obj, name = self.olItemWindow.getHeaderFieldObject(nField)
 		except HeaderFieldNotFoundeError:
 			self.errorBeep()
 			return
-		self.reportObject(obj, getLastScriptRepeatCount())
+		self.reportObject(obj, nRepeat)
 		
 	def reportObject(self, obj, nRepeat):
 		if nRepeat == 0:
