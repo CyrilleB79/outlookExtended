@@ -719,8 +719,8 @@ class AppModule(outlook.AppModule):
 		self.nAttachments = len(attachmentsList)
 		if getLastScriptRepeatCount() == 1 and self.nAttachments > 0:
 		# double press, set focus in field
-			winUser.setForegroundWindow(self.focusInfo['handle'])
 			self.focusInfo['firstObj'].setFocus()
+			winUser.setForegroundWindow(self.focusInfo['handle'])
 		else:
 		# single press
 			self.focusInfo = {'handle': handle}
