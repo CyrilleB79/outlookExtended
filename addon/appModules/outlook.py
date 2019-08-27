@@ -6,10 +6,8 @@
 #See the file COPYING.txt for more details.
 
 #Known bugs (not resolved):
-#1. Double-press NVDA+Shift+A to go to attachments does not work when mail has 20 attachments or so (Outlook 2016).
-#In this case, getLastScriptRepeatCount() returns always 0. Why?
-#2. If you open a message with an attacment and double press NVDA+Shift+A just after this, focus does not go to attachments.
-#Press Ctrl ky (even 10 seconds later) and focus will finally move. Why?
+#1. Double-press NVDA+Shift+A to go to attachments may not always work when mail has 20 attachments or so (Outlook 2016),
+#especially when e-mail has just been opened.
 
 #Possible enhancements
 #1. Use @script decorator for markAsRead and markAsUnread script gesturs, as well as for reportHeaderFieldN scripts. Did not manage to make it work.
@@ -39,6 +37,7 @@ from windowUtils import findDescendantWindow
 import tones
 import globalVars
 import re
+import threading
 
 from nvdaBuiltin.appModules import outlook
 
@@ -717,16 +716,26 @@ class AppModule(outlook.AppModule):
 		except LookupError:
 			self.errorBeep()
 			return
-		nAttachments = len(attachmentsList)
-		if getLastScriptRepeatCount() == 1 and nAttachments > 0:
+		self.nAttachments = len(attachmentsList)
+		if getLastScriptRepeatCount() == 1 and self.nAttachments > 0:
 		# double press, set focus in field
-			winUser.setForegroundWindow(handle)
+			winUser.setForegroundWindow(self.focusInfo['handle'])
+			self.focusInfo['firstObj'].setFocus()
 		else:
 		# single press
-			msg = (
-				windowName + ": " + str(nAttachments) + '. ' +  #Attachments number
-				', '.join(namesGen))
-			ui.message(msg)
+			self.focusInfo = {'handle': handle}
+			try:
+				self.focusInfo['firstObj'] = attachmentsList[0]
+			except IndexError:
+				self.focusInfo['firstObj'] = None
+			#Launch the attachments announcement code in a different thread since it can take time in the case of numerous attachments (above 17 on my machine).
+			#In this case, getLastScriptRepeatCount() after double press will return 0 instead of 1.
+			def announceAttachments():
+				msg = (
+					windowName + ": " + str(self.nAttachments) + '. ' +  #Attachments number
+					', '.join(namesGen))
+				ui.message(msg)
+			threading.Thread(target=announceAttachments).start()
 	
 	def getAttachmentInfos2016(self):
 		fg = api.getForegroundObject()
