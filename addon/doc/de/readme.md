@@ -1,8 +1,8 @@
 # Erweiterte Outlook-Funktionen #
 
 * Autoren: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2019.3
-* [stabile version herunterladen][1]
+* NVDA-Kompatibilität: 2018.3 bis 2019.3
+* [Stabile Version herunterladen][1]
 * [Entwicklerversion herunterladen][2]
 
 Diese Erweiterung verbessert die Verwendung von Microsoft Outlook mit NVDA,
@@ -53,19 +53,22 @@ Befehle sinnvoll sein:
 
 ### Version 1.3
 
-* Fix message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible)
-* Added localizations.
-* Releases performed now with appveyor
+* Korrigiert das Vorlesen von Kopfzeilen in Nachrichten für neuere Office
+  365-Versionen.
+* Updates der Unterstützungen neuerer NVDA-Versionen (kompatibel mit Python
+  2 and 3)
+* Lokalisierungen hinzugefügt.
+* Releases werden nun mit Appvayor bereitgestellt.
 
 ### Version 1.2
 
-* Fix header reading when forwarding meeting.
-* Added localizations.
+* Die Kopfzeilenanzeige beim Weiterleiten von Besprechungen wurde
+  korrigiert.
+* Lokalisierungen hinzugefügt.
 
 ### Version 1.1
 
-* Added localizations.
+* Lokalisierungen hinzugefügt.
 
 ### Version 1.0
 
