@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Auteurs: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2019.3
+* Compatibilité NVDA: 2018.3 à 2019.3
 * Télécharger [version stable][1]
 * Télécharger [version de développement][2]
 
@@ -53,19 +53,21 @@ modifier dans les situations suivantes :
 
 ### Version 1.3
 
-* Fix message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible)
-* Added localizations.
-* Releases performed now with appveyor
+* Correction lecture des en-têtes de message pour version plus récente
+  d'Office 365
+* Mises à jour pour prendre en charge les versions les plus récentes de NVDA
+  (compatible Python 2 et 3)
+* Ajout de localisations.
+* Release effectuée maintenant avec appveyor
 
 ### Version 1.2
 
-* Fix header reading when forwarding meeting.
-* Added localizations.
+* Correction lecture des en-têtes lorsqu'on transfère un message.
+* Ajout de localisations.
 
 ### Version 1.1
 
-* Added localizations.
+* Ajout de localisations.
 
 ### Version 1.0
 
