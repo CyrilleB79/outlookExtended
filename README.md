@@ -26,6 +26,11 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 1.4
+
+* The script to move focus to headers is working again
+* The script to move to attachments is now working when more attachments are present.
+
 ### Version 1.3
 
 * Fix message headers reading for newer Office 365 release.
