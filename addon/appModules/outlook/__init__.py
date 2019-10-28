@@ -28,7 +28,6 @@ from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModu
 from .itemWindow import OutlookItemWindow, NotInMessageWindowError, HeaderFieldNotFoundeError
 from . import compa
 
-from comtypes import COMError
 from scriptHandler import getLastScriptRepeatCount, script
 import winUser
 from logHandler import log
@@ -47,11 +46,15 @@ import tones
 import globalVars
 import core
 import config
+import nvwave
 
-from locationHelper import RectLTWH
 import sys
+import os
+from comtypes import COMError
+from locationHelper import RectLTWH
 import re
 import threading
+from time import sleep
 
 import addonHandler
 
@@ -265,7 +268,206 @@ class _FakeObject(NVDAObject):
 
 	firstChild = None
 
+
+class UIANotificationZoneButton(UIA):
+		
+	@script(
+		gestures = ['kb:upArrow', 'kb:downArrow'],
+	)
+	def script_cancelGesture(self, gesture):
+		# A script to cancel the upArrow or downArrow in the notification zone,
+		# since these gesture may move the focus out of the notification zone.
+		pass
 	
+	@script(
+		gesture = 'kb:leftArrow',
+	)
+	def script_previousButton(self, gesture):
+		self.sendGestureIfOtherButton(gesture, 'backward')
+	
+	@script(
+		gesture = 'kb:rightArrow',
+	)
+	def script_nextButton(self, gesture):
+		self.sendGestureIfOtherButton(gesture, 'forward')
+		
+	def sendGestureIfOtherButton(self, gesture, direction):
+		stopCondition = lambda o: o.role == controlTypes.Role.BUTTON and o.isFocusable
+		isRootObj = lambda o: o.role == controlTypes.Role.GROUPING
+		obj = self.walkObj(self, direction, stopCondition, isRootObj)
+		if obj is None:
+			return
+		gesture.send()
+	
+	def walkObj(self, oStart, direction, stopCondition, isRootObj, ignoreChildren=False):
+		"""A function to walk the object hierarchy until a condition is met.
+		The function returns the first object meeting the condition or None if no object is found.
+		
+		@param oStart: the start object
+		@type obj: NVDAObject
+		@param direction ('backward' or 'forward'): a direction to walk the object hierarchy.
+			backward: look for a matching object considering last child, then previous sibling, then parent at each step.
+			forward: look for a matching object considering first child, then next sibling, then parent.
+		@type direction: str
+		@param stopCondition: a function to evaluate if hierarchy walking should stop on this object.
+		@type stopCondition: function
+		@param isRootObj: a function to evaluate if an object is the root object of the considered object hierarchy.
+		@type isRootObj: function
+		@param ignoreChildren: do not consider first/last child when searching for next matching object.
+		@type ignoreChildren: bool
+		@rtype: NVDAObject | None
+		"""
+		
+		if isRootObj(oStart):
+			# If root object is reach, no object satisfying the condition has been found.
+			return None
+		if direction == 'forward':
+			propList = ['firstChild', 'next', 'parent']
+		elif direction == 'backward':
+			propList = ['lastChild', 'previous', 'parent']
+		if ignoreChildren:
+			del propList[0]
+		for prop in propList:
+			o = getattr(oStart, prop)
+			if o:
+				isParent = prop == 'parent'
+				if stopCondition(o) and not isParent:
+					return o
+				else:
+					return self.walkObj(o, direction, stopCondition, isRootObj, ignoreChildren=isParent)
+		raise RuntimeError('Unexpected object tree structure')
+	
+class UIARecipientButton(UIANotificationZoneButton):
+
+	def _get_name(self):
+		try:
+			return self.firstChild.name
+		except AttributeError:
+			return super(UIARecipientButton, self).name
+			
+	def reportFocus(self):
+		ui.message(self.name)
+		
+
+class UIAMoreInfoButton(UIANotificationZoneButton):
+
+	def _get_name(self):
+		# Translators: The name for a button in the notification bar to display more or less information.
+		return _('More or less information')
+	
+	def reportFocus(self):
+		ui.message(self.name)
+		
+
+class NotificationChecker(threading.Thread):
+	def __init__(self, appModule, *args, **kwargs):
+		super(NotificationChecker, self).__init__(*args, **kwargs)
+		self.outlookAppModule = appModule
+		self._stop = threading.Event()
+		
+	def stop(self):
+		self._stop.set()
+		self.outlookAppModule = None
+		
+	def stopped(self):
+		return self._stop.isSet()
+		
+	def run(self):
+		oldInfoSet = set()
+		oldFgHwnd = 0
+		while not self.stopped():
+			try:
+				try:
+					notif = self.outlookAppModule.getNotificationObj()
+				except AttributeError:  # In case self.outlookAppModule is set to None.
+					log.debugWarning('No link to Outlook appModule.')
+				else:
+					fg = api.getForegroundObject()
+					fgHwnd = fg.windowHandle if fg else 0
+					if notif:
+						infoSet = {
+							# Old version: beeps whenever the notification bar content changes (names added or deleted)
+							o.name for o in notif.children if (
+								(o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
+								or (o.role == controlTypes.Role.STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
+							)
+						}
+					else:
+						infoSet = set()
+					log.debug(f'zzz Info set = {infoSet}\noldInfoSet = {oldInfoSet}\nfgHwnd = {fgHwnd}\noldFgHwnd= {oldFgHwnd}')
+					if fgHwnd == oldFgHwnd and infoSet != oldInfoSet:
+						focus = api.getFocusObject()
+						if focus.windowClassName == 'RichEdit20WPT':
+							nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
+					oldInfoSet = infoSet
+					#else:
+					#	oldInfoSet = set()
+					oldFgHwnd = fgHwnd
+			except Exception as e:
+				# If an error occurs, log it but do not stop the thread.
+				log.error(e, exc_info=True)
+			sleep(0.5)
+		
+
+class NotificationPaneElement:
+	def __init__(self, name, location):
+		self.name = name
+		self.location = location
+		
+	def __repr__(self):
+		return '{name} - \nL={left}, T={top}, W= {width}, H={height}\n'.format(
+			name=self.name,
+			left=self.location.left,
+			top=self.location.top,
+			width=self.location.width,
+			height=self.location.height,
+		)
+
+
+class NotificationPaneRow:
+	def __init__(self, obj):
+		self.elements = [obj]
+		self._bottom = None
+	
+	@property
+	def bottom(self):
+		if self._bottom is None:
+			self._bottom = self.elements[0].location.bottom
+		return self._bottom
+		
+	def add(self, elem):
+		if self.bottom != elem.location.bottom:
+			log.error('{} != {}'.format(self.bottom, elem.bottom))
+		self.elements.append(elem)
+	
+	@property
+	def text(self):
+		textList = []
+		for elem in self.elements:
+			name = elem.name
+			if textList and re.match('^\w.*$', name, re.U):
+				name = ' ' + name
+			textList.append(name)
+		return ''.join(textList)
+
+
+class NotificationPane:
+	def __init__(self, pane):
+		self.rows = []
+		for obj in pane.children:
+			name = obj.name
+			if name:
+				elem = NotificationPaneElement(obj.name, obj.location)
+				if not self.rows or self.rows[-1].bottom <= obj.location.top:
+					row = NotificationPaneRow(elem)
+					self.rows.append(row)
+				else:
+					self.rows[-1].add(elem)
+				
+	@property
+	def text(self):
+		return '\n'.join(r.text for r in self.rows)
+
 
 class AppModule(AppModule):
 	
@@ -282,7 +484,13 @@ class AppModule(AppModule):
 		self.lastFocus = None
 		self.testCases = None
 		self.tcNumber = 0
-		self.initializeTestCases
+		self.notificationChecker = NotificationChecker(appModule=self)
+		self.notificationChecker.start()
+		
+	def terminate(self,*args,**kwargs):
+		self.notificationChecker.stop()
+		self.notificationChecker = None  # To break ref cycle
+		super(AppModule, self).terminate(*args,**kwargs)
 		
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		super(AppModule, self).chooseNVDAObjectOverlayClasses(obj, clsList)
@@ -294,9 +502,15 @@ class AppModule(AppModule):
 			return
 		if UIAGridRow in clsList:
 			clsList.insert(0, UIAGridRowWithReadStatus)
-		if UIA in clsList and obj.role == controlTypes.Role.GROUPING:
-			clsList.insert(0,UIAWithReadStatus)
-		
+			return
+		if UIA in clsList:
+			if obj.role == controlTypes.Role.GROUPING and obj.parent.windowClassName == 'OutlookGrid':
+				clsList.insert(0,UIAWithReadStatus)
+			elif obj.UIAElement.currentAutomationID == 'RecipientButton':
+				clsList.insert(0, UIARecipientButton)
+			elif obj.UIAElement.currentAutomationID == 'MoreInfo':
+				clsList.insert(0, UIAMoreInfoButton)
+	
 	def reportHeaderFieldN(self, nField, gesture):
 		if api.getFocusObject().windowClassName in ['DayViewWnd', 'WeekViewWnd']:
 		#Calendar view: Alt+digit is used command to set up number of days in the view
@@ -375,7 +589,34 @@ class AppModule(AppModule):
 		
 	def errorBeep(self):
 		tones.beep(440, 80)
-	
+		
+	@script(
+		# Translators: Documentation for report notification script.
+		description=_("Reports the notification in a message. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."),	
+		gestures = ["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"]
+		)
+	def script_reportNotification(self, gesture):
+		obj = self.getNotificationObj()
+		if obj is None:
+			# Translators: Message reported when calling the script to report notification bar.
+			ui.message(_("No notification"))
+			return
+		nRepeat = getLastScriptRepeatCount()
+		if nRepeat == 0:
+			notif = NotificationPane(obj)
+			self.notificationText = notif.text
+			ui.message(self.notificationText)
+			self.lastFocus = api.getFocusObject()
+		elif nRepeat == 1:
+			winUser.setForegroundWindow(obj.windowHandle)
+		elif nRepeat == 2:
+			api.copyToClip(self.notificationText)
+			# Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
+			ui.message(_("Copied to clipboard"))
+			#api.setNavigatorObject(obj,isFocus=True)
+			#self.lastFocus.setFocus()
+			winUser.setForegroundWindow(self.lastFocus.windowHandle)
+		
 	@script(
 		# Translators: Documentation for report info bar script.
 		description=_("Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."),	
@@ -530,8 +771,6 @@ class AppModule(AppModule):
 			obj = obj.firstChild
 		return obj
 		
-	__gestures = {"kb:alt+" + key : "reportHeaderField" + str(n) for (key,n) in _headerFieldKeyMap.items()}
-	
 	def initializeTestCases(self):
 		debugTcPath = config.conf['outlookExtended']['testCasePath']
 		isTest = bool(debugTcPath)
@@ -544,6 +783,7 @@ class AppModule(AppModule):
 				self.testCases = tcObjectPropertyDic
 				self.FakeRootWindow = FakeRootWindow
 		else:
+			# Translators: Reported when calling a test command
 			ui.message(_('Test case path not defined.'))
 		return isTest
 	
@@ -570,15 +810,39 @@ class AppModule(AppModule):
 			ui.message(self.tcName)
 		else:
 			self.tcName = ''
+			# Translators: Reported when calling a test command
 			ui.message(_('Test mode offf'))
 	
 	def script_navigatorObject_toFakeRootDialog(self, gesture):
 		if not self.tcNumber: # None or 0
+			# Translators: Reported when calling a test command
 			ui.message(_('Test mode is off.'))
 			return
 		obj = self.getFakeRootDialog()
 		api.setNavigatorObject(obj)
 		speech.speakObject(obj)
+	
+	def getNotificationObj(self):
+		fgObj = api.getForegroundObject()
+		if not fgObj or fgObj.appModule is not self:
+			return None
+		try:
+			cid = 4265
+			obj = getNVDAObjectFromEvent(
+				findDescendantWindow(fgObj.windowHandle, visible=True, className=None, controlID=cid),
+				winUser.OBJID_WINDOW, 0)
+			getChildWithRole = lambda o,role: [oc for oc in obj.children if oc.role == role][0]
+			obj = getChildWithRole(obj, controlTypes.Role.PANE)
+			obj = getChildWithRole(obj, controlTypes.Role.PANE)
+			obj = getChildWithRole(obj, controlTypes.Role.PANE)
+			obj = getChildWithRole(obj, controlTypes.Role.GROUPING)
+			obj = getChildWithRole(obj, controlTypes.Role.PANE)
+		except LookupError:
+			return None
+		return obj
+		
+	
+	__gestures = {"kb:alt+" + key : "reportHeaderField" + str(n) for (key,n) in _headerFieldKeyMap.items()}
 	
 	@staticmethod
 	def _createScript_reportHeaderField(n):

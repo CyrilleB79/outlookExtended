@@ -5,7 +5,7 @@
 * Download [stable version][1]
 * Download [development version][2]
 
-This addon improves the use of Microsoft Outlook by vocalizing some commands and adding extra commands.
+This addon improves the use of Microsoft Outlook by vocalizing some native commands, adding extra commands and adds extra features.
 
 ## Commands
 
@@ -13,10 +13,16 @@ This addon improves the use of Microsoft Outlook by vocalizing some commands and
 * NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout): Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout): Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it.
 * NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout): Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result list, navigates between the fields of the currently selected line.
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout): Reports the notification in a message window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: in the message list, marks the selected message or group of messages as read.
 * Control+U: in the message list, marks the selected message or group of messages as unread.
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends automatic out of office replies or is not present anymore on the Exchange server, Outlook report it in the notification area. In this notification area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area appear, disappear or be updated. You can then press NVDA+shif+N / NVDA+control+shift+N once to have it read and twice to jump to this area. Then move with arrows on the recipient buttons and press a button to remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation commands to read the content of each column.
+  
 ## Notes
 
 All the gestures can be modified in the NVDA command gestures dialog. You may want to modify them especially in the following situations:
