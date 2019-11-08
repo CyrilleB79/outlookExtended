@@ -6,10 +6,8 @@
 #See the file COPYING.txt for more details.
 
 #Known bugs (not resolved):
-#1. Double-press NVDA+Shift+A to go to attachments does not work when mail has 20 attachments or so (Outlook 2016).
-#In this case, getLastScriptRepeatCount() returns always 0. Why?
-#2. If you open a message with an attacment and double press NVDA+Shift+A just after this, focus does not go to attachments.
-#Press Ctrl ky (even 10 seconds later) and focus will finally move. Why?
+#1. Double-press NVDA+Shift+A to go to attachments may not always work when mail has 20 attachments or so (Outlook 2016),
+#especially when e-mail has just been opened.
 
 #Possible enhancements
 #1. Use @script decorator for markAsRead and markAsUnread script gesturs, as well as for reportHeaderFieldN scripts. Did not manage to make it work.
@@ -37,7 +35,9 @@ from NVDAObjects.behaviors import RowWithoutCellObjects, RowWithFakeNavigation
 from NVDAObjects.UIA import UIA
 from windowUtils import findDescendantWindow
 import tones
+import globalVars
 import re
+import threading
 
 from nvdaBuiltin.appModules import outlook
 
@@ -47,14 +47,14 @@ addonHandler.initTranslation()
 
 ADDON_SUMMARY = addonHandler.getCodeAddon ().manifest["summary"]
 
-# Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+# Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 KEY_HEADER_FIELD11 = _("-")
-# Translators: The key just ont the left of the backspace key
+# Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 KEY_HEADER_FIELD12 = _("=")
 
 class HeaderFieldNotFoundeError(LookupError):
 	pass
-class NotInMessageWindowError(StandardError):
+class NotInMessageWindowError(Exception):
 	pass
 	
 class ElemWithReadStatus:
@@ -125,9 +125,17 @@ class OutlookItemWindow(object):
 
 	def __init__(self):
 		self.rootDialog = self.getRootDialog()
-		windowTypeList = ['Message', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
+		windowTypeList = ['Message', 'Message2', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
 		self.windowType = [wt for wt in windowTypeList if getattr(self, 'is' + wt)()]
-		log.debug('Window types: ' + unicode(self.windowType))
+		log.debug('Window types: ' + str(self.windowType))
+		#Log to investigate for new types of windows.
+		#This log is disabled by default because it takes processing time and has thus side effect.
+		#To activate it, open NVDA console and type:
+		# import globalVars
+		# globalVars.olexDebug = True
+		globalVars.olexDebug = getattr(globalVars, 'olexDebug', False)
+		if globalVars.olexDebug:
+			log.debug(self.listHeaderFields())
 		if len(self.windowType) != 1:
 			raise NotInMessageWindowError()
 		self.windowType = self.windowType[0]
@@ -148,10 +156,20 @@ class OutlookItemWindow(object):
 		return obj
 	
 	def isMessage(self):
+		#These fields are always present even if not visible (according to reduced/developped headers state)
 		lstCID= [
 			4099, #'To'
-			4100,
-			4103, 
+			4100, #CC
+			4103, #BCC 
+			]
+		return self.hasHeaderFieldsInThisOrder(lstCID)
+		
+	def isMessage2(self):
+		#Fields in office 365 update (32-bit) as reported by Ralf and user.
+		lstCID= [
+			4117, #To
+			4126, #Cc
+			4104 #Bcc
 			]
 		return self.hasHeaderFieldsInThisOrder(lstCID)
 		
@@ -161,6 +179,15 @@ class OutlookItemWindow(object):
 			4515, 4099, #Optional
 			4518, 4102, #Date/time
 			4517, 4101, #Location
+			]
+		if self.hasHeaderFieldsInThisOrder(lstCID):
+			return True
+		#Test meeting request forwarding
+		lstCID = [
+			4098, #To
+			4516, 4100, #Subject
+			4517, 4101, #Location
+			4518, 4102, #Date/time
 			]
 		return self.hasHeaderFieldsInThisOrder(lstCID)
 	
@@ -245,6 +272,16 @@ class OutlookItemWindow(object):
 			]
 		return self.hasHeaderFieldsInThisOrder(lstCID)
 		
+	def listHeaderFields(self):
+		ls1 = [obj for obj in self.rootDialog.children]
+		return [{
+				'name': o.name,
+				'value': o.value,
+				'role': o.role,
+				'states': o.states,
+				'cid': o.windowControlID
+				}
+			for o in ls1]
 	def hasHeaderFieldsInThisOrder(self, lstCID):
 		ls1 = [obj.windowControlID for obj in self.rootDialog.children if obj.windowControlID in lstCID]
 		return ls1 == lstCID
@@ -263,7 +300,8 @@ class OutlookItemWindow(object):
 			6: (4101, 'Subject'),
 			7: (4346, 'SignedBy'),
 			})
-		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4292 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		#hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4292 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
 		if hasFromReduced:
 			dic.update({
 				1: (4292, 'From'),
@@ -275,6 +313,32 @@ class OutlookItemWindow(object):
 				})
 		return dic
 		
+	def getMessage2HeaderFields(self):
+		#Fields in office 365 update (32-bit) as reported by Ralf and user.
+		hasFromEditing = len([o for o in self.rootDialog.children if o.windowControlID==4263 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		if hasFromEditing:
+			dic = {1: (4263, 'From')}
+		else:
+			dic = {1: (4292, 'From')}
+		dic.update({
+			2: (4315, 'Sent'),
+			3: (4117, 'To'),
+			4: (4126, 'Cc'),
+			5: (4104, 'Bcc'),
+			6: (4294, 'Subject'),
+			7: (4346, 'SignedBy') })
+		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		if hasFromReduced:
+			dic.update({
+				1: (4292, 'From'),
+				2: (4293, 'Sent'),
+				3: (4295, 'ToCc'),
+				4: (None, 'Cc'),
+				5: (None, 'Bcc'),
+				6: (4294, 'Subject')
+				})
+		return dic
+			
 	def getReportHeaderFields(self):
 		dic = {
 			1: (4096, 'From'),
@@ -522,6 +586,7 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, outlook.Add
 	def _moveToRow(self, row):
 		#Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
 		#when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
+		
 		# Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 		ui.message(_('Column navigation not supported in the address book'))
 
@@ -558,18 +623,22 @@ class AppModule(outlook.AppModule):
 		#Calendar view: Alt+digit is used command to set up number of days in the view
 			gesture.send()
 			return
-		try:
-			oItemWindow = OutlookItemWindow()
-		except NotInMessageWindowError:
+		nRepeat = getLastScriptRepeatCount()
+		if nRepeat == 0:
+			try:
+				self.olItemWindow = OutlookItemWindow()
+			except NotInMessageWindowError:
+				self.olItemWindow = None
+		if self.olItemWindow is None:
 			# Translators: When trying to use Alt+Number shortcut but not in message.
 			ui.message(_("Not in a message window"))
 			return
 		try:
-			obj, name = oItemWindow.getHeaderFieldObject(nField)
+			obj, name = self.olItemWindow.getHeaderFieldObject(nField)
 		except HeaderFieldNotFoundeError:
 			self.errorBeep()
 			return
-		self.reportObject(obj, getLastScriptRepeatCount())
+		self.reportObject(obj, nRepeat)
 		
 	def reportObject(self, obj, nRepeat):
 		if nRepeat == 0:
@@ -647,16 +716,26 @@ class AppModule(outlook.AppModule):
 		except LookupError:
 			self.errorBeep()
 			return
-		nAttachments = len(attachmentsList)
-		if getLastScriptRepeatCount() == 1 and nAttachments > 0:
+		self.nAttachments = len(attachmentsList)
+		if getLastScriptRepeatCount() == 1 and self.nAttachments > 0:
 		# double press, set focus in field
-			winUser.setForegroundWindow(handle)
+			self.focusInfo['firstObj'].setFocus()
+			winUser.setForegroundWindow(self.focusInfo['handle'])
 		else:
 		# single press
-			msg = (
-				windowName + ": " + str(nAttachments) + '. ' +  #Attachments number
-				', '.join(namesGen))
-			ui.message(msg)
+			self.focusInfo = {'handle': handle}
+			try:
+				self.focusInfo['firstObj'] = attachmentsList[0]
+			except IndexError:
+				self.focusInfo['firstObj'] = None
+			#Launch the attachments announcement code in a different thread since it can take time in the case of numerous attachments (above 17 on my machine).
+			#In this case, getLastScriptRepeatCount() after double press will return 0 instead of 1.
+			def announceAttachments():
+				msg = (
+					windowName + ": " + str(self.nAttachments) + '. ' +  #Attachments number
+					', '.join(namesGen))
+				ui.message(msg)
+			threading.Thread(target=announceAttachments).start()
 	
 	def getAttachmentInfos2016(self):
 		fg = api.getForegroundObject()
