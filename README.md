@@ -30,6 +30,7 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 * The script to move focus to headers is working again
 * The script to move to attachments is now working when more attachments are present.
+* Added localizations.
 
 ### Version 1.3
 
