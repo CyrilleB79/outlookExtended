@@ -226,6 +226,8 @@ class UIAMailTipItemMessage(UIA):
 class UIARecipientButton(UIA):
 	def _get_name(self):
 		return self.firstChild.name
+	def reportFocus(self):
+		ui.message(self.name)
 		
 	def event_(self):
 		ui.message(self.name)
@@ -328,6 +330,41 @@ class AppModule(AppModule):
 		
 	def errorBeep(self):
 		tones.beep(440, 80)
+		
+	@script(
+		# Translators: Documentation for report info bar script.
+		description=_("Reports the notification in a message. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."),	
+		gestures = ["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"]
+		)
+	def script_reportNotification(self, gesture):
+		obj = self.getNotificationObj()
+		if obj is None:
+			# Translators: When there is no notification
+			ui.message(_("No notification"))
+			return
+		nRepeat = getLastScriptRepeatCount()
+		if nRepeat == 0:
+			namesList = []
+			for o in obj.children:
+				name = o.name
+				if name:
+					if namesList and re.match('^\w.*$', name, re.U):
+						name = ' ' + name
+					namesList.append(name)
+			self.notificationText = ''.join(namesList)
+			ui.message(self.notificationText)
+			self.lastFocus = api.getFocusObject()
+		elif nRepeat == 1:
+			obj.setFocus()
+		elif nRepeat == 2:
+			api.copyToClip(self.notificationText)
+			self.lastFocus.setFocus()
+		
+	@script(
+		# Translators: Documentation for move to message body script.
+		description=_("Moves the focus to the message body"),
+		gestures = ["kb(desktop):NVDA+shift+M", "kb(laptop):NVDA+control+shift+M"]
+		)
 	
 	@script(
 		# Translators: Documentation for report info bar script.
@@ -495,8 +532,6 @@ class AppModule(AppModule):
 			obj = obj.firstChild
 		return obj
 		
-	__gestures = {"kb:alt+" + key : "reportHeaderField" + str(n) for (key,n) in _headerFieldKeyMap.items()}
-	
 	def initializeTestCases(self):
 		debugTcPath = config.conf['outlookExtended']['testCasePath']
 		isTest = bool(debugTcPath)
@@ -533,7 +568,27 @@ class AppModule(AppModule):
 		else:
 			self.tcName = ''
 			ui.message(_('Test mode offf'))
+
+	def getNotificationObj(self):
+		try:
+			cid = 4265
+			obj = getNVDAObjectFromEvent(
+				findDescendantWindow(api.getForegroundObject().windowHandle, visible=True, className=None, controlID=cid),
+				winUser.OBJID_WINDOW, 0)
+			getChildWithRole = lambda o,role: [oc for oc in obj.children if oc.role == role][0]
+			obj = getChildWithRole(obj, controlTypes.ROLE_PANE)
+			obj = getChildWithRole(obj, controlTypes.ROLE_PANE)
+			obj = getChildWithRole(obj, controlTypes.ROLE_PANE)
+			obj = getChildWithRole(obj, controlTypes.ROLE_GROUPING)
+			obj = getChildWithRole(obj, controlTypes.ROLE_PANE)
+		except LookupError:
+			obj = None
+		return obj
 		
+	
+	__gestures = {"kb:alt+" + key : "reportHeaderField" + str(n) for (key,n) in _headerFieldKeyMap.items()}
+	
+	
 	@staticmethod
 	def _createScript_reportHeaderField(n):
 		def  _genericScript_reportHeaderField(self, gesture):
