@@ -206,10 +206,6 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBook
 		ui.message(_('Column navigation not supported in the address book'))
 
 
-class UIAMailTipPane(UIA):
-	def event_NVDAObject_init(self):
-		ui.message('toto')
-	
 class UIAMailTipItemText(UIA):
 	def event_NVDAObject_init(self):
 		ui.message(self.name)
@@ -229,8 +225,9 @@ class UIARecipientButton(UIA):
 	def reportFocus(self):
 		ui.message(self.name)
 		
-	def event_(self):
-		ui.message(self.name)
+	def event_NVDAObject_init(self):
+		from tones import beep
+		beep(440, 440)
 
 class AppModule(AppModule):
 	
@@ -265,12 +262,14 @@ class AppModule(AppModule):
 				clsList.insert(0,UIAWithReadStatus)
 			elif obj.role == controlTypes.Role.PANE and obj.parent.role == controlTypes.ROLE_GROUPING and obj.windowClassName == 'NetUIHWND':
 				clsList.insert(0, UIAMailTipPane)
+			#elif obj.role == controlTypes.Role.PANE and obj.parent.role == controlTypes.ROLE_GROUPING and obj.windowClassName == 'NetUIHWND':
+			#	clsList.insert(0, UIAMailTipPane)
 			elif obj.UIAElement.currentAutomationID == 'RecipientButton':
 				clsList.insert(0, UIARecipientButton)
-			elif obj.UIAElement.currentAutomationID == 'MailTipItemText':
-				clsList.insert(0, UIAMailTipItemText)
-			elif obj.UIAElement.currentAutomationID == 'MailTipItemMessage':
-				clsList.insert(0, UIAMailTipItemMessage)
+			#elif obj.UIAElement.currentAutomationID == 'MailTipItemText':
+			#	clsList.insert(0, UIAMailTipItemText)
+			#elif obj.UIAElement.currentAutomationID == 'MailTipItemMessage':
+			#	clsList.insert(0, UIAMailTipItemMessage)
 	
 	def reportHeaderFieldN(self, nField, gesture):
 		if api.getFocusObject().windowClassName in ['DayViewWnd', 'WeekViewWnd']:
@@ -313,8 +312,13 @@ class AppModule(AppModule):
 		elif nRepeat == 2:
 		# triple press, copy to clipboard and set focus to original focused object
 			api.copyToClip(obj.value)
+<<<<<<< HEAD:addon/appModules/outlook/__init__.py
 			# Translators: When user triple presses Alt+Number to copy a header's field to clipboard
 			core.callLater(0, lambda: ui.message(_("Copied to clipboard")))
+=======
+			# Translators: When user triple press Alt+Number to copy a header's field to clipboard
+			ui.message(_("Copied to clipboard"))
+>>>>>>> 42f2db4 (ajout):addon/appModules/outlook.py
 			api.setNavigatorObject(obj,isFocus=True)
 			self.lastFocus.setFocus()
 	
@@ -355,17 +359,15 @@ class AppModule(AppModule):
 			ui.message(self.notificationText)
 			self.lastFocus = api.getFocusObject()
 		elif nRepeat == 1:
-			obj.setFocus()
+			winUser.setForegroundWindow(obj.windowHandle)
 		elif nRepeat == 2:
 			api.copyToClip(self.notificationText)
-			self.lastFocus.setFocus()
+			# Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
+			ui.message(_("Copied to clipboard"))
+			#api.setNavigatorObject(obj,isFocus=True)
+			#self.lastFocus.setFocus()
+			winUser.setForegroundWindow(self.lastFocus.windowHandle)
 		
-	@script(
-		# Translators: Documentation for move to message body script.
-		description=_("Moves the focus to the message body"),
-		gestures = ["kb(desktop):NVDA+shift+M", "kb(laptop):NVDA+control+shift+M"]
-		)
-	
 	@script(
 		# Translators: Documentation for report info bar script.
 		description=_("Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."),	
