@@ -228,6 +228,28 @@ class UIARecipientButton(UIA):
 	def event_NVDAObject_init(self):
 		from tones import beep
 		beep(440, 440)
+		
+	@script(
+		gestures = ['kb:upArrow', 'kb:leftArrow'],
+	)
+	def script_previousButton(self, gesture):
+		getNearest = lambda o: o.previous
+		self.sendGestureIfOtherButton(gesture, getNearest)
+	
+	@script(
+		gestures = ['kb:downArrow', 'kb:rightArrow'],
+	)
+	def script_nextButton(self, gesture):
+		getNearest = lambda o: o.next
+		self.sendGestureIfOtherButton(gesture, getNearest)
+		
+	def sendGestureIfOtherButton(self, gesture, getNearest):
+		obj = getNearest(self)
+		while obj.role != controlTypes.ROLE_BUTTON:
+			if obj is None:
+				return
+			obj = getNearest(obj)
+		gesture.send()
 
 class AppModule(AppModule):
 	

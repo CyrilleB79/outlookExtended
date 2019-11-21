@@ -13,9 +13,11 @@ This addon improves the use of Microsoft Outlook by vocalizing some commands and
 * NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout): Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout): Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it.
 * NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout): Moves the focus to the message body.
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout): Reports the notification in a message window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard. The notification area messages contain buttons to remove the cited recipients; once the notification area is focused, use arrows to move between these buttons.
 * Control+Alt+Left and Control+Alt+Right: in the address book search result list, navigates between the fields of the currently selected line.
 * Control+Q: in the message list, marks the selected message or group of messages as read.
 * Control+U: in the message list, marks the selected message or group of messages as unread.
+
 
 ## Notes
 
