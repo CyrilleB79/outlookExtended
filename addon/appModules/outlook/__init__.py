@@ -233,17 +233,38 @@ class UIARecipientButton(UIA):
 		gestures = ['kb:upArrow', 'kb:leftArrow'],
 	)
 	def script_previousButton(self, gesture):
-		getNearest = lambda o: o.previous
-		self.sendGestureIfOtherButton(gesture, getNearest)
+		self.sendGestureIfOtherButton(gesture, 'previous')
 	
 	@script(
 		gestures = ['kb:downArrow', 'kb:rightArrow'],
 	)
 	def script_nextButton(self, gesture):
-		getNearest = lambda o: o.next
-		self.sendGestureIfOtherButton(gesture, getNearest)
+		self.sendGestureIfOtherButton(gesture, 'next')
 		
-	def sendGestureIfOtherButton(self, gesture, getNearest):
+	def sendGestureIfOtherButton(self, gesture, direction):
+		stopConditionFun = lambda o: o.role in [controlTypes.ROLE_BUTTON, o.role] and o.isFocusable()
+		obj = walkObj(self, direction, stopConditionFun)
+		if obj.role == controlTypes.ROLE_BUTTON:
+			gesture.send()
+		elif obj.role == controlTypes.ROLE_GROUPING:
+			return
+		raise RuntimeError('Unexpected role {role}'.format(role=obj.role))
+	
+	@staticmethod
+	def walkObj(oStart, direction, stopConditionFun):
+		if direction == 'next':
+			propList = ['firstChild', 'next', 'parent']
+		elif direction == 'previous':
+			propList = ['firstChild', 'previous', 'parent']
+		for prop in propList:
+			o = getattr(oStart, prop)
+			if o:
+				if stopConditionFun(o):
+					return o
+				else:
+					return walkObj(o, direction, stopConditionFun)
+		raise RuntimeError('Unexpected object tree structure')
+	def old_sendGestureIfOtherButton(self, gesture, getNearest):
 		obj = self
 		while True:
 			obj = getNearest(obj)
@@ -253,23 +274,8 @@ class UIARecipientButton(UIA):
 				break  # Button found
 		log.debug('Sending gesture')
 		gesture.send()
+		
 	
-	def walkObj(oStart, direction, stopConditionFun):
-		if direction == 'next':
-			propList = ['firstChild', 'next', 'parent']
-		elif direction == 'previous':
-			propList = ['firstChild', 'previous', 'parent']
-		for prop in propList:
-			o = getattr(oStart, prop)
-			if o:
-				if stopConditionFun(o)
-					return o
-				else:
-					return walkObj(o, direction, stopConditionFun)
-		raise Exception('zzz')
-
-
-
 class AppModule(AppModule):
 	
 	scriptCategory = ADDON_SUMMARY
@@ -353,13 +359,8 @@ class AppModule(AppModule):
 		elif nRepeat == 2:
 		# triple press, copy to clipboard and set focus to original focused object
 			api.copyToClip(obj.value)
-<<<<<<< HEAD:addon/appModules/outlook/__init__.py
 			# Translators: When user triple presses Alt+Number to copy a header's field to clipboard
 			core.callLater(0, lambda: ui.message(_("Copied to clipboard")))
-=======
-			# Translators: When user triple press Alt+Number to copy a header's field to clipboard
-			ui.message(_("Copied to clipboard"))
->>>>>>> 42f2db4 (ajout):addon/appModules/outlook.py
 			api.setNavigatorObject(obj,isFocus=True)
 			self.lastFocus.setFocus()
 	
