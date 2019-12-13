@@ -23,8 +23,8 @@ dodaje dodatne naredbe.
   pritisne dvaput, premješta fokus na njega.
 * NVDA+shift+M (desktop raspored) / NVDA+shift+M (laptop raspored):
   Premješta fokus u polje poruke
-* Control+Alt+lijevo i Control+Alt+desno: u popisu pretrage adresara,
-  navigira se između polja trenutačno odabranog retka
+* Control+Alt+lijevo i Control+Alt+desno: u popisu pretrage adresara, kreći
+  se između polja trenutačno odabranog retka
 * Control+Q: u popisu poruka, označi odabranu poruku ili grupu poruka kao
   pročitane
 * Control+U: u popisu poruka, označi odabranu poruku ili grupu poruka kao
