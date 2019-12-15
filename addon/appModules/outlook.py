@@ -794,7 +794,7 @@ class AppModule(outlook.AppModule):
 			return [], handle,[],obj.name
 		
 	def getInfoBarControlId(self):
-		majVer = self.productVersion.split('.')[0]
+		majVer = int(self.productVersion.split('.')[0])
 		if majVer <= 11:
 			cid = 4105 #Outlook 2003
 		else:
