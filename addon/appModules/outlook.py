@@ -36,6 +36,7 @@ from NVDAObjects.UIA import UIA
 from windowUtils import findDescendantWindow
 import tones
 import globalVars
+from locationHelper import RectLTWH
 import re
 import threading
 
@@ -544,6 +545,11 @@ class List(List):
 	
 class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, outlook.AddressBookEntry):
 
+	def _getColumnLocation(self, column):
+		colHeader = self.parent.getHeader().getChild(column - 1)
+		return RectLTWH(left=colHeader.location.left, top=self.location.top, width=colHeader.location.width, height=self.location.height)
+		
+	
 	def _getColumnContent(self, column):
 		"""Get the text content for a given column of this row.
 		@param column: The index of the column, starting at 1.
