@@ -206,76 +206,70 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBook
 		ui.message(_('Column navigation not supported in the address book'))
 
 
-class UIAMailTipItemText(UIA):
-	def event_NVDAObject_init(self):
-		ui.message(self.name)
-
-class UIAMailTipItemMessage(UIA):
-	def event_NVDAObject_init(self):
-		from tones import beep
-		beep(440,500)
-		
-	def event_show(self):
-		ui.message(self.name)
-		#speech.speakObject(self, reason=controlTypes.REASON_FOCUS)
-
-class UIARecipientButton(UIA):
-	def _get_name(self):
-		return self.firstChild.name
-	def reportFocus(self):
-		ui.message(self.name)
-		
-	def event_NVDAObject_init(self):
-		from tones import beep
-		beep(440, 440)
+class UIANotificationZoneButton(UIA):
 		
 	@script(
-		gestures = ['kb:upArrow', 'kb:leftArrow'],
+		gestures = ['kb:upArrow', 'kb:downArrow'],
+	)
+	def script_cancelGesture(self, gesture):
+		# A script to cancel the upArrow or downArrow in the notification zone,
+		# since these gesture may move the focus out of the notification zone.
+		pass
+	
+	@script(
+		gesture = 'kb:leftArrow',
 	)
 	def script_previousButton(self, gesture):
 		self.sendGestureIfOtherButton(gesture, 'previous')
 	
 	@script(
-		gestures = ['kb:downArrow', 'kb:rightArrow'],
+		gesture = 'kb:rightArrow',
 	)
 	def script_nextButton(self, gesture):
 		self.sendGestureIfOtherButton(gesture, 'next')
 		
 	def sendGestureIfOtherButton(self, gesture, direction):
-		stopConditionFun = lambda o: o.role in [controlTypes.ROLE_BUTTON, o.role] and o.isFocusable()
-		obj = walkObj(self, direction, stopConditionFun)
-		if obj.role == controlTypes.ROLE_BUTTON:
-			gesture.send()
-		elif obj.role == controlTypes.ROLE_GROUPING:
+		stopConditionFun = lambda o: o.role == controlTypes.ROLE_BUTTON and o.isFocusable
+		obj = self.walkObj(self, direction, stopConditionFun)
+		if obj is None:
 			return
-		raise RuntimeError('Unexpected role {role}'.format(role=obj.role))
+		gesture.send()
 	
-	@staticmethod
-	def walkObj(oStart, direction, stopConditionFun):
+	def walkObj(self, oStart, direction, stopConditionFun, ignoreChildren=False):
+		if oStart.role == controlTypes.ROLE_GROUPING:
+			return None
 		if direction == 'next':
 			propList = ['firstChild', 'next', 'parent']
 		elif direction == 'previous':
-			propList = ['firstChild', 'previous', 'parent']
+			propList = ['lastChild', 'previous', 'parent']
+		if ignoreChildren:
+			del propList[0]
 		for prop in propList:
 			o = getattr(oStart, prop)
 			if o:
-				if stopConditionFun(o):
+				isParent = prop == 'parent'
+				if stopConditionFun(o) and not isParent:
 					return o
 				else:
-					return walkObj(o, direction, stopConditionFun)
+					return self.walkObj(o, direction, stopConditionFun, ignoreChildren=isParent)
 		raise RuntimeError('Unexpected object tree structure')
-	def old_sendGestureIfOtherButton(self, gesture, getNearest):
-		obj = self
-		while True:
-			obj = getNearest(obj)
-			if obj is None:
-				return
-			if obj.role == controlTypes.ROLE_BUTTON and obj.isFocusable:
-				break  # Button found
-		log.debug('Sending gesture')
-		gesture.send()
-		
 	
+class UIARecipientButton(UIANotificationZoneButton):
+
+	def _get_name(self):
+		return self.firstChild.name
+	def reportFocus(self):
+		ui.message(self.name)
+		
+
+class UIAMoreInfoButton(UIANotificationZoneButton):
+
+	def _get_name(self):
+		return _('More or less information')
+	def reportFocus(self):
+		ui.message(self.name)
+		
+
 class AppModule(AppModule):
 	
 	scriptCategory = ADDON_SUMMARY
@@ -307,16 +301,10 @@ class AppModule(AppModule):
 		if UIA in clsList:
 			if obj.role == controlTypes.Role.GROUPING and obj.parent.windowClassName == 'OutlookGrid':
 				clsList.insert(0,UIAWithReadStatus)
-			elif obj.role == controlTypes.Role.PANE and obj.parent.role == controlTypes.ROLE_GROUPING and obj.windowClassName == 'NetUIHWND':
-				clsList.insert(0, UIAMailTipPane)
-			#elif obj.role == controlTypes.Role.PANE and obj.parent.role == controlTypes.ROLE_GROUPING and obj.windowClassName == 'NetUIHWND':
-			#	clsList.insert(0, UIAMailTipPane)
 			elif obj.UIAElement.currentAutomationID == 'RecipientButton':
 				clsList.insert(0, UIARecipientButton)
-			#elif obj.UIAElement.currentAutomationID == 'MailTipItemText':
-			#	clsList.insert(0, UIAMailTipItemText)
-			#elif obj.UIAElement.currentAutomationID == 'MailTipItemMessage':
-			#	clsList.insert(0, UIAMailTipItemMessage)
+			elif obj.UIAElement.currentAutomationID == 'MoreInfo':
+				clsList.insert(0, UIAMoreInfoButton)
 	
 	def reportHeaderFieldN(self, nField, gesture):
 		if api.getFocusObject().windowClassName in ['DayViewWnd', 'WeekViewWnd']:
