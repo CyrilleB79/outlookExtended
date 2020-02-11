@@ -29,7 +29,6 @@ from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModu
 from .itemWindow import OutlookItemWindow, NotInMessageWindowError, HeaderFieldNotFoundeError
 from . import compa
 
-from comtypes import COMError
 from scriptHandler import getLastScriptRepeatCount, script
 import winUser
 from logHandler import log
@@ -47,10 +46,12 @@ import globalVars
 import core
 import config
 
-from locationHelper import RectLTWH
 import sys
+from comtypes import COMError
+from locationHelper import RectLTWH
 import re
 import threading
+from time import sleep
 
 import addonHandler
 
@@ -270,6 +271,34 @@ class UIAMoreInfoButton(UIANotificationZoneButton):
 		ui.message(self.name)
 		
 
+class NotificationChecker(threading.Thread):
+	def __init__(self, appModule, *args, **kwargs):
+		super(NotificationChecker, self).__init__(*args, **kwargs)
+		self.outlookAppModule = appModule
+		self._stop = threading.Event()
+		
+	def stop(self):
+		self._stop.set()
+		
+	def stopped(self):
+		return self._stop.isSet()
+		
+	def run(self):
+		oldBtnSet = set()
+		while not self.stopped():
+			obj = self.outlookAppModule.getNotificationObj()
+			if obj:
+				btnSet = {o for o in obj.children if o.role == controlTypes.ROLE_BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton'}
+				if btnSet != oldBtnSet:
+					log.debug(btnSet - oldBtnSet)
+					tones.beep(440, 50)
+					oldBtnSet = btnSet
+			else:
+				oldBtnSet = set()
+			sleep(1)	
+		tones.beep(110, 200)
+
+        	        	
 class AppModule(AppModule):
 	
 	scriptCategory = ADDON_SUMMARY
@@ -286,7 +315,15 @@ class AppModule(AppModule):
 		self.testCases = None
 		self.tcNumber = 0
 		self.initializeTestCases
+		self.notificationChecker = NotificationChecker(appModule=self)
+		self.notificationChecker.start()
 		
+	def terminate(self,*args,**kwargs):
+		self.notificationChecker.stop()
+		super(AppModule, self).terminate(*args,**kwargs)
+		
+	def event_focusMove(self, obj, nextHandler):
+		tones.beep(440,80)
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		super(AppModule, self).chooseNVDAObjectOverlayClasses(obj, clsList)
 		if obj.role==controlTypes.Role.LISTITEM and obj.windowClassName=="OUTEXVLB":
