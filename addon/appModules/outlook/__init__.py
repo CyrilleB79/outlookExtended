@@ -45,8 +45,10 @@ import tones
 import globalVars
 import core
 import config
+import nvwave
 
 import sys
+import os
 from comtypes import COMError
 from locationHelper import RectLTWH
 import re
@@ -258,7 +260,11 @@ class UIANotificationZoneButton(UIA):
 class UIARecipientButton(UIANotificationZoneButton):
 
 	def _get_name(self):
-		return self.firstChild.name
+		try:
+			return self.firstChild.name
+		except AttributeError:
+			return super(UIARecipientButton, self).name
+			
 	def reportFocus(self):
 		ui.message(self.name)
 		
@@ -284,21 +290,26 @@ class NotificationChecker(threading.Thread):
 		return self._stop.isSet()
 		
 	def run(self):
-		oldBtnSet = set()
+		oldInfoSet = set()
 		while not self.stopped():
 			obj = self.outlookAppModule.getNotificationObj()
 			if obj:
-				btnSet = {o for o in obj.children if o.role == controlTypes.ROLE_BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton'}
-				if btnSet != oldBtnSet:
-					log.debug(btnSet - oldBtnSet)
-					tones.beep(440, 50)
-					oldBtnSet = btnSet
+				infoSet = {
+					o.name for o in obj.children if (
+						(o.role == controlTypes.ROLE_BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
+						or (o.role == controlTypes.ROLE_STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
+					)
+				}
+				if infoSet != oldInfoSet:
+					focus = api.getFocusObject()
+					if focus.windowClassName == 'RichEdit20WPT':
+						nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
+					oldInfoSet = infoSet
 			else:
-				oldBtnSet = set()
-			sleep(1)	
-		tones.beep(110, 200)
-
-        	        	
+				oldInfoSet = set()
+			sleep(0.5)
+		
+		
 class AppModule(AppModule):
 	
 	scriptCategory = ADDON_SUMMARY
