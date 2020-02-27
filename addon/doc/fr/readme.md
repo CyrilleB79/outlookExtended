@@ -23,7 +23,7 @@ vocalisation de certaines commandes et l’ajout de commandes supplémentaires.
   (disposition ordinateur portable): Annonce le nombre et le nom des pièces
   jointes dans une fenêtre de message. Une double pression y déplace le
   focus.
-* * NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
+* NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
   (disposition ordinateur portable): Déplace le focus dans le corps du
   message.
 * Control+Alt+Gauche and Control+Alt+Droite: Dans la liste des résultats de
