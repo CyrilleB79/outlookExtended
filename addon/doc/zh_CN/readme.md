@@ -15,10 +15,14 @@
   案一次，朗读消息，日历项目或任务窗口中的信息栏。按两次，则将焦点移动到上述项目。按三次，则将其内容复制到剪贴板。
 * NVDA+shift+A (台式机方按) / NVDA+control+shift+A (笔记本方案):
   在消息窗口中朗读附件的编号和名称。按两次，则将焦点移动到附件。
-* NVDA+shift+M (台式机方案) / NVDA+shift+M (笔记本方案): 将焦点移动到邮件正文
-* Control+Alt+左光标 和 Control+Alt+右光标: 分别在地址簿搜索结果列表，和当前所选的编辑框之间进行浏览
-* Control+Q: 在消息列表中，将所选消息或消息组标记为已读
-* Control+U: 在邮件列表中，将所选邮件或邮件组标记为未读
+* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
+  Moves the focus to the message body.
+* Control+Alt+Left and Control+Alt+Right: in the address book search result
+  list, navigates between the fields of the currently selected line.
+* Control+Q: in the message list, marks the selected message or group of
+  messages as read.
+* Control+U: in the message list, marks the selected message or group of
+  messages as unread.
 
 ## 注意
 
@@ -29,16 +33,29 @@
 
 ## 更新日志
 
+### Version 1.5
+
+* Reading the information bar is now working with NVDA 2019.3.
+* Table navigation in the address book results is now working with NVDA
+  2019.3.
+
+### Version 1.4
+
+* The script to move focus to headers is working again.
+* The script to move to attachments is now working when more attachments are
+  present.
+* 新增本地化。
+
 ### 版本1.3
 
-* 修复为较新的Office 365版本读取的邮件头。
-* 更新以支持（兼容Python 2和3）
+* Fixed message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
 * 新增本地化。
-* 现在使用appveyor进行发布
+* Releases performed now with appveyor.
 
 ### 版本1.2
 
-* 修复转发会议时标头读取。
+* Fixed header reading when forwarding meeting.
 * 新增本地化。
 
 ### 版本1.1

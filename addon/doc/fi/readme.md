@@ -22,14 +22,14 @@ näppäinkomentoja sekä lisäämällä uusia.
   (kannettavan näppäimistöasettelu): Lukee viesti-ikkunassa liitteiden
   lukumäärän ja nimet. Kahdesti painettaessa kohdistus siirretään
   liitetiedostojen luetteloon.
-* NVDA+Vaihto+M (pöytäkoneen näppäimistöasettelu) / NVDA+Vaihto+M
-  (kannettavan näppäimistöasettelu): Siirtää kohdistuksen viestirunkoon.
-* Ctrl+Alt+Nuoli vasemmalle ja Ctrl+Alt+Nuoli oikealle: Liikkuu valittuna
-  olevan rivin kenttien välillä osoitekirjan hakutulosten luettelossa.
-* Ctrl+Q: Merkitsee valitun viestin/valitut viestit luetuiksi
-  viestiluettelossa.
-* Ctrl+U: Merkitsee valitun viestin/valitut viestit lukemattomiksi
-  viestiluettelossa.
+* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
+  Moves the focus to the message body.
+* Control+Alt+Left and Control+Alt+Right: in the address book search result
+  list, navigates between the fields of the currently selected line.
+* Control+Q: in the message list, marks the selected message or group of
+  messages as read.
+* Control+U: in the message list, marks the selected message or group of
+  messages as unread.
 
 ## Huomautuksia
 
@@ -48,17 +48,29 @@ tilanteissa:
 
 ## Muutosloki
 
+### Version 1.5
+
+* Reading the information bar is now working with NVDA 2019.3.
+* Table navigation in the address book results is now working with NVDA
+  2019.3.
+
+### Version 1.4
+
+* The script to move focus to headers is working again.
+* The script to move to attachments is now working when more attachments are
+  present.
+* Lokalisointeja lisätty.
+
 ### Versio 1.3
 
-* Korjattu viestiotsakkeiden lukeminen uudemmissa Office 365:n versioissa.
-* Päivityksiä uudempien NVDA-versioiden tukemiseksi (Python 2- ja 3
-  -yhteensopiva)
+* Fixed message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
 * Lokalisointeja lisätty.
-* Julkaisut suoritetaan nyt appveyorilla
+* Releases performed now with appveyor.
 
 ### Versio 1.2
 
-* Korjattu otsakkeen lukeminen tapaamista välitettäessä.
+* Fixed header reading when forwarding meeting.
 * Lokalisointeja lisätty.
 
 ### Versio 1.1

@@ -21,14 +21,14 @@ dodaje dodatne naredbe.
 * NVDA+shift+A (desktop raspored) / NVDA+control+shift+A (laptop raspored):
   Izvještava o broju privitaka i njihove nazive u prozoru poruke. Ako se
   pritisne dvaput, premješta fokus na njega.
-* NVDA+shift+M (desktop raspored) / NVDA+shift+M (laptop raspored):
-  Premješta fokus u polje poruke
-* Control+Alt+lijevo i Control+Alt+desno: u popisu pretrage adresara, kreći
-  se između polja trenutačno odabranog retka
-* Control+Q: u popisu poruka, označi odabranu poruku ili grupu poruka kao
-  pročitane
-* Control+U: u popisu poruka, označi odabranu poruku ili grupu poruka kao
-  nepročitane
+* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
+  Moves the focus to the message body.
+* Control+Alt+Left and Control+Alt+Right: in the address book search result
+  list, navigates between the fields of the currently selected line.
+* Control+Q: in the message list, marks the selected message or group of
+  messages as read.
+* Control+U: in the message list, marks the selected message or group of
+  messages as unread.
 
 ## Napomene
 
@@ -45,16 +45,29 @@ ih je promijeniti za sljedeće situacije:
 
 ## Dnevnik promjena
 
+### Version 1.5
+
+* Reading the information bar is now working with NVDA 2019.3.
+* Table navigation in the address book results is now working with NVDA
+  2019.3.
+
+### Version 1.4
+
+* The script to move focus to headers is working again.
+* The script to move to attachments is now working when more attachments are
+  present.
+* Dodane su lokalizacije.
+
 ### Verzija 1.3
 
-* Ispravljeno čitanje zaglavlja poruka za novija Office 365 izdanja.
-* Nadogradnje za podršku novijih NVDA verzija (kompatibilne s Python 2 i 3)
+* Fixed message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
 * Dodane su lokalizacije.
-* Izdanja se sada izrađuju pomoću „appveyor”
+* Releases performed now with appveyor.
 
 ### Verzija 1.2
 
-* Ispravljeno čitanje zaglavlja poruka za prosljeđivanja sastanka.
+* Fixed header reading when forwarding meeting.
 * Dodane su lokalizacije.
 
 ### Verzija 1.1

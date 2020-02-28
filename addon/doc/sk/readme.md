@@ -20,11 +20,14 @@ oznamovaním rôznych informácií.
 * NVDA+shift+A (rozloženie desktop) / NVDA+ctrl+shift+A (rozloženie laptop):
   Oznámi počet a názvy príloh v okne správy. Stlačené dvakrát rýchlo za
   sebou presunie fokus na prílohy.
-* NVDA+shift+M: Presunie fokus do tela správy
-* Ctrl+alt+ľavá a pravá šípka: V zozname kontaktov presúva medzi poliami
-  vybratého kontaktu
-* Ctrl+q: Označí správu alebo vybraté správy v zozname správ ako prečítané
-* Ctrl+u: Označí správu alebo vybraté správy v zozname správ ako neprečítané
+* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
+  Moves the focus to the message body.
+* Control+Alt+Left and Control+Alt+Right: in the address book search result
+  list, navigates between the fields of the currently selected line.
+* Control+Q: in the message list, marks the selected message or group of
+  messages as read.
+* Control+U: in the message list, marks the selected message or group of
+  messages as unread.
 
 ## Poznámky
 
@@ -40,17 +43,29 @@ budete chcieť zmeniť v nasledujúcich situáciách:
 
 ## Zoznam zmien
 
+### Version 1.5
+
+* Reading the information bar is now working with NVDA 2019.3.
+* Table navigation in the address book results is now working with NVDA
+  2019.3.
+
+### Version 1.4
+
+* The script to move focus to headers is working again.
+* The script to move to attachments is now working when more attachments are
+  present.
+* Pridané preklady.
+
 ### Verzia 1.3
 
-* Opravené čítanie hlavičiek správ pre Office 365.
-* Pridaná podpora pre Python 3 tak, aby doplnok fungoval s novou verziou
-  NVDA.
+* Fixed message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
 * Pridané preklady.
-* Vydania sú teraz odosielané cez appveyor
+* Releases performed now with appveyor.
 
 ### Verzia 1.2
 
-* Opravené čítanie hlavičiek pri preposielaní stretnutia.
+* Fixed header reading when forwarding meeting.
 * Pridané preklady.
 
 ### Verzia 1.1

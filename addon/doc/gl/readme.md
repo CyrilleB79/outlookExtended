@@ -22,15 +22,14 @@ engadindo atallos adicionais.
 * NVDA+shift+A (distribución de escritorio) / NVDA+control+shift+A
   (distribución portátil): Anuncia o número e os nomes dos adxuntos nunha
   xanela de mensaxe. Se se preme dúas veces, move o foco cara eles.
-* NVDA+shift+M (distribución de escritorio) / NVDA+control+shift+M
-  (distribución portátil): Move o foco ó corpo da mensaxe
-* Control+Alt+Esquerda e Control+Alt+Dereita: Na lista de resultados de
-  busca na libreta de enderezos, navegar entre os campos da liña actualmente
-  seleccionada.
-* Control+Q: Na lista de mensaxes, marcar como lida a mensaxe ou o grupo de
-  mensaxes seleccionado.
-* Control+U: Na lista de mensaxes, marcar como non lida a mensaxe ou o grupo
-  de mensaxes seleccionado.
+* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
+  Moves the focus to the message body.
+* Control+Alt+Left and Control+Alt+Right: in the address book search result
+  list, navigates between the fields of the currently selected line.
+* Control+Q: in the message list, marks the selected message or group of
+  messages as read.
+* Control+U: in the message list, marks the selected message or group of
+  messages as unread.
 
 ## Notas
 
@@ -47,18 +46,29 @@ NVDA. Poderías querer modificalos especialmente nas seguintes situacións:
 
 ## Rexistro de trocos
 
+### Version 1.5
+
+* Reading the information bar is now working with NVDA 2019.3.
+* Table navigation in the address book results is now working with NVDA
+  2019.3.
+
+### Version 1.4
+
+* The script to move focus to headers is working again.
+* The script to move to attachments is now working when more attachments are
+  present.
+* Traducións engadidas.
+
 ### Versión 1.3
 
-* Arranxada a lectura de encabezados de mensaxes para compilacións máis
-  novas de Office 365.
-* Actualizacións para soportar versións máis novas do NVDA (compatible con
-  Python 2 e 3)
+* Fixed message headers reading for newer Office 365 release.
+* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
 * Traducións engadidas.
-* As liberacións realízanse agora con Appveyor
+* Releases performed now with appveyor.
 
 ### Versión 1.2
 
-* Arranxada a lectura de encabezamentos ao reenviar reunións.
+* Fixed header reading when forwarding meeting.
 * Traducións engadidas.
 
 ### Versión 1.1
