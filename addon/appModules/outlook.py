@@ -36,6 +36,8 @@ from NVDAObjects.UIA import UIA
 from windowUtils import findDescendantWindow
 import tones
 import globalVars
+import core
+
 from locationHelper import RectLTWH
 import re
 import threading
@@ -740,7 +742,7 @@ class AppModule(outlook.AppModule):
 				msg = (
 					windowName + ": " + str(self.nAttachments) + '. ' +  #Attachments number
 					', '.join(namesGen))
-				ui.message(msg)
+				core.callLater(0, ui.message, msg)
 			threading.Thread(target=announceAttachments).start()
 	
 	def getAttachmentInfos2016(self):
