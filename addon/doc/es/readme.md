@@ -22,14 +22,15 @@ Este complemento mejora el uso de Microsoft Outlook verbalizando algunas
 * NVDA+shift+A (distribución de escritorio) / NVDA+control+shift+A
   (distribución portátil): indica el número y los nombres de los adjuntos en
   una ventana de mensaje. Si se pulsa dos veces, mueve el foco hasta allí.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+shift+M (distribución de escritorio) / NVDA+control+shift+M
+  (distribución portátil): mueve el foco al cuerpo del mensaje.
+* Ctrl+alt+flechas izquierda y derecha: en la lista de resultados de
+  búsqueda de la libreta de direcciones, navega entre los campos de la línea
+  seleccionada actualmente.
+* Ctrl+q: en la lista de mensajes, marca el mensaje o grupo de mensajes
+  seleccionado como leído.
+* Ctrl+u: en la lista de mensajes, marca el mensaje o grupo de mensajes
+  seleccionado como no leído.
 
 ## Notas
 
@@ -46,34 +47,36 @@ NVDA. Puedes querer modificarlos en las siguientes situaciones:
 
 ## Registro de cambios
 
-### Version 1.5
+### Versión 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
-  2019.3.
+* Ahora funciona la lectura de la barra de información con NVDA 2019.3.
+* La navegación por tablas en los resultados de la libreta de direcciones ya
+  funciona en NVDA 2019.3.
 
-### Version 1.4
+### Versión 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
-* Traducciones añadidas
+* Vuelve a funcionar el script para desplazar el foco a las cabeceras.
+* Vuelve a funcionar el script que permite desplazarse a los adjuntos cuando
+  hay varios archivos presentes.
+* Traducciones añadidas.
 
 ### Versión 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
-* Traducciones añadidas
-* Releases performed now with appveyor.
+* Arreglada la lectura de encabezados de mensajes en compilaciones más
+  nuevas de Office 365.
+* Actualizaciones para soportar versiones más nuevas de NVDA (compatible con
+  Python 2 y 3).
+* Traducciones añadidas.
+* Las liberaciones se realizan ahora con Appveyor.
 
 ### Versión 1.2
 
-* Fixed header reading when forwarding meeting.
-* Traducciones añadidas
+* Arreglada la lectura de encabezados al reenviar reuniones.
+* Traducciones añadidas.
 
 ### Versión 1.1
 
-* Traducciones añadidas
+* Traducciones añadidas.
 
 ### Versión 1.0
 

@@ -22,14 +22,15 @@ engadindo atallos adicionais.
 * NVDA+shift+A (distribución de escritorio) / NVDA+control+shift+A
   (distribución portátil): Anuncia o número e os nomes dos adxuntos nunha
   xanela de mensaxe. Se se preme dúas veces, move o foco cara eles.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+shift+M (distribución de escritorio) / NVDA+control+shift+M
+  (distribución portátil): Move o foco ó corpo da mensaxe.
+* Control+Alt+Esquerda e Control+Alt+Dereita: na lista de resultados de
+  busca na libreta de enderezos, navega entre os campos da liña actualmente
+  seleccionada.
+* Control+Q: na lista de mensaxes, marca como lida a mensaxe ou o grupo de
+  mensaxes seleccionado.
+* Control+U: na lista de mensaxes, marca como non lida a mensaxe ou o grupo
+  de mensaxes seleccionado.
 
 ## Notas
 
@@ -46,29 +47,31 @@ NVDA. Poderías querer modificalos especialmente nas seguintes situacións:
 
 ## Rexistro de trocos
 
-### Version 1.5
+### Versión 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
-  2019.3.
+* A lectura da barra de información xa funciona con NVDA 2019.3.
+* A navegación por táboa nos resultados da libreta de enderezos xa funciona
+  con NVDA 2019.3.
 
-### Version 1.4
+### Versión 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
+* O script para mover o foco ás cabeceiras volve a funcionar.
+* O script para moverse aos adxuntos xa funciona cando están presentes máis
+  adxuntos.
 * Traducións engadidas.
 
 ### Versión 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
+* Arranxada a lectura de encabezados de mensaxes para versións máis novas de
+  Office 365.
+* Actualizacións para soportar versións máis novas do NVDA (compatible con
+  Python 2 e 3).
 * Traducións engadidas.
-* Releases performed now with appveyor.
+* As liberacións realízanse agora con Appveyor.
 
 ### Versión 1.2
 
-* Fixed header reading when forwarding meeting.
+* Arranxada a lectura de encabezamentos ao reenviar reunións.
 * Traducións engadidas.
 
 ### Versión 1.1

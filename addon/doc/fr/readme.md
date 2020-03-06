@@ -23,14 +23,16 @@ vocalisation de certaines commandes et l’ajout de commandes supplémentaires.
   (disposition ordinateur portable): Annonce le nombre et le nom des pièces
   jointes dans une fenêtre de message. Une double pression y déplace le
   focus.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
+  (disposition ordinateur portable): Déplace le focus dans le corps du
+  message.
+* Control+Alt+Gauche et Control+Alt+Droite: Dans la liste des résultats de
+  recherche du carnet d’adresses, navigue entre les champs de la ligne
+  sélectionnée.
+* Control+Q: Dans la liste des messages, marque le message ou le groupe de
+  messages sélectionné comme lu.
+* Control+U: Dans la liste des messages, marque le message ou le groupe de
+  messages sélectionné comme non lu.
 
 ## Notes
 
@@ -51,27 +53,30 @@ modifier dans les situations suivantes :
 
 ### Version 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
+* La lecture de la barre d'informations fonctionne désormais avec NVDA
   2019.3.
+* La navigation de tableau dans les résultats du carnet d'adresses
+  fonctionne désormais avec NVDA 2019.3.
 
 ### Version 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
+* Le script pour déplacer le focus aux en-têtes fonctionne à nouveau.
+* Le script pour se déplacer aux pièces jointes fonctionne désormais lorsque
+  plus de pièces jointes sont présentes.
 * Ajout de localisations.
 
 ### Version 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
+* Correction de la lecture des en-têtes de message pour la nouvelle version
+  d'Office 365.
+* Mises à jour pour prendre en charge les versions les plus récentes de NVDA
+  (compatible Python 2 et 3).
 * Ajout de localisations.
-* Releases performed now with appveyor.
+* Release effectuée maintenant avec appveyor.
 
 ### Version 1.2
 
-* Fixed header reading when forwarding meeting.
+* Correction de la lecture des en-têtes lorsqu'on transfère un message.
 * Ajout de localisations.
 
 ### Version 1.1

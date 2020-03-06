@@ -22,14 +22,14 @@ näppäinkomentoja sekä lisäämällä uusia.
   (kannettavan näppäimistöasettelu): Lukee viesti-ikkunassa liitteiden
   lukumäärän ja nimet. Kahdesti painettaessa kohdistus siirretään
   liitetiedostojen luetteloon.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+Vaihto+M (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+M (kannettavan
+  näppäimistöasettelu): Siirtää kohdistuksen viestirunkoon.
+* Ctrl+Alt+Nuoli vasemmalle ja Ctrl+Alt+Nuoli oikealle: Liikkuu valittuna
+  olevan rivin kenttien välillä osoitekirjan hakutulosluettelossa.
+* Ctrl+Q: Merkitsee valitun viestin/valitut viestit luetuiksi
+  viestiluettelossa.
+* Ctrl+U: Merkitsee valitun viestin/valitut viestit lukemattomiksi
+  viestiluettelossa.
 
 ## Huomautuksia
 
@@ -48,29 +48,29 @@ tilanteissa:
 
 ## Muutosloki
 
-### Version 1.5
+### Versio 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
-  2019.3.
+* Tietopalkin lukeminen toimii nyt NVDA 2019.3:n kanssa.
+* Taulukkonavigointi osoitekirjan hakutuloksissa toimii nyt NVDA 2019.3:n
+  kanssa.
 
-### Version 1.4
+### Versio 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
+* Kohdistuksen viestiotsakkeisiin siirtävä skripti toimii taas.
+* Liitteisiin siirtävä skripti toimii nyt, kun liitteitä on enemmän.
 * Lokalisointeja lisätty.
 
 ### Versio 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
+* Korjattu viestiotsakkeiden lukeminen uudemmissa Office 365:n versioissa.
+* Päivityksiä uudempien NVDA-versioiden tukemiseksi (Python 2- ja 3
+  -yhteensopiva).
 * Lokalisointeja lisätty.
-* Releases performed now with appveyor.
+* Julkaisut suoritetaan nyt appveyorilla.
 
 ### Versio 1.2
 
-* Fixed header reading when forwarding meeting.
+* Korjattu otsakkeen lukeminen tapaamista välitettäessä.
 * Lokalisointeja lisätty.
 
 ### Versio 1.1

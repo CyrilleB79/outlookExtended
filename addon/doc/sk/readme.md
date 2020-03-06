@@ -20,14 +20,13 @@ oznamovaním rôznych informácií.
 * NVDA+shift+A (rozloženie desktop) / NVDA+ctrl+shift+A (rozloženie laptop):
   Oznámi počet a názvy príloh v okne správy. Stlačené dvakrát rýchlo za
   sebou presunie fokus na prílohy.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+shift+M (desktop) a NVDA+ctrl+shift+M (laptop): Presunie fokus do
+  tela správy
+* Ctrl+alt+ľavá a pravá šípka: V zozname kontaktov presúva medzi poliami
+  vybratého kontaktu.
+* Ctrl+q: Označí správu alebo vybraté správy v zozname správ ako prečítané.
+* Ctrl+u: Označí správu alebo vybraté správy v zozname správ ako
+  neprečítané.
 
 ## Poznámky
 
@@ -43,29 +42,28 @@ budete chcieť zmeniť v nasledujúcich situáciách:
 
 ## Zoznam zmien
 
-### Version 1.5
+### Verzia 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
-  2019.3.
+* Čítanie informarčného panela funguje s NVDA 2019.3.
+* Čítanie tabuľky výsledkov v adresári funguje s NVDA 2019.3.
 
-### Version 1.4
+### Verzia 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
+* Opravená funkcia prechodu na hlavičky.
+* Funkcia na prechodk prílohám funguje aj vtedy, ak je v správe viacero
+  príloh.
 * Pridané preklady.
 
 ### Verzia 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
+* Opravené čítanie hlavičiek správ pre nové verzie Office 365.
+* Upravené pre nové verzie NVDA (kompatibilné s Python 2 a 3).
 * Pridané preklady.
-* Releases performed now with appveyor.
+* Vydania sú teraz odosielané cez appveyor.
 
 ### Verzia 1.2
 
-* Fixed header reading when forwarding meeting.
+* Opravené čítanie hlavičiek pri preposielaní stretnutia.
 * Pridané preklady.
 
 ### Verzia 1.1
