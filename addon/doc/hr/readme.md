@@ -14,21 +14,21 @@ dodaje dodatne naredbe.
   to 12 u poruci, stavki kalendara ili prozoru zadatka. Ako se pritisne
   dvaput, fokusira to polje, ako je moguće. Ako se pritisne triput, kopira
   sadržaj u međuspremnik.
-* NVDA+shift+I (desktop raspored) / NVDA+control+shift+I (laptop raspored):
+* NVDA+šift+I (desktop raspored) / NVDA+kontrol+šift+I (laptop raspored):
   Izvještava o informacijskoj traci u poruci, stavki kalendara ili prozoru
   zadatka. Ako se pritisne dvaput, fokusira ga. Ako se pritisne triput,
   kopira sadržaj u međuspremnik.
-* NVDA+shift+A (desktop raspored) / NVDA+control+shift+A (laptop raspored):
+* NVDA+šift+A (desktop raspored) / NVDA+kontrol+šift+A (laptop raspored):
   Izvještava o broju privitaka i njihove nazive u prozoru poruke. Ako se
   pritisne dvaput, premješta fokus na njega.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+šift+M (desktop raspored) / NVDA+kontrol+šift+M (laptop raspored):
+  Premješta fokus u polje poruke.
+* Kontrol+Alt+lijevo i kontrol+Alt+desno: u popisu pretrage adresara, kreći
+  se između polja trenutačno odabranog retka.
+* Kontrol+Q: u popisu poruka, označi odabranu poruku ili grupu poruka kao
+  pročitane.
+* Kontrol+U: u popisu poruka, označi odabranu poruku ili grupu poruka kao
+  nepročitane.
 
 ## Napomene
 
@@ -45,29 +45,28 @@ ih je promijeniti za sljedeće situacije:
 
 ## Dnevnik promjena
 
-### Version 1.5
+### Verzija 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
-  2019.3.
+* Čitanje informacijske trake sada radi s NVDA 2019.3.
+* Kretanje po tablici u rezultatima adresara sada opet radi s NVDA 2019.3.
 
-### Version 1.4
+### Verzija 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
+* Skripta za premještanje fokusa na zaglavlja sada opet radi.
+* Skripta za premještanje na privitke sada opet radi, kad je prisutno više
+  privitaka.
 * Dodane su lokalizacije.
 
 ### Verzija 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
+* Ispravljeno čitanje zaglavlja poruka za novija Office 365 izdanja.
+* Nadogradnje za podršku novijih NVDA verzija (kompatibilne s Python 2 i 3).
 * Dodane su lokalizacije.
-* Releases performed now with appveyor.
+* Izdanja se sada izrađuju pomoću „appveyor”.
 
 ### Verzija 1.2
 
-* Fixed header reading when forwarding meeting.
+* Ispravljeno čitanje zaglavlja poruka za prosljeđivanja sastanka.
 * Dodane su lokalizacije.
 
 ### Verzija 1.1

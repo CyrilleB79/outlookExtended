@@ -70,7 +70,7 @@ tilanteissa:
 
 ### Versio 1.2
 
-* Korjattu otsakkeen lukeminen tapaamista välitettäessä.
+* Korjattu otsakkeen lukeminen kokousta välitettäessä.
 * Lokalisointeja lisätty.
 
 ### Versio 1.1
