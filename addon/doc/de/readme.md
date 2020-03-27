@@ -24,14 +24,15 @@ indem es einige Tastenbefehle meldet und zusätzliche Befehle hinzufügt.
   Meldet die Anzahl und die Namen der Anlagen in einem
   Nachrichtenfenster. Zweimaliges Drücken verschiebt den Fokus auf die Liste
   der Anlagen .
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+Umschalt+M (Desktop-Schema) / NVDA+Steuerung+Umschalt+M
+  (Laptop-Schema): Verschiebt den Fokus auf den Nachrichtentext.
+* STRG+Alt+Pfeil links und STRG+Alt+Pfeil rechts: navigiert zwischen den
+  Spalten der aktuell ausgewählten Zeile in der Ergebnisliste der
+  Adressbuchsuche.
+* STRG+Q: markiert die ausgewählte Nachricht oder Gruppe von Nachrichten als
+  gelesen in der Nachrichtenliste.
+* STRG+U: markiert die ausgewählte Nachricht oder Gruppe von Nachrichten als
+  ungelesen in der Nachrichtenliste.
 
 ## Anmerkungen
 
@@ -53,27 +54,31 @@ Befehle sinnvoll sein:
 
 ### Version 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
-  2019.3.
+* Das Lesen der Informationsleiste funktioniert jetzt mit NVDA 2019.3.
+* Die Tabellennavigation in den Adressbuchergebnissen funktioniert jetzt mit
+  NVDA 2019.3.
 
 ### Version 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
+* Das Skript zum Verschieben des Fokus auf Überschriften funktioniert
+  wieder.
+* Der Befehl, um zu Anlagen zu wechseln, funktioniert jetzt, wenn mehrere
+  Anlagen vorhanden sind.
 * Lokalisierungen hinzugefügt.
 
 ### Version 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
+* Korrigiert das Vorlesen von Kopfzeilen in Nachrichten für neuere Office
+  365-Versionen.
+* Updates der Unterstützungen neuerer NVDA-Versionen (kompatibel mit Python
+  2 und 3)
 * Lokalisierungen hinzugefügt.
-* Releases performed now with appveyor.
+* Releases werden nun mit Appvayor bereitgestellt.
 
 ### Version 1.2
 
-* Fixed header reading when forwarding meeting.
+* Die Kopfzeilenanzeige beim Weiterleiten von Besprechungen wurde
+  korrigiert.
 * Lokalisierungen hinzugefügt.
 
 ### Version 1.1

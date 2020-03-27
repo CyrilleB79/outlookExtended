@@ -45,13 +45,13 @@ NVDA. Có thể bạn muốn thay đổi nó trong các tình huống sau:
 
 ## Bản ghi các thay đổi
 
-### Version 1.5
+### Phiên bản 1.5
 
 * Reading the information bar is now working with NVDA 2019.3.
 * Table navigation in the address book results is now working with NVDA
   2019.3.
 
-### Version 1.4
+### Phiên bản 1.4
 
 * The script to move focus to headers is working again.
 * The script to move to attachments is now working when more attachments are
