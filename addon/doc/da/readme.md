@@ -1,7 +1,7 @@
 # Udvidelse til Outlook #
 
 * Forfattere: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2019.3
+* NVDA-kompatibilitet: 2018.3 til 2019.3
 * Download [stabil version][1]
 * Download [udviklingsversion][2]
 
@@ -22,14 +22,14 @@ kommandoer og tilføje ekstra kommandoer.
 * NVDA+shift+A (Desktoplayout) NVDA+Shift+Ctrl+A (Laptoplayout): Rapporterer
   nummeret og navnene på vedhæftede filer i et meddelelsesvindue. Hvis du
   trykker to gange, flyttes fokus til det pågældende område.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+Shift+M (Desktoplayout) NVDA+Shift+M (Laptoplayout): flytter fokus
+  til beskedområdet.
+* Ctrl+Alt+Venstre og Ctrl+Alt+Højre: I adressebogens søgeresultatliste vil
+  kommandoen navigere mellem felterne for den aktuelt valgte linje.
+* Ctrl+Q: Markerer den valgte besked eller gruppe af meddelelser som læst i
+  meddelelseslisten.
+* Ctrl+U: Markerer den valgte besked eller gruppe af meddelelser som ulæste
+  i meddelelseslisten.
 
 ## Bemærkninger
 
@@ -49,36 +49,38 @@ nogle tilfælde ændre dem særligt i følgende situationer:
 
 ### Version 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
+* Læsning af statuslinjen fungerer nu med NVDA 2019.3.
+* Tabelnavigation i resultaterne af adressebogen fungerer nu med NVDA
   2019.3.
 
 ### Version 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
-* Added localizations.
+* Scriptet for at flytte fokus til overskrifter fungerer igen.
+* Skriptet, der skal flytte til vedhæftede filer, fungerer nu, når flere
+  vedhæftede filer er til stede.
+* Tilføjede oversættelser.
 
 ### Version 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
-* Added localizations.
-* Releases performed now with appveyor.
+* Rettede læsning af meddelelsesoverskrifter, der læser for nyere Office
+  365-udgivelse.
+* Opdateringer til understøttelse af nyere versioner af NVDA (kompatibel med
+  Python 2 og 3)
+* Tilføjede oversættelser.
+* Udgivelser udføres nu med appveyor.
 
 ### Version 1.2
 
-* Fixed header reading when forwarding meeting.
-* Added localizations.
+* Rettede læsning af overskrifter, når der videresendes møder.
+* Tilføjede oversættelser.
 
 ### Version 1.1
 
-* Added localizations.
+* Tilføjede oversættelser.
 
 ### Version 1.0
 
-* Første udgivelse
+* Første udgivelse.
 
 [[!tag dev stable]]
 
