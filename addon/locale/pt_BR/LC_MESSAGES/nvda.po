@@ -1,0 +1,148 @@
+# Brazilian Portuguese translation of outlookExtended.
+# Copyright (C) 2020 NVDA Contributors.
+# This file is distributed under the same license as the NVDA package.
+# Rui Fontes <rui.fontes@tiflotecnia.com>, 2019.
+# Ângelo Abrantes <ampa4374@gmail.com>, 2019-2020.
+# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OutlookExtended\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2020-01-03 15:05+1000\n"
+"PO-Revision-Date: 2020-05-15 20:42-0300\n"
+"Last-Translator: Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>\n"
+"Language-Team: NVDA Brazilian Portuguese translation team (Equipe de "
+"tradução do NVDA para Português Brasileiro) <clever97@gmail.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.11\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../../../appModules\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+msgid "-"
+msgstr "-"
+
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+msgid "="
+msgstr "="
+
+#. Translators: Documentation for mark as read script.
+msgid "Mark a message as read"
+msgstr "Marcar uma mensagem como lida"
+
+#. Translators: Documentation for mark as unread script.
+msgid "Mark a message as unread"
+msgstr "Marcar uma mensagem como não lida"
+
+#. Translators: To what the mark as read/unread applies to
+#, python-format
+msgid "Messages group: %s"
+msgstr "Grupo de mensagens: %s"
+
+#. Translators: To what the mark as read/unread applies to
+#, python-format
+msgid "Messages: %s"
+msgstr "Mensagens: %s"
+
+#. Translators: Error when mark as read/unread shortcut is called with no message selected
+msgid "No message selected"
+msgstr "Nenhuma mensagem selecionada"
+
+#. Translators: To announce the message or group status: unread
+msgid "unread"
+msgstr "não lida"
+
+#. Translators: To announce the message or group status: read
+msgid "read"
+msgstr "lida"
+
+#. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
+#. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
+#. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
+msgid "Column navigation not supported in the address book"
+msgstr "Navegação por coluna não suportada no catálogo de endereços"
+
+#. Translators: When trying to use Alt+Number shortcut but not in message.
+#. Translators: Error when trying to move focus in message body
+msgid "Not in a message window"
+msgstr "Não está numa janela de mensagem"
+
+#. Translators: When user double press Alt+Number to copy a header's field to clipboard
+msgid "Copied to clipboard"
+msgstr "Copiado para a área de transferência"
+
+#. Translators: A checkbox state
+msgid "checked"
+msgstr "marcada"
+
+msgid "unchecked"
+msgstr "desmarcada"
+
+#. Translators: To report name and value of a heaeder's field
+#, python-brace-format
+msgid "{name} {value}"
+msgstr "{name} {value}"
+
+#. Translators: Documentation for report info bar script.
+msgid ""
+"Reports the information bar in a message, calendar item or task window. If "
+"pressed twice, moves the focus to it. If pressed three times, copies its "
+"content to the clipboard."
+msgstr ""
+"Relata a barra de informações em uma mensagem, item de calendário ou janela "
+"de tarefa. Se pressionado duas vezes, move o foco para ela. Se pressionado "
+"três vezes, copia seu conteúdo para a área de transferência."
+
+#. Translators: When the info bar is not present
+msgid "No information bar"
+msgstr "Sem barra de informação"
+
+#. Translators: Documentation for move to message body script.
+msgid "Moves the focus to the message body"
+msgstr "Move o foco para o corpo da mensagem"
+
+#. Translators: Documentation for Attachments script.
+msgid ""
+"Reports the number and the names of attachments in a message window. If "
+"pressed twice, moves the focus to it."
+msgstr ""
+"Informa o número e os nomes dos anexos em uma janela de mensagem. Se "
+"pressionado duas vezes, move o foco para ele."
+
+#. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
+#, python-format
+msgid ""
+"Reports the header field %s in a message, calendar item or task window. If "
+"pressed twice, moves the focus to this field if possible. If pressed three "
+"times, copies its content to the clipboard."
+msgstr ""
+"Informa o campo de cabeçalho %s em uma mensagem, item de calendário ou "
+"janela de tarefa. Se pressionado duas vezes, move o foco para este campo, se "
+"possível. Se pressionado três vezes, copia seu conteúdo para a área de "
+"transferência."
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+msgid "Outlook Extended"
+msgstr "Outlook Estendido"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+msgid ""
+"Extended support and features for Microsoft Outlook:\n"
+"- Provide gestures to read and navigate to headers, information bar and "
+"attachments in messages, calendar items, tasks.\n"
+"- Improve result reading in address book.\n"
+"- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+msgstr ""
+"Suporte e recursos estendidos para o Microsoft Outlook:\n"
+"- Fornece comandos (gestos) para ler e navegar para cabeçalhos, barra de "
+"informações e anexos em mensagens, itens de calendário, tarefas.\n"
+"- Melhora a leitura dos resultados no catálogo de endereços.\n"
+"- Vocaliza marcar como lida/não lida de comandos ctrl+q/ctrl+u."
