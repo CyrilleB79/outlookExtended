@@ -21,14 +21,15 @@ thêm vào một số phím lệnh.
 * NVDA+shift+A (kiểu bàn phím desktop) / NVDA+control+shift+A (kiểu bàn phím
   laptop): đọc số lượng và tên của các tệp đính kèm trong thư. Bấm hai lần,
   chuyển con trỏ đến nó.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+shift+M (kiểu bàn phím desktop) / NVDA+shift+M (kiểu bàn phím laptop
+  ): chuyển con trỏ đến nội dung thư.
+* Control+Alt+mũi tên trái và Control+Alt+mũi tên phải: trong danh sách kết
+  quả tìm kiếm của sổ địa chỉ, duyệt giữa các trường của dòng đang được
+  chọn.
+* Control+Q: trong danh sách thư, đánh dấu đã đọc cho các thư hay nhóm thư
+  đã chọn.
+* Control+U: trong danh sách thư, đánh dấu chưa đọc cho các thư hay nhóm thư
+  đã chọn.
 
 ## Các lưu ý
 
@@ -47,27 +48,28 @@ NVDA. Có thể bạn muốn thay đổi nó trong các tình huống sau:
 
 ### Phiên bản 1.5
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
-  2019.3.
+* Việc đọc thanh thông tin giờ đã hoạt động với NVDA 2019.3.
+* Việc điều hướng trong bảng ơ 3ket61 quả trong sổ địa chỉ giờ đây đã hoạt
+  động với NVDA 2019.3.
 
 ### Phiên bản 1.4
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
+* Kịch bản chuyển con trỏ đến tiêu đề giờ đây đã hoạt động trở lại.
+* Kịch bản chuyển con trỏ đến tập tin đính kèm giờ đây đã hoạt động khi có
+  nhiều tập tin đính kèm.
 * Đã thêm các bản dịch.
 
 ### Phiên bản 1.3
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
+* Sửa lỗi đọc các tiêu đề thư cho các bản phát hành mới hơn của Office 365.
+* Cập nhật hỗ trợ các phiên bản NVDA mới hơn (tương thích với Python 2 và
+  3).
 * Đã thêm các bản dịch.
-* Releases performed now with appveyor.
+* Các bản phát hành giờ đã vận hành được với appveyor.
 
 ### Phiên bản 1.2
 
-* Fixed header reading when forwarding meeting.
+* Sửa lỗi đọc tiêu đề khi chuyển tiếp thông tin cuộc họp.
 * Đã thêm các bản dịch.
 
 ### Phiên bản 1.1
