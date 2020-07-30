@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'OutlookExtended' '1.0-dev'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
+"POT-Creation-Date: 2019-02-21 00:29+0000\n"
+"PO-Revision-Date: 2019-02-21 20:41+0000\n"
+"Last-Translator: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
+"Language-Team: Equipa portuguesa do NVDA <ampa4374@gmail.com; rui."
+"fontes@tiflotecnia.pt>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../../../appModules\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "-"
+msgstr "'"
+
+msgid "="
+msgstr "«"
+
+msgid "Mark a message as read"
+msgstr "Marcar uma mensagem como lida"
+
+msgid "Mark a message as unread"
+msgstr "Marcar uma mensagem como não lida"
+
+#, python-format
+msgid "Messages group: %s"
+msgstr "Grupo de mensagens: %s"
+
+#, python-format
+msgid "Messages: %s"
+msgstr "Mensagens %s"
+
+msgid "No message selected"
+msgstr "Sem mensagens seleccionadas"
+
+msgid "unread"
+msgstr "Não lida"
+
+msgid "read"
+msgstr "Lida"
+
+msgid "Column navigation not supported in the address book"
+msgstr "Navegação por colunas não suportada no livro de endereços"
+
+msgid "Not in a message window"
+msgstr "Não está numa janela de mensagem"
+
+msgid "Copied to clipboard"
+msgstr "Copiado para a área de transferência"
+
+msgid "checked"
+msgstr "Marcado"
+
+msgid "unchecked"
+msgstr "Não marcado"
+
+#, python-brace-format
+msgid "{name} {value}"
+msgstr "{name} {value}"
+
+msgid ""
+"Reports the information bar in a message, calendar item or task window. If "
+"pressed twice, moves the focus to it. If pressed three times, copies its "
+"content to the clipboard."
+msgstr ""
+"Lê a barra de informações numa mensagem, item de calendário ou janela de "
+"tarefas. Se for pressionado duas vezes, move o foco para essa informação. Se "
+"pressionado três vezes, copia o seu conteúdo para a área de transferência."
+
+msgid "No information bar"
+msgstr "Sem barra de informação"
+
+msgid "Moves the focus to the message body"
+msgstr "Move o foco para o corpo da mensagem"
+
+msgid ""
+"Reports the number and the names of attachments in a message window. If "
+"pressed twice, moves the focus to it."
+msgstr ""
+"Indica o número e os nomes dos anexos, numa janela de mensagem. Se "
+"pressionado duas vezes, leva o foco para a lista de anexos."
+
+#, python-format
+msgid ""
+"Reports the header field %s in a message, calendar item or task window. If "
+"pressed twice, moves the focus to this field if possible. If pressed three "
+"times, copies its content to the clipboard."
+msgstr ""
+"Lê o campo de cabeçalho %s numa mensagem, item de calendário ou janela de "
+"tarefas. Se pressionado duas vezes, move o foco para este campo, se "
+"possível. Se pressionado três vezes, copia o seu conteúdo para a área de "
+"transferência."
+
+#~ msgid "Outlook Extended"
+#~ msgstr "Outlook melhorado"
+
+#~ msgid ""
+#~ "Extended support and features for Microsoft Outlook:\n"
+#~ "- Provide gestures to read and navigate to headers, information bar and "
+#~ "attachments in messages, calendar items, tasks.\n"
+#~ "- Improve result reading in address book.\n"
+#~ "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+#~ msgstr ""
+#~ "Suporte melhorado e recursos para o Microsoft Outlook:\n"
+#~ "- fornece teclas de atalho para ler e navegar para cabeçalhos, barra de "
+#~ "informações e anexos em mensagens, itens de calendário, tarefas.\n"
+#~ "- Melhora a leitura de resultados no livro de endereços.\n"
+#~ "- marca as mensagens como lidas/não lidas, com as teclas ctrl+q e ctrl+u."
+
+#~ msgid ""
+#~ "Extended support and features for Microsoft Outlook:\n"
+#~ "\t- Provide gestures to read and navigate to headers, information bar and "
+#~ "attachments in messages, calendar items, tasks.\n"
+#~ "\t- Improve result reading in address book\n"
+#~ "\t- Vocalize mark as read/unread ctrl+q/ctrl+u commands"
+#~ msgstr ""
+#~ "Support et fonctionnalités étendus pour Microsoft Outlook :\n"
+#~ "\t- fournit des gestes de commande pour lire et se rendre aux en-têtes, à "
+#~ "la barre d'information et aux pièces jointes dans un message, un élément "
+#~ "de calendrier ou une tâche.\n"
+#~ "\t- Améliore la lecture des résultats dans le carnet d'adresses\n"
+#~ "\t- Vocalise les commandes marquer comme lu/non lu ctrl+q/ctrl+u"

@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-03-01 07:52+0100\n"
-"Last-Translator: Bachir BENANOU <ben_bach@yahoo.fr>\n"
-"Language-Team: NVDA French Translation Team <LL@li.org>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2020-01-13 19:44+0100\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.6\n"
+"Last-Translator: Ondrej Rosík <ondrej.rosik@gmail.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.6.11\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 msgid "-"
-msgstr ")"
+msgstr "-"
 
 #. Translators: The key just ont the left of the backspace key
 msgid "="
@@ -27,55 +27,55 @@ msgstr "="
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
-msgstr "Marquer un message comme lu"
+msgstr "Označí správu ako prečítanú"
 
 #. Translators: Documentation for mark as unread script.
 msgid "Mark a message as unread"
-msgstr "Marquer un message comme non lu"
+msgstr "Označí správu ako neprečítanú"
 
 #. Translators: To what the mark as read/unread applies to
 #, python-format
 msgid "Messages group: %s"
-msgstr "Groupe de messages : %s"
+msgstr "Skupina správ: %s"
 
 #. Translators: To what the mark as read/unread applies to
 #, python-format
 msgid "Messages: %s"
-msgstr "Messages : %s"
+msgstr "Správy: %s"
 
 #. Translators: Error when mark as read/unread shortcut is called with no message selected
 msgid "No message selected"
-msgstr "Aucun message n'est sélectionné"
+msgstr "Nie je vybratá žiadna správa"
 
 #. Translators: To announce the message or group status: unread
 msgid "unread"
-msgstr "non lu"
+msgstr "Neprečítané"
 
 #. Translators: To announce the message or group status: read
 msgid "read"
-msgstr "lu"
+msgstr "Prečítané"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
 #. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
 #. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 msgid "Column navigation not supported in the address book"
-msgstr "Navigation par colonnes non supportée dans le carnet d'adresses"
+msgstr "Navigácia po stĺpcoch nie je v adresári podporovaná"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
-msgstr "Pas dans une fenêtre de message"
+msgstr "Nie ste v okne správy"
 
 #. Translators: When user double press Alt+Number to copy a header's field to clipboard
 msgid "Copied to clipboard"
-msgstr "Copié dans le presse-papiers"
+msgstr "Skopýrované do schránky"
 
 #. Translators: A checkbox state
 msgid "checked"
-msgstr "coché"
+msgstr "Začiarknuté"
 
 msgid "unchecked"
-msgstr "non coché"
+msgstr "Nezačiarknuté"
 
 #. Translators: To report name and value of a heaeder's field
 #, python-brace-format
@@ -88,25 +88,25 @@ msgid ""
 "pressed twice, moves the focus to it. If pressed three times, copies its "
 "content to the clipboard."
 msgstr ""
-"Annonce la barre d'information dans un message, un élément de calendrier ou "
-"une fenêtre de tâche. Un double-appui y amène le focus. Un triple-appui "
-"copie son contenu dans le presse-papiers."
+"Oznamuje informačný panel v správe, položke kalendára alebo okne úlohy. "
+"Stlačené dvakrát rýchlo za sebou presunie fokus na panel. Stlačenétrikrát "
+"rýchlo za sebou skopíruje informáciu do schránky."
 
 #. Translators: When the info bar is not present
 msgid "No information bar"
-msgstr "Barre d'information non présente"
+msgstr "Žiadný informačný panel"
 
 #. Translators: Documentation for move to message body script.
 msgid "Moves the focus to the message body"
-msgstr "Déplace le focus dans le corps du message"
+msgstr "Presunie fokus na telo správy"
 
 #. Translators: Documentation for Attachments script.
 msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
 msgstr ""
-"Annonce le nombre et le nom des pièces jointes dans une fenêtre de message. "
-"Un double-appui y amène le focus."
+"Oznamuje počet príloh a ich názvy v okne správy. Stlačené dvakrát rýchlo za "
+"sebou presunie fokus na prílohy."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
@@ -115,14 +115,14 @@ msgid ""
 "pressed twice, moves the focus to this field if possible. If pressed three "
 "times, copies its content to the clipboard."
 msgstr ""
-"Annonce le champ d'en-tête %s dans un message, un élément de calendrier ou "
-"une fenêtre de tâche. Un double-appui amène le focus dans ce champ si "
-"possible. Un tripe-appui copie son contenu dans le presse-papiers."
+"Oznamuje hlavičku %s v správe, udalosti z kalendára alebo okne s úlohami. "
+"Stlačené dvakrát rýchlo za sebou presunie fokus na príslušné miesto. "
+"Stlačené trikrát rýchlo za sebou skopíruje informáciu do schránky."
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
 msgid "Outlook Extended"
-msgstr "Outlook Extended"
+msgstr "Rozšírená podpora pre Microsoft Outlook"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
@@ -133,9 +133,8 @@ msgid ""
 "- Improve result reading in address book.\n"
 "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
 msgstr ""
-"Support et fonctionnalités étendus pour Microsoft Outlook :\n"
-"- fournit des gestes de commande pour lire et se rendre aux en-têtes, à la "
-"barre d'information et aux pièces jointes dans un message, un élément de "
-"calendrier ou une tâche.\n"
-"- Améliore la lecture des résultats dans le carnet d'adresses.\n"
-"- Vocalise les commandes marquer comme lu/non lu ctrl+q/ctrl+u."
+"Rozšírená podpora pre Microsoft Outlook:\n"
+"- Poskytuje klávesové skratky na prechod k hlavičkám, informačnému panelu, "
+"prílohám, udalostiam z kalendára a úlohám.\n"
+"- Zlepšuje čítanie výsledkov v adresári.\n"
+"- Oznamuje ak je správa označená ako prečítaná alebo neprečítaná."
