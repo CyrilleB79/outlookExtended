@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the outlookExtended package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: outlookExtended 1.0-dev\n"
+"Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
+"POT-Creation-Date: 2019-02-20 16:32+1000\n"
+"PO-Revision-Date: 2020-07-30 09:48+0200\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+msgid "-"
+msgstr "-"
+
+#. Translators: The key just ont the left of the backspace key
+msgid "="
+msgstr "="
+
+#. Translators: Documentation for mark as read script.
+msgid "Mark a message as read"
+msgstr "Olvasottnak jelölés"
+
+#. Translators: Documentation for mark as unread script.
+msgid "Mark a message as unread"
+msgstr "Olvasatlannak jelölés"
+
+#. Translators: To what the mark as read/unread applies to
+#, python-format
+msgid "Messages group: %s"
+msgstr "Üzenetszál: %s"
+
+#. Translators: To what the mark as read/unread applies to
+#, python-format
+msgid "Messages: %s"
+msgstr "Üzenet: %s"
+
+#. Translators: Error when mark as read/unread shortcut is called with no message selected
+msgid "No message selected"
+msgstr "Nincs kijelölt üzenet"
+
+#. Translators: To announce the message or group status: unread
+msgid "unread"
+msgstr "Olvasatlan"
+
+#. Translators: To announce the message or group status: read
+msgid "read"
+msgstr "Olvasott"
+
+#. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
+#. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
+#. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
+msgid "Column navigation not supported in the address book"
+msgstr "Az oszlopos navigációmód a címtárban nem támogatott"
+
+#. Translators: When trying to use Alt+Number shortcut but not in message.
+#. Translators: Error when trying to move focus in message body
+msgid "Not in a message window"
+msgstr "Nincs üzenet ablakban"
+
+#. Translators: When user double press Alt+Number to copy a header's field to clipboard
+msgid "Copied to clipboard"
+msgstr "A vágólapra másolva"
+
+#. Translators: A checkbox state
+msgid "checked"
+msgstr "Bejelölve"
+
+msgid "unchecked"
+msgstr "Nincs bejelölve"
+
+#. Translators: To report name and value of a heaeder's field
+#, python-brace-format
+msgid "{name} {value}"
+msgstr "{name} {value}"
+
+#. Translators: Documentation for report info bar script.
+msgid ""
+"Reports the information bar in a message, calendar item or task window. If "
+"pressed twice, moves the focus to it. If pressed three times, copies its "
+"content to the clipboard."
+msgstr ""
+"Az információssávot jeleníti meg üzenet, feladat és naptár ablakokban. "
+"Kétszeri lenyomásra a fókuszt az információs sávra helyezi, Háromszori "
+"lenyomásra a vágólapra másolja az információs sáv tartalmát."
+
+#. Translators: When the info bar is not present
+msgid "No information bar"
+msgstr "Nincs információs sáv"
+
+#. Translators: Documentation for move to message body script.
+msgid "Moves the focus to the message body"
+msgstr "Az üzenettörzsre helyezi a fókuszt."
+
+#. Translators: Documentation for Attachments script.
+msgid ""
+"Reports the number and the names of attachments in a message window. If "
+"pressed twice, moves the focus to it."
+msgstr ""
+"Bejelenti a mellékletek számát és nevét az üzenetablakban. Kétszeri "
+"lenyomásra a mellékletekre helyezi a fókuszt."
+
+#. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
+#, python-format
+msgid ""
+"Reports the header field %s in a message, calendar item or task window. If "
+"pressed twice, moves the focus to this field if possible. If pressed three "
+"times, copies its content to the clipboard."
+msgstr ""
+"%s fejléc bejelentése az üzenetek a naptár és a feladatok ablakában. "
+"Kétszeri lenyomásra a fókuszt a kérdéses mezőre helyezi, amennyiben az "
+"lehetséges. Háromszori lenyomásra a mező tartalmát a vágólapra helyezi."
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+msgid "Outlook Extended"
+msgstr "Outlook kiegészítő"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+msgid ""
+"Extended support and features for Microsoft Outlook:\n"
+"- Provide gestures to read and navigate to headers, information bar and "
+"attachments in messages, calendar items, tasks.\n"
+"- Improve result reading in address book.\n"
+"- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+msgstr ""
+"Bővített támogatás és szolgáltatások a Microsoft Outlook számára:\n"
+"- Billentyűparancsokat tartalmaz a címsorokhoz, információs sávhoz, "
+"mellékletekhez, naptár elemekhez, feladatokhoz.\n"
+"- A címtár olvasásának fejlettebb támogatása. \n"
+"- Olvasatlan és olvasott státusz változtatása a ctrl+q/ctrl+u "
+"billentyűparancsokkal."
