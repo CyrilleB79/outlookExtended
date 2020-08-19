@@ -32,7 +32,7 @@ class OutlookItemWindow(object):
 
 	def __init__(self, rootDialog, debug=False):
 		self.rootDialog = rootDialog
-		windowTypeList = ['Message', 'Message2', 'MeetingRequest', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
+		windowTypeList = ['Message', 'Message2', 'MeetingRequest', 'MeetingRequest2', 'MeetingReply', 'TaskRequest', 'Report', 'RSS', 'Calendar', 'CalendarAttendeesList', 'CalendarAttendeesTrackingList', 'Task', 'Journal']
 		self.windowType = [wt for wt in windowTypeList if getattr(self, 'is' + wt)()]
 		log.debug('Window types: ' + str(self.windowType))
 		#Log to investigate for new types of windows.
@@ -80,6 +80,18 @@ class OutlookItemWindow(object):
 			]
 		return self.hasHeaderFieldsInThisOrder(lstCID)
 	
+	def isMeetingRequest2(self):
+		# Fields in Office 365 64-bits for cancelled meeting request, as reported by DG on May 18th and 19th, 2020.
+		lstCID = [
+			4539, 4105, #Required
+			4540, 4106, #Optional
+			4534, 4102, #Date/time
+			4538, 4101, #Location
+		]
+		return self.hasHeaderFieldsInThisOrder(lstCID)
+		
+		
+		
 	def isMeetingReply(self):
 		lstCID= [
 			4520, 4105, #Date/time
@@ -271,6 +283,19 @@ class OutlookItemWindow(object):
 				})
 		return dic
 		
+	def getMeetingRequest2HeaderFields(self):
+		dic = {
+			1: (4292, 'From'),
+			2: (4315, 'Sent'),
+			3: (4105, 'Required'),
+			4: (4106, 'Optional'),
+			5: (4294, 'Subject'),
+			6:(4101, 'Location'),
+			7:(4102, 'DateTime'),
+		}
+		return dic
+		
+	
 	def getMeetingReplyHeaderFields(self):
 		dic = {
 			1: (4097, 'From'),
