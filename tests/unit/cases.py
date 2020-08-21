@@ -1,13 +1,14 @@
 # -*- coding: UTF-8 -*-
 # tests/unit/cases.py
-# A part of NonVisual Desktop Access (NVDA)
+# NVDA add-on: Outlook Extended
+# Copyright (C) 2020 Cyrille Bougot
 # This file is covered by the GNU General Public License.
-# See the file COPYING for more details.
-# Copyright (C) 2017-2019 NV Access Limited, Babbage B.V.
+# See the file COPYING.txt for more details.
 
-tcObjectList = {}
+tcObjectPropertyDic = {}
+tcHeaderFieldDic = {}
 
-tcObjectList['Message_CollapsedHeader'] = [
+tcObjectPropertyDic['Message_CollapsedHeader'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': '', 'value': None, 'role': 7, 'states': {128}, 'cid': 4296},
 	{'name': 'De', 'value': None, 'role': 7, 'states': {128}, 'cid': 4297},
@@ -79,7 +80,17 @@ tcObjectList['Message_CollapsedHeader'] = [
 	{'name': None, 'value': None, 'role': 56, 'states': {1024, 16777216}, 'cid': 4768}
 ]
 
-tcObjectList['Message_ExpandedHeader'] = [
+tcHeaderFieldDic['Message_CollapsedHeader'] = {
+	1: (4292, 'From'),
+	2: (4293, 'Sent'),
+	3: (4295, 'ToCc'),
+	4: (None, 'Cc'),
+	5: (None, 'Bcc'),
+	6: (4294, 'Subject'),
+	7: (4346, 'SignedBy'),
+}
+
+tcObjectPropertyDic['Message_ExpandedHeader'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': '', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4296},
 	{'name': 'De', 'value': None, 'role': 7, 'states': {128}, 'cid': 4297},
@@ -151,7 +162,17 @@ tcObjectList['Message_ExpandedHeader'] = [
 	{'name': None, 'value': None, 'role': 56, 'states': {1024, 16777216}, 'cid': 4768}
 ]
 
-tcObjectList['Message_Editing'] = [
+tcHeaderFieldDic['Message_ExpandedHeader'] = {
+	1: (4097, 'From'),
+	2: (4098, 'Sent'),
+	3: (4099, 'To'),
+	4: (4100, 'Cc'),
+	5: (4103, 'Bcc'),
+	6: (4101, 'Subject'),
+	7: (4346, 'SignedBy'),
+}
+
+tcObjectPropertyDic['Message_Editing'] = [
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4336},
 	{'name': None, 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4331},
@@ -179,9 +200,19 @@ tcObjectList['Message_Editing'] = [
 	{'name': None, 'value': None, 'role': 56, 'states': {1024, 16777216}, 'cid': 4768}
 ]
 
-# tcObjectList['Message2'] = 
+tcHeaderFieldDic['Message_Editing'] = {
+	1: (4263, 'From'),
+	2: (4098, 'Sent'),
+	3: (4099, 'To'),
+	4: (4100, 'Cc'),
+	5: (4103, 'Bcc'),
+	6: (4101, 'Subject'),
+	7: (4346, 'SignedBy'),
+}
 
-tcObjectList['MeetingRequest'] = [
+# zzz TO DO: tcObjectPropertyDic['Message2'] = 
+
+tcObjectPropertyDic['MeetingRequest'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': '', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4296},
 	{'name': 'De', 'value': None, 'role': 7, 'states': {128}, 'cid': 4297},
@@ -248,7 +279,17 @@ tcObjectList['MeetingRequest'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4159}
 ]
 
-tcObjectList['MeetingReply_Reading'] = [
+tcHeaderFieldDic['MeetingRequest'] = {
+	1: (4096, 'From'),
+	2: (4097, 'Sent'),
+	3: (4098, 'Required'),
+	4: (4099, 'Optional'),
+	5: (4100, 'Subject'),
+	6:(4101, 'Location'),
+	7:(4102, 'DateTime'),
+}
+
+tcObjectPropertyDic['MeetingReply_Reading'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
 	{'name': 'DAL=on', 'value': 'mer. 20/06/2018 08:47', 'role': 8, 'states': {128, 16777216}, 'cid': 4098},
@@ -284,7 +325,21 @@ tcObjectList['MeetingReply_Reading'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4159}
 ]
 
-tcObjectList['MeetingReply_Editing'] = [
+tcHeaderFieldDic['MeetingReply_Reading'] = {
+	1: (4097, 'From'),
+	2: (4098, 'Sent'),
+	3: (4107, 'To'),
+	4: (4108, 'Cc'),
+	5: (4099, 'Subject'),
+	6: (4106, 'Location'),
+	7:(4105, 'DateTime'), #Date/time or, for e-mails in edition, current time
+	8: (4109, 'ProposedNewTime'),
+	9: (4100, 'Accepted'),
+	10: (4101, 'Tentative'),
+	11: (4102, 'Declined'),
+}
+
+tcObjectPropertyDic['MeetingReply_Editing'] = [
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
 	{'name': 'DAL=on', 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4331},
 	{'name': "Barre d'informations", 'value': 'Oui, je participerai peut-être.', 'role': 8, 'states': {16777216, 2}, 'cid': 4262},
@@ -312,7 +367,21 @@ tcObjectList['MeetingReply_Editing'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350}
 ]
 
-tcObjectList['MeetingReply_NewTimeProposal'] = [
+tcHeaderFieldDic['MeetingReply_Editing'] = {
+	1: (4097, 'From'),
+	2: (4098, 'Sent'),
+	3: (4107, 'To'),
+	4: (4108, 'Cc'),
+	5: (4099, 'Subject'),
+	6: (4106, 'Location'),
+	7:(4105, 'DateTime'), #Date/time or, for e-mails in edition, current time 
+	8: (4109, 'ProposedNewTime'),
+	9: (4100, 'Accepted'),
+	10: (4101, 'Tentative'),
+	11: (4102, 'Declined'),
+}
+
+tcObjectPropertyDic['MeetingReply_NewTimeProposal'] = [
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
 	{'name': 'Envoyer', 'value': None, 'role': 9, 'states': {16777216}, 'cid': 4256},
 	{'name': 'De\xa0', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4257},
@@ -342,7 +411,21 @@ tcObjectList['MeetingReply_NewTimeProposal'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350}
 ]
 
-tcObjectList['TaskRequest'] = [
+tcHeaderFieldDic['MeetingReply_NewTimeProposal'] = {
+	1: (4097, 'From'),
+	2: (4098, 'Sent'),
+	3: (4107, 'To'),
+	4: (4108, 'Cc'),
+	5: (4099, 'Subject'),
+	6: (4106, 'Location'),
+	7:(4105, 'DateTime'), #Date/time or, for e-mails in edition, current time 
+	8: (4109, 'ProposedNewTime'),
+	9: (4100, 'Accepted'),
+	10: (4101, 'Tentative'),
+	11: (4102, 'Declined'),
+}
+
+tcObjectPropertyDic['TaskRequest'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': 'Catégories', 'value': None, 'role': 7, 'states': {128}, 'cid': 4532},
 	{'name': 'Catégories', 'value': '', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4261},
@@ -380,7 +463,16 @@ tcObjectList['TaskRequest'] = [
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026}
 ]
 
-tcObjectList['Report'] = [
+tcHeaderFieldDic['TaskRequest'] = {
+	1: (4097, 'Subject'),
+	2: (4110, 'DueDate'),
+	3: (4104, 'State'),
+	4: (4099, 'Priority'),
+	5: (4112, '% completed'),
+	6: (4103, 'Owner'),
+}
+
+tcObjectPropertyDic['Report'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
 	{'name': "Barre d'informations", 'value': '', 'role': 8, 'states': {1024, 1, 2, 16777216}, 'cid': 4262},
@@ -409,7 +501,16 @@ tcObjectList['Report'] = [
 	{'name': "Date d'expiration", 'value': None, 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 532}
 ]
 
-tcObjectList['RSS'] = [
+tcHeaderFieldDic['Report'] = {
+	1: (4096, 'From'),
+	2: (4097, 'Sent'),
+	3: (4098, 'To'),
+	4: (None, 'Cc'),
+	5: (None, 'BCC'),
+	6: (4099, 'Subject'),
+}
+
+tcObjectPropertyDic['RSS'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
 	{'name': "Barre d'informations", 'value': '', 'role': 8, 'states': {1024, 1, 2, 16777216}, 'cid': 4262},
@@ -431,7 +532,96 @@ tcObjectList['RSS'] = [
 	{'name': 'Message', 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4159}
 ]
 
-tcObjectList['Calendar_MeetingOccurence'] = [
+tcHeaderFieldDic['RSS'] = {
+	1: (4107, 'Author'),
+	2: (4105, 'Published'),
+	3: (4106, 'Feed'),
+	4: (None, 'Cc'),
+	5: (None, 'BCC'),
+	6: (4108, 'Subject')
+}
+
+tcObjectPropertyDic['Calendar_MeetingOccurence'] = [
+	{'name': 'Catégories', 'value': None, 'role': 7, 'states': {128}, 'cid': 4864},
+	{'name': 'Catégories', 'value': '', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4261},
+	{'name': "Barre d'informations", 'value': 'A lieu chaque vendredi à compter du 27/09/2013 de 11:30 à 12:00', 'role': 8, 'states': {16777216, 2}, 'cid': 4262},
+	{'name': None, 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4331},
+	{'name': '', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 4265},
+	{'name': 'Dans le dossier', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 512},
+	{'name': 'Dans le dossier partagé', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 518},
+	{'name': 'Dans le dossier partagé', 'value': None, 'role': 16, 'states': {1024, 1, 128}, 'cid': 513},
+	{'name': None, 'value': None, 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 514},
+	{'name': '', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 516},
+	{'name': None, 'value': None, 'role': 16, 'states': {128}, 'cid': 528},
+	{'name': 'Stratégie de rétention', 'value': None, 'role': 7, 'states': {128}, 'cid': 529},
+	{'name': 'Stratégie de rétention', 'value': '', 'role': 8, 'states': {128, 16777216}, 'cid': 530},
+	{'name': 'Archiver', 'value': None, 'role': 7, 'states': {128}, 'cid': 533},
+	{'name': 'Archiver', 'value': None, 'role': 8, 'states': {128, 16777216}, 'cid': 534},
+	{'name': "Date d'expiration", 'value': None, 'role': 7, 'states': {128}, 'cid': 531},
+	{'name': "Date d'expiration", 'value': None, 'role': 8, 'states': {128, 16777216}, 'cid': 532},
+	{'name': 'Organisateur', 'value': None, 'role': 7, 'states': {128}, 'cid': 4524},
+	{'name': 'Organisateur', 'value': 'Jean Dupont', 'role': 8, 'states': {128, 16777216}, 'cid': 4523},
+	{'name': 'Envoyer', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4256},
+	{'name': 'De\xa0', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4257},
+	{'name': 'De', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4264},
+	{'name': 'De', 'value': 'John Doe', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4263},
+	{'name': 'À...', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4357},
+	{'name': 'À', 'value': None, 'role': 7, 'states': {128}, 'cid': 4531},
+	{'name': 'À', 'value': 'John Doe; Jane Doe; Jean Dupont', 'role': 8, 'states': {1024, 1, 16777216}, 'cid': 4106},
+	{'name': 'Envoyé', 'value': None, 'role': 7, 'states': {128}, 'cid': 4527},
+	{'name': 'Envoyé', 'value': 'ven. 27/09/2013 11:26', 'role': 8, 'states': {128, 16777216}, 'cid': 4526},
+	{'name': 'Objet', 'value': None, 'role': 7, 'states': {128}, 'cid': 4534},
+	{'name': 'Objet', 'value': 'Meeting with friends', 'role': 8, 'states': {16777216, 2}, 'cid': 4100},
+	{'name': 'Emplacement', 'value': None, 'role': 7, 'states': {128}, 'cid': 4530},
+	{'name': 'Emplacement\x00', 'value': 'The organization''s bar', 'role': 13, 'states': {16777216}, 'cid': 0},
+	{'name': 'Salles...', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4363},
+	{'name': 'Heure de début', 'value': None, 'role': 7, 'states': {128}, 'cid': 4513},
+	{'name': 'Date de début', 'value': None, 'role': 7, 'states': {128}, 'cid': 4554},
+	{'name': 'Date de début', 'value': 'ven. 21/08/2020', 'role': 8, 'states': {16777216}, 'cid': 4098},
+	{'name': None, 'value': '', 'role': 0, 'states': {16777216}, 'cid': 4352},
+	{'name': 'Heure de début', 'value': None, 'role': 7, 'states': {128}, 'cid': 4555},
+	{'name': 'Heure de début', 'value': '11:30', 'role': 8, 'states': {16777216}, 'cid': 4096},
+	{'name': None, 'value': '', 'role': 0, 'states': {16777216}, 'cid': 4354},
+	{'name': None, 'value': None, 'role': 13, 'states': {1024, 1, 16777216}, 'cid': 0},
+	{'name': 'Heure de fin', 'value': None, 'role': 7, 'states': {128}, 'cid': 4512},
+	{'name': 'Date de fin', 'value': None, 'role': 7, 'states': {128}, 'cid': 4556},
+	{'name': 'Date de fin', 'value': 'ven. 21/08/2020', 'role': 8, 'states': {16777216}, 'cid': 4099},
+	{'name': None, 'value': '', 'role': 0, 'states': {16777216}, 'cid': 4353},
+	{'name': 'Heure de fin', 'value': None, 'role': 7, 'states': {128}, 'cid': 4557},
+	{'name': 'Heure de fin', 'value': '12:00', 'role': 8, 'states': {16777216}, 'cid': 4097},
+	{'name': None, 'value': '', 'role': 0, 'states': {16777216}, 'cid': 4355},
+	{'name': None, 'value': None, 'role': 13, 'states': {1024, 1, 16777216}, 'cid': 0},
+	{'name': 'Journée entière', 'value': None, 'role': 5, 'states': {16777216, 1}, 'cid': 4226},
+	{'name': 'Périodicité', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4514},
+	{'name': 'Périodicité', 'value': '', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4104},
+	{'name': 'Joint', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4258},
+	{'name': 'Joint', 'value': None, 'role': 3, 'states': {1024, 1, 16777216}, 'cid': 4306},
+	{'name': 'Joint', 'value': None, 'role': 3, 'states': {16777216, 1}, 'cid': 4332},
+	{'name': 'Notes', 'value': None, 'role': 7, 'states': {128}, 'cid': 4535},
+	{'name': 'Notes', 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4159},
+	{'name': 'Contacts...', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4259},
+	{'name': 'Contacts', 'value': None, 'role': 7, 'states': {128}, 'cid': 4537},
+	{'name': 'Contacts', 'value': '', 'role': 8, 'states': {1024, 1, 16777216}, 'cid': 4260},
+	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
+	{'name': 'DAL=on', 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350}
+]
+
+
+tcHeaderFieldDic['Calendar_MeetingOccurence'] = {
+	1: (4523, 'Organizer'), #Exists invisible in appointment
+	#1: (4263, 'From'),
+	2: (4526, 'Sent'),
+	3: (4106, 'To'),
+	4: (4100, 'Subject'),
+	5: (4102, 'Location'),
+	6: (4098, 'StartDate'),
+	7: (4096, 'StartTime'),
+	8: (4099, 'EndDate'),
+	9: (4097, 'EndTime'),
+	10: (4226, 'AllDay'),
+}
+
+tcObjectPropertyDic['Calendar_MeetingSeries'] = [
 	{'name': 'Catégories', 'value': None, 'role': 7, 'states': {128}, 'cid': 4864},
 	{'name': 'Catégories', 'value': '', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4261},
 	{'name': "Barre d'informations", 'value': 'Acceptée provisoirement le 22/10/2018 11:06.', 'role': 8, 'states': {16777216, 2}, 'cid': 4262},
@@ -496,72 +686,17 @@ tcObjectList['Calendar_MeetingOccurence'] = [
 	{'name': 'DAL=on', 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350}
 ]
 
-tcObjectList['Calendar_MeetingSeries'] = [
-	{'name': 'Catégories', 'value': None, 'role': 7, 'states': {128}, 'cid': 4864},
-	{'name': 'Catégories', 'value': '', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4261},
-	{'name': "Barre d'informations", 'value': 'Acceptée provisoirement le 22/10/2018 11:06.', 'role': 8, 'states': {16777216, 2}, 'cid': 4262},
-	{'name': None, 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4331},
-	{'name': '', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 4265},
-	{'name': 'Dans le dossier', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 512},
-	{'name': 'Dans le dossier partagé', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 518},
-	{'name': 'Dans le dossier partagé', 'value': None, 'role': 16, 'states': {1024, 1, 128}, 'cid': 513},
-	{'name': None, 'value': None, 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 514},
-	{'name': '', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 516},
-	{'name': None, 'value': None, 'role': 16, 'states': {128}, 'cid': 528},
-	{'name': 'Stratégie de rétention', 'value': None, 'role': 7, 'states': {128}, 'cid': 529},
-	{'name': 'Stratégie de rétention', 'value': '', 'role': 8, 'states': {128, 16777216}, 'cid': 530},
-	{'name': 'Archiver', 'value': None, 'role': 7, 'states': {128}, 'cid': 533},
-	{'name': 'Archiver', 'value': None, 'role': 8, 'states': {128, 16777216}, 'cid': 534},
-	{'name': "Date d'expiration", 'value': None, 'role': 7, 'states': {128}, 'cid': 531},
-	{'name': "Date d'expiration", 'value': None, 'role': 8, 'states': {128, 16777216}, 'cid': 532},
-	{'name': 'Organisateur', 'value': None, 'role': 7, 'states': {128}, 'cid': 4524},
-	{'name': 'Organisateur', 'value': 'Jean Dupont', 'role': 8, 'states': {128, 16777216}, 'cid': 4523},
-	{'name': 'Envoyer', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4256},
-	{'name': 'De\xa0', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4257},
-	{'name': 'De', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4264},
-	{'name': 'De', 'value': 'john.doe@example.com', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4263},
-	{'name': 'À...', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4357},
-	{'name': 'À', 'value': None, 'role': 7, 'states': {128}, 'cid': 4531},
-	{'name': 'À', 'value': 'John Doe; Jean Dupont', 'role': 8, 'states': {1024, 1, 16777216}, 'cid': 4106},
-	{'name': 'Envoyé', 'value': None, 'role': 7, 'states': {128}, 'cid': 4527},
-	{'name': 'Envoyé', 'value': 'ven. 27/09/2013 11:26', 'role': 8, 'states': {128, 16777216}, 'cid': 4526},
-	{'name': 'Objet', 'value': None, 'role': 7, 'states': {128}, 'cid': 4534},
-	{'name': 'Objet', 'value': 'Meeting with friends', 'role': 8, 'states': {16777216, 2}, 'cid': 4100},
-	{'name': 'Emplacement', 'value': None, 'role': 7, 'states': {128}, 'cid': 4530},
-	{'name': 'Emplacement\x00', 'value': 'The organization\'s pub', 'role': 13, 'states': {16777216}, 'cid': 0},
-	{'name': 'Salles...', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4363},
-	{'name': 'Heure de début', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4513},
-	{'name': 'Date de début', 'value': None, 'role': 7, 'states': {128}, 'cid': 4554},
-	{'name': 'Date de début', 'value': 'ven. 27/09/2013', 'role': 8, 'states': {1024, 1, 16777216}, 'cid': 4098},
-	{'name': 'Date de début', 'value': '', 'role': 0, 'states': {1024, 1, 16777216}, 'cid': 4352},
-	{'name': 'Heure de début', 'value': None, 'role': 7, 'states': {128}, 'cid': 4555},
-	{'name': 'Heure de début', 'value': '11:30', 'role': 8, 'states': {1024, 1, 16777216}, 'cid': 4096},
-	{'name': 'Heure de début', 'value': '', 'role': 0, 'states': {1024, 1, 16777216}, 'cid': 4354},
-	{'name': 'Heure de début', 'value': 'Heure de début', 'role': 13, 'states': {1024, 1, 16777216}, 'cid': 0},
-	{'name': 'Heure de fin', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4512},
-	{'name': 'Date de fin', 'value': None, 'role': 7, 'states': {128}, 'cid': 4556},
-	{'name': 'Date de fin', 'value': 'ven. 27/09/2013', 'role': 8, 'states': {1024, 1, 16777216}, 'cid': 4099},
-	{'name': 'Date de fin', 'value': '', 'role': 0, 'states': {1024, 1, 16777216}, 'cid': 4353},
-	{'name': 'Heure de fin', 'value': None, 'role': 7, 'states': {128}, 'cid': 4557},
-	{'name': 'Heure de fin', 'value': '12:00', 'role': 8, 'states': {1024, 1, 16777216}, 'cid': 4097},
-	{'name': 'Heure de fin', 'value': '', 'role': 0, 'states': {1024, 1, 16777216}, 'cid': 4355},
-	{'name': 'Heure de fin', 'value': 'Heure de fin', 'role': 13, 'states': {1024, 1, 16777216}, 'cid': 0},
-	{'name': 'Journée entière', 'value': None, 'role': 5, 'states': {1024, 16777216}, 'cid': 4226},
-	{'name': 'Périodicité', 'value': None, 'role': 7, 'states': {128}, 'cid': 4514},
-	{'name': 'Périodicité', 'value': 'A lieu chaque vendredi à compter du 27/09/2013 de 11:30 à 12:00', 'role': 8, 'states': {128, 16777216}, 'cid': 4104},
-	{'name': 'Joint', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4258},
-	{'name': 'Joint', 'value': None, 'role': 3, 'states': {1024, 1, 16777216}, 'cid': 4306},
-	{'name': 'Joint', 'value': None, 'role': 3, 'states': {16777216, 1}, 'cid': 4332},
-	{'name': 'Notes', 'value': None, 'role': 7, 'states': {128}, 'cid': 4535},
-	{'name': 'Notes', 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4159},
-	{'name': 'Contacts...', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4259},
-	{'name': 'Contacts', 'value': None, 'role': 7, 'states': {128}, 'cid': 4537},
-	{'name': 'Contacts', 'value': '', 'role': 8, 'states': {1024, 1, 16777216}, 'cid': 4260},
-	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
-	{'name': 'DAL=on', 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350}
-]
+tcHeaderFieldDic['Calendar_MeetingSeries'] = {
+	1: (4523, 'Organizer'), #Exists invisible in appointment
+	2: (4526, 'Sent'),
+	3: (4106, 'To'),
+	4: (4100, 'Subject'),
+	5: (4102, 'Location'),
+	6: (4104, 'Periodicity'),
+	7: (4226, 'AllDay')
+}
 
-tcObjectList['CalendarAttendeesList'] = [
+tcObjectPropertyDic['CalendarAttendeesList_UniqueMeeting'] = [
 	{'name': 'Tous les participants', 'value': '', 'role': 14, 'states': {16777216, 8388608, 4}, 'cid': 4542},
 	{'name': 'Attendee grid width', 'value': None, 'role': 56, 'states': {1024, 16777216}, 'cid': 4543},
 	{'name': 'Envoyer', 'value': None, 'role': 9, 'states': {1024, 16777216}, 'cid': 4256},
@@ -610,13 +745,26 @@ tcObjectList['CalendarAttendeesList'] = [
 	{'name': 'Horizontal', 'value': None, 'role': 3, 'states': set(), 'cid': 1236}
 ]
 
-tcObjectList['CalendarAttendeesTrackingList'] = [
+tcHeaderFieldDic['CalendarAttendeesList_UniqueMeeting'] = {
+	1: (4542, 'AttendeesList'),
+	2: (4720, 'AllAttendeesStatus'),
+	3: (4098, 'StartDate'),
+	4: (4096, 'StartTime'),
+	5: (4099, 'EndDate'),
+	6: (4097, 'EndTime'),
+}
+
+tcObjectPropertyDic['CalendarAttendeesTrackingList'] = [
 	{'name': 'Tous les participants', 'value': '', 'role': 14, 'states': {16777216, 8388608, 2, 4}, 'cid': 4542},
 	{'name': 'Les réponses suivantes à cette réunion ont été reçues\xa0:', 'value': None, 'role': 7, 'states': {128}, 'cid': 4870},
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026}
 ]
 
-tcObjectList['Task'] = [
+tcHeaderFieldDic['CalendarAttendeesTrackingList'] = {
+	1: (4542, 'AttendeesTrackingList')
+}
+
+tcObjectPropertyDic['Task'] = [
 	{'name': 'Catégories', 'value': None, 'role': 7, 'states': {128}, 'cid': 4532},
 	{'name': 'Catégories', 'value': '', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4261},
 	{'name': "Barre d'informations", 'value': '', 'role': 8, 'states': {1024, 1, 2, 16777216}, 'cid': 4262},
@@ -673,7 +821,25 @@ tcObjectList['Task'] = [
 	{'name': 'DAL=on', 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350}
 ]
 
-tcObjectList['Journal'] = [
+tcHeaderFieldDic['Task'] = {
+	1: (4263, 'From'),
+	2: (4096, 'To'),
+	3: (4097, 'Subject'),
+	4: (4100, 'StartDate'),
+	5: (4101, 'DueDate'),
+	6: (4481, 'State'),
+	7: (4480, 'Priority'),
+	8: (4112, '% completed'),
+	9: (4226, 'Reminder'),
+	10: (4102, 'Date reminder'),
+	11: (4108, 'Reminder time'),
+	12: (4103, 'Owner'),
+}
+
+# zzz TO DO
+# tcObjectPropertyDic['Task_AssignationEditing']
+
+tcObjectPropertyDic['Journal'] = [
 	{'name': 'Objet', 'value': None, 'role': 7, 'states': {128}, 'cid': 4512},
 	{'name': 'Objet', 'value': 'Test élément journal', 'role': 8, 'states': {16777216}, 'cid': 4096},
 	{'name': 'Type d’entrée', 'value': None, 'role': 7, 'states': {128}, 'cid': 4513},
@@ -700,3 +866,12 @@ tcObjectList['Journal'] = [
 	{'name': None, 'value': None, 'role': 56, 'states': {1024, 16777216}, 'cid': 4768},
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026}
 ]
+
+tcHeaderFieldDic['Journal'] = {
+	1: (4096, 'Subject'),
+	2: (4480, 'EntryType'),
+	3: (4098, 'Company'),
+	4: (4099, 'StartDate'),
+	5: (4100, 'StartTime'),
+	6: (4101, 'Duration'),
+}

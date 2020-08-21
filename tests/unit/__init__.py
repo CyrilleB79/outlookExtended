@@ -1,8 +1,8 @@
 # tests/unit/__init__.py
-# A part of NonVisual Desktop Access (NVDA)
+# NVDA add-on: Outlook Extended
+# Copyright (C) 2020 Cyrille Bougot
 # This file is covered by the GNU General Public License.
-# See the file COPYING for more details.
-# Copyright (C) 2017-2019 NV Access Limited, Babbage B.V.
+# See the file COPYING.txt for more details.
 
 import unittest
 import os
@@ -32,13 +32,13 @@ class FakeObject(object):
 class FakeRootWindow(object):
 	def __init__(self, test):
 		super(FakeRootWindow, self).__init__()
-		objList = cases.tcObjectList[test]
+		objList = cases.tcObjectPropertyDic[test]
 		self.children = [FakeObject(**d) for d in objList]
 		
 
 class TestOutlookItemWindow(unittest.TestCase):
 
-	def makeTest(test):
+	def makeTestIsWindowType(test):
 		def test_function(self):
 			fakeRoot = FakeRootWindow(test)
 			oiw = OutlookItemWindow(rootDialog=fakeRoot)
@@ -46,9 +46,22 @@ class TestOutlookItemWindow(unittest.TestCase):
 			self.assertTrue(getattr(oiw, 'is' + windowType)())
 		return test_function
 		
-	for test in cases.tcObjectList.keys():
-		locals()['test_' + test] = makeTest(test)
-	del makeTest
+	for test in cases.tcObjectPropertyDic.keys():
+		locals()['testIs%s' % test] = makeTestIsWindowType(test)
+	del makeTestIsWindowType
+	
+	def makeTestGetWindowTypeFields(test):
+		def test_function(self):
+			fakeRoot = FakeRootWindow(test)
+			oiw = OutlookItemWindow(rootDialog=fakeRoot)
+			windowType = test.split('_')[0]
+			self.assertEqual(getattr(oiw, 'get' + windowType + 'HeaderFields')(), cases.tcHeaderFieldDic[test])
+		return test_function
+		
+	for test in cases.tcObjectPropertyDic.keys():
+		locals()['testGet%sHeaderFields' % test] = makeTestGetWindowTypeFields(test)
+	del makeTestGetWindowTypeFields
+
 
 if __name__ == '__main__':
 	unittest.main()

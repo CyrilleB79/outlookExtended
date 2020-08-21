@@ -10,6 +10,13 @@ from __future__ import unicode_literals
 from logHandler import log
 try:
 	import controlTypes
+except ModuleNotFoundError:
+	# stub
+	class CT: pass
+	controlTypes = CT()
+	controlTypes.STATE_INVISIBLE = 1024
+	
+try:
 	import winUser
 	from windowUtils import findDescendantWindow
 	from NVDAObjects.IAccessible import getNVDAObjectFromEvent
