@@ -9,6 +9,7 @@ import os
 import sys
 
 import cases
+from fakeObjects import FakeRootWindow
 
 # The path to the unit tests.
 UNIT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -20,21 +21,6 @@ SOURCE_DIR = os.path.join(TOP_DIR, "addon", "appModules", "outlook")
 sys.path.insert(1, SOURCE_DIR)
 
 from itemWindow import OutlookItemWindow
-
-class FakeObject(object):
-	def __init__(self, **attributes):
-		super(FakeObject, self).__init__()
-		for (k,v) in attributes.items():
-			if k == 'cid':
-				k = 'windowControlID'
-			setattr(self, k, v)
-
-class FakeRootWindow(object):
-	def __init__(self, test):
-		super(FakeRootWindow, self).__init__()
-		objList = cases.tcObjectPropertyDic[test]
-		self.children = [FakeObject(**d) for d in objList]
-		
 
 class TestOutlookItemWindow(unittest.TestCase):
 

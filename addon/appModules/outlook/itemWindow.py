@@ -15,7 +15,7 @@ except ModuleNotFoundError:
 	class CT: pass
 	controlTypes = CT()
 	controlTypes.STATE_INVISIBLE = 1024
-	
+
 try:
 	import winUser
 	from windowUtils import findDescendantWindow
@@ -431,6 +431,17 @@ class OutlookItemWindow(object):
 				obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 		except LookupError:
 			raise HeaderFieldNotFoundeError()
+		except AttributeError:  # Exception raised when performing tests calling self.rootDialog.windowHandle on FakeRootDialog
+			obj = [o for o in self.rootDialog.children if o.windowControlID == cid]
+			if len(obj) != 1:
+				infos = {
+					'obj': obj,
+					'cid': cid,
+					'name': name,
+				}
+				log.debug(f'Header field not found. Infos: {infos}')
+				raise HeaderFieldNotFoundeError()
+			obj = obj[0]
 		if controlTypes.STATE_INVISIBLE in obj.states:
 			raise HeaderFieldNotFoundeError()
 		return obj,name

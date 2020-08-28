@@ -39,8 +39,10 @@ from windowUtils import findDescendantWindow
 import tones
 import globalVars
 import core
+import config
 
 from locationHelper import RectLTWH
+import sys
 import re
 import threading
 
@@ -56,6 +58,11 @@ ADDON_SUMMARY = addonHandler.getCodeAddon ().manifest["summary"]
 KEY_HEADER_FIELD11 = _("-")
 # Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 KEY_HEADER_FIELD12 = _("=")
+
+confspec = {
+	'testCasePath': 'string(default="")',
+}
+config.conf.spec["outlookExtended"] = confspec
 
 class ElemWithReadStatus:
 
@@ -208,6 +215,9 @@ class AppModule(outlook.AppModule):
 	def __init__(self,*args,**kwargs):
 		super(AppModule,self).__init__(*args,**kwargs)
 		self.lastFocus = None
+		self.testCases = None
+		self.tcNumber = 0
+		self.initializeTestCases
 		
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		super(AppModule, self).chooseNVDAObjectOverlayClasses(obj, clsList)
@@ -422,8 +432,7 @@ class AppModule(outlook.AppModule):
 			obj = None
 		return obj
 	
-	@staticmethod
-	def getRootDialog():
+	def getRootDialog(self):
 		obj = api.getFocusObject()
 		parent = obj.parent
 		try:
@@ -431,6 +440,18 @@ class AppModule(outlook.AppModule):
 				obj = obj.parent
 		except AttributeError:
 			raise NotInMessageWindowError
+		# Check if config.conf['outlookExtended']['testCasePath'] is defined.
+		# If defined, it allows setting up a debug test framework fore live tests on various message types.
+		# The message types are defined in the file case.py that can be found in the Github repo of this add-on.
+		# When a message type is selected, alt+digit return the header of the test case object
+		# instead of the header of the real window.
+		# To activate it, open NVDA console and type:
+		# import config
+		# config.conf['outlookExtended']['testCasePath'] = r'C:\pathToOutlookExtendedGITLocalRepo\tests\unit'
+		if self.testCases and self.tcNumber != 0:
+			tcName = list(self.testCases.keys())[self.tcNumber - 1]
+			obj = self.FakeRootWindow(tcName)
+			return obj
 		if obj.role == controlTypes.ROLE_WINDOW:
 			#Sometimes going up hierarchy goes directly to window object without passing via dialog object -> go to first child
 			obj = obj.firstChild
@@ -438,6 +459,43 @@ class AppModule(outlook.AppModule):
 		
 	__gestures = {"kb:alt+" + key : "reportHeaderField" + str(n) for (key,n) in _headerFieldKeyMap.items()}
 	
+	def initializeTestCases(self):
+		debugTcPath = config.conf['outlookExtended']['testCasePath']
+		isTest = bool(debugTcPath)
+		if isTest:
+			if self.testCases is None:
+				sys.path.append(debugTcPath)
+				from cases import tcObjectPropertyDic 
+				from fakeObjects import FakeRootWindow
+				del sys.path[-1]
+				self.testCases = tcObjectPropertyDic
+				self.FakeRootWindow = FakeRootWindow
+		else:
+			ui.message(_('Test case path not defined.'))
+		return isTest
+	
+	# Scripts to select next and previous test cases when test mode is active
+	# These scripts are unassigned by default
+	# To assign them, edit directly the gesture.ini file, e.g. by pasting the following lines:
+	# [appModules.outlook.AppModule]
+	# selectNextTestCase = kb:control+f6+nvda+shift
+	# selectPreviousTestCase = kb:control+f5+nvda+shift
+	def script_selectNextTestCase(self, gesture):
+		return self.selectTestCase(offset=1)
+	def script_selectPreviousTestCase(self, gesture):
+		return self.selectTestCase(offset=-1)
+		
+	def selectTestCase(self, offset):
+		if not self.initializeTestCases():
+			return
+		self.tcNumber = (self.tcNumber + offset) % (len(self.testCases) + 1)
+		if self.tcNumber != 0:
+			self.tcName = list(self.testCases.keys())[self.tcNumber - 1]
+			ui.message(self.tcName)
+		else:
+			self.tcName = ''
+			ui.message(_('Test mode offf'))
+		
 	@staticmethod
 	def _createScript_reportHeaderField(n):
 		def  _genericScript_reportHeaderField(self, gesture):
@@ -452,7 +510,6 @@ class AppModule(outlook.AppModule):
 			scriptName = 'script_reportHeaderField' + str(n)
 			scriptFun = AppModule._createScript_reportHeaderField(n)
 			setattr(cls, scriptName, scriptFun)
-	
 	
 	
 AppModule.createAllScript_reportHeaderField()
