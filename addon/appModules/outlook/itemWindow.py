@@ -226,7 +226,7 @@ class OutlookItemWindow(object):
 			3: (4117, 'To'),
 			4: (4126, 'Cc'),
 			5: (4104, 'Bcc'),
-			6: (4294, 'Subject'),
+			6: (4101 if hasFromEditing else 4294, 'Subject'),
 			7: (4346, 'SignedBy') })
 		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
 		if hasFromReduced:
