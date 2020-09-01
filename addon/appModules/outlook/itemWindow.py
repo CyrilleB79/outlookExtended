@@ -188,8 +188,8 @@ class OutlookItemWindow(object):
 		return ls1 == lstCID
 	
 	def getMessageHeaderFields(self):
-		hasFromEditing = len([o for o in self.rootDialog.children if o.windowControlID==4263 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
-		if hasFromEditing:
+		isWriting = len([o for o in self.rootDialog.children if o.windowControlID == 4256 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		if isWriting:
 			dic = {1: (4263, 'From')}
 		else:
 			dic = {1: (4097, 'From')}
@@ -216,8 +216,8 @@ class OutlookItemWindow(object):
 		
 	def getMessage2HeaderFields(self):
 		#Fields in office 365 update (32-bit) as reported by Ralf and user.
-		hasFromEditing = len([o for o in self.rootDialog.children if o.windowControlID==4263 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
-		if hasFromEditing:
+		isWriting = len([o for o in self.rootDialog.children if o.windowControlID == 4256 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		if isWriting:
 			dic = {1: (4263, 'From')}
 		else:
 			dic = {1: (4292, 'From')}
@@ -226,7 +226,7 @@ class OutlookItemWindow(object):
 			3: (4117, 'To'),
 			4: (4126, 'Cc'),
 			5: (4104, 'Bcc'),
-			6: (4101 if hasFromEditing else 4294, 'Subject'),
+			6: (4101 if isWriting else 4294, 'Subject'),
 			7: (4346, 'SignedBy') })
 		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
 		if hasFromReduced:

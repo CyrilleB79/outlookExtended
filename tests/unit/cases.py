@@ -334,6 +334,51 @@ tcHeaderFieldDic['Message2_Editing'] = {
 	7: (4346, 'SignedBy'),
 }
 
+# Message writing with Microsoft® Outlook® pour Microsoft 365 MSO (16.0.12730.20252) 64 bit as reported by SD
+tcObjectPropertyDic['Message2_EditingSD'] = [
+	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
+	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4336},
+	{'name': None, 'value': None, 'role': 3, 'states': {1024, 1, 16777216}, 'cid': 4331},
+	{'name': '', 'value': None, 'role': 7, 'states': {128}, 'cid': 4556},
+	{'name': '', 'value': None, 'role': 7, 'states': {128}, 'cid': 4555},
+	{'name': 'Envoyer', 'value': None, 'role': 9, 'states': {16777216}, 'cid': 4256},
+	{'name': 'De', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4257},
+	{'name': None, 'value': 'Jane Doe', 'role': 8, 'states': {1024, 1, 128, 16777216}, 'cid': 4263},
+	{'name': '', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 535},
+	{'name': 'À', 'value': None, 'role': 9, 'states': {16777216}, 'cid': 4352},
+	{'name': 'Cc', 'value': None, 'role': 9, 'states': {16777216}, 'cid': 4353},
+	{'name': 'Cci', 'value': None, 'role': 9, 'states': {1024, 1, 16777216}, 'cid': 4358},
+	{'name': 'À', 'value': None, 'role': 7, 'states': {128}, 'cid': 4527},
+	{'name': 'À', 'value': 'John Doe', 'role': 8, 'states': {16777216}, 'cid': 4117},
+	{'name': 'Cc', 'value': None, 'role': 7, 'states': {128}, 'cid': 4528},
+	{'name': 'Cc', 'value': '', 'role': 8, 'states': {16777216}, 'cid': 4126},
+	{'name': 'Cci', 'value': None, 'role': 7, 'states': {128}, 'cid': 4529},
+	{'name': 'Cci', 'value': '', 'role': 8, 'states': {1024, 16777216}, 'cid': 4104},
+	{'name': 'Objet', 'value': None, 'role': 7, 'states': {128}, 'cid': 4516},
+	{'name': 'Objet', 'value': 'New project', 'role': 8, 'states': {16777216}, 'cid': 4101},
+	{'name': '', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 546},
+	{'name': 'Pièces jointes', 'value': None, 'role': 7, 'states': {128}, 'cid': 4864},
+	{'name': 'Pièces jointes', 'value': None, 'role': 3, 'states': {1024, 1, 16777216}, 'cid': 4306},
+	{'name': 'Pièces jointes', 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4332},
+	{'name': 'Message', 'value': None, 'role': 7, 'states': {128}, 'cid': 4550},
+	{'name': 'Message', 'value': None, 'role': 7, 'states': {128}, 'cid': 547},
+	{'name': None, 'value': None, 'role': 3, 'states': {16777216}, 'cid': 4159},
+	{'name': "Barre d'informations", 'value': '', 'role': 8, 'states': {1024, 1, 2, 128, 16777216}, 'cid': 4262},
+	{'name': None, 'value': '', 'role': 0, 'states': {16777216, 1}, 'cid': 4265},
+	{'name': None, 'value': None, 'role': 56, 'states': {1024, 16777216}, 'cid': 4768},
+	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350}
+]
+
+tcHeaderFieldDic['Message2_EditingSD'] = {
+	1: (4263, 'From'),
+	2: (4315, 'Sent'),
+	3: (4117, 'To'),
+	4: (4126, 'Cc'),
+	5: (4104, 'Bcc'),
+	6: (4101, 'Subject'),
+	7: (4346, 'SignedBy'),
+}
+	
 tcObjectPropertyDic['MeetingRequest'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': '', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4296},
