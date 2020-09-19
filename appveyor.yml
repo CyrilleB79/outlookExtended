@@ -1,8 +1,12 @@
 version: '{branch}-{build}'
 environment:
-  PY_PYTHON: 2.7-32
+  PY_PYTHON: 3.7-32
 install:
 - cmd: >-
+    set PATH=C:\Python37\Scripts;%PATH%
+
+    python -m pip install -U pip
+
     python -m pip install wheel
 
     py -m pip install scons
@@ -12,6 +16,21 @@ before_build:
 - ps: $env:IS_DEV = ($env:APPVEYOR_REPO_TAG -eq "false") -or ($env:APPVEYOR_REPO_TAG_NAME -match "dev")
 build_script:
 - cmd: scons dev=%IS_DEV%
+
+test_script:
+# Unit Tests (Python)
+ - ps: |
+     $errorCode=0
+     py ./tests/unit/__init__.py
+     if($LastExitCode -ne 0) {
+      $errorCode=$LastExitCode
+      Add-AppveyorMessage "Unit test failure"
+     }
+     else
+     {
+      Add-AppveyorMessage "Unit test success"
+     }
+     if($errorCode -ne 0) { $host.SetShouldExit($errorCode) }
 
 artifacts:
 - path: '*.nvda-addon'
