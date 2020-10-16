@@ -1,7 +1,7 @@
 # Outlook estendido (Outlook extended) #
 
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilidade com NVDA: 2018.3 a 2019.3
+* NVDA compatibility: 2018.3 to 2020.3
 * Baixe a [versão estável][1]
 * Baixe a [versão em desenvolvimento][2]
 
@@ -47,6 +47,14 @@ do NVDA. Pode querer alterá-los especialmente nas seguintes situações:
   12, se não corresponderem ao leiaute do teclado local.
 
 ## Registro de alterações (Change log)
+
+### Version 1.6
+
+* Fixed various issues when reading messages headers in Outlook 365.
+* Fixed an error in announce attachments script when a braille keyboard is
+  used.
+* Added a unit test framework.
+* Updated localizations.
 
 ### Versão 1.5
 

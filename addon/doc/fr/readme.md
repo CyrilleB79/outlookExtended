@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Auteurs : Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilité NVDA: 2018.3 à 2019.3
+* Compatibilité NVDA: 2018.3 à 2020.3
 * Télécharger [version stable][1]
 * Télécharger [version de développement][2]
 
@@ -50,6 +50,15 @@ modifier dans les situations suivantes :
   avec votre disposition de clavier locale.
 
 ## Journal des modifications
+
+### Version 1.6
+
+* Correction de divers problèmes lors de la lecture des en-têtes de messages
+  dans Outlook 365.
+* Correction d'une erreur dans le script d'annonce des pièces jointes
+  lorsqu'un clavier braille est utilisé.
+* Ajout d'un environnement de test unitaire.
+* Ajout de localisations.
 
 ### Version 1.5
 

@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Tekijät: Cyrille Bougot, Ralf Kefferpuetz
-* Yhteensopivuus: NVDA 2018.3-2019.3
+* NVDA compatibility: 2018.3 to 2020.3
 * Lataa [vakaa versio][1]
 * Lataa [kehitysversio][2]
 
@@ -47,6 +47,14 @@ tilanteissa:
   kanssa.
 
 ## Muutosloki
+
+### Version 1.6
+
+* Fixed various issues when reading messages headers in Outlook 365.
+* Fixed an error in announce attachments script when a braille keyboard is
+  used.
+* Added a unit test framework.
+* Updated localizations.
 
 ### Versio 1.5
 

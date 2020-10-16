@@ -1,7 +1,7 @@
 # Poboljšanja za Outlook #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* Kompatibilnost sa NVDA verzijama: od 2018.3 do 2019.3
+* NVDA compatibility: 2018.3 to 2020.3
 * Preuzmite [stabilnu verziju][1]
 * Preuzmite [verziju u razvoju][2]
 
@@ -45,6 +45,14 @@ Sve prečice se mogu menjati u dijalogu za podešavanje ulaznih komandi. Možda
   prečice za 11. i 12. polje ako koristite drugi raspored tastature.
 
 ## Lista promena
+
+### Version 1.6
+
+* Fixed various issues when reading messages headers in Outlook 365.
+* Fixed an error in announce attachments script when a braille keyboard is
+  used.
+* Added a unit test framework.
+* Updated localizations.
 
 ### Verzija 1.5
 

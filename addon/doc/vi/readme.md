@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Tác giả: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA tương thích: 2018.3 đến 2019.3
+* NVDA tương thích: 2018.3 đến 2020.3
 * Tải về [phiên bản chính thức][1]
 * Tải về [phiên bản thử nghiệm][2]
 
@@ -45,6 +45,14 @@ NVDA. Có thể bạn muốn thay đổi nó trong các tình huống sau:
   bạn.
 
 ## Bản ghi các thay đổi
+
+### Phiên bản 1.6
+
+* Sửa nhiều lỗi khi đọc các tiêu đề của thư trong Outlook 365.
+* Sửa một lỗi trong kịch bản thông báo tập tin đính kèm khi dùng bàn phím
+  chữ nổi.
+* Thêm một bộ kiểm tra.
+* Đã thêm các bản phiên dịch.
 
 ### Phiên bản 1.5
 

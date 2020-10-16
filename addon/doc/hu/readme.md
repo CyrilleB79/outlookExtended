@@ -1,7 +1,7 @@
 # Outlook kiegészítő #
 
 * Készítők: Cyrille Bougot, Ralf Kefferpuetz
-* Kompatibilis NVDA kiadások: 2018.3 és 2019.3 között minden kiadás
+* NVDA compatibility: 2018.3 to 2020.3
 * [stabil verzió][1] letöltése
 * [fejlesztői verzió][2] letöltése
 
@@ -42,6 +42,14 @@ ablakában.
   parancsot, hogy kövesse a logikát.
 
 ## Változások
+
+### Version 1.6
+
+* Fixed various issues when reading messages headers in Outlook 365.
+* Fixed an error in announce attachments script when a braille keyboard is
+  used.
+* Added a unit test framework.
+* Updated localizations.
 
 ### 1.5-ös verzió
 

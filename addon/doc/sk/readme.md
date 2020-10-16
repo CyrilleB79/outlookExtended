@@ -1,7 +1,7 @@
 # Rozšírená podpora pre Microsoft Outlook #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* Funguje s NVDA 2018.3 do 2019.3
+* NVDA compatibility: 2018.3 to 2020.3
 * Stiahnuť [stabilnú verziu][1]
 * Stiahnuť [vývojovú verziu][2]
 
@@ -41,6 +41,14 @@ budete chcieť zmeniť v nasledujúcich situáciách:
   upraviť, ak používate inú ako anglickú klávesnicu.
 
 ## Zoznam zmien
+
+### Version 1.6
+
+* Fixed various issues when reading messages headers in Outlook 365.
+* Fixed an error in announce attachments script when a braille keyboard is
+  used.
+* Added a unit test framework.
+* Updated localizations.
 
 ### Verzia 1.5
 

@@ -1,7 +1,7 @@
 # Udvidelse til Outlook #
 
 * Forfattere: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA-kompatibilitet: 2018.3 til 2019.3
+* NVDA-kompatibilitet: 2018.3 til 2020.3
 * Download [stabil version][1]
 * Download [udviklingsversion][2]
 
@@ -46,6 +46,15 @@ nogle tilfælde ændre dem særligt i følgende situationer:
   ikke passer til dit lokale tastaturlayout.
 
 ## Ændringshistorik
+
+### Version 1.6
+
+* Rettet forskellige problemer, når du læser beskedoverskrifter i Outlook
+  365.
+* Rettede en fejl i scriptet til annoncering af vedhæftelser, når et
+  punkttastatur bruges.
+* Tilføjet et unit test framework.
+* Opdaterede oversættelser.
 
 ### Version 1.5
 
