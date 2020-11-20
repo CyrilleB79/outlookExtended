@@ -41,8 +41,8 @@ situazioni:
   quelli della versione di Outlook in uso nel tuo paese, li dovrai
   modificare di conseguenza.
 * I tasti di default per leggere le intestazioni corrispondono ad Alt
-  premuto assieme ai tasti della prima riga della tastiera
-  alfanumerica. Potreste aver bisogno di rimappare i tasti per leggere le
+  premuto assieme ai tasti della prima riga della tastiera alfanumerica
+  americana. Potresti aver bisogno di rimappare i tasti per leggere le
   intestazioni 11 e 12 se sono collocati in posizioni diverse nel tuo layout
   tastiera.
 
@@ -74,7 +74,7 @@ situazioni:
 
 * Sistemata la lettura delle intestazioni dei messaggi per le nuove versioni
   di Office 365.
-* Aggiornamenti per supportare le nuove versioni di NVDA (compatible con
+* Aggiornamenti per supportare le nuove versioni di NVDA (compatibile con
   Python 2 e 3).
 * Aggiunte traduzioni.
 * Le versioni sono ora rilasciate con appveyor.
