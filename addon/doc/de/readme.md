@@ -1,7 +1,7 @@
 # Erweiterte Outlook-Funktionen #
 
 * Autoren: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2020.3
+* NVDA-Kompatibilität: 2018.3 bis 2020.3
 * [Stabile Version herunterladen][1]
 * [Entwicklerversion herunterladen][2]
 
@@ -54,11 +54,12 @@ Befehle sinnvoll sein:
 
 ### Version 1.6
 
-* Fixed various issues when reading messages headers in Outlook 365.
-* Fixed an error in announce attachments script when a braille keyboard is
-  used.
-* Added a unit test framework.
-* Updated localizations.
+* Mehrere Fehler behoben, die beim lesen von NachrichtenÜberschriften in
+  Outlook 365 auftraten.
+* Ein Fehler im Skript zum Ansagen von Anhängen bei verwendeter
+  Braille-Tastatur wurde behoben.
+* Ein Test-Framework wurde hinzugefügt.
+* Lokalisierungen aktualisiert.
 
 ### Version 1.5
 
