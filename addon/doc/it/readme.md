@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilità NVDA : dalla versione 2018.3 alla 2020.3
+* Compatibilità con NVDA : dalla versione 2018.3 alla 2020.3
 * Scarica la [versione stabile][1]
 * Scarica la [versione in sviluppo][2]
 
@@ -24,7 +24,7 @@ comandi ed aggiungendone altri.
 * NVDA+shift+M (layout desktop) / NVDA+control+shift+M (layout laptop):
   sposta il focus sul corpo di un messaggio.
 * Control+Alt+Freccia sinistra/destra: nell'elenco dei risultati di ricerca
-  della rubrica, naviga tra i campi della riga selezionata.
+  della rubrica, si sposta tra i campi della riga selezionata.
 * Control+Q: nell'elenco dei messaggi, marca il messaggio o gruppo di
   messaggi selezionato come letto.
 * Control+U: nell'elenco dei messaggi, marca il messaggio o gruppo di
@@ -37,14 +37,14 @@ Immissione di NVDA. Può essere utile modificarli specialmente nelle seguenti
 situazioni:
 
 * I tasti di default per marcare i messaggi come letti o non letti sono
-  quelli della versione inglese di Outlook. Se questi differeiscono da
-  quelli della versione di Outlook in uso nel tuo paese, li dovrai
-  modificare di conseguenza.
+  quelli della versione inglese di Outlook. Se questi differiscono da quelli
+  della versione di Outlook in uso nel vostro paese, li dovrete modificare
+  di conseguenza.
 * I tasti di default per leggere le intestazioni corrispondono ad Alt
   premuto assieme ai tasti della prima riga della tastiera alfanumerica
-  americana. Potresti aver bisogno di rimappare i tasti per leggere le
-  intestazioni 11 e 12 se sono collocati in posizioni diverse nel tuo layout
-  tastiera.
+  americana. Potreste aver bisogno di rimappare i tasti per leggere le
+  intestazioni 11 e 12 se sono collocati in posizioni diverse nel vostro
+  layout tastiera.
 
 ## Elenco delle modifiche
 
@@ -66,8 +66,8 @@ situazioni:
 ### Novità nella versione 1.4
 
 * Lo script per spostare il focus sulle intestazioni funziona nuovamente.
-* Lo script per spostarsi sugli allegati ora funziona quando è presente più
-  di un allegato.
+* Lo script per spostarsi sugli allegati ora funziona anche quando è
+  presente più di un allegato.
 * Aggiunte traduzioni.
 
 ### Novità nella versione 1.3
