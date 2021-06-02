@@ -4,37 +4,37 @@
 # Change this file instead of sconstruct or manifest files, whenever possible.
 
 # Full getext (please don't change)
-_ = lambda x : x
+_ = lambda x: x
 
 # Add-on information variables
 addon_info = {
 	# for previously unpublished addons, please follow the community guidelines at:
-	# https://bitbucket.org/nvdaaddonteam/todo/raw/master/guideLines.txt
+	# https://bitbucket.org/nvdaaddonteam/todo/raw/master/guidelines.txt
 	# add-on Name, internal for nvda
-	"addon_name" : "outlookExtended",
+	"addon_name": "outlookExtended",
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on to be shown on installation and add-on information.
-	"addon_summary" : _("Outlook Extended"),
+	"addon_summary": _("Outlook Extended"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description" : _("""Extended support and features for Microsoft Outlook:
+	"addon_description": _("""Extended support and features for Microsoft Outlook:
 - Provide gestures to read and navigate to headers, information bar and attachments in messages, calendar items, tasks.
 - Improve result reading in address book.
 - Vocalize mark as read/unread ctrl+q/ctrl+u commands."""),
 	# version
-	"addon_version" : "1.4",
+	"addon_version": "1.7",
 	# Author(s)
-	"addon_author" : u"Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>",
+	"addon_author": u"Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>",
 	# URL for the add-on documentation support
-	"addon_url" : None,
+	"addon_url": None,
 	# Documentation file name
-	"addon_docFileName" : "readme.html",
-	# Minimum NVDA version supported (e.g. "2018.3")
-	"addon_minimumNVDAVersion" : "2018.3.0",
-	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion" : "2019.3.0",
-	# Add-on update channel (default is stable or None)
-	"addon_updateChannel" : None,
+	"addon_docFileName": "readme.html",
+	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
+	"addon_minimumNVDAVersion": "2018.3.0",
+	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
+	"addon_lastTestedNVDAVersion": "2021.1.0",
+	# Add-on update channel (default is None, denoting stable releases, and for development releases, use "dev"; do not change unless you know what you are doing)
+	"addon_updateChannel": None,
 }
 
 
@@ -43,7 +43,7 @@ import os.path
 # Define the python files that are the sources of your add-on.
 # You can use glob expressions here, they will be expanded.
 import os.path
-pythonSources = [os.path.join('addon', 'appModules', '*.py')]
+pythonSources = [os.path.join('addon', 'appModules', 'outlook', '*.py')]
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = pythonSources + ["buildVars.py"]
