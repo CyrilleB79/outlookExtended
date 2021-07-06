@@ -1,7 +1,7 @@
 # Udvidelse til Outlook #
 
 * Forfattere: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA-kompatibilitet: 2018.3 til 2020.3
+* NVDA-kompatibilitet: 2018.3 og derover
 * Download [stabil version][1]
 * Download [udviklingsversion][2]
 
@@ -46,6 +46,11 @@ nogle tilfælde ændre dem særligt i følgende situationer:
   ikke passer til dit lokale tastaturlayout.
 
 ## Ændringshistorik
+
+### Version 1.7
+
+* Opdateret kompatibilitetsstatus til NVDA 2021.1.
+* Opdaterede oversættelser.
 
 ### Version 1.6
 

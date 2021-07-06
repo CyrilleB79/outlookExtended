@@ -9,19 +9,19 @@ msgstr ""
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
 "PO-Revision-Date: 2019-02-22 12:37+0100\n"
+"Last-Translator: Simone Dal Maso <simone.dalmaso@gmail.com>\n"
+"Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Simone Dal Maso <simone.dalmaso@gmail.com>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.7\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "-"
 
-#. Translators: The key just ont the left of the backspace key
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "="
 
@@ -89,9 +89,8 @@ msgid ""
 "content to the clipboard."
 msgstr ""
 "Annuncia la barra delle informazioni in un messaggio, in un elemento del "
-"calendario o in una finestra delle attività. Se premuto due volte, sposta "
-"il focus su di esso. Se premuto tre volte, copia il suo contenuto negli "
-"Appunti."
+"calendario o in una finestra delle attività. Se premuto due volte, sposta il "
+"focus su di esso. Se premuto tre volte, copia il suo contenuto negli Appunti."
 
 #. Translators: When the info bar is not present
 msgid "No information bar"
@@ -106,8 +105,14 @@ msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
 msgstr ""
-"Annuncia il numero e il nome degli allegati nella finestra di un "
-"messaggio. Se premuto due volte, sposta il focus su di esso."
+"Annuncia il numero e il nome degli allegati nella finestra di un messaggio. "
+"Se premuto due volte, sposta il focus su di esso."
+
+msgid "Test case path not defined."
+msgstr ""
+
+msgid "Test mode offf"
+msgstr ""
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
@@ -116,10 +121,10 @@ msgid ""
 "pressed twice, moves the focus to this field if possible. If pressed three "
 "times, copies its content to the clipboard."
 msgstr ""
-"Annuncia il campo di intestazione %s in un messaggio, elemento di "
-"calendario o finestra di attività. Se premuto due volte, sposta il focus "
-"su questo campo, se possibile. Se premuto tre volte, copia il suo "
-"contenuto negli Appunti."
+"Annuncia il campo di intestazione %s in un messaggio, elemento di calendario "
+"o finestra di attività. Se premuto due volte, sposta il focus su questo "
+"campo, se possibile. Se premuto tre volte, copia il suo contenuto negli "
+"Appunti."
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.

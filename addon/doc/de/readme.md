@@ -1,7 +1,7 @@
 # Erweiterte Outlook-Funktionen #
 
 * Autoren: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA-Kompatibilität: 2018.3 bis 2020.3
+* NVDA-Kompatibilität: 2018.3 und neuer
 * [Stabile Version herunterladen][1]
 * [Entwicklerversion herunterladen][2]
 
@@ -51,6 +51,11 @@ Befehle sinnvoll sein:
   übereinstimmen.
 
 ## Änderungsprotokoll
+
+### Version 1.7
+
+* Kompatibilität aktualisiert für NVDA 2021.1.
+* Lokalisierungen aktualisiert.
 
 ### Version 1.6
 

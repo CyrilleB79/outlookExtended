@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-02-21 17:21+0200\n"
+"PO-Revision-Date: 2021-06-04 18:55+0300\n"
+"Last-Translator: Kostadin Kolev <k_kolev1985@mail.bg>\n"
+"Language-Team: \n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Kostadin Kolev <k_kolev1985@mail.bg>\n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.0\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "-"
 
-#. Translators: The key just ont the left of the backspace key
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "="
 
@@ -108,6 +108,12 @@ msgstr ""
 "Съобщава броя и имената на прикачените файлове в прозореца за съобщения. "
 "Двукратното натискане премества фокуса в полето с прикачените файлове."
 
+msgid "Test case path not defined."
+msgstr "Пътят за тестовия казус не е указан."
+
+msgid "Test mode offf"
+msgstr "Тестовият режим е изключен"
+
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
 msgid ""
@@ -115,10 +121,10 @@ msgid ""
 "pressed twice, moves the focus to this field if possible. If pressed three "
 "times, copies its content to the clipboard."
 msgstr ""
-"Съобщава полето на заглавката за колона %s в съобщение, елемент от "
-"календара или в прозореца на задачите. При двукратно натискане, ако е "
-"възможно, премества фокуса в това поле. Трикратното натискане копира "
-"съдържанието му в клипборда."
+"Съобщава полето на заглавката за колона %s в съобщение, елемент от календара "
+"или в прозореца на задачите. При двукратно натискане, ако е възможно, "
+"премества фокуса в това поле. Трикратното натискане копира съдържанието му в "
+"клипборда."
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.

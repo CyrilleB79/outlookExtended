@@ -1,7 +1,7 @@
 # Outlook estendido (Outlook extended) #
 
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2020.3
+* NVDA compatibility: 2018.3 and beyond
 * Baixe a [versão estável][1]
 * Baixe a [versão em desenvolvimento][2]
 
@@ -47,6 +47,11 @@ do NVDA. Pode querer alterá-los especialmente nas seguintes situações:
   12, se não corresponderem ao leiaute do teclado local.
 
 ## Registro de alterações (Change log)
+
+### Version 1.7
+
+* Update compatibility for NVDA 2021.1.
+* Updated localizations.
 
 ### Version 1.6
 

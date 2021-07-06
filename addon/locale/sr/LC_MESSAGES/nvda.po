@@ -108,6 +108,12 @@ msgstr ""
 "Prijavljuje broj i imena priloga u prozoru poruke. Ako se pritisne dva puta, "
 "premešta fokus na njih."
 
+msgid "Test case path not defined."
+msgstr ""
+
+msgid "Test mode offf"
+msgstr ""
+
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
 msgid ""

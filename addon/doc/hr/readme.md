@@ -1,7 +1,7 @@
 # Prošireni Outlook (Outlook extended) #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA kompatibilnost: 2018.3 do 2020.3
+* NVDA kompatibilnost: 2018.3 i novije
 * Preuzmi [stabilnu verziju][1]
 * Preuzmi [razvojnu verziju][2]
 
@@ -44,6 +44,11 @@ ih je promijeniti za sljedeće situacije:
   rasporedom lokalne tipkovnice.
 
 ## Dnevnik promjena
+
+### Verzija 1.7
+
+* Aktualizirana kompatibilnost za NVDA 2021.1
+* Prijevodi su aktualizirani.
 
 ### Verzija 1.6
 

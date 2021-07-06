@@ -9,19 +9,19 @@ msgstr ""
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-09-13 16:32+1000\n"
 "PO-Revision-Date: 2019-09-13 14:19+0700\n"
+"Last-Translator: Eugene Kornev <kornev@elitagroup.ru>\n"
+"Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Eugene Kornev <kornev@elitagroup.ru>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.3\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "-"
 
-#. Translators: The key just ont the left of the backspace key
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "="
 
@@ -78,6 +78,7 @@ msgid "unchecked"
 msgstr "не отмечено"
 
 #. Translators: To report name and value of a heaeder's field
+#, python-brace-format
 msgid "{name} {value}"
 msgstr "{name} {value}"
 
@@ -106,6 +107,12 @@ msgid ""
 msgstr ""
 "Сообщает число и имена вложений в окне сообщения. Если нажать дважды, "
 "переводит к ним фокус."
+
+msgid "Test case path not defined."
+msgstr ""
+
+msgid "Test mode offf"
+msgstr ""
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format

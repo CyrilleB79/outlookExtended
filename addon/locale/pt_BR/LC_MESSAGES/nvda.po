@@ -115,6 +115,12 @@ msgstr ""
 "Informa o número e os nomes dos anexos em uma janela de mensagem. Se "
 "pressionado duas vezes, move o foco para ele."
 
+msgid "Test case path not defined."
+msgstr ""
+
+msgid "Test mode offf"
+msgstr ""
+
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
 msgid ""

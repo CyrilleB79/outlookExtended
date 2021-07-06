@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Tác giả: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA tương thích: 2018.3 đến 2020.3
+* NVDA compatibility: 2018.3 and beyond
 * Tải về [phiên bản chính thức][1]
 * Tải về [phiên bản thử nghiệm][2]
 
@@ -45,6 +45,11 @@ NVDA. Có thể bạn muốn thay đổi nó trong các tình huống sau:
   bạn.
 
 ## Bản ghi các thay đổi
+
+### Version 1.7
+
+* Update compatibility for NVDA 2021.1.
+* Đã thêm các bản phiên dịch.
 
 ### Phiên bản 1.6
 

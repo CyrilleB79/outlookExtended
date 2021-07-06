@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilità con NVDA : dalla versione 2018.3 alla 2020.3
+* NVDA compatibility: 2018.3 and beyond
 * Scarica la [versione stabile][1]
 * Scarica la [versione in sviluppo][2]
 
@@ -47,6 +47,11 @@ situazioni:
   layout tastiera.
 
 ## Elenco delle modifiche
+
+### Version 1.7
+
+* Update compatibility for NVDA 2021.1.
+* Traduzioni aggiornate.
 
 ### Novità nella versione 1.6
 

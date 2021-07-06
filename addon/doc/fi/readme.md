@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Tekijät: Cyrille Bougot, Ralf Kefferpuetz
-* Yhteensopivuus: NVDA 2018.3-2020.3
+* Yhteensopivuus: NVDA 2018.3 ja sitä uudemmat
 * Lataa [vakaa versio][1]
 * Lataa [kehitysversio][2]
 
@@ -47,6 +47,11 @@ tilanteissa:
   kanssa.
 
 ## Muutosloki
+
+### Versio 1.7
+
+* Yhteensopivuus päivitetty NVDA 2021.1:lle.
+* Lokalisointeja päivitetty.
 
 ### Versio 1.6
 
