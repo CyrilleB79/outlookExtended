@@ -1,16 +1,16 @@
 # Brazilian Portuguese translation of outlookExtended.
-# Copyright (C) 2020 NVDA Contributors.
+# Copyright (C) 2020-2021 NVDA Contributors.
 # This file is distributed under the same license as the NVDA package.
 # Rui Fontes <rui.fontes@tiflotecnia.com>, 2019.
 # Ângelo Abrantes <ampa4374@gmail.com>, 2019-2020.
-# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020.
+# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: OutlookExtended\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2020-01-03 15:05+1000\n"
-"PO-Revision-Date: 2020-05-15 20:42-0300\n"
+"PO-Revision-Date: 2021-07-06 18:30-0300\n"
 "Last-Translator: Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>\n"
 "Language-Team: NVDA Brazilian Portuguese translation team (Equipe de "
 "tradução do NVDA para Português Brasileiro) <clever97@gmail.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.11\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../../appModules\n"
@@ -116,10 +116,10 @@ msgstr ""
 "pressionado duas vezes, move o foco para ele."
 
 msgid "Test case path not defined."
-msgstr ""
+msgstr "Caminho do caso de teste não definido."
 
 msgid "Test mode offf"
-msgstr ""
+msgstr "Desligado modo de teste"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format

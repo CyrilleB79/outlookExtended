@@ -18,11 +18,11 @@ msgstr ""
 "X-Generator: Poedit 1.6.11\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "trừ"
 
-#. Translators: The key just ont the left of the backspace key
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "Bằng"
 
@@ -108,6 +108,12 @@ msgid ""
 msgstr ""
 "Đọc số lượng và tên của các tệp đính kèm trong thư. Nếu bấm hai lần, chuyển "
 "con trỏ đến nó."
+
+msgid "Test case path not defined."
+msgstr ""
+
+msgid "Test mode offf"
+msgstr ""
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
