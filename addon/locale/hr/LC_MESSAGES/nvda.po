@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2020-03-13 17:34+0100\n"
+"PO-Revision-Date: 2021-07-23 16:20+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
@@ -112,10 +112,10 @@ msgstr ""
 "pritisne dvaput, premješta fokus na njega."
 
 msgid "Test case path not defined."
-msgstr ""
+msgstr "Put testnog slučaja nije definiran."
 
 msgid "Test mode offf"
-msgstr ""
+msgstr "Testni modus je isključen"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
