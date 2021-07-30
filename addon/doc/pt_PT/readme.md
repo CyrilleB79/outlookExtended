@@ -1,7 +1,7 @@
 # Outlook mais acessível #
 
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2020.3
+* Compatibilidade com o NVDA: 2018.3 e seguintes.
 * Baixar [Versão estável][1]
 * Baixar [Versão de desenvolvimento][2]
 
@@ -21,14 +21,15 @@ comandos e adicionando alguns novos.
 * NVDA+shift+A (computador de secretária) / NVDA+control+shift+A (computador
   portátil): Lê o número e os nomes dos anexos, numa janela de mensagem. Se
   pressionado duas vezes, move o foco os anexos.
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout):
-  Moves the focus to the message body.
-* Control+Alt+Left and Control+Alt+Right: in the address book search result
-  list, navigates between the fields of the currently selected line.
-* Control+Q: in the message list, marks the selected message or group of
-  messages as read.
-* Control+U: in the message list, marks the selected message or group of
-  messages as unread.
+* NVDA+shift+M (teclado do desktop) / NVDA+control+shift+M (teclado do
+  laptop): Muda o foco para o corpo da mensagem.
+* Control+Alt+Esquerda e Control+Alt+Direita: na lista de resultados da
+  pesquisa do livro de endereços, navegam entre os campos da linha
+  actualmente seleccionada.
+* Control+Q: na lista de mensagens, marca a mensagem ou grupo de mensagens
+  seleccionadas como lidas.
+* Control+U: na lista de mensagens, marca a mensagem ou grupo de mensagens
+  seleccionadas como não lidas.
 
 ## Notas:
 
@@ -45,42 +46,49 @@ NVDA. Pode querer alterá-los especialmente nas seguintes situações:
 
 ## Modificações:
 
-### Version 1.6
+### Versão 1.7
 
-* Fixed various issues when reading messages headers in Outlook 365.
-* Fixed an error in announce attachments script when a braille keyboard is
-  used.
-* Added a unit test framework.
-* Updated localizations.
+* Compatibilidade de actualização para NVDA 2021.1.
+* Traduções actualizadas.
 
-### Version 1.5
+### Versão 1.6
 
-* Reading the information bar is now working with NVDA 2019.3.
-* Table navigation in the address book results is now working with NVDA
-  2019.3.
+* Corrigidos vários problemas ao ler cabeçalhos de mensagens no Outlook 365.
+* Corrigido um erro no script de anúncios de anexos quando é utilizado um
+  teclado braille.
+* Adicionada uma estrutura de teste unitário.
+* Traduções actualizadas.
 
-### Version 1.4
+### Versão 1.5
 
-* The script to move focus to headers is working again.
-* The script to move to attachments is now working when more attachments are
-  present.
-* Added localizations.
+* A leitura da barra de informação está agora a funcionar com o NVDA 2019.3.
+* A navegação na tabela dos resultados do livro de endereços está agora a
+  trabalhar com o NVDA 2019.3.
 
-### Version 1.3
+### Versão 1.4
 
-* Fixed message headers reading for newer Office 365 release.
-* Updates to support newer versions of NVDA (Python 2 and 3 compatible).
-* Added localizations.
-* Releases performed now with appveyor.
+* O script para mover o foco para os cabeçalhos está a funcionar novamente.
+* O script para mover para anexos está agora a funcionar quando mais anexos
+  estão presentes.
+* Adicionadas traduções.
 
-### Version 1.2
+### Versão 1.3
 
-* Fixed header reading when forwarding meeting.
-* Added localizations.
+* resolvido o problema da Leitura de cabeçalhos de mensagens para o novo
+  lançamento do Office 365.
+* Actualizações para suportar versões mais recentes do NVDA (compatibilidade
+  com Python 2 e 3).
+* Adicionadas traduções.
+* Lançamentos realizados agora com o appveyor.
 
-### Version 1.1
+### Versão 1.2
 
-* Added localizations.
+* Resolvido o problema da Leitura de cabeçalho ao encaminhar a reunião.
+* Adicionadas traduções.
+
+### Versão 1.1
+
+* Adicionadas traduções.
 
 ### Versão 1.0
 
