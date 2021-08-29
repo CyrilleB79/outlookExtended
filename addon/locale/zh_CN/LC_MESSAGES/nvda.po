@@ -9,19 +9,19 @@ msgstr ""
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
 "PO-Revision-Date: 2019-02-24 15:57+0800\n"
+"Last-Translator: dingpengyu <dingpengyu06@gmail.com>\n"
+"Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: dingpengyu <dingpengyu06@gmail.com>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.2.1\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "-"
 
-#. Translators: The key just ont the left of the backspace key
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "="
 
@@ -88,8 +88,8 @@ msgid ""
 "pressed twice, moves the focus to it. If pressed three times, copies its "
 "content to the clipboard."
 msgstr ""
-"案一次，朗读消息，日历项目或任务窗口中的信息栏。按两次，将焦点移动到信息"
-"栏。按三次，将其内容复制到剪贴板。"
+"案一次，朗读消息，日历项目或任务窗口中的信息栏。按两次，将焦点移动到信息栏。"
+"按三次，将其内容复制到剪贴板。"
 
 #. Translators: When the info bar is not present
 msgid "No information bar"
@@ -104,6 +104,12 @@ msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
 msgstr "案一次，在消息窗口中朗读附件的编号和名称。按两次，将焦点移动到附件。"
+
+msgid "Test case path not defined."
+msgstr ""
+
+msgid "Test mode offf"
+msgstr ""
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
@@ -129,6 +135,6 @@ msgid ""
 "- Improve result reading in address book.\n"
 "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
 msgstr ""
-"主要扩展了Microsoft Outlook的支持和功能： - 提供手势以读取和导航到邮件，日"
-"历项目，任务中的标题，信息栏和附件。 - 改善地址簿中的结果读数。 - Vocalize"
-"标记为已读/未读 快捷键 ctrl + q / ctrl + u。"
+"主要扩展了Microsoft Outlook的支持和功能： - 提供手势以读取和导航到邮件，日历"
+"项目，任务中的标题，信息栏和附件。 - 改善地址簿中的结果读数。 - Vocalize标记"
+"为已读/未读 快捷键 ctrl + q / ctrl + u。"

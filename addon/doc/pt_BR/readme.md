@@ -1,11 +1,11 @@
 # Outlook estendido (Outlook extended) #
 
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2020.3
+* Compatibilidade com NVDA: 2018.3 e além
 * Baixe a [versão estável][1]
 * Baixe a [versão em desenvolvimento][2]
 
-Esse complemento melhora o uso do Microsoft Outlook vocalizando alguns
+Este complemento melhora o uso do Microsoft Outlook vocalizando alguns
 comandos e adicionando comandos extras.
 
 ## Comandos
@@ -48,13 +48,18 @@ do NVDA. Pode querer alterá-los especialmente nas seguintes situações:
 
 ## Registro de alterações (Change log)
 
-### Version 1.6
+### Versão 1.7
 
-* Fixed various issues when reading messages headers in Outlook 365.
-* Fixed an error in announce attachments script when a braille keyboard is
-  used.
-* Added a unit test framework.
-* Updated localizations.
+* Atualizada a compatibilidade para NVDA 2021.1.
+* Localizações (traduções) atualizadas.
+
+### Versão 1.6
+
+* Vários problemas corrigidos ao ler cabeçalhos de mensagens no Outlook 365.
+* Corrigido um erro no script de anúncio de anexos quando um teclado braille
+  é usado.
+* Adicionada uma estrutura (framework) de teste de unidade.
+* Localizações (traduções) atualizadas.
 
 ### Versão 1.5
 
@@ -68,7 +73,7 @@ do NVDA. Pode querer alterá-los especialmente nas seguintes situações:
 * O script para mover o foco para os cabeçalhos está funcionando novamente.
 * O script para mover para anexos agora está funcionando quando há mais
   anexos presentes.
-* Adicionadas localizações.
+* Localizações (traduções) adicionadas.
 
 ### Versão 1.3
 
@@ -76,17 +81,17 @@ do NVDA. Pode querer alterá-los especialmente nas seguintes situações:
   recente do Office 365.
 * Atualização para oferecer suporte a versões mais recentes do NVDA
   (compatível com Python 2 e 3).
-* Adicionadas localizações.
+* Localizações (traduções) adicionadas.
 * Versões realizadas agora com appveyor.
 
 ### Versão 1.2
 
 * Corrigida a leitura do cabeçalho ao encaminhar a reunião.
-* Adicionadas localizações.
+* Localizações (traduções) adicionadas.
 
 ### Versão 1.1
 
-* Adicionadas localizações.
+* Localizações (traduções) adicionadas.
 
 ### Versão 1.0
 

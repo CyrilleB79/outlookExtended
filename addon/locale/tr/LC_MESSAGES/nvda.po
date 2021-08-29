@@ -8,22 +8,22 @@ msgstr ""
 "Project-Id-Version: 'OutlookExtended' '1.0-dev'\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-02-26 08:44+0300\n"
+"PO-Revision-Date: 2021-06-25 06:48+0300\n"
 "Last-Translator: Cyrille Bougot <cyrille.bougot2@laposte.net>\n"
 "Language-Team: cagrid@hotmail.com\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "*"
 
-#. Translators: The key just ont the left of the backspace key
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "-"
 
@@ -109,6 +109,12 @@ msgid ""
 msgstr ""
 "İleti penceresinde eklenti sayısı ve adlarını okur. İki kez basılırsa odağı "
 "eklenti bölümüne taşır"
+
+msgid "Test case path not defined."
+msgstr "Test senaryosu yolu tanımlanmadı."
+
+msgid "Test mode offf"
+msgstr "Test modu kapalı"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format

@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-03-02 10:37+0100\n"
+"PO-Revision-Date: 2021-06-30 12:30+0200\n"
+"Last-Translator: Nicolai Svendsen <chojiro1990@gmail.com>\n"
+"Language-Team: \n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Nicolai Svendsen <chojiro1990@gmail.com>\n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 3.0\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "-"
 
-#. Translators: The key just ont the left of the backspace key
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "="
 
@@ -105,9 +105,14 @@ msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
 msgstr ""
-"Rapporterer nummeret og navnene på vedhæftede filer i et "
-"meddelelsesvindue. Hvis du trykker to gange, flyttes fokus til det "
-"pågældende område."
+"Rapporterer nummeret og navnene på vedhæftede filer i et meddelelsesvindue. "
+"Hvis du trykker to gange, flyttes fokus til det pågældende område."
+
+msgid "Test case path not defined."
+msgstr "Testsagens sti er ikke defineret."
+
+msgid "Test mode offf"
+msgstr "Testtilstand fra"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
@@ -117,8 +122,8 @@ msgid ""
 "times, copies its content to the clipboard."
 msgstr ""
 "Rapporterer overskriftsfeltet %s i en besked, kalenderobjekt eller "
-"opgavevindue. Hvis du trykker to gange, flytter fokuset til dette felt, "
-"hvis det er muligt. Hvis du trykker tre gange, kopierer du indholdet til "
+"opgavevindue. Hvis du trykker to gange, flytter fokuset til dette felt, hvis "
+"det er muligt. Hvis du trykker tre gange, kopierer du indholdet til "
 "udklipsholderen."
 
 #. Add-on summary, usually the user visible name of the addon.

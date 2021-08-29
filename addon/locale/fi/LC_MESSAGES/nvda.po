@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: outlookExtended\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-02-21 15:33+0200\n"
-"Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
+"PO-Revision-Date: 2021-06-08 11:35+0200\n"
+"Last-Translator: Jani Kinnunen <jani.kinnunen@wippies.fi>\n"
 "Language-Team: Jani Kinnunen <jani.kinnunen@wippies.fi>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.6.11\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "-"
 
-#. Translators: The key just ont the left of the backspace key
+#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "="
 
@@ -108,6 +108,12 @@ msgid ""
 msgstr ""
 "Lukee liitteiden määrän ja nimet viesti-ikkunassa. Kahdesti painettaessa "
 "kohdistus siirretään siihen."
+
+msgid "Test case path not defined."
+msgstr "Testitapauksen polkua ei määritetty."
+
+msgid "Test mode offf"
+msgstr "Testitila pois"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format

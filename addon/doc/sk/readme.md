@@ -1,7 +1,7 @@
 # Rozšírená podpora pre Microsoft Outlook #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2020.3
+* NVDA compatibility: 2018.3 and beyond
 * Stiahnuť [stabilnú verziu][1]
 * Stiahnuť [vývojovú verziu][2]
 
@@ -41,6 +41,11 @@ budete chcieť zmeniť v nasledujúcich situáciách:
   upraviť, ak používate inú ako anglickú klávesnicu.
 
 ## Zoznam zmien
+
+### Version 1.7
+
+* Update compatibility for NVDA 2021.1.
+* Updated localizations.
 
 ### Version 1.6
 

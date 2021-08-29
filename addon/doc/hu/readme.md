@@ -1,7 +1,7 @@
 # Outlook kiegészítő #
 
 * Készítők: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 to 2020.3
+* NVDA compatibility: 2018.3 and beyond
 * [stabil verzió][1] letöltése
 * [fejlesztői verzió][2] letöltése
 
@@ -42,6 +42,11 @@ ablakában.
   parancsot, hogy kövesse a logikát.
 
 ## Változások
+
+### Version 1.7
+
+* Update compatibility for NVDA 2021.1.
+* Updated localizations.
 
 ### Version 1.6
 
