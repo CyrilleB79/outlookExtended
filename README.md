@@ -26,6 +26,11 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 1.8
+
+* Updated localizations.
+* Ensure that all the variable from the original Outlook appModule are still available.
+
 ### Version 1.7
 
 * Update compatibility for NVDA 2021.1.
