@@ -22,6 +22,12 @@
 
 from __future__ import unicode_literals
 
+# Import all from original outlook appModule to keep it available if needed.
+from nvdaBuiltin.appModules.outlook import *
+
+# Import here explecitely used variables from original outlook appModule for clarity.
+from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModule
+
 from .itemWindow import OutlookItemWindow, NotInMessageWindowError, HeaderFieldNotFoundeError
 
 from comtypes import COMError
@@ -45,8 +51,6 @@ from locationHelper import RectLTWH
 import sys
 import re
 import threading
-
-from nvdaBuiltin.appModules import outlook
 
 import addonHandler
 
@@ -121,7 +125,7 @@ class ElemWithReadStatus:
 		}	
 		
 
-class UIAGridRowWithReadStatus(outlook.UIAGridRow, ElemWithReadStatus):
+class UIAGridRowWithReadStatus(UIAGridRow, ElemWithReadStatus):
 	pass
 	
 class UIAWithReadStatus(UIA, ElemWithReadStatus):
@@ -148,7 +152,7 @@ class List(List):
 		return len(self.children)
 	
 	
-class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, outlook.AddressBookEntry):
+class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBookEntry):
 
 	def _getColumnLocation(self, column):
 		colHeader = self.parent.getHeader().getChild(column - 1)
@@ -202,7 +206,7 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, outlook.Add
 		ui.message(_('Column navigation not supported in the address book'))
 
 
-class AppModule(outlook.AppModule):
+class AppModule(AppModule):
 	
 	scriptCategory = ADDON_SUMMARY
 	
@@ -227,7 +231,7 @@ class AppModule(outlook.AppModule):
 		if obj.role==controlTypes.ROLE_LIST and obj.windowClassName=="OUTEXVLB":
 			clsList.insert(0, List)
 			return
-		if outlook.UIAGridRow in clsList:
+		if UIAGridRow in clsList:
 			clsList.insert(0, UIAGridRowWithReadStatus)
 		if UIA in clsList and obj.role == controlTypes.ROLE_GROUPING:
 			clsList.insert(0,UIAWithReadStatus)
