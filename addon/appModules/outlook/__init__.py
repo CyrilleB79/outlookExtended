@@ -234,7 +234,24 @@ class AppModule(AppModule):
 		if UIAGridRow in clsList:
 			clsList.insert(0, UIAGridRowWithReadStatus)
 		if UIA in clsList and obj.role == controlTypes.ROLE_GROUPING:
-			clsList.insert(0,UIAWithReadStatus)
+			clsList.insert(0,UIAWithReadStatus)	
+	
+	def isBadUIAWindow(self,hwnd):
+		# This function only aims to change the version of Outlook which isBadUIAWindow returns True.
+		
+		windowClass=winUser.getClassName(hwnd)
+		# #2816: Outlook versions before 2016 auto complete does not fire enough UIA events, IAccessible is better.
+		if windowClass=="NetUIHWND":
+			parentHwnd=winUser.getAncestor(hwnd,winUser.GA_ROOT)
+			if winUser.getClassName(parentHwnd)=="Net UI Tool Window":
+				# A fix regarding auto-completion has been introduced in NVDA 2019.1 for newer Outlook 2016 versions.
+				# But it broke older Outlook 2016 versions (such as '16.0.5182.1000').
+				# It seems that Outlook's UI changed on this point during 2016 dev cycle.
+				# For reference, #8244 let us think that '16.0.9226.2114' is already a version with the new behaviour since it was not working with NVDA 2018.1.
+				version = tuple(int(n) for n in self.productVersion.split('.')[0:3])
+				if version <= (16, 0, 5182):
+					return True
+		return super(AppModule, self).isBadUIAWindow(hwnd)
 		
 	def reportHeaderFieldN(self, nField, gesture):
 		if api.getFocusObject().windowClassName in ['DayViewWnd', 'WeekViewWnd']:
