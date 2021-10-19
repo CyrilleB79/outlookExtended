@@ -1,20 +1,23 @@
 # -*- coding: UTF-8 -*-
 #appModules/outlook/itemWindow.py
 #NVDA add-on: Outlook Extended
-#Copyright (C) 2018-2020 Cyrille Bougot, Ralf Kefferpuetz
+#Copyright (C) 2018-2021 Cyrille Bougot, Ralf Kefferpuetz
 #This file is covered by the GNU General Public License.
 #See the file COPYING.txt for more details.
-
-from __future__ import unicode_literals
 
 from logHandler import log
 try:
 	import controlTypes
+	from . import compa
+	controlTypes = compa.convertControlTypes(controlTypes)
 except ModuleNotFoundError:
 	# stub
+	from enum import IntEnum
 	class CT: pass
 	controlTypes = CT()
-	controlTypes.STATE_INVISIBLE = 1024
+	class State(IntEnum):
+		INVISIBLE = 1024
+	controlTypes.State = State
 
 try:
 	import winUser
@@ -179,7 +182,7 @@ class OutlookItemWindow(object):
 				'name': o.name,
 				'value': o.value,
 				'role': o.role,
-				'states': o.states,
+				'states': {int(s) for s in o.states},
 				'cid': o.windowControlID
 				}
 			for o in ls1]
@@ -188,7 +191,7 @@ class OutlookItemWindow(object):
 		return ls1 == lstCID
 	
 	def getMessageHeaderFields(self):
-		isWriting = len([o for o in self.rootDialog.children if o.windowControlID == 4256 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		isWriting = len([o for o in self.rootDialog.children if o.windowControlID == 4256 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if isWriting:
 			dic = {1: (4263, 'From')}
 		else:
@@ -201,8 +204,8 @@ class OutlookItemWindow(object):
 			6: (4101, 'Subject'),
 			7: (4346, 'SignedBy'),
 			})
-		#hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4292 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
-		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		#hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4292 and controlTypes.State.INVISIBLE not in o.states]) == 1
+		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if hasFromReduced:
 			dic.update({
 				1: (4292, 'From'),
@@ -216,7 +219,7 @@ class OutlookItemWindow(object):
 		
 	def getMessage2HeaderFields(self):
 		#Fields in office 365 update (32-bit) as reported by Ralf and user.
-		isWriting = len([o for o in self.rootDialog.children if o.windowControlID == 4256 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		isWriting = len([o for o in self.rootDialog.children if o.windowControlID == 4256 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if isWriting:
 			dic = {1: (4263, 'From')}
 		else:
@@ -228,7 +231,7 @@ class OutlookItemWindow(object):
 			5: (4104, 'Bcc'),
 			6: (4101 if isWriting else 4294, 'Subject'),
 			7: (4346, 'SignedBy') })
-		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4280 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if hasFromReduced:
 			dic.update({
 				1: (4292, 'From'),
@@ -272,7 +275,7 @@ class OutlookItemWindow(object):
 			6:(4101, 'Location'),
 			7:(4102, 'DateTime'),
 			}
-		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4292 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		hasFromReduced = len([o for o in self.rootDialog.children if o.windowControlID==4292 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if hasFromReduced:
 			dic.update({
 				1: (4292, 'From'),
@@ -305,7 +308,7 @@ class OutlookItemWindow(object):
 			5: (4099, 'Subject'),
 			6: (4106, 'Location')
 			}
-		hasDateTime = len([o for o in self.rootDialog.children if o.windowControlID == 4105 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		hasDateTime = len([o for o in self.rootDialog.children if o.windowControlID == 4105 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if hasDateTime:
 			dic.update({7:(4105, 'DateTime')}) #Date/time or, for e-mails in edition, current time 
 		else:
@@ -331,7 +334,7 @@ class OutlookItemWindow(object):
 		return dic
 	
 	def getCalendarHeaderFields(self):
-		hasOrganizer = len([o for o in self.rootDialog.children if o.windowControlID == 4523 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		hasOrganizer = len([o for o in self.rootDialog.children if o.windowControlID == 4523 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if hasOrganizer:
 			dic = {1: (4523, 'Organizer')} #Exists invisible in appointment
 		else:
@@ -343,7 +346,7 @@ class OutlookItemWindow(object):
 			5: (4102, 'Location')
 			})
 		#Test if item is a unique meeting by Checking if start date is visible
-		isUniqueMeetingInstance = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		isUniqueMeetingInstance = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if isUniqueMeetingInstance:
 			dic.update({
 				6: (4098, 'StartDate'),
@@ -365,7 +368,7 @@ class OutlookItemWindow(object):
 			2: (4720, 'AllAttendeesStatus'),
 			}
 		#Test if item is a unique meeting by Checking if start date is visible
-		isUniqueMeetingInstance = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		isUniqueMeetingInstance = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if isUniqueMeetingInstance:
 			dic.update({
 				3: (4098, 'StartDate'),
@@ -394,7 +397,7 @@ class OutlookItemWindow(object):
 			7: (4480, 'Priority'),
 			8: (4112, '% completed'),
 			}
-		hasReminder = len([o for o in self.rootDialog.children if o.windowControlID == 4226 and controlTypes.STATE_INVISIBLE not in o.states]) == 1
+		hasReminder = len([o for o in self.rootDialog.children if o.windowControlID == 4226 and controlTypes.State.INVISIBLE not in o.states]) == 1
 		if hasReminder:
 			dic.update({
 				9: (4226, 'Reminder'),
@@ -442,7 +445,7 @@ class OutlookItemWindow(object):
 				log.debug(f'Header field not found. Infos: {infos}')
 				raise HeaderFieldNotFoundeError()
 			obj = obj[0]
-		if controlTypes.STATE_INVISIBLE in obj.states:
+		if controlTypes.State.INVISIBLE in obj.states:
 			raise HeaderFieldNotFoundeError()
 		return obj,name
 

@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 #appModules/outlook.py
 #NVDA add-on: Outlook Extended
-#Copyright (C) 2018 Cyrille Bougot, Ralf Kefferpuetz
+#Copyright (C) 2018-2021 Cyrille Bougot, Ralf Kefferpuetz
 #This file is covered by the GNU General Public License.
 #See the file COPYING.txt for more details.
 
@@ -20,8 +20,6 @@
 #TODO: (zzz)
 #Check task assigned to others
 
-from __future__ import unicode_literals
-
 # Import all from original outlook appModule to keep it available if needed.
 from nvdaBuiltin.appModules.outlook import *
 
@@ -29,6 +27,7 @@ from nvdaBuiltin.appModules.outlook import *
 from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModule
 
 from .itemWindow import OutlookItemWindow, NotInMessageWindowError, HeaderFieldNotFoundeError
+from . import compa
 
 from comtypes import COMError
 from scriptHandler import getLastScriptRepeatCount, script
@@ -36,6 +35,7 @@ import winUser
 from logHandler import log
 import api
 import controlTypes
+controlTypes = compa.convertControlTypes(controlTypes)
 import ui
 from NVDAObjects.IAccessible import IAccessible, List
 from NVDAObjects.IAccessible import getNVDAObjectFromEvent
@@ -225,15 +225,15 @@ class AppModule(AppModule):
 		
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		super(AppModule, self).chooseNVDAObjectOverlayClasses(obj, clsList)
-		if obj.role==controlTypes.ROLE_LISTITEM and obj.windowClassName=="OUTEXVLB":
+		if obj.role==controlTypes.Role.LISTITEM and obj.windowClassName=="OUTEXVLB":
 			clsList.insert(0, AddressBookEntry)
 			return
-		if obj.role==controlTypes.ROLE_LIST and obj.windowClassName=="OUTEXVLB":
+		if obj.role==controlTypes.Role.LIST and obj.windowClassName=="OUTEXVLB":
 			clsList.insert(0, List)
 			return
 		if UIAGridRow in clsList:
 			clsList.insert(0, UIAGridRowWithReadStatus)
-		if UIA in clsList and obj.role == controlTypes.ROLE_GROUPING:
+		if UIA in clsList and obj.role == controlTypes.Role.GROUPING:
 			clsList.insert(0,UIAWithReadStatus)
 		
 	def reportHeaderFieldN(self, nField, gesture):
@@ -283,10 +283,10 @@ class AppModule(AppModule):
 			self.lastFocus.setFocus()
 	
 	def speakObject(self, obj):
-		if obj.role == controlTypes.ROLE_CHECKBOX:
+		if obj.role == controlTypes.Role.CHECKBOX:
 			name = obj.name
 			# Translators: A checkbox state
-			value = _('checked') if controlTypes.STATE_CHECKED in obj.states else _('unchecked')
+			value = _('checked') if controlTypes.State.CHECKED in obj.states else _('unchecked')
 		else:
 			name,value = obj.name,obj.value
 		# Translators: To report name and value of a heaeder's field
@@ -369,9 +369,9 @@ class AppModule(AppModule):
 		obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 		try:
 			o = obj
-			while o.role != controlTypes.ROLE_BUTTON:
+			while o.role != controlTypes.Role.BUTTON:
 				o = o.firstChild
-			attachmentsList = [a for a in o.parent.children if a.role == controlTypes.ROLE_BUTTON]
+			attachmentsList = [a for a in o.parent.children if a.role == controlTypes.Role.BUTTON]
 		except AttributeError:
 			attachmentsList = []
 		namesGen = (child.firstChild.getChild(1).name for child in attachmentsList)
@@ -387,7 +387,7 @@ class AppModule(AppModule):
 			bFoundWindow = True
 			obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 			if not (obj.location.width == 0 and obj.location.height == 0):
-				attachmentsList = [c for c in obj.children[1:] if c.role == controlTypes.ROLE_LISTITEM]
+				attachmentsList = [c for c in obj.children[1:] if c.role == controlTypes.Role.LISTITEM]
 				namesGen = (a.name for a in attachmentsList)
 				bResult = True
 		except LookupError:
@@ -403,7 +403,7 @@ class AppModule(AppModule):
 				def makeGenChildren(o): #Define a generator to get children since the .children roperty does not work
 					o = o.firstChild
 					while o is not None:
-						if o.role == controlTypes.ROLE_BUTTON:
+						if o.role == controlTypes.Role.BUTTON:
 							yield o
 						o = o.next
 				attachmentsList = [o for o in makeGenChildren(obj)]
@@ -456,7 +456,7 @@ class AppModule(AppModule):
 			tcName = list(self.testCases.keys())[self.tcNumber - 1]
 			obj = self.FakeRootWindow(tcName)
 			return obj
-		if obj.role == controlTypes.ROLE_WINDOW:
+		if obj.role == controlTypes.Role.WINDOW:
 			#Sometimes going up hierarchy goes directly to window object without passing via dialog object -> go to first child
 			obj = obj.firstChild
 		return obj
