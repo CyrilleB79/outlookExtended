@@ -274,11 +274,11 @@ class AppModule(AppModule):
 		# double press, set focus in field
 			handle = obj.windowHandle
 			winUser.setForegroundWindow(handle)
-		else:
-		# trible press (or more), copy to clipboard and set focus to original focused object
+		elif nRepeat == 2:
+		# triple press, copy to clipboard and set focus to original focused object
 			api.copyToClip(obj.value)
-			# Translators: When user double press Alt+Number to copy a header's field to clipboard
-			ui.message(_("Copied to clipboard"))
+			# Translators: When user triple presses Alt+Number to copy a header's field to clipboard
+			core.callLater(0, lambda: ui.message(_("Copied to clipboard")))
 			api.setNavigatorObject(obj,isFocus=True)
 			self.lastFocus.setFocus()
 	

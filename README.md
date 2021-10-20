@@ -30,6 +30,7 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 * Prepared compatibility for NVDA 2022.1
 * Dropped compatibility for versions of NVDA below 2019.3
+* Fixed the announcement when the user triple-presses alt+number shortcuts.
 
 ### Version 1.8
 
