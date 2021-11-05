@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'OutlookExtended' '1.0-dev'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2019-02-21 00:29+0000\n"
-"PO-Revision-Date: 2021-07-09 19:29+0100\n"
+"PO-Revision-Date: 2021-10-30 22:28+0100\n"
 "Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa portuguesa do NVDA <ampa4374@gmail.com; rui."
 "fontes@tiflotecnia.pt>\n"
@@ -54,11 +54,11 @@ msgstr "Sem mensagens seleccionadas"
 
 #. Translators: To announce the message or group status: unread
 msgid "unread"
-msgstr "Não lida"
+msgstr "não lida"
 
 #. Translators: To announce the message or group status: read
 msgid "read"
-msgstr "Lida"
+msgstr "lida"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
 #. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
@@ -77,10 +77,10 @@ msgstr "Copiado para a área de transferência"
 
 #. Translators: A checkbox state
 msgid "checked"
-msgstr "Marcado"
+msgstr "marcado"
 
 msgid "unchecked"
-msgstr "Não marcado"
+msgstr "não marcado"
 
 #. Translators: To report name and value of a heaeder's field
 #, python-brace-format
