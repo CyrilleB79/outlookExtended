@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2019-05-28 14:19+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-12-15 08:45+0100\n"
+"Last-Translator: Jožef Gregorc <jozko.gregorc@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
-msgstr "-"
+msgstr "'"
 
 #. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
-msgstr "="
+msgstr "+"
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
@@ -78,7 +78,6 @@ msgid "unchecked"
 msgstr "ni izbrano"
 
 #. Translators: To report name and value of a heaeder's field
-#, python-brace-format
 msgid "{name} {value}"
 msgstr "{name} {value}"
 
@@ -109,10 +108,10 @@ msgstr ""
 "žarišče na to."
 
 msgid "Test case path not defined."
-msgstr ""
+msgstr "Pot testnega primera ni določena."
 
 msgid "Test mode offf"
-msgstr ""
+msgstr "Testni način izključen"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
