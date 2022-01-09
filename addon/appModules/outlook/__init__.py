@@ -223,27 +223,47 @@ class UIANotificationZoneButton(UIA):
 		gesture = 'kb:leftArrow',
 	)
 	def script_previousButton(self, gesture):
-		self.sendGestureIfOtherButton(gesture, 'previous')
+		self.sendGestureIfOtherButton(gesture, 'backward')
 	
 	@script(
 		gesture = 'kb:rightArrow',
 	)
 	def script_nextButton(self, gesture):
-		self.sendGestureIfOtherButton(gesture, 'next')
+		self.sendGestureIfOtherButton(gesture, 'forward')
 		
 	def sendGestureIfOtherButton(self, gesture, direction):
-		stopConditionFun = lambda o: o.role == controlTypes.ROLE_BUTTON and o.isFocusable
-		obj = self.walkObj(self, direction, stopConditionFun)
+		stopCondition = lambda o: o.role == controlTypes.Role.BUTTON and o.isFocusable
+		isRootObj = lambda o: o.role == controlTypes.Role.GROUPING
+		obj = self.walkObj(self, direction, stopCondition, isRootObj)
 		if obj is None:
 			return
 		gesture.send()
 	
-	def walkObj(self, oStart, direction, stopConditionFun, ignoreChildren=False):
-		if oStart.role == controlTypes.ROLE_GROUPING:
+	def walkObj(self, oStart, direction, stopCondition, isRootObj, ignoreChildren=False):
+		"""A function to walk the object hierarchy until a condition is met.
+		The function returns the first object meeting the condition or None if no object is found.
+		
+		@param oStart: the start object
+		@type obj: NVDAObject
+		@param direction ('backward' or 'forward'): a direction to walk the object hierarchy.
+			backward: look for a matching object considering last child, then previous sibling, then parent at each step.
+			forward: look for a matching object considering first child, then next sibling, then parent.
+		@type direction: str
+		@param stopCondition: a function to evaluate if hierarchy walking should stop on this object.
+		@type stopCondition: function
+		@param isRootObj: a function to evaluate if an object is the root object of the considered object hierarchy.
+		@type isRootObj: function
+		@param ignoreChildren: do not consider first/last child when searching for next matching object.
+		@type ignoreChildren: bool
+		@rtype: NVDAObject | None
+		"""
+		
+		if isRootObj(oStart):
+			# If root object is reach, no object satisfying the condition has been found.
 			return None
-		if direction == 'next':
+		if direction == 'forward':
 			propList = ['firstChild', 'next', 'parent']
-		elif direction == 'previous':
+		elif direction == 'backward':
 			propList = ['lastChild', 'previous', 'parent']
 		if ignoreChildren:
 			del propList[0]
@@ -251,10 +271,10 @@ class UIANotificationZoneButton(UIA):
 			o = getattr(oStart, prop)
 			if o:
 				isParent = prop == 'parent'
-				if stopConditionFun(o) and not isParent:
+				if stopCondition(o) and not isParent:
 					return o
 				else:
-					return self.walkObj(o, direction, stopConditionFun, ignoreChildren=isParent)
+					return self.walkObj(o, direction, stopCondition, isRootObj, ignoreChildren=isParent)
 		raise RuntimeError('Unexpected object tree structure')
 	
 class UIARecipientButton(UIANotificationZoneButton):
@@ -273,6 +293,7 @@ class UIAMoreInfoButton(UIANotificationZoneButton):
 
 	def _get_name(self):
 		return _('More or less information')
+	
 	def reportFocus(self):
 		ui.message(self.name)
 		
@@ -292,22 +313,26 @@ class NotificationChecker(threading.Thread):
 	def run(self):
 		oldInfoSet = set()
 		while not self.stopped():
-			obj = self.outlookAppModule.getNotificationObj()
-			if obj:
-				infoSet = {
-					o.name for o in obj.children if (
-						(o.role == controlTypes.ROLE_BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
-						or (o.role == controlTypes.ROLE_STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
-					)
-				}
-				if infoSet != oldInfoSet:
-					focus = api.getFocusObject()
-					if focus.windowClassName == 'RichEdit20WPT':
-						nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
-					oldInfoSet = infoSet
-			else:
-				oldInfoSet = set()
-			sleep(0.5)
+			try:
+				obj = self.outlookAppModule.getNotificationObj()
+				if obj:
+					infoSet = {
+						o.name for o in obj.children if (
+							(o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
+							or (o.role == controlTypes.Role.STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
+						)
+					}
+					if infoSet != oldInfoSet:
+						focus = api.getFocusObject()
+						if focus.windowClassName == 'RichEdit20WPT':
+							nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
+						oldInfoSet = infoSet
+				else:
+					oldInfoSet = set()
+				sleep(0.5)
+			except Exception as e:
+				# If an error occurs, log it but do not stop the thread.
+				log.error(e, exc_info=True)
 		
 		
 class AppModule(AppModule):
@@ -325,7 +350,6 @@ class AppModule(AppModule):
 		self.lastFocus = None
 		self.testCases = None
 		self.tcNumber = 0
-		self.initializeTestCases
 		self.notificationChecker = NotificationChecker(appModule=self)
 		self.notificationChecker.start()
 		
@@ -333,8 +357,6 @@ class AppModule(AppModule):
 		self.notificationChecker.stop()
 		super(AppModule, self).terminate(*args,**kwargs)
 		
-	def event_focusMove(self, obj, nextHandler):
-		tones.beep(440,80)
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		super(AppModule, self).chooseNVDAObjectOverlayClasses(obj, clsList)
 		if obj.role==controlTypes.Role.LISTITEM and obj.windowClassName=="OUTEXVLB":
@@ -656,11 +678,11 @@ class AppModule(AppModule):
 				findDescendantWindow(api.getForegroundObject().windowHandle, visible=True, className=None, controlID=cid),
 				winUser.OBJID_WINDOW, 0)
 			getChildWithRole = lambda o,role: [oc for oc in obj.children if oc.role == role][0]
-			obj = getChildWithRole(obj, controlTypes.ROLE_PANE)
-			obj = getChildWithRole(obj, controlTypes.ROLE_PANE)
-			obj = getChildWithRole(obj, controlTypes.ROLE_PANE)
-			obj = getChildWithRole(obj, controlTypes.ROLE_GROUPING)
-			obj = getChildWithRole(obj, controlTypes.ROLE_PANE)
+			obj = getChildWithRole(obj, controlTypes.Role.PANE)
+			obj = getChildWithRole(obj, controlTypes.Role.PANE)
+			obj = getChildWithRole(obj, controlTypes.Role.PANE)
+			obj = getChildWithRole(obj, controlTypes.Role.GROUPING)
+			obj = getChildWithRole(obj, controlTypes.Role.PANE)
 		except LookupError:
 			obj = None
 		return obj
