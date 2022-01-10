@@ -312,27 +312,34 @@ class NotificationChecker(threading.Thread):
 		
 	def run(self):
 		oldInfoSet = set()
+		oldFgHwnd = 0
 		while not self.stopped():
 			try:
-				obj = self.outlookAppModule.getNotificationObj()
-				if obj:
+				notif = self.outlookAppModule.getNotificationObj()
+				fgHwnd = api.getForegroundObject().windowHandle
+				if notif:
 					infoSet = {
-						o.name for o in obj.children if (
-							(o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
-							or (o.role == controlTypes.Role.STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
+						# Old version
+						#o.name for o in notif.children if (
+						#	(o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
+						#	or (o.role == controlTypes.Role.STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
+						#)
+						o.name for o in notif.children if (
+							o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton'
 						)
 					}
-					if infoSet != oldInfoSet:
+					if fgHwnd == oldFgHwnd and infoSet - oldInfoSet:
 						focus = api.getFocusObject()
 						if focus.windowClassName == 'RichEdit20WPT':
 							nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
-						oldInfoSet = infoSet
+					oldInfoSet = infoSet
 				else:
 					oldInfoSet = set()
-				sleep(0.5)
+				oldFgHwnd = fgHwnd
 			except Exception as e:
 				# If an error occurs, log it but do not stop the thread.
 				log.error(e, exc_info=True)
+			sleep(0.5)
 		
 		
 class AppModule(AppModule):
@@ -672,10 +679,13 @@ class AppModule(AppModule):
 			ui.message(_('Test mode offf'))
 
 	def getNotificationObj(self):
+		fgObj = api.getForegroundObject()
+		if fgObj.appModule is not self:
+			return None
 		try:
 			cid = 4265
 			obj = getNVDAObjectFromEvent(
-				findDescendantWindow(api.getForegroundObject().windowHandle, visible=True, className=None, controlID=cid),
+				findDescendantWindow(fgObj.windowHandle, visible=True, className=None, controlID=cid),
 				winUser.OBJID_WINDOW, 0)
 			getChildWithRole = lambda o,role: [oc for oc in obj.children if oc.role == role][0]
 			obj = getChildWithRole(obj, controlTypes.Role.PANE)
@@ -684,7 +694,7 @@ class AppModule(AppModule):
 			obj = getChildWithRole(obj, controlTypes.Role.GROUPING)
 			obj = getChildWithRole(obj, controlTypes.Role.PANE)
 		except LookupError:
-			obj = None
+			return None
 		return obj
 		
 	
