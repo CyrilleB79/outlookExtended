@@ -306,6 +306,7 @@ class NotificationChecker(threading.Thread):
 		
 	def stop(self):
 		self._stop.set()
+		self.outlookAppModule = None
 		
 	def stopped(self):
 		return self._stop.isSet()
@@ -315,7 +316,11 @@ class NotificationChecker(threading.Thread):
 		oldFgHwnd = 0
 		while not self.stopped():
 			try:
-				notif = self.outlookAppModule.getNotificationObj()
+				try:
+					notif = self.outlookAppModule.getNotificationObj()
+				except AttributeError:  # In case self.outlookAppModule is set to None.
+					log.debugwarning('No link to Outlook appModule; terminating NotificationChecker.')
+					break
 				fgHwnd = api.getForegroundObject().windowHandle
 				if notif:
 					infoSet = {
@@ -341,7 +346,67 @@ class NotificationChecker(threading.Thread):
 				log.error(e, exc_info=True)
 			sleep(0.5)
 		
+
+class NotificationPaneElement:
+	def __init__(self, name, location):
+		self.name = name
+		self.location = location
 		
+	def __repr__(self):
+		return '{name} - \nL={left}, T={top}, W= {width}, H={height}\n'.format(
+			name=self.name,
+			left=self.location.left,
+			top=self.location.top,
+			width=self.location.width,
+			height=self.location.height,
+		)
+
+
+class NotificationPaneRow:
+	def __init__(self, obj):
+		self.elements = [obj]
+		self._bottom = None
+	
+	@property
+	def bottom(self):
+		if self._bottom is None:
+			self._bottom = self.elements[0].location.bottom
+		return self._bottom
+		
+	def add(self, elem):
+		if self.bottom != elem.location.bottom:
+			log.error('{} != {}'.format(self.bottom, elem.bottom))
+		self.elements.append(elem)
+	
+	@property
+	def text(self):
+		textList = []
+		for elem in self.elements:
+			name = elem.name
+			if textList and re.match('^\w.*$', name, re.U):
+				name = ' ' + name
+			textList.append(name)
+		return ''.join(textList)
+
+
+class NotificationPane:
+	def __init__(self, pane):
+		self.rows = []
+		for obj in pane.children:
+			name = obj.name
+			if name:
+				elem = NotificationPaneElement(obj.name, obj.location)
+				if not self.rows or self.rows[-1].bottom <= obj.location.top:
+					row = NotificationPaneRow(elem)
+					self.rows.append(row)
+				else:
+					self.rows[-1].add(elem)
+				
+	@property
+	def text(self):
+		return '\n'.join(r.text for r in self.rows)
+
+
 class AppModule(AppModule):
 	
 	scriptCategory = ADDON_SUMMARY
@@ -362,6 +427,7 @@ class AppModule(AppModule):
 		
 	def terminate(self,*args,**kwargs):
 		self.notificationChecker.stop()
+		self.notificationChecker = None  # To break ref cycle
 		super(AppModule, self).terminate(*args,**kwargs)
 		
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
@@ -455,14 +521,8 @@ class AppModule(AppModule):
 			return
 		nRepeat = getLastScriptRepeatCount()
 		if nRepeat == 0:
-			namesList = []
-			for o in obj.children:
-				name = o.name
-				if name:
-					if namesList and re.match('^\w.*$', name, re.U):
-						name = ' ' + name
-					namesList.append(name)
-			self.notificationText = ''.join(namesList)
+			notif = NotificationPane(obj)
+			self.notificationText = notif.text
 			ui.message(self.notificationText)
 			self.lastFocus = api.getFocusObject()
 		elif nRepeat == 1:
@@ -680,7 +740,7 @@ class AppModule(AppModule):
 
 	def getNotificationObj(self):
 		fgObj = api.getForegroundObject()
-		if fgObj.appModule is not self:
+		if not fgObj or fgObj.appModule is not self:
 			return None
 		try:
 			cid = 4265
