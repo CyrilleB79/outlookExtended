@@ -319,28 +319,29 @@ class NotificationChecker(threading.Thread):
 				try:
 					notif = self.outlookAppModule.getNotificationObj()
 				except AttributeError:  # In case self.outlookAppModule is set to None.
-					log.debugwarning('No link to Outlook appModule; terminating NotificationChecker.')
-					break
-				fgHwnd = api.getForegroundObject().windowHandle
-				if notif:
-					infoSet = {
-						# Old version
-						#o.name for o in notif.children if (
-						#	(o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
-						#	or (o.role == controlTypes.Role.STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
-						#)
-						o.name for o in notif.children if (
-							o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton'
-						)
-					}
-					if fgHwnd == oldFgHwnd and infoSet - oldInfoSet:
-						focus = api.getFocusObject()
-						if focus.windowClassName == 'RichEdit20WPT':
-							nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
-					oldInfoSet = infoSet
+					log.debugWarning('No link to Outlook appModule.')
 				else:
-					oldInfoSet = set()
-				oldFgHwnd = fgHwnd
+					fg = api.getForegroundObject()
+					fgHwnd = fg.windowHandle if fg else 0
+					if notif:
+						infoSet = {
+							# Old version
+							#o.name for o in notif.children if (
+							#	(o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
+							#	or (o.role == controlTypes.Role.STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
+							#)
+							o.name for o in notif.children if (
+								o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton'
+							)
+						}
+						if fgHwnd == oldFgHwnd and infoSet - oldInfoSet:
+							focus = api.getFocusObject()
+							if focus.windowClassName == 'RichEdit20WPT':
+								nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
+						oldInfoSet = infoSet
+					else:
+						oldInfoSet = set()
+					oldFgHwnd = fgHwnd
 			except Exception as e:
 				# If an error occurs, log it but do not stop the thread.
 				log.error(e, exc_info=True)
