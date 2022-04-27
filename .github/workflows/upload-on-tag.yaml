@@ -37,7 +37,7 @@ jobs:
         version = re.search(pattern, refTag).group(1)
         print(f'===> Version:{version}')
         pattern = rf'## Change log.*### Version {version}\s*(.*?)\s*(\n(### Version)|(\[\d+\]:)|$)'
-        fileContent = open('README.md', 'r', encoding='utf8').read()
+        fileContent = open('readme.md', 'r', encoding='utf8').read()
         changeLog = re.search(pattern, fileContent, re.DOTALL).group(1) + '\n'
         print(f'===> ChangeLog:\n<<<{changeLog}>>>\n')
         open('changelog.md', 'w', encoding='utf-8').write(changeLog)
