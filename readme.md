@@ -26,6 +26,10 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 0.0
+
+Just a test version for private use.
+
 ### Version 1.9
 
 * Prepared compatibility for NVDA 2022.1
