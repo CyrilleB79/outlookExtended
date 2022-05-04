@@ -18,5 +18,7 @@ class FakeNVDAObject(object):
 class FakeRootWindow(object):
 	def __init__(self, test):
 		super(FakeRootWindow, self).__init__()
+		self.role = 4  # controlTypes.Role.DIALOG = 4
 		objList = cases.tcObjectPropertyDic[test]
 		self.children = [FakeNVDAObject(**d) for d in objList]
+		

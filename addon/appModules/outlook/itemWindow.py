@@ -343,11 +343,11 @@ class OutlookItemWindow(object):
 			2: (4526, 'Sent'),
 			3: (4106, 'To'),
 			4: (4100, 'Subject'),
-			5: (4102, 'Location')
+			5: ((4102, 4111), 'Location'), # Two control ID according to Outlook version; maybe difference between 32-bit and 64-bit versions.
 			})
-		#Test if item is a unique meeting by Checking if start date is visible
-		isUniqueMeetingInstance = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.State.INVISIBLE not in o.states]) == 1
-		if isUniqueMeetingInstance:
+		# Tests if item has detailed Date/Time fields by Checking if start date is visible
+		hasDetailedDateTime = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.State.INVISIBLE not in o.states]) == 1
+		if hasDetailedDateTime:
 			dic.update({
 				6: (4098, 'StartDate'),
 				7: (4096, 'StartTime'),
@@ -355,11 +355,18 @@ class OutlookItemWindow(object):
 				9: (4097, 'EndTime'),
 				10: (4226, 'AllDay')
 				})
-		else: #Series
-			dic.update({
-				6: (4104, 'Periodicity'),
-				7: (4226, 'AllDay')
+		else:
+			hasSingleFieldDateTime = len([o for o in self.rootDialog.children if o.windowControlID == 4108 and controlTypes.State.INVISIBLE not in o.states]) == 1
+			if hasSingleFieldDateTime:
+				dic.update({
+					6: (4108, 'DateTime'),
+					7: (4226, 'AllDay'),  # Note sure at all if this field is present.
 				})
+			else:  #Series
+				dic.update({
+					6: (4104, 'Periodicity'),
+					7: (4226, 'AllDay')
+					})
 		return dic
 	
 	def getCalendarAttendeesListHeaderFields(self):
@@ -424,29 +431,52 @@ class OutlookItemWindow(object):
 		return dic
 		
 	def getHeaderFieldObject(self, nField):
+		dicHeaderFields = self.getHeaderFieldsFun()
 		try:
-			cid,name = self.getHeaderFieldsFun()[nField]
+			cid,name = dicHeaderFields[nField]
 		except KeyError:
-			raise HeaderFieldNotFoundeError()
-		try:
-			handle = findDescendantWindow(self.rootDialog.windowHandle, controlID=cid)
-			if handle:
-				obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
-		except LookupError:
-			raise HeaderFieldNotFoundeError()
-		except AttributeError:  # Exception raised when performing tests calling self.rootDialog.windowHandle on FakeRootDialog
-			obj = [o for o in self.rootDialog.children if o.windowControlID == cid]
-			if len(obj) != 1:
-				infos = {
+			msg = f'The key {nField} is not present in the dictionary {dicHeaderFields}'
+			raise HeaderFieldNotFoundeError(msg)
+		if isinstance(cid, tuple):
+			cids = cid
+		else:
+			cids = (cid,)
+		if self.rootDialog.name != 'Fake root':
+			msgList = []
+			for cid in cids:
+				try:
+					handle = findDescendantWindow(self.rootDialog.windowHandle, controlID=cid)
+					if handle:
+						obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
+						if controlTypes.State.INVISIBLE in obj.states:
+							msgList.append(f'Object (cid={obj.windowControlID}) is invisible')
+						else:
+							break
+					else:
+						msgList.append(f'Handle={handle} found for cid={cid}')
+				except LookupError:
+					msgList.append(f'LookupError for cid={cid}')
+			else:
+				msg = f'No window found for cids={cids}. Details below:\n' + '\n'.join(msgList)
+				raise HeaderFieldNotFoundeError(msg)
+		else:
+			log.debug('FakeRootDialog')
+			obj = [o for o in self.rootDialog.children if o.windowControlID in cids]
+			nObj = len(obj)
+			if nObj != 1:
+				infoDic = {
 					'obj': obj,
-					'cid': cid,
+					'children': str([o.windowControlID for o in self.rootDialog.children]),
+					'cids': cids,
 					'name': name,
 				}
-				log.debug(f'Header field not found. Infos: {infos}')
-				raise HeaderFieldNotFoundeError()
+				info = '\n'.join(f'{k}: {v}' for (k,v) in infoDic.items())
+				msg = f'Fake root window: {nObj} objects found, 1 expected. Info =\n{info}'
+				raise HeaderFieldNotFoundeError(msg)
 			obj = obj[0]
-		if controlTypes.State.INVISIBLE in obj.states:
-			raise HeaderFieldNotFoundeError()
+			if controlTypes.State.INVISIBLE in obj.states:
+				msg = f'Object (cid={obj.windowControlID}) is invisible'
+				raise HeaderFieldNotFoundeError(msg)
 		return obj,name
 
 
