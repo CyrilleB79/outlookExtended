@@ -343,7 +343,7 @@ class OutlookItemWindow(object):
 			2: (4526, 'Sent'),
 			3: (4106, 'To'),
 			4: (4100, 'Subject'),
-			5: (4102, 'Location')
+			5: ((4102, 4111), 'Location'), # Two control ID according to Outlook version; maybe difference between 32-bit and 64-bit versions.
 			})
 		#Test if item is a unique meeting by Checking if start date is visible
 		isUniqueMeetingInstance = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.State.INVISIBLE not in o.states]) == 1
@@ -428,18 +428,28 @@ class OutlookItemWindow(object):
 			cid,name = self.getHeaderFieldsFun()[nField]
 		except KeyError:
 			raise HeaderFieldNotFoundeError()
+		if isinstance(cid, tuple):
+			cids = cid
+		else:
+			cids = (cid,)
 		try:
-			handle = findDescendantWindow(self.rootDialog.windowHandle, controlID=cid)
-			if handle:
-				obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
-		except LookupError:
-			raise HeaderFieldNotFoundeError()
+			for cid in cids:
+				try:
+					handle = findDescendantWindow(self.rootDialog.windowHandle, controlID=cid)
+					if handle:
+						obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
+						break
+				except LookupError:
+					pass
+			else:
+				raise HeaderFieldNotFoundeError()
 		except AttributeError:  # Exception raised when performing tests calling self.rootDialog.windowHandle on FakeRootDialog
-			obj = [o for o in self.rootDialog.children if o.windowControlID == cid]
+			obj = [o for o in self.rootDialog.children if o.windowControlID in cids]
 			if len(obj) != 1:
 				infos = {
 					'obj': obj,
-					'cid': cid,
+					'children': str([o.windowControlID for o in self.rootDialog.children]),
+					'cids': cids,
 					'name': name,
 				}
 				log.debug(f'Header field not found. Infos: {infos}')

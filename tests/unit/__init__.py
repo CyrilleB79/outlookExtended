@@ -41,7 +41,11 @@ class TestOutlookItemWindow(unittest.TestCase):
 			fakeRoot = FakeRootWindow(test)
 			oiw = OutlookItemWindow(rootDialog=fakeRoot)
 			windowType = test.split('_')[0]
-			self.assertEqual(getattr(oiw, 'get' + windowType + 'HeaderFields')(), cases.tcHeaderFieldDic[test])
+			cid = getattr(oiw, 'get' + windowType + 'HeaderFields')()
+			cids = cases.tcHeaderFieldDic[test]
+			if not isinstance(cid, tuple):
+				cids = (cids,)
+			self.assertTrue(cid in cids)
 		return test_function
 		
 	for test in cases.tcObjectPropertyDic.keys():
