@@ -427,6 +427,7 @@ class OutlookItemWindow(object):
 		try:
 			cid,name = self.getHeaderFieldsFun()[nField]
 		except KeyError:
+			log.debug(f'dicHEaderFields = {self.getHeaderFieldsFun()}; nField = {nField}')
 			raise HeaderFieldNotFoundeError()
 		if isinstance(cid, tuple):
 			cids = cid
@@ -439,11 +440,15 @@ class OutlookItemWindow(object):
 					if handle:
 						obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 						break
+					log.debug(f'handle = {handle} for cid={cid}')
 				except LookupError:
+					log.debug(f'LookUpError for cid={cid}')
 					pass
 			else:
+				log.debug(f'Header field not found: no window found for cids={cids}')
 				raise HeaderFieldNotFoundeError()
 		except AttributeError:  # Exception raised when performing tests calling self.rootDialog.windowHandle on FakeRootDialog
+			log.debug('FakeRootDialog')
 			obj = [o for o in self.rootDialog.children if o.windowControlID in cids]
 			if len(obj) != 1:
 				infos = {
@@ -456,6 +461,7 @@ class OutlookItemWindow(object):
 				raise HeaderFieldNotFoundeError()
 			obj = obj[0]
 		if controlTypes.State.INVISIBLE in obj.states:
+			log.debug(f'Header field not found. Reason: Invisible.')
 			raise HeaderFieldNotFoundeError()
 		return obj,name
 
