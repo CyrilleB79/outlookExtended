@@ -250,8 +250,12 @@ class AppModule(AppModule):
 			# import globalVars
 			# globalVars.olexDebug = True
 			debug = getattr(globalVars, 'olexDebug', False)
+			# Get OutlookItem dialog
 			try:
-				self.olItemWindow = OutlookItemWindow(self.getRootDialog(), debug=debug)
+				rootDialog = self.getFakeRootDialog()
+				if not rootDialog:
+					rootDialog = self.getRootDialog()
+				self.olItemWindow = OutlookItemWindow(rootDialog, debug=debug)
 			except NotInMessageWindowError:
 				self.olItemWindow = None
 		if self.olItemWindow is None:
@@ -260,11 +264,27 @@ class AppModule(AppModule):
 			return
 		try:
 			obj, name = self.olItemWindow.getHeaderFieldObject(nField)
-		except HeaderFieldNotFoundeError:
+		except HeaderFieldNotFoundeError as e:
+			log.debug(f'Header not found: {e}')
 			self.errorBeep()
 			return
 		self.reportObject(obj, nRepeat)
-		
+	
+	def getFakeRootDialog(self):
+		# Checks if config.conf['outlookExtended']['testCasePath'] is defined.
+		# If defined, it allows setting up a debug test framework fore live tests on various message types.
+		# The message types are defined in the file case.py that can be found in the Github repo of this add-on.
+		# When a message type is selected, alt+digit return the header of the test case object
+		# instead of the header of the real window.
+		# To activate it, open NVDA console and type:
+		# import config
+		# config.conf['outlookExtended']['testCasePath'] = r'C:\pathToOutlookExtendedGITLocalRepo\tests\unit'
+		if self.testCases and self.tcNumber != 0:
+			tcName = list(self.testCases.keys())[self.tcNumber - 1]
+			obj = self.FakeRootWindow(tcName)
+			return obj
+		return None
+				
 	def reportObject(self, obj, nRepeat):
 		if nRepeat == 0:
 		# single press
@@ -444,18 +464,6 @@ class AppModule(AppModule):
 				obj = obj.parent
 		except AttributeError:
 			raise NotInMessageWindowError
-		# Check if config.conf['outlookExtended']['testCasePath'] is defined.
-		# If defined, it allows setting up a debug test framework fore live tests on various message types.
-		# The message types are defined in the file case.py that can be found in the Github repo of this add-on.
-		# When a message type is selected, alt+digit return the header of the test case object
-		# instead of the header of the real window.
-		# To activate it, open NVDA console and type:
-		# import config
-		# config.conf['outlookExtended']['testCasePath'] = r'C:\pathToOutlookExtendedGITLocalRepo\tests\unit'
-		if self.testCases and self.tcNumber != 0:
-			tcName = list(self.testCases.keys())[self.tcNumber - 1]
-			obj = self.FakeRootWindow(tcName)
-			return obj
 		if obj.role == controlTypes.Role.WINDOW:
 			#Sometimes going up hierarchy goes directly to window object without passing via dialog object -> go to first child
 			obj = obj.firstChild

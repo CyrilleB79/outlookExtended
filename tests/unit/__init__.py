@@ -45,7 +45,14 @@ class TestOutlookItemWindow(unittest.TestCase):
 			cids = cases.tcHeaderFieldDic[test]
 			if not isinstance(cid, tuple):
 				cids = (cids,)
-			self.assertTrue(cid in cids)
+			try:
+				self.assertTrue(cid in cids)
+			except Exception:
+				print('=== cid ===')
+				print(cid)
+				print('=== cids ===')
+				print(cids)
+				raise
 		return test_function
 		
 	for test in cases.tcObjectPropertyDic.keys():

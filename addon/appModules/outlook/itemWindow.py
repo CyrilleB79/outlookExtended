@@ -424,11 +424,12 @@ class OutlookItemWindow(object):
 		return dic
 		
 	def getHeaderFieldObject(self, nField):
+		dicHeaderFields = self.getHeaderFieldsFun()
 		try:
-			cid,name = self.getHeaderFieldsFun()[nField]
+			cid,name = dicHeaderFields[nField]
 		except KeyError:
-			log.debug(f'dicHEaderFields = {self.getHeaderFieldsFun()}; nField = {nField}')
-			raise HeaderFieldNotFoundeError()
+			msg = f'The key {nField} is not present in the dictionary {dicHeaderFields}'
+			raise HeaderFieldNotFoundeError(msg)
 		if isinstance(cid, tuple):
 			cids = cid
 		else:
@@ -450,19 +451,21 @@ class OutlookItemWindow(object):
 		except AttributeError:  # Exception raised when performing tests calling self.rootDialog.windowHandle on FakeRootDialog
 			log.debug('FakeRootDialog')
 			obj = [o for o in self.rootDialog.children if o.windowControlID in cids]
-			if len(obj) != 1:
-				infos = {
+			nObj = len(obj)
+			if nObj != 1:
+				infoDic = {
 					'obj': obj,
 					'children': str([o.windowControlID for o in self.rootDialog.children]),
 					'cids': cids,
 					'name': name,
 				}
-				log.debug(f'Header field not found. Infos: {infos}')
-				raise HeaderFieldNotFoundeError()
+				info = '\n'.join(f'{k}: {v}' for (k,v) in infoDic.items())
+				msg = f'Fake root window: {nObj} objects found, 1 expected. Info =\n{info}'
+				raise HeaderFieldNotFoundeError(msg)
 			obj = obj[0]
 		if controlTypes.State.INVISIBLE in obj.states:
-			log.debug(f'Header field not found. Reason: Invisible.')
-			raise HeaderFieldNotFoundeError()
+			msg = f'Object (cid={obj.windowControlID}) is invisible'
+			raise HeaderFieldNotFoundeError(msg)
 		return obj,name
 
 
