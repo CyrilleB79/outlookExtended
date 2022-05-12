@@ -11,7 +11,6 @@
 
 #Possible enhancements
 #1. Use @script decorator for markAsRead and markAsUnread script gesturs, as well as for reportHeaderFieldN scripts. Did not manage to make it work.
-#2. Deactivate following script when moving from message body to attachment or last header field in order to prevent NVDA from announcing document margin: shift+tab, bound to script tab on NVDAObjects.window.winword.WordDocument
 #3. Rename fields wrongly named. E.g. value=None&name=textExpectedFromValue -> take label from previous window.
 #4. Implement column navigation in address book: debug column navigation (scroll the list, access other children thant the ones visible...)
 #5. Allow to get back to message body even when an attachment preview is displayed when calling NVDA+Shift+M
@@ -37,6 +36,8 @@ import api
 import controlTypes
 controlTypes = compa.convertControlTypes(controlTypes)
 import ui
+from NVDAObjects import NVDAObject
+from NVDAObjects.window import NVDAObject, Window
 from NVDAObjects.IAccessible import IAccessible, List
 from NVDAObjects.IAccessible import getNVDAObjectFromEvent
 from NVDAObjects.behaviors import RowWithoutCellObjects, RowWithFakeNavigation
@@ -206,6 +207,66 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBook
 		ui.message(_('Column navigation not supported in the address book'))
 
 
+class FakeRootDialog(Window):
+
+	role = controlTypes.Role.DIALOG
+	# Translators: The name of a fake NVDA object used for tests.
+	name = _("Fake root")
+	treeInterceptor = None
+	
+	def __init__(self, object=None):
+		self.parent = api.getFocusObject()
+		self.obj = object
+		self.childObjList = object.children
+		super().__init__(windowHandle=self.parent.windowHandle)
+		
+	def _get_childCount(self):
+		return len(self.childObjList)
+
+	def _makeFakeObject(self, index):
+		if index < 0 or index >= self.childCount:
+			return None
+		return _FakeObject(parent=self, index=index, obj=self.childObjList[index])
+
+	def _get_firstChild(self):
+		return self._makeFakeObject(0)
+
+	def _get_children(self):
+		return [self._makeFakeObject(index) for index in range(0, self.childCount)]
+
+	def _getChild(self, index):
+		return self._makeFakeObject(index)
+
+
+class _FakeObject(NVDAObject):
+
+	def __init__(self, parent, index, obj):
+		super().__init__()
+		self.parent = parent
+		self.index = index
+		for k in dir(obj):
+			if not k.startswith('_'):
+				setattr(self, k, getattr(obj, k))
+		self.role = controlTypes.Role(self.role)
+		self.states = {controlTypes.State(s) for s in self.states}
+		self.processID = parent.processID
+		try:
+			# HACK: Some NVDA code depends on window properties, even for non-Window objects.
+			self.windowHandle = parent.windowHandle
+			self.windowClassName = parent.windowClassName
+		except AttributeError:
+			pass
+
+	def _get_next(self):
+		return self.parent._makeFakeObject(self.index + 1)
+
+	def _get_previous(self):
+		return self.parent._makeFakeObject(self.index - 1)
+
+	firstChild = None
+
+	
+
 class AppModule(AppModule):
 	
 	scriptCategory = ADDON_SUMMARY
@@ -281,7 +342,7 @@ class AppModule(AppModule):
 		# config.conf['outlookExtended']['testCasePath'] = r'C:\pathToOutlookExtendedGITLocalRepo\tests\unit'
 		if self.testCases and self.tcNumber != 0:
 			tcName = list(self.testCases.keys())[self.tcNumber - 1]
-			obj = self.FakeRootWindow(tcName)
+			obj = FakeRootDialog(object=self.FakeRootWindow(tcName))
 			return obj
 		return None
 				
@@ -486,12 +547,15 @@ class AppModule(AppModule):
 			ui.message(_('Test case path not defined.'))
 		return isTest
 	
-	# Scripts to select next and previous test cases when test mode is active
+	# Test scripts
+	# 1. Scripts to select next and previous test cases when test mode is active
+	# 2. Script to move the navigator object on the fake root dialog.
 	# These scripts are unassigned by default
 	# To assign them, edit directly the gesture.ini file, e.g. by pasting the following lines:
 	# [appModules.outlook.AppModule]
 	# selectNextTestCase = kb:control+f6+nvda+shift
 	# selectPreviousTestCase = kb:control+f5+nvda+shift
+	# move= kb:control+f8+nvda+shift
 	def script_selectNextTestCase(self, gesture):
 		return self.selectTestCase(offset=1)
 	def script_selectPreviousTestCase(self, gesture):
@@ -507,7 +571,15 @@ class AppModule(AppModule):
 		else:
 			self.tcName = ''
 			ui.message(_('Test mode offf'))
-		
+	
+	def script_navigatorObject_toFakeRootDialog(self, gesture):
+		if not self.tcNumber: # None or 0
+			ui.message(_('Test mode is off.'))
+			return
+		obj = self.getFakeRootDialog()
+		api.setNavigatorObject(obj)
+		speech.speakObject(obj)
+	
 	@staticmethod
 	def _createScript_reportHeaderField(n):
 		def  _genericScript_reportHeaderField(self, gesture):
