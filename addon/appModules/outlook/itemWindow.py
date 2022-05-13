@@ -345,9 +345,9 @@ class OutlookItemWindow(object):
 			4: (4100, 'Subject'),
 			5: ((4102, 4111), 'Location'), # Two control ID according to Outlook version; maybe difference between 32-bit and 64-bit versions.
 			})
-		#Test if item is a unique meeting by Checking if start date is visible
-		isUniqueMeetingInstance = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.State.INVISIBLE not in o.states]) == 1
-		if isUniqueMeetingInstance:
+		# Tests if item has detailed Date/Time fields by Checking if start date is visible
+		hasDetailedDateTime = len([o for o in self.rootDialog.children if o.windowControlID == 4098 and controlTypes.State.INVISIBLE not in o.states]) == 1
+		if hasDetailedDateTime:
 			dic.update({
 				6: (4098, 'StartDate'),
 				7: (4096, 'StartTime'),
@@ -355,11 +355,18 @@ class OutlookItemWindow(object):
 				9: (4097, 'EndTime'),
 				10: (4226, 'AllDay')
 				})
-		else: #Series
-			dic.update({
-				6: (4104, 'Periodicity'),
-				7: (4226, 'AllDay')
+		else:
+			hasSingleFieldDateTime = len([o for o in self.rootDialog.children if o.windowControlID == 4108 and controlTypes.State.INVISIBLE not in o.states]) == 1
+			if hasSingleFieldDateTime:
+				dic.update({
+					6: (4108, 'DateTime'),
+					7: (4226, 'AllDay'),  # Note sure at all if this field is present.
 				})
+			else:  #Series
+				dic.update({
+					6: (4104, 'Periodicity'),
+					7: (4226, 'AllDay')
+					})
 		return dic
 	
 	def getCalendarAttendeesListHeaderFields(self):
@@ -434,7 +441,7 @@ class OutlookItemWindow(object):
 			cids = cid
 		else:
 			cids = (cid,)
-		try:
+		if self.rootDialog.name != 'Fake root':
 			for cid in cids:
 				try:
 					handle = findDescendantWindow(self.rootDialog.windowHandle, controlID=cid)
@@ -448,7 +455,7 @@ class OutlookItemWindow(object):
 			else:
 				log.debug(f'Header field not found: no window found for cids={cids}')
 				raise HeaderFieldNotFoundeError()
-		except AttributeError:  # Exception raised when performing tests calling self.rootDialog.windowHandle on FakeRootDialog
+		else:
 			log.debug('FakeRootDialog')
 			obj = [o for o in self.rootDialog.children if o.windowControlID in cids]
 			nObj = len(obj)

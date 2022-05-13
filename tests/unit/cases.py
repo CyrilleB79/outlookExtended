@@ -851,6 +851,7 @@ tcHeaderFieldDic['Calendar_MeetingOccurence'] = {
 tcObjectPropertyDic['Calendar_MeetingOccurence2'] = [
 # A meeting occurance, Microsoft® Outlook® til Microsoft 365 MSO (Version 2204 Build 16.0.15128.20158) 64-bit
 # The location field is 4111 instead of 4102.
+# Date/Time is a single field rather than 4 fields for start/end date/time.
 # (DG_2022-05-09)
 	{'name': 'Kategorier', 'value': None, 'role': 7, 'states': {128}, 'cid': 4864},
 	{'name': 'Kategorier', 'value': None, 'role': 3, 'states': {1024, 1, 16777216}, 'cid': 4267},
@@ -957,11 +958,8 @@ tcHeaderFieldDic['Calendar_MeetingOccurence2'] = {
 	3: (4106, 'To'),
 	4: (4100, 'Subject'),
 	5: ((4102, 4111), 'Location'),
-	6: (4098, 'StartDate'),
-	7: (4096, 'StartTime'),
-	8: (4099, 'EndDate'),
-	9: (4097, 'EndTime'),
-	10: (4226, 'AllDay'),
+	6: (4108, 'DateTime'),
+	7: (4226, 'AllDay'),  # Note sure at all if this field is present.
 }
 
 tcObjectPropertyDic['Calendar_MeetingSeries'] = [
