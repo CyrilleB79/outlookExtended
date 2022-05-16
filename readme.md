@@ -28,9 +28,13 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ### Version 1.9
 
-* Prepared compatibility for NVDA 2022.1
-* Dropped compatibility for versions of NVDA below 2019.3
+* Compatibility with NVDA 2022.1.
+* Dropped compatibility for versions of NVDA below 2019.3.
+* The release is now performed thanks to a GitHub action instead of appVeyor.
 * Fixed the announcement when the user triple-presses alt+number shortcuts.
+* Fixed an issue preventing from reading calendar items headers of some versions of Outlook 365.
+* Improvement of the test environment of the add-on: navigation in the fake root dialog.
+* Updated localizations.
 
 ### Version 1.8
 
