@@ -442,19 +442,23 @@ class OutlookItemWindow(object):
 		else:
 			cids = (cid,)
 		if self.rootDialog.name != 'Fake root':
+			msgList = []
 			for cid in cids:
 				try:
 					handle = findDescendantWindow(self.rootDialog.windowHandle, controlID=cid)
 					if handle:
 						obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
-						break
-					log.debug(f'handle = {handle} for cid={cid}')
+						if controlTypes.State.INVISIBLE in obj.states:
+							msgList.append(f'Object (cid={obj.windowControlID}) is invisible')
+						else:
+							break
+					else:
+						msgList.append(f'Handle={handle} found for cid={cid}')
 				except LookupError:
-					log.debug(f'LookUpError for cid={cid}')
-					pass
+					msgList.append(f'LookupError for cid={cid}')
 			else:
-				log.debug(f'Header field not found: no window found for cids={cids}')
-				raise HeaderFieldNotFoundeError()
+				msg = f'No window found for cids={cids}. Details below:\n' + '\n'.join(msgList)
+				raise HeaderFieldNotFoundeError(msg)
 		else:
 			log.debug('FakeRootDialog')
 			obj = [o for o in self.rootDialog.children if o.windowControlID in cids]
@@ -470,9 +474,9 @@ class OutlookItemWindow(object):
 				msg = f'Fake root window: {nObj} objects found, 1 expected. Info =\n{info}'
 				raise HeaderFieldNotFoundeError(msg)
 			obj = obj[0]
-		if controlTypes.State.INVISIBLE in obj.states:
-			msg = f'Object (cid={obj.windowControlID}) is invisible'
-			raise HeaderFieldNotFoundeError(msg)
+			if controlTypes.State.INVISIBLE in obj.states:
+				msg = f'Object (cid={obj.windowControlID}) is invisible'
+				raise HeaderFieldNotFoundeError(msg)
 		return obj,name
 
 
