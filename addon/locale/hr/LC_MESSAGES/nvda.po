@@ -64,12 +64,16 @@ msgstr "pročitano"
 msgid "Column navigation not supported in the address book"
 msgstr "Kretanje po stupcima nije podržano u adresaru"
 
+#. Translators: The name of a fake NVDA object used for tests.
+msgid "Fake root"
+msgstr ""
+
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
 msgstr "Ne nalazi se u prozoru poruke"
 
-#. Translators: When user double press Alt+Number to copy a header's field to clipboard
+#. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
 msgid "Copied to clipboard"
 msgstr "Kopirano u međuspremnik"
 
@@ -115,6 +119,11 @@ msgid "Test case path not defined."
 msgstr "Put testnog slučaja nije definiran."
 
 msgid "Test mode offf"
+msgstr "Testni modus je isključen"
+
+#. None or 0
+#, fuzzy
+msgid "Test mode is off."
 msgstr "Testni modus je isključen"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window

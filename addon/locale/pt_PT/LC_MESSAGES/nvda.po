@@ -66,12 +66,16 @@ msgstr "lida"
 msgid "Column navigation not supported in the address book"
 msgstr "Navegação por colunas não suportada no livro de endereços"
 
+#. Translators: The name of a fake NVDA object used for tests.
+msgid "Fake root"
+msgstr ""
+
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
 msgstr "Não está numa janela de mensagem"
 
-#. Translators: When user double press Alt+Number to copy a header's field to clipboard
+#. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
 msgid "Copied to clipboard"
 msgstr "Copiado para a área de transferência"
 
@@ -117,6 +121,11 @@ msgid "Test case path not defined."
 msgstr "Caminho do caso de teste não definido."
 
 msgid "Test mode offf"
+msgstr "Modo de teste desligado"
+
+#. None or 0
+#, fuzzy
+msgid "Test mode is off."
 msgstr "Modo de teste desligado"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window

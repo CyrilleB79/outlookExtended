@@ -62,12 +62,16 @@ msgstr "luettu"
 msgid "Column navigation not supported in the address book"
 msgstr "Sarakeselausta ei tueta osoitekirjassa"
 
+#. Translators: The name of a fake NVDA object used for tests.
+msgid "Fake root"
+msgstr ""
+
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
 msgstr "Ei viesti-ikkunassa"
 
-#. Translators: When user double press Alt+Number to copy a header's field to clipboard
+#. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
 msgid "Copied to clipboard"
 msgstr "Kopioitu leikepöydälle"
 
@@ -113,6 +117,11 @@ msgid "Test case path not defined."
 msgstr "Testitapauksen polkua ei määritetty."
 
 msgid "Test mode offf"
+msgstr "Testitila pois"
+
+#. None or 0
+#, fuzzy
+msgid "Test mode is off."
 msgstr "Testitila pois"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window

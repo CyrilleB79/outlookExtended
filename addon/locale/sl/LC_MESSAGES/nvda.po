@@ -61,12 +61,16 @@ msgstr "prebrano"
 msgid "Column navigation not supported in the address book"
 msgstr "Krmiljenje po stolpcih ni podprto v adresarju"
 
+#. Translators: The name of a fake NVDA object used for tests.
+msgid "Fake root"
+msgstr ""
+
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
 msgstr "ni v oknu sporočila"
 
-#. Translators: When user double press Alt+Number to copy a header's field to clipboard
+#. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
 msgid "Copied to clipboard"
 msgstr "Preslikano v odložišče"
 
@@ -78,6 +82,7 @@ msgid "unchecked"
 msgstr "ni izbrano"
 
 #. Translators: To report name and value of a heaeder's field
+#, python-brace-format
 msgid "{name} {value}"
 msgstr "{name} {value}"
 
@@ -111,6 +116,11 @@ msgid "Test case path not defined."
 msgstr "Pot testnega primera ni določena."
 
 msgid "Test mode offf"
+msgstr "Testni način izključen"
+
+#. None or 0
+#, fuzzy
+msgid "Test mode is off."
 msgstr "Testni način izključen"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
