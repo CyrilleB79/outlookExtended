@@ -1,4 +1,4 @@
-# Outlook extended #
+# Laajennettu Outlook #
 
 * Tekijät: Cyrille Bougot, Ralf Kefferpuetz
 * Yhteensopivuus: NVDA 2018.3 ja sitä uudemmat
@@ -33,14 +33,14 @@ näppäinkomentoja sekä lisäämällä uusia.
 
 ## Huomautuksia
 
-Kaikkia syötekomentoja on mahdollista muokata NVDA:n
-Syötekomennot-valintaikkunassa. Se voi olla tarpeen erityisesti seuraavissa
-tilanteissa:
+Kaikkia näppäinkomentoja on mahdollista muokata NVDA:n
+Näppäinkomennot-valintaikkunassa. Se voi olla tarpeen erityisesti
+seuraavissa tilanteissa:
 
-* Viestit luetuiksi ja lukemattomiksi merkitsevät oletussyötekomennot ovat
-  englanninkielistä Outlookia varten. Mikäli käyttämässäsi Outlookin
-  kieliversiossa käytetään eri komentoja, sinun tulee muuttaa nämä komennot
-  käytössä olevien komentojen mukaisiksi.
+* Viestit luetuiksi ja lukemattomiksi merkitsevät oletusarvoiset
+  näppäinkomennot ovat englanninkielistä Outlookia varten. Mikäli
+  käyttämässäsi Outlookin kieliversiossa käytetään eri komentoja, sinun
+  tulee muuttaa nämä komennot käytössä olevien komentojen mukaisiksi.
 * Otsakkeiden lukemiseen tarkoitetuissa komennoissa käytetään Alt-näppäintä
   yhdessä numerorivin näppäinten kanssa. Otsakkeiden 11 ja 12 komennot on
   ehkä määriteltävä uudelleen, mikäli ne eivät täsmää näppäinasettelusi
