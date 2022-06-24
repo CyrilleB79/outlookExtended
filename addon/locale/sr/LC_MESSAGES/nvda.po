@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.4\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2020-01-03 15:05+1000\n"
-"PO-Revision-Date: 2021-07-22 17:09+0100\n"
+"PO-Revision-Date: 2022-06-19 04:03+0100\n"
 "Last-Translator: Nikola Jović <wwenikola123@gmail.com>\n"
 "Language-Team: Serbian <wwenikola123@gmail.com>\n"
 "Language: sr\n"
@@ -63,7 +63,7 @@ msgstr "Navigacija kroz kolone nije podržana u adresaru"
 
 #. Translators: The name of a fake NVDA object used for tests.
 msgid "Fake root"
-msgstr ""
+msgstr "Fake root"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
@@ -119,9 +119,8 @@ msgid "Test mode offf"
 msgstr "Onemogućen režim testiranja"
 
 #. None or 0
-#, fuzzy
 msgid "Test mode is off."
-msgstr "Onemogućen režim testiranja"
+msgstr "Onemogućen režim testiranja."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
