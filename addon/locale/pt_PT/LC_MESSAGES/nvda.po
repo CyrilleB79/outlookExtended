@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'OutlookExtended' '1.0-dev'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2019-02-21 00:29+0000\n"
-"PO-Revision-Date: 2021-11-18 23:18+0000\n"
+"PO-Revision-Date: 2022-07-25 12:57+0100\n"
 "Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa portuguesa do NVDA <ampa4374@gmail.com; rui."
 "fontes@tiflotecnia.pt>\n"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../../appModules\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -68,7 +68,7 @@ msgstr "Navegação por colunas não suportada no livro de endereços"
 
 #. Translators: The name of a fake NVDA object used for tests.
 msgid "Fake root"
-msgstr ""
+msgstr "Raiz falsa"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
@@ -124,9 +124,8 @@ msgid "Test mode offf"
 msgstr "Modo de teste desligado"
 
 #. None or 0
-#, fuzzy
 msgid "Test mode is off."
-msgstr "Modo de teste desligado"
+msgstr "Modo de teste desligado."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format
