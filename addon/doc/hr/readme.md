@@ -1,7 +1,7 @@
 # Prošireni Outlook (Outlook extended) #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA kompatibilnost: 2018.3 i novije
+* NVDA kompatibilnost: 2019.3 i novije verzije
 * Preuzmi [stabilnu verziju][1]
 * Preuzmi [razvojnu verziju][2]
 
@@ -45,9 +45,27 @@ ih je promijeniti za sljedeće situacije:
 
 ## Dnevnik promjena
 
+### Verzija 1.9
+
+* Kompatibilnost s NVDA 2022.1.
+* Dodatak više nije kompatibilan s NVDA verzijama manje od 2019.3.
+* Izdanje se sada izvodi zahvaljujući GitHub action umjesto appVeyora.
+* Ispravljena je najava kada korisnik triput pritisne prečace alt+broj.
+* Ispravljen je problem koji sprečava čitanje zaglavlja stavki kalendara
+  nekih Outlooka 365 verzija.
+* Poboljšanje testnog okruženja dodatka: navigacija u dijalogu lažnog
+  korijena.
+* Prijevodi su aktualizirani.
+
+### Verzija 1.8
+
+* Prijevodi su aktualizirani.
+* Osigurava da su sve varijable iz izvornog Outlook appModule i dalje
+  dostupne.
+
 ### Verzija 1.7
 
-* Aktualizirana kompatibilnost za NVDA 2021.1
+* Aktualizirana je kompatibilnost za NVDA 2021.1.
 * Prijevodi su aktualizirani.
 
 ### Verzija 1.6

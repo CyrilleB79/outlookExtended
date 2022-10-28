@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilidad con NVDA: de 2018.3 en adelante
+* Compatibilidad con NVDA: de 2019.3 en adelante
 * Descargar [versión estable][1]
 * Descargar [versión de desarrollo][2]
 
@@ -46,6 +46,25 @@ NVDA. Puedes querer modificarlos en las siguientes situaciones:
   encajan con tu distribución de teclado.
 
 ## Registro de cambios
+
+### Versión 1.9
+
+* Compatibilidad con NVDA 2022.1.
+* Eliminada la compatibilidad con versiones de NVDA anteriores a la 2019.3.
+* La versión se construye con una acción de GitHub en lugar de AppVeyor.
+* Corregido el anuncio cuando el usuario pulsa los atajos alt+números tres
+  veces.
+* Corregido un problema que impedía leer las cabeceras de algunos elementos
+  del calendario en algunas versiones de Outlook 365.
+* Mejora del entorno de pruebas del complemento: navegación en el diálogo de
+  raíz falsa.
+* Traducciones actualizadas.
+
+### Versión 1.8
+
+* Traducciones actualizadas.
+* Se garantiza que todas las variables del módulo original de Outlook se
+  encuentran todavía disponibles.
 
 ### Versión 1.7
 

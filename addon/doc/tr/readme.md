@@ -1,7 +1,7 @@
 # geliştirilmiş Outlook desteği #
 
 * Yazarlar: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA uyumluluğu: 2018.3 ve üzeri sürümler
+* NVDA compatibility: 2019.3 and beyond
 * [kararlı sürüm][1]ü indir
 * [geliştirme sürümü][2]nü indir
 
@@ -45,6 +45,25 @@ gerekebilir:
   yeniden ayarlamanız gerekebilir.
 
 ## Değişiklikler
+
+### Version 1.9
+
+* Compatibility with NVDA 2022.1.
+* Dropped compatibility for versions of NVDA below 2019.3.
+* The release is now performed thanks to a GitHub action instead of
+  appVeyor.
+* Fixed the announcement when the user triple-presses alt+number shortcuts.
+* Fixed an issue preventing from reading calendar items headers of some
+  versions of Outlook 365.
+* Improvement of the test environment of the add-on: navigation in the fake
+  root dialog.
+* Çeviriler güncellendi.
+
+### Version 1.8
+
+* Çeviriler güncellendi.
+* Ensure that all the variable from the original Outlook appModule are still
+  available.
 
 ### Sürüm 1.7
 

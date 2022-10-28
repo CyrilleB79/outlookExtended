@@ -1,7 +1,7 @@
 # Outlook mais acessível #
 
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilidade com o NVDA: 2018.3 e seguintes.
+* NVDA compatibility: 2019.3 and beyond
 * Baixar [Versão estável][1]
 * Baixar [Versão de desenvolvimento][2]
 
@@ -45,6 +45,25 @@ NVDA. Pode querer alterá-los especialmente nas seguintes situações:
   se eles não corresponderem ao esquema do teclado local.
 
 ## Modificações:
+
+### Version 1.9
+
+* Compatibility with NVDA 2022.1.
+* Dropped compatibility for versions of NVDA below 2019.3.
+* The release is now performed thanks to a GitHub action instead of
+  appVeyor.
+* Fixed the announcement when the user triple-presses alt+number shortcuts.
+* Fixed an issue preventing from reading calendar items headers of some
+  versions of Outlook 365.
+* Improvement of the test environment of the add-on: navigation in the fake
+  root dialog.
+* Traduções actualizadas.
+
+### Version 1.8
+
+* Traduções actualizadas.
+* Ensure that all the variable from the original Outlook appModule are still
+  available.
 
 ### Versão 1.7
 
