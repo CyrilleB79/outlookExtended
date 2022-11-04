@@ -1,7 +1,7 @@
 # Laajennettu Outlook #
 
 * Tekijät: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2019.3 and beyond
+* Yhteensopivuus: NVDA 2019.3 ja sitä uudemmat
 * Lataa [vakaa versio][1]
 * Lataa [kehitysversio][2]
 
@@ -48,24 +48,23 @@ seuraavissa tilanteissa:
 
 ## Muutosloki
 
-### Version 1.9
+### Versio 1.9
 
-* Compatibility with NVDA 2022.1.
-* Dropped compatibility for versions of NVDA below 2019.3.
-* The release is now performed thanks to a GitHub action instead of
-  appVeyor.
-* Fixed the announcement when the user triple-presses alt+number shortcuts.
-* Fixed an issue preventing from reading calendar items headers of some
-  versions of Outlook 365.
-* Improvement of the test environment of the add-on: navigation in the fake
-  root dialog.
+* Yhteensopivuus NVDA 2022.1:lle.
+* Poistettu yhteensopivuus NVDA:n versioilta, jotka ovat vanhempia kuin
+  2019.3.
+* Julkaisu suoritetaan nyt GitHub-toiminnolla appVeyorin sijasta.
+* Korjattu ilmoitus, kun käyttäjä painaa kolmesti Alt+numero-pikanäppäimiä.
+* Korjattu ongelma, joka esti kalenterimerkintöjen otsakkeiden lukemisen
+  joissakin Outlook 365:n versioissa.
+* Lisäosan testiympäristön parannus: valejuurivalintaikkunassa liikkuminen.
 * Lokalisointeja päivitetty.
 
-### Version 1.8
+### Versio 1.8
 
 * Lokalisointeja päivitetty.
-* Ensure that all the variable from the original Outlook appModule are still
-  available.
+* Varmistettu, että kaikki alkuperäisen Outlook-sovellusmoduulin muuttujat
+  ovat edelleen käytettävissä.
 
 ### Versio 1.7
 
