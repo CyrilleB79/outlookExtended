@@ -1,7 +1,7 @@
 # Erweiterte Outlook-Funktionen #
 
-* Autoren: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2019.3 and beyond
+* Autoren: Cyrille Bougot und Ralf Kefferpuetz
+* NVDA-Kompatibilität: 2019.3 und neuer
 * [Stabile Version herunterladen][1]
 * [Entwicklerversion herunterladen][2]
 
@@ -54,22 +54,22 @@ Befehle sinnvoll sein:
 
 ### Version 1.9
 
-* Compatibility with NVDA 2022.1.
-* Dropped compatibility for versions of NVDA below 2019.3.
-* The release is now performed thanks to a GitHub action instead of
-  appVeyor.
-* Fixed the announcement when the user triple-presses alt+number shortcuts.
-* Fixed an issue preventing from reading calendar items headers of some
-  versions of Outlook 365.
-* Improvement of the test environment of the add-on: navigation in the fake
-  root dialog.
+* Kompatibilität mit NVDA 2022.1.
+* Die Unterstützung für NVDA-Versionen älter als 2019.3 wurde entfernt.
+* Die Freigabe erfolgt nun über eine GitHub-Aktion anstelle von appVeyor.
+* Die Mitteilung, sobald der Benutzer dreimal die Tastenkombination
+  Alt+Ziffer drückt, wurde korrigiert.
+* Es wurde ein Problem behoben, welches das Auslesen der Kopfzeilen von
+  Kalenderelementen in einigen Versionen von Outlook 365 verhinderte.
+* Verbesserung der Test-Umgebung der NVDA-Erweiterung: Navigation im
+  Fake-Root-Dialogfeld.
 * Lokalisierungen aktualisiert.
 
 ### Version 1.8
 
 * Lokalisierungen aktualisiert.
-* Ensure that all the variable from the original Outlook appModule are still
-  available.
+* Es wird sichergestellt, dass alle Variablen aus dem ursprünglichen
+  App-Modul für Outlook noch verfügbar sind.
 
 ### Version 1.7
 
