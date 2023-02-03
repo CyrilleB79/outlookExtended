@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2022-05-31 23:14+0200\n"
+"PO-Revision-Date: 2023-02-03 09:56+0100\n"
 "Last-Translator: Cyrille Bougot <cyrille.bougot2@laposte.net>\n"
 "Language-Team: NVDA French Translation Team <LL@li.org>\n"
 "Language: fr\n"
@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Annonce le champ d'en-tête %s dans un message, un élément de calendrier ou "
 "une fenêtre de tâche. Un double-appui amène le focus dans ce champ si "
-"possible. Un tripe-appui copie son contenu dans le presse-papiers."
+"possible. Un triple-appui copie son contenu dans le presse-papiers."
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.

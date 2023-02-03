@@ -12,12 +12,12 @@ vocalisation de certaines commandes et l’ajout de commandes supplémentaires.
 
 * Alt+1 à Alt+9, Alt+0, Alt+), alt+=: Annonce le champ d’en-tête 1 à 12 dans
   un message, un élément de calendrier ou une tâche. Une double pression
-  déplace le focus dans ce champ si possible. Une tripe pression copie son
+  déplace le focus dans ce champ si possible. Une triple pression copie son
   contenu dans le presse-papiers.
 * NVDA+Maj+I (disposition ordinateur de bureau) / NVDA+control+maj+I
   (disposition ordinateur portable): Annonce la barre d'information dans un
   message, un élément de calendrier ou une fenêtre de tâche. Une double
-  pression y déplace le focus. Une tripe pression copie son contenu dans le
+  pression y déplace le focus. Une triple pression copie son contenu dans le
   presse-papiers.
 * NVDA+maj+A (disposition ordinateur de bureau) / NVDA+control+maj+A
   (disposition ordinateur portable): Annonce le nombre et le nom des pièces
