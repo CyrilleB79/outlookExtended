@@ -1,7 +1,7 @@
 # Outlook 扩展 #
 
 * 作者: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA 兼容版本: 2018.3 及以后
+* NVDA compatibility: 2019.3 and beyond
 * 下载 [稳定版][1]
 * 下载 [开发板][2]
 
@@ -28,6 +28,25 @@
 * 读取标题的默认手势对应于Alt与字母数字键盘第一行的键组合。如果它们与本地键盘布局不匹配，您可能需要重新映射读取标题11和12的手势。
 
 ## 更新日志
+
+### Version 1.9
+
+* Compatibility with NVDA 2022.1.
+* Dropped compatibility for versions of NVDA below 2019.3.
+* The release is now performed thanks to a GitHub action instead of
+  appVeyor.
+* Fixed the announcement when the user triple-presses alt+number shortcuts.
+* Fixed an issue preventing from reading calendar items headers of some
+  versions of Outlook 365.
+* Improvement of the test environment of the add-on: navigation in the fake
+  root dialog.
+* 新增本地化。
+
+### Version 1.8
+
+* 新增本地化。
+* Ensure that all the variable from the original Outlook appModule are still
+  available.
 
 ### 版本1.7
 

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2021-07-20 10:31+0200\n"
+"PO-Revision-Date: 2022-05-29 11:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
@@ -41,7 +41,7 @@ msgstr "Grupa wiadomości: %s"
 #. Translators: To what the mark as read/unread applies to
 #, python-format
 msgid "Messages: %s"
-msgstr "wiadomości: %s"
+msgstr "Wiadomości: %s"
 
 #. Translators: Error when mark as read/unread shortcut is called with no message selected
 msgid "No message selected"
@@ -53,7 +53,7 @@ msgstr "nieprzeczytane"
 
 #. Translators: To announce the message or group status: read
 msgid "read"
-msgstr "Przeczytane"
+msgstr "przeczytane"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
 #. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
@@ -63,7 +63,7 @@ msgstr "Nawigacja po kolumnach nie jest wsperana w książce adresowej"
 
 #. Translators: The name of a fake NVDA object used for tests.
 msgid "Fake root"
-msgstr ""
+msgstr "Fałszywy obiekt nadrzędny"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
@@ -119,9 +119,8 @@ msgid "Test mode offf"
 msgstr "Tryb testowy wyłączony"
 
 #. None or 0
-#, fuzzy
 msgid "Test mode is off."
-msgstr "Tryb testowy wyłączony"
+msgstr "Tryb testowy jest wyłączony."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format

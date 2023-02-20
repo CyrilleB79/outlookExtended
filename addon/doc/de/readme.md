@@ -1,7 +1,7 @@
 # Erweiterte Outlook-Funktionen #
 
-* Autoren: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA-Kompatibilität: 2018.3 und neuer
+* Autoren: Cyrille Bougot und Ralf Kefferpuetz
+* NVDA-Kompatibilität: 2019.3 und neuer
 * [Stabile Version herunterladen][1]
 * [Entwicklerversion herunterladen][2]
 
@@ -51,6 +51,25 @@ Befehle sinnvoll sein:
   übereinstimmen.
 
 ## Änderungsprotokoll
+
+### Version 1.9
+
+* Kompatibilität mit NVDA 2022.1.
+* Die Unterstützung für NVDA-Versionen älter als 2019.3 wurde entfernt.
+* Die Freigabe erfolgt nun über eine GitHub-Aktion anstelle von appVeyor.
+* Die Mitteilung, sobald der Benutzer dreimal die Tastenkombination
+  Alt+Ziffer drückt, wurde korrigiert.
+* Es wurde ein Problem behoben, welches das Auslesen der Kopfzeilen von
+  Kalenderelementen in einigen Versionen von Outlook 365 verhinderte.
+* Verbesserung der Test-Umgebung der NVDA-Erweiterung: Navigation im
+  Fake-Root-Dialogfeld.
+* Lokalisierungen aktualisiert.
+
+### Version 1.8
+
+* Lokalisierungen aktualisiert.
+* Es wird sichergestellt, dass alle Variablen aus dem ursprünglichen
+  App-Modul für Outlook noch verfügbar sind.
 
 ### Version 1.7
 

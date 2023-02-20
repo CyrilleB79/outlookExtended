@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Tác giả: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA tương thích: 2018.3 trở đi
+* NVDA compatibility: 2019.3 and beyond
 * Tải về [phiên bản chính thức][1]
 * Tải về [phiên bản thử nghiệm][2]
 
@@ -45,6 +45,25 @@ NVDA. Có thể bạn muốn thay đổi nó trong các tình huống sau:
   bạn.
 
 ## Bản ghi các thay đổi
+
+### Version 1.9
+
+* Compatibility with NVDA 2022.1.
+* Dropped compatibility for versions of NVDA below 2019.3.
+* The release is now performed thanks to a GitHub action instead of
+  appVeyor.
+* Fixed the announcement when the user triple-presses alt+number shortcuts.
+* Fixed an issue preventing from reading calendar items headers of some
+  versions of Outlook 365.
+* Improvement of the test environment of the add-on: navigation in the fake
+  root dialog.
+* Đã thêm các bản phiên dịch.
+
+### Version 1.8
+
+* Đã thêm các bản phiên dịch.
+* Ensure that all the variable from the original Outlook appModule are still
+  available.
 
 ### Phiên bản 1.7
 

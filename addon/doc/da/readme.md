@@ -1,7 +1,7 @@
 # Udvidelse til Outlook #
 
 * Forfattere: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA-kompatibilitet: 2018.3 og derover
+* NVDA-kompatibilitet: 2019.3 og derefter
 * Download [stabil version][1]
 * Download [udviklingsversion][2]
 
@@ -46,6 +46,26 @@ nogle tilfælde ændre dem særligt i følgende situationer:
   ikke passer til dit lokale tastaturlayout.
 
 ## Ændringshistorik
+
+### Version 1.9
+
+* Kompatibilitet med NVDA 2022.1.
+* Droppet kompatibilitet for versioner af NVDA under 2019.3.
+* Udgivelsen udføres nu takket være en GitHub-handling i stedet for
+  appVeyor.
+* Rettede meddelelsen, når brugeren udfører et tredobbelte trykk på
+  alt+nummer genveje.
+* Rettede et problem, der forhindrede i at læse kalenderelementer i nogle
+  versioner af Outlook 365.
+* Forbedring af testmiljøet for tilføjelsen: navigation i den falske
+  roddialog.
+* Opdaterede oversættelser.
+
+### Version 1.8
+
+* Opdaterede oversættelser.
+* Sørget for, at alle variabler fra det originale Outlook appModule stadig
+  er tilgængelige.
 
 ### Version 1.7
 

@@ -1,7 +1,7 @@
 # Outlook extended (Розширення для Outlook) #
 
 * Автори: Cyrille Bougot, Ralf Kefferpuetz
-* Сумісність з NVDA: 2018.3  та новіші
+* NVDA compatibility: 2019.3 and beyond
 * Завантажити [стабільну версію][1]
 * Завантажити [версію в розробці][2]
 
@@ -45,6 +45,25 @@
   вони не відповідають вашій локальній розкладці клавіатури.
 
 ## Журнал змін
+
+### Version 1.9
+
+* Compatibility with NVDA 2022.1.
+* Dropped compatibility for versions of NVDA below 2019.3.
+* The release is now performed thanks to a GitHub action instead of
+  appVeyor.
+* Fixed the announcement when the user triple-presses alt+number shortcuts.
+* Fixed an issue preventing from reading calendar items headers of some
+  versions of Outlook 365.
+* Improvement of the test environment of the add-on: navigation in the fake
+  root dialog.
+* Оновлено локалізації.
+
+### Version 1.8
+
+* Оновлено локалізації.
+* Ensure that all the variable from the original Outlook appModule are still
+  available.
 
 ### Версія 1.7
 

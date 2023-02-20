@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2021-08-19 11:35+0100\n"
+"PO-Revision-Date: 2022-07-14 11:00+0100\n"
 "Last-Translator: Simone Dal Maso <simone.dalmaso@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -63,7 +63,7 @@ msgstr "Navigazione per colonne non supportata nella rubrica"
 
 #. Translators: The name of a fake NVDA object used for tests.
 msgid "Fake root"
-msgstr ""
+msgstr "Fake root"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
@@ -113,15 +113,14 @@ msgstr ""
 "Se premuto due volte, sposta il focus su di esso."
 
 msgid "Test case path not defined."
-msgstr ""
+msgstr "Percorso del test case non definito."
 
 msgid "Test mode offf"
 msgstr "Modalità test  disattivata"
 
 #. None or 0
-#, fuzzy
 msgid "Test mode is off."
-msgstr "Modalità test  disattivata"
+msgstr "Modalità test disattivata"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
 #, python-format

@@ -1,7 +1,7 @@
 # Outlook extended #
 
 * Auteurs : Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilité NVDA: 2018.3 et ultérieure
+* Compatibilité NVDA: 2019.3 et ultérieure
 * Télécharger [version stable][1]
 * Télécharger [version de développement][2]
 
@@ -12,12 +12,12 @@ vocalisation de certaines commandes et l’ajout de commandes supplémentaires.
 
 * Alt+1 à Alt+9, Alt+0, Alt+), alt+=: Annonce le champ d’en-tête 1 à 12 dans
   un message, un élément de calendrier ou une tâche. Une double pression
-  déplace le focus dans ce champ si possible. Une tripe pression copie son
+  déplace le focus dans ce champ si possible. Une triple pression copie son
   contenu dans le presse-papiers.
 * NVDA+Maj+I (disposition ordinateur de bureau) / NVDA+control+maj+I
   (disposition ordinateur portable): Annonce la barre d'information dans un
   message, un élément de calendrier ou une fenêtre de tâche. Une double
-  pression y déplace le focus. Une tripe pression copie son contenu dans le
+  pression y déplace le focus. Une triple pression copie son contenu dans le
   presse-papiers.
 * NVDA+maj+A (disposition ordinateur de bureau) / NVDA+control+maj+A
   (disposition ordinateur portable): Annonce le nombre et le nom des pièces
@@ -50,6 +50,27 @@ modifier dans les situations suivantes :
   avec votre disposition de clavier locale.
 
 ## Journal des modifications
+
+### Version 1.9
+
+* Compatibilité avec NVDA 2022.1.
+* Abandon de la compatibilité pour les versions de NVDA inférieures à
+  2019.3.
+* La release est maintenant effectuée grâce à une action GitHub au lieu
+  d'appVeyor.
+* Correction de l'annonce lorsque l'utilisateur appuie trois fois sur les
+  raccourcis alt+chiffre.
+* Correction d'un problème empêchant la lecture des en-têtes des éléments de
+  calendrier de certaines versions d'Outlook 365.
+* Amélioration de l'environnement de test de l'extension : navigation dans
+  la boîte de dialogue fake root.
+* Ajout de localisations.
+
+### Version 1.8
+
+* Ajout de localisations.
+* Garantit que toutes les variables du module applicatif Outlook d'origine
+  sont toujours disponibles.
 
 ### Version 1.7
 

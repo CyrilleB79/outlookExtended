@@ -1,7 +1,7 @@
 # Poboljšanja za Outlook #
 
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2018.3 and beyond
+* NVDA compatibility: 2019.3 and beyond
 * Preuzmite [stabilnu verziju][1]
 * Preuzmite [verziju u razvoju][2]
 
@@ -45,6 +45,25 @@ Sve prečice se mogu menjati u dijalogu za podešavanje ulaznih komandi. Možda
   prečice za 11. i 12. polje ako koristite drugi raspored tastature.
 
 ## Lista promena
+
+### Version 1.9
+
+* Compatibility with NVDA 2022.1.
+* Dropped compatibility for versions of NVDA below 2019.3.
+* The release is now performed thanks to a GitHub action instead of
+  appVeyor.
+* Fixed the announcement when the user triple-presses alt+number shortcuts.
+* Fixed an issue preventing from reading calendar items headers of some
+  versions of Outlook 365.
+* Improvement of the test environment of the add-on: navigation in the fake
+  root dialog.
+* Updated localizations.
+
+### Version 1.8
+
+* Updated localizations.
+* Ensure that all the variable from the original Outlook appModule are still
+  available.
 
 ### Version 1.7
 

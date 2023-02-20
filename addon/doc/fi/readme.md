@@ -1,7 +1,7 @@
-# Outlook extended #
+# Laajennettu Outlook #
 
 * Tekijät: Cyrille Bougot, Ralf Kefferpuetz
-* Yhteensopivuus: NVDA 2018.3 ja sitä uudemmat
+* Yhteensopivuus: NVDA 2019.3 ja sitä uudemmat
 * Lataa [vakaa versio][1]
 * Lataa [kehitysversio][2]
 
@@ -33,20 +33,38 @@ näppäinkomentoja sekä lisäämällä uusia.
 
 ## Huomautuksia
 
-Kaikkia syötekomentoja on mahdollista muokata NVDA:n
-Syötekomennot-valintaikkunassa. Se voi olla tarpeen erityisesti seuraavissa
-tilanteissa:
+Kaikkia näppäinkomentoja on mahdollista muokata NVDA:n
+Näppäinkomennot-valintaikkunassa. Se voi olla tarpeen erityisesti
+seuraavissa tilanteissa:
 
-* Viestit luetuiksi ja lukemattomiksi merkitsevät oletussyötekomennot ovat
-  englanninkielistä Outlookia varten. Mikäli käyttämässäsi Outlookin
-  kieliversiossa käytetään eri komentoja, sinun tulee muuttaa nämä komennot
-  käytössä olevien komentojen mukaisiksi.
+* Viestit luetuiksi ja lukemattomiksi merkitsevät oletusarvoiset
+  näppäinkomennot ovat englanninkielistä Outlookia varten. Mikäli
+  käyttämässäsi Outlookin kieliversiossa käytetään eri komentoja, sinun
+  tulee muuttaa nämä komennot käytössä olevien komentojen mukaisiksi.
 * Otsakkeiden lukemiseen tarkoitetuissa komennoissa käytetään Alt-näppäintä
   yhdessä numerorivin näppäinten kanssa. Otsakkeiden 11 ja 12 komennot on
   ehkä määriteltävä uudelleen, mikäli ne eivät täsmää näppäinasettelusi
   kanssa.
 
 ## Muutosloki
+
+### Versio 1.9
+
+* Yhteensopivuus NVDA 2022.1:lle.
+* Poistettu yhteensopivuus NVDA:n versioilta, jotka ovat vanhempia kuin
+  2019.3.
+* Julkaisu suoritetaan nyt GitHub-toiminnolla appVeyorin sijasta.
+* Korjattu ilmoitus, kun käyttäjä painaa kolmesti Alt+numero-pikanäppäimiä.
+* Korjattu ongelma, joka esti kalenterimerkintöjen otsakkeiden lukemisen
+  joissakin Outlook 365:n versioissa.
+* Lisäosan testiympäristön parannus: valejuurivalintaikkunassa liikkuminen.
+* Lokalisointeja päivitetty.
+
+### Versio 1.8
+
+* Lokalisointeja päivitetty.
+* Varmistettu, että kaikki alkuperäisen Outlook-sovellusmoduulin muuttujat
+  ovat edelleen käytettävissä.
 
 ### Versio 1.7
 
