@@ -7,13 +7,15 @@
 
 import cases
 
+
 class FakeNVDAObject(object):
 	def __init__(self, **attributes):
 		super(FakeNVDAObject, self).__init__()
-		for (k,v) in attributes.items():
+		for (k, v) in attributes.items():
 			if k == 'cid':
 				k = 'windowControlID'
 			setattr(self, k, v)
+
 
 class FakeRootWindow(object):
 	def __init__(self, test):
@@ -21,4 +23,3 @@ class FakeRootWindow(object):
 		self.role = 4  # controlTypes.Role.DIALOG = 4
 		objList = cases.tcObjectPropertyDic[test]
 		self.children = [FakeNVDAObject(**d) for d in objList]
-		

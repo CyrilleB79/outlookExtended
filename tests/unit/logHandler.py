@@ -8,4 +8,5 @@ class LogHandler:
 	def debug(*args):
 		pass
 
+
 log = LogHandler()

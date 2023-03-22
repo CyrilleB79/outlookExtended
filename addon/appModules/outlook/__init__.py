@@ -1,26 +1,28 @@
 # -*- coding: UTF-8 -*-
-#appModules/outlook.py
-#NVDA add-on: Outlook Extended
-#Copyright (C) 2018-2021 Cyrille Bougot, Ralf Kefferpuetz
-#This file is covered by the GNU General Public License.
-#See the file COPYING.txt for more details.
+# NVDA add-on: Outlook Extended
+# Copyright (C) 2018-2023 Cyrille Bougot, Ralf Kefferpuetz
+# This file is covered by the GNU General Public License.
+# See the file COPYING.txt for more details.
 
-#Known bugs (not resolved):
-#1. Double-press NVDA+Shift+A to go to attachments may not always work when mail has 20 attachments or so (Outlook 2016),
-#especially when e-mail has just been opened.
+# Known bugs (not resolved):
+# 1. Double-press NVDA+Shift+A to go to attachments may not always work when mail has 20 attachments or so
+# (Outlook 2016), especially when e-mail has just been opened.
 
-#Possible enhancements
-#1. Use @script decorator for markAsRead and markAsUnread script gesturs, as well as for reportHeaderFieldN scripts. Did not manage to make it work.
-#3. Rename fields wrongly named. E.g. value=None&name=textExpectedFromValue -> take label from previous window.
-#4. Implement column navigation in address book: debug column navigation (scroll the list, access other children thant the ones visible...)
-#5. Allow to get back to message body even when an attachment preview is displayed when calling NVDA+Shift+M
+# Possible enhancements
+# 1. Use @script decorator for markAsRead and markAsUnread script gesturs, as well as for reportHeaderFieldN
+# scripts. Did not manage to make it work.
+# 3. Rename fields wrongly named. E.g. value=None&name=textExpectedFromValue -> take label from previous
+# window.
+# 4. Implement column navigation in address book: debug column navigation (scroll the list, access other
+# children thant the ones visible...)
+# 5. Allow to get back to message body even when an attachment preview is displayed when calling NVDA+Shift+M
 
 
-#TODO: (zzz)
-#Check task assigned to others
+# TODO: (zzz)
+# Check task assigned to others
 
-# Import all from original outlook appModule to keep it available if needed.
-from nvdaBuiltin.appModules.outlook import *
+# Import all from original outlook appModule to keep it available if needed for anyone using this module.
+from nvdaBuiltin.appModules.outlook import *  # noqa: F401, F403
 
 # Import here explecitely used variables from original outlook appModule for clarity.
 from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModule
@@ -33,12 +35,11 @@ import winUser
 from logHandler import log
 import api
 import controlTypes
-controlTypes = compa.convertControlTypes(controlTypes)
 import ui
+from speech import speech
 from NVDAObjects import NVDAObject
-from NVDAObjects.window import NVDAObject, Window
-from NVDAObjects.IAccessible import IAccessible, List
-from NVDAObjects.IAccessible import getNVDAObjectFromEvent
+from NVDAObjects.window import Window
+from NVDAObjects.IAccessible import List, getNVDAObjectFromEvent
 from NVDAObjects.behaviors import RowWithoutCellObjects, RowWithFakeNavigation
 from NVDAObjects.UIA import UIA
 from windowUtils import findDescendantWindow
@@ -58,13 +59,19 @@ from time import sleep
 
 import addonHandler
 
+controlTypes = compa.convertControlTypes(controlTypes)
+
 addonHandler.initTranslation()
 
-ADDON_SUMMARY = addonHandler.getCodeAddon ().manifest["summary"]
+ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
 
-# Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+# Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+# Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
+# screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 KEY_HEADER_FIELD11 = _("-")
-# Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+# Translators: The key just ont the left of the backspace key.
+# Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
+# screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 KEY_HEADER_FIELD12 = _("=")
 
 confspec = {
@@ -72,33 +79,34 @@ confspec = {
 }
 config.conf.spec["outlookExtended"] = confspec
 
+
 class ElemWithReadStatus:
 
 	scriptCategory = ADDON_SUMMARY
-	
+
 	@script(
 		# Translators: Documentation for mark as read script.
-		description = _("Mark a message as read")
-		)
+		description=_("Mark a message as read")
+	)
 	def script_markAsRead(self, gesture):
 		gesture.send()
 		self.reportReadStatus()
-		
+
 	@script(
 		# Translators: Documentation for mark as unread script.
-		description = _("Mark a message as unread")
-		)
+		description=_("Mark a message as unread")
+	)
 	def script_markAsUnread(self, gesture):
 		gesture.send()
 		self.reportReadStatus()
-	
+
 	def reportReadStatus(self):
 		focus = api.getFocusObject()
 		if focus.appModule.nativeOm:
 			try:
-				selection=focus.appModule.nativeOm.activeExplorer().selection
+				selection = focus.appModule.nativeOm.activeExplorer().selection
 			except COMError:
-				return #No COM access
+				return  # No COM access
 			nSel = selection.count
 			if nSel > 1:
 				# Translators: To what the mark as read/unread applies to
@@ -110,11 +118,11 @@ class ElemWithReadStatus:
 				# Translators: Error when mark as read/unread shortcut is called with no message selected
 				ui.message(_("No message selected"))
 				return
-			selection=selection.item(1)
+			selection = selection.item(1)
 			try:
-				unread=selection.unread
+				unread = selection.unread
 			except COMError:
-				unread=False
+				unread = False
 			if unread:
 				# Translators: To announce the message or group status: unread
 				itemState = _("unread")
@@ -122,47 +130,53 @@ class ElemWithReadStatus:
 				# Translators: To announce the message or group status: read
 				itemState = _("read")
 			ui.message(itemType % itemState)
-	
-	__gestures={
-		"kb:control+U":"markAsUnread",
-		"kb:control+Q":"markAsRead",
-		}	
-		
+
+	__gestures = {
+		"kb:control+U": "markAsUnread",
+		"kb:control+Q": "markAsRead",
+	}
+
 
 class UIAGridRowWithReadStatus(UIAGridRow, ElemWithReadStatus):
 	pass
-	
+
+
 class UIAWithReadStatus(UIA, ElemWithReadStatus):
 	pass
-	
+
 
 class List(List):
 	def getHeader(self):
 		try:
 			return self.header
 		except AttributeError:
-			#handle = findDescendantWindow(api.getForegroundObject().windowHandle, controlID=138, className='SysHeader32')
+			# handle = findDescendantWindow(api.getForegroundObject().windowHandle, controlID=138,
+			# className='SysHeader32')
 			handle = findDescendantWindow(self.parent.windowHandle, controlID=138, className='SysHeader32')
 			self.header = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 			self.allowIAccessibleChildIDAndChildCountForPositionInfo = True
 			return self.header
-		
+
 	def _get_columnCount(self):
 		header = self.getHeader()
 		return len(header.children)
-		
+
 	def _get_rowCount(self):
-		#zzz Should be better defined since does not take scrolling use case
+		# zzz Should be better defined since does not take scrolling use case
 		return len(self.children)
-	
-	
+
+
 class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBookEntry):
 
 	def _getColumnLocation(self, column):
 		colHeader = self.parent.getHeader().getChild(column - 1)
-		return RectLTWH(left=colHeader.location.left, top=self.location.top, width=colHeader.location.width, height=self.location.height)
-		
-	
+		return RectLTWH(
+			left=colHeader.location.left,
+			top=self.location.top,
+			width=colHeader.location.width,
+			height=self.location.height,
+		)
+
 	def _getColumnContent(self, column):
 		"""Get the text content for a given column of this row.
 		@param column: The index of the column, starting at 1.
@@ -170,42 +184,42 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBook
 		@rtype: str
 		"""
 		colNames = [c.name for c in self.parent.getHeader().children]
-		colPatterns = [name +r' (?P<C'+str(col+1)+r'>.*?)' for col,name in enumerate(colNames)]
+		colPatterns = [fr"{name} (?P<C{col+1}>.*?)" for col, name in enumerate(colNames)]
 		sep = ', '
-		pattern = '^' + colPatterns[0] + ''.join(['(?:' + sep + cp + ')?' for cp in colPatterns[1:]]) + '$'
+		pattern = f"^{colPatterns[0]}{''.join(['(?:' + sep + cp + ')?' for cp in colPatterns[1:]])}$"
 		m = re.match(pattern, self.name)
 		if not m:
-			log.warning('Parsing failed: self.name = '+str(self.name)+ ' ; colNames = ' + str(colNames))
+			log.warning(f"Parsing failed: self.name = {self.name}; colNames = {colNames}")
 			return
-		return m.groupdict()['C'+str(column)]
-		
+		return m.groupdict()[f"C{column}"]
+
 	def _getColumnHeader(self, column):
 		"""Get the header text for this column.
 		@param column: The index of the column, starting at 1.
 		@type column: int
 		@rtype: str
 		"""
-		return self.parent.getHeader().getChild(column-1).name
-	
-	
+		return self.parent.getHeader().getChild(column - 1).name
+
 	def _get_next(self):
 		rows = self.parent.children
 		index = rows.index(self)
 		if index == len(rows) - 1:
 			return None
-		return rows[index+1]
-		
+		return rows[index + 1]
+
 	def _get_previous(self):
 		rows = self.parent.children
 		index = rows.index(self)
 		if index == 0:
 			return None
-		return rows[index-1]
-	
+		return rows[index - 1]
+
 	def _moveToRow(self, row):
-		#Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
-		#when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
-		
+		# Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
+		# when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you
+		# press control again.
+
 		# Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 		ui.message(_('Column navigation not supported in the address book'))
 
@@ -216,13 +230,13 @@ class FakeRootDialog(Window):
 	# Translators: The name of a fake NVDA object used for tests.
 	name = _("Fake root")
 	treeInterceptor = None
-	
+
 	def __init__(self, object=None):
 		self.parent = api.getFocusObject()
 		self.obj = object
 		self.childObjList = object.children
 		super().__init__(windowHandle=self.parent.windowHandle)
-		
+
 	def _get_childCount(self):
 		return len(self.childObjList)
 
@@ -270,54 +284,58 @@ class _FakeObject(NVDAObject):
 
 
 class UIANotificationZoneButton(UIA):
-		
+
 	@script(
-		gestures = ['kb:upArrow', 'kb:downArrow'],
+		gestures=['kb:upArrow', 'kb:downArrow'],
 	)
 	def script_cancelGesture(self, gesture):
 		# A script to cancel the upArrow or downArrow in the notification zone,
 		# since these gesture may move the focus out of the notification zone.
 		pass
-	
+
 	@script(
-		gesture = 'kb:leftArrow',
+		gesture='kb:leftArrow',
 	)
 	def script_previousButton(self, gesture):
 		self.sendGestureIfOtherButton(gesture, 'backward')
-	
+
 	@script(
-		gesture = 'kb:rightArrow',
+		gesture='kb:rightArrow',
 	)
 	def script_nextButton(self, gesture):
 		self.sendGestureIfOtherButton(gesture, 'forward')
-		
+
 	def sendGestureIfOtherButton(self, gesture, direction):
-		stopCondition = lambda o: o.role == controlTypes.Role.BUTTON and o.isFocusable
-		isRootObj = lambda o: o.role == controlTypes.Role.GROUPING
-		obj = self.walkObj(self, direction, stopCondition, isRootObj)
+		obj = self.walkObj(
+			oStart=self,
+			direction=direction,
+			stopCondition=lambda o: o.role == controlTypes.Role.BUTTON and o.isFocusable,
+			isRootObj=lambda o: o.role == controlTypes.Role.GROUPING,
+		)
 		if obj is None:
 			return
 		gesture.send()
-	
+
 	def walkObj(self, oStart, direction, stopCondition, isRootObj, ignoreChildren=False):
 		"""A function to walk the object hierarchy until a condition is met.
 		The function returns the first object meeting the condition or None if no object is found.
-		
+
 		@param oStart: the start object
 		@type obj: NVDAObject
 		@param direction ('backward' or 'forward'): a direction to walk the object hierarchy.
-			backward: look for a matching object considering last child, then previous sibling, then parent at each step.
+			backward: look for a matching object considering last child, then previous sibling, then parent.
 			forward: look for a matching object considering first child, then next sibling, then parent.
 		@type direction: str
 		@param stopCondition: a function to evaluate if hierarchy walking should stop on this object.
 		@type stopCondition: function
-		@param isRootObj: a function to evaluate if an object is the root object of the considered object hierarchy.
+		@param isRootObj: a function to evaluate if an object is the root object of the considered object
+			hierarchy.
 		@type isRootObj: function
 		@param ignoreChildren: do not consider first/last child when searching for next matching object.
 		@type ignoreChildren: bool
 		@rtype: NVDAObject | None
 		"""
-		
+
 		if isRootObj(oStart):
 			# If root object is reach, no object satisfying the condition has been found.
 			return None
@@ -336,42 +354,43 @@ class UIANotificationZoneButton(UIA):
 				else:
 					return self.walkObj(o, direction, stopCondition, isRootObj, ignoreChildren=isParent)
 		raise RuntimeError('Unexpected object tree structure')
-	
+
+
 class UIARecipientButton(UIANotificationZoneButton):
 
 	def _get_name(self):
 		try:
 			return self.firstChild.name
 		except AttributeError:
-			return super(UIARecipientButton, self).name
-			
+			return super().name
+
 	def reportFocus(self):
 		ui.message(self.name)
-		
+
 
 class UIAMoreInfoButton(UIANotificationZoneButton):
 
 	def _get_name(self):
 		# Translators: The name for a button in the notification bar to display more or less information.
 		return _('More or less information')
-	
+
 	def reportFocus(self):
 		ui.message(self.name)
-		
+
 
 class NotificationChecker(threading.Thread):
 	def __init__(self, appModule, *args, **kwargs):
-		super(NotificationChecker, self).__init__(*args, **kwargs)
+		super().__init__(*args, **kwargs)
 		self.outlookAppModule = appModule
 		self._stop = threading.Event()
-		
+
 	def stop(self):
 		self._stop.set()
 		self.outlookAppModule = None
-		
+
 	def stopped(self):
 		return self._stop.isSet()
-		
+
 	def run(self):
 		oldInfoSet = set()
 		oldFgHwnd = 0
@@ -389,31 +408,31 @@ class NotificationChecker(threading.Thread):
 							# Old version: beeps whenever the notification bar content changes (names added or deleted)
 							o.name for o in notif.children if (
 								(o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
-								or (o.role == controlTypes.Role.STATICTEXT and o.UIAElement.currentAutomationID == 'MailTipItemPreText')
+								or (
+									o.role == controlTypes.Role.STATICTEXT
+									and o.UIAElement.currentAutomationID == 'MailTipItemPreText'
+								)
 							)
 						}
 					else:
 						infoSet = set()
-					log.debug(f'zzz Info set = {infoSet}\noldInfoSet = {oldInfoSet}\nfgHwnd = {fgHwnd}\noldFgHwnd= {oldFgHwnd}')
 					if fgHwnd == oldFgHwnd and infoSet != oldInfoSet:
 						focus = api.getFocusObject()
 						if focus.windowClassName == 'RichEdit20WPT':
 							nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
 					oldInfoSet = infoSet
-					#else:
-					#	oldInfoSet = set()
 					oldFgHwnd = fgHwnd
 			except Exception as e:
 				# If an error occurs, log it but do not stop the thread.
 				log.error(e, exc_info=True)
 			sleep(0.5)
-		
+
 
 class NotificationPaneElement:
 	def __init__(self, name, location):
 		self.name = name
 		self.location = location
-		
+
 	def __repr__(self):
 		return '{name} - \nL={left}, T={top}, W= {width}, H={height}\n'.format(
 			name=self.name,
@@ -428,24 +447,24 @@ class NotificationPaneRow:
 	def __init__(self, obj):
 		self.elements = [obj]
 		self._bottom = None
-	
+
 	@property
 	def bottom(self):
 		if self._bottom is None:
 			self._bottom = self.elements[0].location.bottom
 		return self._bottom
-		
+
 	def add(self, elem):
 		if self.bottom != elem.location.bottom:
 			log.error('{} != {}'.format(self.bottom, elem.bottom))
 		self.elements.append(elem)
-	
+
 	@property
 	def text(self):
 		textList = []
 		for elem in self.elements:
 			name = elem.name
-			if textList and re.match('^\w.*$', name, re.U):
+			if textList and re.match(r'^\w.*$', name, re.U):
 				name = ' ' + name
 			textList.append(name)
 		return ''.join(textList)
@@ -463,41 +482,41 @@ class NotificationPane:
 					self.rows.append(row)
 				else:
 					self.rows[-1].add(elem)
-				
+
 	@property
 	def text(self):
 		return '\n'.join(r.text for r in self.rows)
 
 
 class AppModule(AppModule):
-	
+
 	scriptCategory = ADDON_SUMMARY
-	
-	_headerFieldKeyMap = {str(i):i for i in range(1,10)}
+
+	_headerFieldKeyMap = {str(i): i for i in range(1, 10)}
 	_headerFieldKeyMap.update({
 		'0': 10,
 		KEY_HEADER_FIELD11: 11,
 		KEY_HEADER_FIELD12: 12})
-		
-	def __init__(self,*args,**kwargs):
-		super(AppModule,self).__init__(*args,**kwargs)
+
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
 		self.lastFocus = None
 		self.testCases = None
 		self.tcNumber = 0
 		self.notificationChecker = NotificationChecker(appModule=self)
 		self.notificationChecker.start()
-		
-	def terminate(self,*args,**kwargs):
+
+	def terminate(self, *args, **kwargs):
 		self.notificationChecker.stop()
 		self.notificationChecker = None  # To break ref cycle
-		super(AppModule, self).terminate(*args,**kwargs)
-		
+		super().terminate(*args, **kwargs)
+
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
-		super(AppModule, self).chooseNVDAObjectOverlayClasses(obj, clsList)
-		if obj.role==controlTypes.Role.LISTITEM and obj.windowClassName=="OUTEXVLB":
+		super().chooseNVDAObjectOverlayClasses(obj, clsList)
+		if obj.role == controlTypes.Role.LISTITEM and obj.windowClassName == "OUTEXVLB":
 			clsList.insert(0, AddressBookEntry)
 			return
-		if obj.role==controlTypes.Role.LIST and obj.windowClassName=="OUTEXVLB":
+		if obj.role == controlTypes.Role.LIST and obj.windowClassName == "OUTEXVLB":
 			clsList.insert(0, List)
 			return
 		if UIAGridRow in clsList:
@@ -505,15 +524,15 @@ class AppModule(AppModule):
 			return
 		if UIA in clsList:
 			if obj.role == controlTypes.Role.GROUPING and obj.parent.windowClassName == 'OutlookGrid':
-				clsList.insert(0,UIAWithReadStatus)
+				clsList.insert(0, UIAWithReadStatus)
 			elif obj.UIAElement.currentAutomationID == 'RecipientButton':
 				clsList.insert(0, UIARecipientButton)
 			elif obj.UIAElement.currentAutomationID == 'MoreInfo':
 				clsList.insert(0, UIAMoreInfoButton)
-	
+
 	def reportHeaderFieldN(self, nField, gesture):
+		# Calendar view: Alt+digit is used command to set up number of days in the view
 		if api.getFocusObject().windowClassName in ['DayViewWnd', 'WeekViewWnd']:
-		#Calendar view: Alt+digit is used command to set up number of days in the view
 			gesture.send()
 			return
 		nRepeat = getLastScriptRepeatCount()
@@ -544,7 +563,7 @@ class AppModule(AppModule):
 			self.errorBeep()
 			return
 		self.reportObject(obj, nRepeat)
-	
+
 	def getFakeRootDialog(self):
 		# Checks if config.conf['outlookExtended']['testCasePath'] is defined.
 		# If defined, it allows setting up a debug test framework fore live tests on various message types.
@@ -559,42 +578,45 @@ class AppModule(AppModule):
 			obj = FakeRootDialog(object=self.FakeRootWindow(tcName))
 			return obj
 		return None
-				
+
 	def reportObject(self, obj, nRepeat):
-		if nRepeat == 0:
 		# single press
+		if nRepeat == 0:
 			self.speakObject(obj)
-			self.lastFocus= api.getFocusObject()
-		elif nRepeat == 1:
+			self.lastFocus = api.getFocusObject()
 		# double press, set focus in field
+		elif nRepeat == 1:
 			handle = obj.windowHandle
 			winUser.setForegroundWindow(handle)
-		elif nRepeat == 2:
 		# triple press, copy to clipboard and set focus to original focused object
+		elif nRepeat == 2:
 			api.copyToClip(obj.value)
 			# Translators: When user triple presses Alt+Number to copy a header's field to clipboard
 			core.callLater(0, lambda: ui.message(_("Copied to clipboard")))
-			api.setNavigatorObject(obj,isFocus=True)
+			api.setNavigatorObject(obj, isFocus=True)
 			self.lastFocus.setFocus()
-	
+
 	def speakObject(self, obj):
 		if obj.role == controlTypes.Role.CHECKBOX:
 			name = obj.name
 			# Translators: A checkbox state
 			value = _('checked') if controlTypes.State.CHECKED in obj.states else _('unchecked')
 		else:
-			name,value = obj.name,obj.value
+			name, value = obj.name, obj.value
 		# Translators: To report name and value of a heaeder's field
-		ui.message(_("{name} {value}").format(name=name,value=value))
-		
+		ui.message(_("{name} {value}").format(name=name, value=value))
+
 	def errorBeep(self):
 		tones.beep(440, 80)
-		
+
 	@script(
-		# Translators: Documentation for report notification script.
-		description=_("Reports the notification in a message. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."),	
-		gestures = ["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"]
-		)
+		description=_(
+			# Translators: Documentation for report notification script.
+			"Reports the notification in a message. If pressed twice, moves the focus to it."
+			" If pressed three times, copies its content to the clipboard."
+		),
+		gestures=["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"]
+	)
 	def script_reportNotification(self, gesture):
 		obj = self.getNotificationObj()
 		if obj is None:
@@ -613,15 +635,16 @@ class AppModule(AppModule):
 			api.copyToClip(self.notificationText)
 			# Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
 			ui.message(_("Copied to clipboard"))
-			#api.setNavigatorObject(obj,isFocus=True)
-			#self.lastFocus.setFocus()
 			winUser.setForegroundWindow(self.lastFocus.windowHandle)
-		
+
 	@script(
-		# Translators: Documentation for report info bar script.
-		description=_("Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."),	
-		gestures = ["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"]
-		)
+		description=_(
+			# Translators: Documentation for report info bar script.
+			"Reports the information bar in a message, calendar item or task window."
+			" If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
+		),
+		gestures=["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"]
+	)
 	def script_reportInfoBar(self, gesture):
 		obj = self.getInfoBarObj()
 		if obj is None:
@@ -629,64 +652,75 @@ class AppModule(AppModule):
 			ui.message(_("No information bar"))
 			return
 		self.reportObject(obj, getLastScriptRepeatCount())
-		
+
 	@script(
 		# Translators: Documentation for move to message body script.
 		description=_("Moves the focus to the message body"),
-		gestures = ["kb(desktop):NVDA+shift+M", "kb(laptop):NVDA+control+shift+M"]
-		)
+		gestures=["kb(desktop):NVDA+shift+M", "kb(laptop):NVDA+control+shift+M"]
+	)
 	def script_focusToMessageBody(self, gesture):
 		try:
 			obj = getNVDAObjectFromEvent(
-			findDescendantWindow(api.getForegroundObject().windowHandle, visible=True, className=None, controlID=4159),
-			winUser.OBJID_CLIENT, 0)
+				findDescendantWindow(
+					api.getForegroundObject().windowHandle,
+					visible=True,
+					className=None,
+					controlID=4159,
+				),
+				winUser.OBJID_CLIENT,
+				0,
+			)
 		except LookupError:
 			# Translators: Error when trying to move focus in message body
 			ui.message(_("Not in a message window"))
 			return
 		obj.setFocus()
-	
+
 	@script(
 		# Translators: Documentation for Attachments script.
-		description=_("Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it."),
-		gestures = ["kb(desktop):NVDA+shift+A", "kb(laptop):NVDA+control+shift+A"]
-		)
+		description=_(
+			"Reports the number and the names of attachments in a message window."
+			" If pressed twice, moves the focus to it.",
+		),
+		gestures=["kb(desktop):NVDA+shift+A", "kb(laptop):NVDA+control+shift+A"]
+	)
 	def script_attachments(self, gesture):
 		obj = api.getFocusObject()
 		appVersionMaj = int(obj.appModule.productVersion.split('.')[0])
-		
+
 		try:
-			if appVersionMaj >= 16: #Outlook 2016+
-				attachmentsList,handle,namesGen,windowName = self.getAttachmentInfos2016()
+			if appVersionMaj >= 16:  # Outlook 2016+
+				attachmentsList, handle, namesGen, windowName = self.getAttachmentInfos2016()
 			else:
-				attachmentsList,handle,namesGen,windowName = self.getAttachmentInfos2013()
+				attachmentsList, handle, namesGen, windowName = self.getAttachmentInfos2013()
 		except LookupError:
 			self.errorBeep()
 			return
 		self.nAttachments = len(attachmentsList)
-		if getLastScriptRepeatCount() == 1 and self.nAttachments > 0:
 		# double press, set focus in field
+		if getLastScriptRepeatCount() == 1 and self.nAttachments > 0:
 			self.focusInfo['firstObj'].setFocus()
 			winUser.setForegroundWindow(self.focusInfo['handle'])
-		else:
 		# single press
+		else:
 			self.focusInfo = {'handle': handle}
 			try:
 				self.focusInfo['firstObj'] = attachmentsList[0]
 			except IndexError:
 				self.focusInfo['firstObj'] = None
-			#Launch the attachments announcement code in a different thread since it can take time in the case of numerous attachments (above 17 on my machine).
-			#In this case, getLastScriptRepeatCount() after double press will return 0 instead of 1.
+
+			# Launch the attachments announcement code in a different thread since it can take time in the case of
+			# numerous attachments (above 17 on my machine).
+			# In this case, getLastScriptRepeatCount() after double press will return 0 instead of 1.
 			def announceAttachments():
-				msg = (
-					windowName + ": " + str(self.nAttachments) + '. ' +  #Attachments number
-					', '.join(namesGen))
+				attachmentList = ', '.join(namesGen)
+				msg = f"{windowName}: {self.nAttachments}. {attachmentList}"
 				core.callLater(0, ui.message, msg)
 			threading.Thread(target=announceAttachments).start()
-	
+
 	def getAttachmentInfos2016(self):
 		fg = api.getForegroundObject()
-		cidAttachments=4306
+		cidAttachments = 4306
 		handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttachments)
 		obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 		try:
@@ -697,11 +731,11 @@ class AppModule(AppModule):
 		except AttributeError:
 			attachmentsList = []
 		namesGen = (child.firstChild.getChild(1).name for child in attachmentsList)
-		return attachmentsList,handle,namesGen,obj.name
-		
+		return attachmentsList, handle, namesGen, obj.name
+
 	def getAttachmentInfos2013(self):
 		fg = api.getForegroundObject()
-		cidAttachments=4623
+		cidAttachments = 4623
 		bFoundWindow = False
 		bResult = False
 		try:
@@ -715,14 +749,18 @@ class AppModule(AppModule):
 		except LookupError:
 			pass
 		if not bResult:
-			cidAttachments=4104
+			cidAttachments = 4104
 			try:
 				handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttachments)
 				obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 				if obj.firstChild is None:
 					raise LookupError
 				bFoundWindow = True
-				def makeGenChildren(o): #Define a generator to get children since the .children roperty does not work
+
+				def makeGenChildren(o):
+					"""Define a generator to get children since the .children property does not work
+					"""
+
 					o = o.firstChild
 					while o is not None:
 						if o.role == controlTypes.Role.BUTTON:
@@ -736,48 +774,50 @@ class AppModule(AppModule):
 		if not bFoundWindow:
 			raise LookupError
 		if bResult:
-			return attachmentsList,handle,namesGen,obj.name
+			return attachmentsList, handle, namesGen, obj.name
 		else:
-			return [], handle,[],obj.name
-		
+			return [], handle, [], obj.name
+
 	def getInfoBarControlId(self):
 		majVer = int(self.productVersion.split('.')[0])
 		if majVer <= 11:
-			cid = 4105 #Outlook 2003
+			cid = 4105  # Outlook 2003
 		else:
-			cid = 4262 #Outlook 2016
+			cid = 4262  # Outlook 2016
 		return cid
-	
+
 	def getInfoBarObj(self):
 		try:
 			cid = self.getInfoBarControlId()
 			obj = getNVDAObjectFromEvent(
-			findDescendantWindow(api.getForegroundObject().windowHandle, visible=True, className=None, controlID=cid),
-			winUser.OBJID_CLIENT, 0)
+				findDescendantWindow(api.getForegroundObject().windowHandle, visible=True, className=None, controlID=cid),
+				winUser.OBJID_CLIENT,
+				0,
+			)
 		except LookupError:
 			obj = None
 		return obj
-	
+
 	def getRootDialog(self):
 		obj = api.getFocusObject()
-		parent = obj.parent
 		try:
 			while obj.windowClassName != "#32770":
 				obj = obj.parent
 		except AttributeError:
 			raise NotInMessageWindowError
 		if obj.role == controlTypes.Role.WINDOW:
-			#Sometimes going up hierarchy goes directly to window object without passing via dialog object -> go to first child
+			# Sometimes going up hierarchy goes directly to window object without passing via dialog object -> go to
+			# first child
 			obj = obj.firstChild
 		return obj
-		
+
 	def initializeTestCases(self):
 		debugTcPath = config.conf['outlookExtended']['testCasePath']
 		isTest = bool(debugTcPath)
 		if isTest:
 			if self.testCases is None:
 				sys.path.append(debugTcPath)
-				from cases import tcObjectPropertyDic 
+				from cases import tcObjectPropertyDic
 				from fakeObjects import FakeRootWindow
 				del sys.path[-1]
 				self.testCases = tcObjectPropertyDic
@@ -786,7 +826,7 @@ class AppModule(AppModule):
 			# Translators: Reported when calling a test command
 			ui.message(_('Test case path not defined.'))
 		return isTest
-	
+
 	# Test scripts
 	# 1. Scripts to select next and previous test cases when test mode is active
 	# 2. Script to move the navigator object on the fake root dialog.
@@ -798,9 +838,10 @@ class AppModule(AppModule):
 	# move= kb:control+f8+nvda+shift
 	def script_selectNextTestCase(self, gesture):
 		return self.selectTestCase(offset=1)
+
 	def script_selectPreviousTestCase(self, gesture):
 		return self.selectTestCase(offset=-1)
-		
+
 	def selectTestCase(self, offset):
 		if not self.initializeTestCases():
 			return
@@ -812,16 +853,16 @@ class AppModule(AppModule):
 			self.tcName = ''
 			# Translators: Reported when calling a test command
 			ui.message(_('Test mode offf'))
-	
+
 	def script_navigatorObject_toFakeRootDialog(self, gesture):
-		if not self.tcNumber: # None or 0
+		if not self.tcNumber:  # None or 0
 			# Translators: Reported when calling a test command
 			ui.message(_('Test mode is off.'))
 			return
 		obj = self.getFakeRootDialog()
 		api.setNavigatorObject(obj)
 		speech.speakObject(obj)
-	
+
 	def getNotificationObj(self):
 		fgObj = api.getForegroundObject()
 		if not fgObj or fgObj.appModule is not self:
@@ -831,7 +872,9 @@ class AppModule(AppModule):
 			obj = getNVDAObjectFromEvent(
 				findDescendantWindow(fgObj.windowHandle, visible=True, className=None, controlID=cid),
 				winUser.OBJID_WINDOW, 0)
-			getChildWithRole = lambda o,role: [oc for oc in obj.children if oc.role == role][0]
+
+			def getChildWithRole(o, role):
+				return [oc for oc in obj.children if oc.role == role][0]
 			obj = getChildWithRole(obj, controlTypes.Role.PANE)
 			obj = getChildWithRole(obj, controlTypes.Role.PANE)
 			obj = getChildWithRole(obj, controlTypes.Role.PANE)
@@ -840,24 +883,27 @@ class AppModule(AppModule):
 		except LookupError:
 			return None
 		return obj
-		
-	
-	__gestures = {"kb:alt+" + key : "reportHeaderField" + str(n) for (key,n) in _headerFieldKeyMap.items()}
-	
+
+	__gestures = {f"kb:alt+{key}": f"reportHeaderField{n}" for (key, n) in _headerFieldKeyMap.items()}
+
 	@staticmethod
 	def _createScript_reportHeaderField(n):
-		def  _genericScript_reportHeaderField(self, gesture):
+		def _genericScript_reportHeaderField(self, gesture):
 			return self.reportHeaderFieldN(n, gesture)
-		#Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
-		_genericScript_reportHeaderField.__doc__ = _("Reports the header field %s in a message, calendar item or task window. If pressed twice, moves the focus to this field if possible. If pressed three times, copies its content to the clipboard.") % str(n)
+		_genericScript_reportHeaderField.__doc__ = _(
+			# Translators: Input help mode message for report a header's field command. in outlook message, calendar
+			# item or task window
+			"Reports the header field %s in a message, calendar item or task window. If pressed twice, moves"
+			" the focus to this field if possible. If pressed three times, copies its content to the clipboard."
+		) % str(n)
 		return _genericScript_reportHeaderField
-	
+
 	@classmethod
 	def createAllScript_reportHeaderField(cls):
-		for n in range(1,len(cls._headerFieldKeyMap)+1):
-			scriptName = 'script_reportHeaderField' + str(n)
+		for n in range(1, len(cls._headerFieldKeyMap) + 1):
+			scriptName = f"script_reportHeaderField{n}"
 			scriptFun = AppModule._createScript_reportHeaderField(n)
 			setattr(cls, scriptName, scriptFun)
-	
-	
+
+
 AppModule.createAllScript_reportHeaderField()

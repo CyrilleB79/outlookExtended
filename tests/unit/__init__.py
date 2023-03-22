@@ -17,10 +17,11 @@ UNIT_DIR = os.path.dirname(os.path.abspath(__file__))
 TOP_DIR = os.path.dirname(os.path.dirname(UNIT_DIR))
 # The path to the NVDA "source" directory.
 SOURCE_DIR = os.path.join(TOP_DIR, "addon", "appModules", "outlook")
-# Let us import modules from the NVDA source.
+# Let us import modules from the add-on source.
 sys.path.insert(1, SOURCE_DIR)
 
-from itemWindow import OutlookItemWindow
+from itemWindow import OutlookItemWindow  # noqa: E402 - Needed here after path modification.
+
 
 class TestOutlookItemWindow(unittest.TestCase):
 
@@ -31,11 +32,11 @@ class TestOutlookItemWindow(unittest.TestCase):
 			windowType = test.split('_')[0]
 			self.assertTrue(getattr(oiw, 'is' + windowType)())
 		return test_function
-		
+
 	for test in cases.tcObjectPropertyDic.keys():
 		locals()['testIs%s' % test] = makeTestIsWindowType(test)
 	del makeTestIsWindowType
-	
+
 	def makeTestGetWindowTypeFields(test):
 		def test_function(self):
 			fakeRoot = FakeRootWindow(test)
@@ -54,7 +55,7 @@ class TestOutlookItemWindow(unittest.TestCase):
 				print(cids)
 				raise
 		return test_function
-		
+
 	for test in cases.tcObjectPropertyDic.keys():
 		locals()['testGet%sHeaderFields' % test] = makeTestGetWindowTypeFields(test)
 	del makeTestGetWindowTypeFields

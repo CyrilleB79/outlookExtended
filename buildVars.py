@@ -5,6 +5,7 @@
 
 import os.path
 
+
 # Since some strings in `addon_info` are translatable,
 # we need to include them in the .po files.
 # Gettext recognizes only strings given as parameters to the `_` function.
@@ -24,14 +25,13 @@ addon_info = {
 	"addon_summary": _("Outlook Extended"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("""Extended support and features for Microsoft Outlook:
-- Provide gestures to read and navigate to headers, information bar and attachments in messages, calendar items, tasks.
-- Improve result reading in address book.
-- Vocalize mark as read/unread ctrl+q/ctrl+u commands."""),
+	"addon_description": _("Extended support and features for Microsoft Outlook."),
 	# version
 	"addon_version": "1.10",
 	# Author(s)
-	"addon_author": "Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>",
+	"addon_author": (
+		"Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>"
+	),
 	# URL for the add-on documentation support
 	"addon_url": "https://github.com/CyrilleB79/outlookExtended",
 	# URL for the add-on repository where the source code can be found

@@ -22,7 +22,7 @@ tcObjectPropertyDic['Message_CollapsedHeader'] = [
 	{'name': 'Pièces jointes', 'value': None, 'role': 9, 'states': {1024, 16777216}, 'cid': 4284},
 	{'name': '', 'value': None, 'role': 7, 'states': {128}, 'cid': 4287},
 	{'name': 'Envoyé', 'value': None, 'role': 7, 'states': {128}, 'cid': 4299},
-	{'name': 'Envoyé', 'value': '14:59', 'role': 8, 'states': {128, 16777216}, 'cid': 4293},
+	{'name': 'Envoyé', 'value': '14: 59', 'role': 8, 'states': {128, 16777216}, 'cid': 4293},
 	{'name': 'Objet', 'value': None, 'role': 7, 'states': {128}, 'cid': 4300},
 	{'name': 'Objet', 'value': 'Test', 'role': 8, 'states': {128, 16777216}, 'cid': 4294},
 	{'name': '', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 4288},
@@ -378,7 +378,7 @@ tcHeaderFieldDic['Message2_EditingSD'] = {
 	6: (4101, 'Subject'),
 	7: (4346, 'SignedBy'),
 }
-	
+
 tcObjectPropertyDic['MeetingRequest'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': '', 'value': None, 'role': 7, 'states': {1024, 1, 128}, 'cid': 4296},
@@ -452,12 +452,12 @@ tcHeaderFieldDic['MeetingRequest'] = {
 	3: (4098, 'Required'),
 	4: (4099, 'Optional'),
 	5: (4100, 'Subject'),
-	6:(4101, 'Location'),
-	7:(4102, 'DateTime'),
+	6: (4101, 'Location'),
+	7: (4102, 'DateTime'),
 }
 
-tcObjectPropertyDic['MeetingRequest2_Cancelled'] = [
 # Cancelled meeting request on Outlook 365, 64 bits, as reported by DG on May 19th, 2020.
+tcObjectPropertyDic['MeetingRequest2_Cancelled'] = [
 	{'name': None, 'value': None, 'role': 3, 'states': {1024, 16777216}, 'cid': 4350},
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {1024, 128}, 'cid': 1026},
 	{'name': 'DAL=on', 'value': None, 'role': 7, 'states': {128}, 'cid': 4312},
@@ -512,8 +512,8 @@ tcHeaderFieldDic['MeetingRequest2_Cancelled'] = {
 	3: (4105, 'Required'),
 	4: (4106, 'Optional'),
 	5: (4294, 'Subject'),
-	6:(4101, 'Location'),
-	7:(4102, 'DateTime'),
+	6: (4101, 'Location'),
+	7: (4102, 'DateTime'),
 }
 
 tcObjectPropertyDic['MeetingReply_Reading'] = [
@@ -559,7 +559,7 @@ tcHeaderFieldDic['MeetingReply_Reading'] = {
 	4: (4108, 'Cc'),
 	5: (4099, 'Subject'),
 	6: (4106, 'Location'),
-	7:(4105, 'DateTime'), #Date/time or, for e-mails in edition, current time
+	7: (4105, 'DateTime'),  # Date/time or, for e-mails in edition, current time
 	8: (4109, 'ProposedNewTime'),
 	9: (4100, 'Accepted'),
 	10: (4101, 'Tentative'),
@@ -601,7 +601,7 @@ tcHeaderFieldDic['MeetingReply_Editing'] = {
 	4: (4108, 'Cc'),
 	5: (4099, 'Subject'),
 	6: (4106, 'Location'),
-	7:(4105, 'DateTime'), #Date/time or, for e-mails in edition, current time 
+	7: (4105, 'DateTime'),  # Date/time or, for e-mails in edition, current time
 	8: (4109, 'ProposedNewTime'),
 	9: (4100, 'Accepted'),
 	10: (4101, 'Tentative'),
@@ -645,7 +645,7 @@ tcHeaderFieldDic['MeetingReply_NewTimeProposal'] = {
 	4: (4108, 'Cc'),
 	5: (4099, 'Subject'),
 	6: (4106, 'Location'),
-	7:(4105, 'DateTime'), #Date/time or, for e-mails in edition, current time 
+	7: (4105, 'DateTime'),  # Date/time or, for e-mails in edition, current time
 	8: (4109, 'ProposedNewTime'),
 	9: (4100, 'Accepted'),
 	10: (4101, 'Tentative'),
@@ -835,8 +835,8 @@ tcObjectPropertyDic['Calendar_MeetingOccurence'] = [
 
 
 tcHeaderFieldDic['Calendar_MeetingOccurence'] = {
-	1: (4523, 'Organizer'), #Exists invisible in appointment
-	#1: (4263, 'From'),
+	1: (4523, 'Organizer'),  # Exists invisible in appointment
+	# 1: (4263, 'From'),
 	2: (4526, 'Sent'),
 	3: (4106, 'To'),
 	4: (4100, 'Subject'),
@@ -848,11 +848,11 @@ tcHeaderFieldDic['Calendar_MeetingOccurence'] = {
 	10: (4226, 'AllDay'),
 }
 
-tcObjectPropertyDic['Calendar_MeetingOccurence2'] = [
 # A meeting occurance, Microsoft® Outlook® til Microsoft 365 MSO (Version 2204 Build 16.0.15128.20158) 64-bit
 # The location field is 4111 instead of 4102.
 # Date/Time is a single field rather than 4 fields for start/end date/time.
 # (DG_2022-05-09)
+tcObjectPropertyDic['Calendar_MeetingOccurence2'] = [
 	{'name': 'Kategorier', 'value': None, 'role': 7, 'states': {128}, 'cid': 4864},
 	{'name': 'Kategorier', 'value': None, 'role': 3, 'states': {1024, 1, 16777216}, 'cid': 4267},
 	{'name': 'Kategorier', 'value': None, 'role': 3, 'states': {1024, 1, 16777216}, 'cid': 4331},
@@ -952,8 +952,8 @@ tcObjectPropertyDic['Calendar_MeetingOccurence2'] = [
 ]
 
 tcHeaderFieldDic['Calendar_MeetingOccurence2'] = {
-	1: (4523, 'Organizer'), #Exists invisible in appointment
-	#1: (4263, 'From'),
+	1: (4523, 'Organizer'),  # Exists invisible in appointment
+	# 1: (4263, 'From'),
 	2: (4526, 'Sent'),
 	3: (4106, 'To'),
 	4: (4100, 'Subject'),
@@ -1028,7 +1028,7 @@ tcObjectPropertyDic['Calendar_MeetingSeries'] = [
 ]
 
 tcHeaderFieldDic['Calendar_MeetingSeries'] = {
-	1: (4523, 'Organizer'), #Exists invisible in appointment
+	1: (4523, 'Organizer'),  # Exists invisible in appointment
 	2: (4526, 'Sent'),
 	3: (4106, 'To'),
 	4: (4100, 'Subject'),

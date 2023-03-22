@@ -12,12 +12,18 @@ def convertControlTypes(ct):
 		ct.Role
 	except AttributeError:
 		# Re-create Role enum
-		Role = enum.IntEnum('Role', {v[len('ROLE_'):]: getattr(ct, v) for v in dir(ct) if v.startswith('ROLE_')})
+		Role = enum.IntEnum(
+			'Role',
+			{v[len('ROLE_'):]: getattr(ct, v) for v in dir(ct) if v.startswith('ROLE_')},
+		)
 		ct.Role = Role
 	try:
 		ct.State
 	except AttributeError:
 		# Re-create State enum
-		State = enum.IntEnum('State', {v[len('STATE_'):]: getattr(ct, v) for v in dir(ct) if v.startswith('STATE_')})
+		State = enum.IntEnum(
+			'State',
+			{v[len('STATE_'):]: getattr(ct, v) for v in dir(ct) if v.startswith('STATE_')},
+		)
 		ct.State = State
 	return ct
