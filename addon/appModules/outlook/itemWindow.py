@@ -517,7 +517,7 @@ class OutlookItemWindow(object):
 			cids = cid
 		else:
 			cids = (cid, )
-		if self.rootDialog.name != 'Fake root':
+		if self.rootDialog.__class__.__name__ != 'FakeRootDialog':
 			msgList = []
 			for cid in cids:
 				try:
