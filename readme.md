@@ -32,6 +32,11 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 2.0
+
+* Improve the user experience with notifications appearing when entering e-mail addresses which are not valid anymore or which send automatic out of office replies:
+  a sound alerts when such notifications appear or are updated, a gesture allows to read it or to move to it, and navigation in this area with arrows is made more easy.
+
 ### Version 1.10
 
 * Compatibility with NVDA 2023.1.
