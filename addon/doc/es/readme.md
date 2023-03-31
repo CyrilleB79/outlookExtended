@@ -6,7 +6,7 @@
 * Descargar [versión de desarrollo][2]
 
 Este complemento mejora el uso de Microsoft Outlook verbalizando algunas
-órdenes y añadiendo órdenes extra.
+órdenes y añadiendo órdenes y funciones extra.
 
 ## Órdenes
 
@@ -24,14 +24,31 @@ Este complemento mejora el uso de Microsoft Outlook verbalizando algunas
   una ventana de mensaje. Si se pulsa dos veces, mueve el foco hasta allí.
 * NVDA+shift+M (distribución de escritorio) / NVDA+control+shift+M
   (distribución portátil): mueve el foco al cuerpo del mensaje.
-* Ctrl+alt+flechas izquierda y derecha: en la lista de resultados de
-  búsqueda de la libreta de direcciones, navega entre los campos de la línea
-  seleccionada actualmente.
+* NVDA+shift+N (distribución de escritorio) / NVDA+control+shift+N
+  (distribución portátil): muestra la notificación en una ventana de
+  mensaje. Si se pulsa dos veces, mueve el foco hacia ella. Si se pulsa tres
+  veces, copia su contenido al portapapeles.
 * Ctrl+q: en la lista de mensajes, marca el mensaje o grupo de mensajes
   seleccionado como leído.
 * Ctrl+u: en la lista de mensajes, marca el mensaje o grupo de mensajes
   seleccionado como no leído.
 
+## Mejoras adicionales
+
+* Cuando el destinatario introducido en los campos Para, CC o CCO envía
+  respuestas automáticas por desconexión o ya no está presente en el
+  servidor Exchange, Outlook lo anuncia en el área de notificaciones. En
+  esta zona de notificaciones, también hay botones para eliminar la
+  dirección de estos destinatarios. Este complemento informará con un pitido
+  cuando aparezca el área de notificaciones, desaparezca o se actualice. En
+  ese momento, se puede pulsar una vez NVDA+shift+N o NVDA+control+shift+N
+  para leerla o dos veces para saltar a ella. Después, se puede usar el
+  desplazamiento con las flechas para moverse por los botones del
+  destinatario y pulsar uno para eliminar al destinatario correspondiente.
+* En la lista de resultados de la libreta de direcciones, se pueden usar
+  órdenes de navegación horizontal por tablas para leer el contenido de cada
+  columna.
+  
 ## Notas
 
 Todos los gestos pueden cambiarse en el diálogo Gestos de entrada de
@@ -46,6 +63,20 @@ NVDA. Puedes querer modificarlos en las siguientes situaciones:
   encajan con tu distribución de teclado.
 
 ## Registro de cambios
+
+### Versión 2.0
+
+* Se mejora la experiencia de usuario con las notificaciones que aparecen al
+  introducir direcciones de correo electrónico que ya no son válidas o que
+  envían respuestas automáticas de desconexión de la oficina: se reproduce
+  un sonido cuando dichas notificaciones aparecen o se actualizan, un gesto
+  permite leerlas o desplazarse hasta ellas, y se facilita la navegación por
+  la zona con las flechas.
+
+### Versión 1.10
+
+* Compatibilidad con NVDA 2023.1.
+* Traducciones actualizadas.
 
 ### Versión 1.9
 

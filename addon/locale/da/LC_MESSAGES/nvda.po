@@ -17,11 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.2\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
+#. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "-"
 
-#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#. Translators: The key just ont the left of the backspace key.
+#. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
+#. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "="
 
@@ -56,7 +60,8 @@ msgid "read"
 msgstr "Læst"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
-#. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
+#. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you
+#. press control again.
 #. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 msgid "Column navigation not supported in the address book"
 msgstr "Kolonnenavigation understøttes ikke i adressebogen"
@@ -65,12 +70,18 @@ msgstr "Kolonnenavigation understøttes ikke i adressebogen"
 msgid "Fake root"
 msgstr "Falsk rod"
 
+#. Translators: The name for a button in the notification bar to display more or less information.
+#, fuzzy
+msgid "More or less information"
+msgstr "Ingen informationslinje"
+
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
 msgstr "Ikke i et meddelelsesvindue"
 
 #. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
+#. Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
 msgid "Copied to clipboard"
 msgstr "Kopieret til udklipsholder"
 
@@ -85,6 +96,21 @@ msgstr "Ikke markeret"
 #, python-brace-format
 msgid "{name} {value}"
 msgstr "{name} {value}"
+
+#. Translators: Documentation for report notification script.
+#, fuzzy
+msgid ""
+"Reports the notification in a message. If pressed twice, moves the focus to "
+"it. If pressed three times, copies its content to the clipboard."
+msgstr ""
+"Rapporterer informationslinjen i en besked, kalenderobjekt eller "
+"opgavevindue. Hvis du trykker to gange, flyttes fokus til den. Hvis du "
+"trykker tre gange, kopierer du indholdet til udklipsholderen."
+
+#. Translators: Message reported when calling the script to report notification bar.
+#, fuzzy
+msgid "No notification"
+msgstr "Ingen informationslinje"
 
 #. Translators: Documentation for report info bar script.
 msgid ""
@@ -104,7 +130,6 @@ msgstr "Ingen informationslinje"
 msgid "Moves the focus to the message body"
 msgstr "Flytter fokus til meddelelsesteksten"
 
-#. Translators: Documentation for Attachments script.
 msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
@@ -112,17 +137,21 @@ msgstr ""
 "Rapporterer nummeret og navnene på vedhæftede filer i et meddelelsesvindue. "
 "Hvis du trykker to gange, flyttes fokus til det pågældende område."
 
+#. Translators: Reported when calling a test command
 msgid "Test case path not defined."
 msgstr "Testsagens sti er ikke defineret."
 
+#. Translators: Reported when calling a test command
 msgid "Test mode offf"
 msgstr "Testtilstand fra"
 
 #. None or 0
+#. Translators: Reported when calling a test command
 msgid "Test mode is off."
 msgstr "Testtilstand fra"
 
-#. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
+#. Translators: Input help mode message for report a header's field command. in outlook message, calendar
+#. item or task window
 #, python-format
 msgid ""
 "Reports the header field %s in a message, calendar item or task window. If "
@@ -135,22 +164,26 @@ msgstr ""
 "udklipsholderen."
 
 #. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
 msgid "Outlook Extended"
 msgstr "Udvidelse til Outlook"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-msgid ""
-"Extended support and features for Microsoft Outlook:\n"
-"- Provide gestures to read and navigate to headers, information bar and "
-"attachments in messages, calendar items, tasks.\n"
-"- Improve result reading in address book.\n"
-"- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+msgid "Extended support and features for Microsoft Outlook."
 msgstr ""
-"udvidet funktionalitet for Microsoft Outlook:\n"
-"- angiver kommandoer til brug af læsning og navigering til overskrifter, "
-"informationslinjen og vedhæftede filer i meddelelser, kalenderobjekter og "
-"opgavevisning.\n"
-"- Forbedret læsning af resultater i adressebogen.\n"
-"- Oplæser kommandoer, når meddelelser markeres som læst eller ulæst."
+
+#~ msgid ""
+#~ "Extended support and features for Microsoft Outlook:\n"
+#~ "- Provide gestures to read and navigate to headers, information bar and "
+#~ "attachments in messages, calendar items, tasks.\n"
+#~ "- Improve result reading in address book.\n"
+#~ "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+#~ msgstr ""
+#~ "udvidet funktionalitet for Microsoft Outlook:\n"
+#~ "- angiver kommandoer til brug af læsning og navigering til overskrifter, "
+#~ "informationslinjen og vedhæftede filer i meddelelser, kalenderobjekter og "
+#~ "opgavevisning.\n"
+#~ "- Forbedret læsning af resultater i adressebogen.\n"
+#~ "- Oplæser kommandoer, når meddelelser markeres som læst eller ulæst."

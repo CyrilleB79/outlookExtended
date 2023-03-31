@@ -17,11 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
+#. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "-"
 
-#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#. Translators: The key just ont the left of the backspace key.
+#. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
+#. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "="
 
@@ -56,7 +60,8 @@ msgid "read"
 msgstr "Прочетено"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
-#. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
+#. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you
+#. press control again.
 #. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 msgid "Column navigation not supported in the address book"
 msgstr "Навигацията по колони не се поддържа в адресната книга"
@@ -65,12 +70,18 @@ msgstr "Навигацията по колони не се поддържа в �
 msgid "Fake root"
 msgstr "Фалшив корен"
 
+#. Translators: The name for a button in the notification bar to display more or less information.
+#, fuzzy
+msgid "More or less information"
+msgstr "Информационната лента не е налична"
+
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
 msgstr "Фокусът не е в полето за съобщение"
 
 #. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
+#. Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
 msgid "Copied to clipboard"
 msgstr "Копирано в клипборда"
 
@@ -85,6 +96,21 @@ msgstr "Без отметка"
 #, python-brace-format
 msgid "{name} {value}"
 msgstr "{name} {value}"
+
+#. Translators: Documentation for report notification script.
+#, fuzzy
+msgid ""
+"Reports the notification in a message. If pressed twice, moves the focus to "
+"it. If pressed three times, copies its content to the clipboard."
+msgstr ""
+"Съобщава информационната лента в съобщение, елемент от календара или в "
+"прозореца на задачите. Двукратното натискане премества фокуса в нея. "
+"Трикратното натискане копира съдържанието й в клипборда."
+
+#. Translators: Message reported when calling the script to report notification bar.
+#, fuzzy
+msgid "No notification"
+msgstr "Информационната лента не е налична"
 
 #. Translators: Documentation for report info bar script.
 msgid ""
@@ -104,7 +130,6 @@ msgstr "Информационната лента не е налична"
 msgid "Moves the focus to the message body"
 msgstr "Премества фокуса в полето със съдържанието на съобщението"
 
-#. Translators: Documentation for Attachments script.
 msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
@@ -112,17 +137,21 @@ msgstr ""
 "Съобщава броя и имената на прикачените файлове в прозореца за съобщения. "
 "Двукратното натискане премества фокуса в полето с прикачените файлове."
 
+#. Translators: Reported when calling a test command
 msgid "Test case path not defined."
 msgstr "Пътят за тестовия казус не е указан."
 
+#. Translators: Reported when calling a test command
 msgid "Test mode offf"
 msgstr "Тестовият режим е изключен"
 
 #. None or 0
+#. Translators: Reported when calling a test command
 msgid "Test mode is off."
 msgstr "Тестовият режим е изключен."
 
-#. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
+#. Translators: Input help mode message for report a header's field command. in outlook message, calendar
+#. item or task window
 #, python-format
 msgid ""
 "Reports the header field %s in a message, calendar item or task window. If "
@@ -135,23 +164,27 @@ msgstr ""
 "клипборда."
 
 #. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
 msgid "Outlook Extended"
 msgstr "Разширена функционалност за Outlook"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-msgid ""
-"Extended support and features for Microsoft Outlook:\n"
-"- Provide gestures to read and navigate to headers, information bar and "
-"attachments in messages, calendar items, tasks.\n"
-"- Improve result reading in address book.\n"
-"- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+msgid "Extended support and features for Microsoft Outlook."
 msgstr ""
-"Разширена поддръжка и функции за Microsoft Outlook:\n"
-"- Осигуряване на жестове за четене и навигация към заглавките, "
-"информационната лента и прикачените файлове в съобщенията, елементите от "
-"календара, задачите.\n"
-"- Подобряване на четенето на резултатите в адресната книга.\n"
-"- Докладване на действията по отбелязване на съобщението като прочетено/"
-"непрочетено (командите Control+Q и Control+U)."
+
+#~ msgid ""
+#~ "Extended support and features for Microsoft Outlook:\n"
+#~ "- Provide gestures to read and navigate to headers, information bar and "
+#~ "attachments in messages, calendar items, tasks.\n"
+#~ "- Improve result reading in address book.\n"
+#~ "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+#~ msgstr ""
+#~ "Разширена поддръжка и функции за Microsoft Outlook:\n"
+#~ "- Осигуряване на жестове за четене и навигация към заглавките, "
+#~ "информационната лента и прикачените файлове в съобщенията, елементите от "
+#~ "календара, задачите.\n"
+#~ "- Подобряване на четенето на резултатите в адресната книга.\n"
+#~ "- Докладване на действията по отбелязване на съобщението като прочетено/"
+#~ "непрочетено (командите Control+Q и Control+U)."

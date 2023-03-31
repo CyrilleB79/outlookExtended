@@ -5,8 +5,8 @@
 * Baixar [Versão estável][1]
 * Baixar [Versão de desenvolvimento][2]
 
-Este extra melhora o uso do Microsoft Outlook, verbalizando determinados
-comandos e adicionando alguns novos.
+This addon improves the use of Microsoft Outlook by vocalizing some native
+commands, adding extra commands and adds extra features.
 
 ## Comandos:
 
@@ -23,14 +23,28 @@ comandos e adicionando alguns novos.
   pressionado duas vezes, move o foco os anexos.
 * NVDA+shift+M (teclado do desktop) / NVDA+control+shift+M (teclado do
   laptop): Muda o foco para o corpo da mensagem.
-* Control+Alt+Esquerda e Control+Alt+Direita: na lista de resultados da
-  pesquisa do livro de endereços, navegam entre os campos da linha
-  actualmente seleccionada.
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
+  Reports the notification in a message window. If pressed twice, moves the
+  focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: na lista de mensagens, marca a mensagem ou grupo de mensagens
   seleccionadas como lidas.
 * Control+U: na lista de mensagens, marca a mensagem ou grupo de mensagens
   seleccionadas como não lidas.
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area. In this notification
+  area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area
+  appear, disappear or be updated. You can then press NVDA+shif+N /
+  NVDA+control+shift+N once to have it read and twice to jump to this
+  area. Then move with arrows on the recipient buttons and press a button to
+  remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation
+  commands to read the content of each column.
+  
 ## Notas:
 
 Todos os comandos podem ser modificados no diálogo de definir comandos do
@@ -45,6 +59,19 @@ NVDA. Pode querer alterá-los especialmente nas seguintes situações:
   se eles não corresponderem ao esquema do teclado local.
 
 ## Modificações:
+
+### Version 2.0
+
+* Improve the user experience with notifications appearing when entering
+  e-mail addresses which are not valid anymore or which send automatic out
+  of office replies: a sound alerts when such notifications appear or are
+  updated, a gesture allows to read it or to move to it, and navigation in
+  this area with arrows is made more easy.
+
+### Version 1.10
+
+* Compatibility with NVDA 2023.1.
+* Traduções actualizadas.
 
 ### Version 1.9
 

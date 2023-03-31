@@ -5,8 +5,8 @@
 * Stiahnuť [stabilnú verziu][1]
 * Stiahnuť [vývojovú verziu][2]
 
-Zlepšuje prístupnosť Microsoft Outlooku pridaním klávesových skratiek a
-oznamovaním rôznych informácií.
+This addon improves the use of Microsoft Outlook by vocalizing some native
+commands, adding extra commands and adds extra features.
 
 ## Klávesové skratky
 
@@ -22,12 +22,27 @@ oznamovaním rôznych informácií.
   sebou presunie fokus na prílohy.
 * NVDA+shift+M (desktop) a NVDA+ctrl+shift+M (laptop): Presunie fokus do
   tela správy
-* Ctrl+alt+ľavá a pravá šípka: V zozname kontaktov presúva medzi poliami
-  vybratého kontaktu.
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
+  Reports the notification in a message window. If pressed twice, moves the
+  focus to it. If pressed three times, copies its content to the clipboard.
 * Ctrl+q: Označí správu alebo vybraté správy v zozname správ ako prečítané.
 * Ctrl+u: Označí správu alebo vybraté správy v zozname správ ako
   neprečítané.
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area. In this notification
+  area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area
+  appear, disappear or be updated. You can then press NVDA+shif+N /
+  NVDA+control+shift+N once to have it read and twice to jump to this
+  area. Then move with arrows on the recipient buttons and press a button to
+  remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation
+  commands to read the content of each column.
+  
 ## Poznámky
 
 Všetky skratky je možné upraviť v dialógu NVDA Klávesové skratky. Skratky
@@ -41,6 +56,19 @@ budete chcieť zmeniť v nasledujúcich situáciách:
   upraviť, ak používate inú ako anglickú klávesnicu.
 
 ## Zoznam zmien
+
+### Version 2.0
+
+* Improve the user experience with notifications appearing when entering
+  e-mail addresses which are not valid anymore or which send automatic out
+  of office replies: a sound alerts when such notifications appear or are
+  updated, a gesture allows to read it or to move to it, and navigation in
+  this area with arrows is made more easy.
+
+### Version 1.10
+
+* Compatibility with NVDA 2023.1.
+* Updated localizations.
 
 ### Version 1.9
 

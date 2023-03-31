@@ -5,8 +5,8 @@
 * Scarica la [versione stabile][1]
 * Scarica la [versione in sviluppo][2]
 
-Questo add-on migliora l'utilizzo di Microsoft Outlook, vocalizzando alcuni
-comandi ed aggiungendone altri.
+This addon improves the use of Microsoft Outlook by vocalizing some native
+commands, adding extra commands and adds extra features.
 
 ## Comandi
 
@@ -23,13 +23,28 @@ comandi ed aggiungendone altri.
   premuto due volte, sposta il focus su di essi.
 * NVDA+shift+M (layout desktop) / NVDA+control+shift+M (layout laptop):
   sposta il focus sul corpo di un messaggio.
-* Control+Alt+Freccia sinistra/destra: nell'elenco dei risultati di ricerca
-  della rubrica, si sposta tra i campi della riga selezionata.
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
+  Reports the notification in a message window. If pressed twice, moves the
+  focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: nell'elenco dei messaggi, marca il messaggio o gruppo di
   messaggi selezionato come letto.
 * Control+U: nell'elenco dei messaggi, marca il messaggio o gruppo di
   messaggi selezionato come non letto.
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area. In this notification
+  area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area
+  appear, disappear or be updated. You can then press NVDA+shif+N /
+  NVDA+control+shift+N once to have it read and twice to jump to this
+  area. Then move with arrows on the recipient buttons and press a button to
+  remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation
+  commands to read the content of each column.
+  
 ## Note
 
 Tutti i comandi possono essere modificati nella finestra Gesti e Tasti di
@@ -47,6 +62,19 @@ situazioni:
   layout tastiera.
 
 ## Elenco delle modifiche
+
+### Version 2.0
+
+* Improve the user experience with notifications appearing when entering
+  e-mail addresses which are not valid anymore or which send automatic out
+  of office replies: a sound alerts when such notifications appear or are
+  updated, a gesture allows to read it or to move to it, and navigation in
+  this area with arrows is made more easy.
+
+### Version 1.10
+
+* Compatibility with NVDA 2023.1.
+* Traduzioni aggiornate.
 
 ### Version 1.9
 

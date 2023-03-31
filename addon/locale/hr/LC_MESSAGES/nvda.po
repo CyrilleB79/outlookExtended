@@ -20,11 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
+#. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
+#. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
 msgstr "'"
 
-#. Translators: The key just ont the left of the backspace key. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#. Translators: The key just ont the left of the backspace key.
+#. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
+#. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "+"
 
@@ -59,7 +63,8 @@ msgid "read"
 msgstr "pročitano"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
-#. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you press control again.
+#. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you
+#. press control again.
 #. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
 msgid "Column navigation not supported in the address book"
 msgstr "Kretanje po stupcima nije podržano u adresaru"
@@ -68,12 +73,18 @@ msgstr "Kretanje po stupcima nije podržano u adresaru"
 msgid "Fake root"
 msgstr "Lažni korijen"
 
+#. Translators: The name for a button in the notification bar to display more or less information.
+#, fuzzy
+msgid "More or less information"
+msgstr "Nema informacijske trake"
+
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
 msgid "Not in a message window"
 msgstr "Ne nalazi se u prozoru poruke"
 
 #. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
+#. Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
 msgid "Copied to clipboard"
 msgstr "Kopirano u međuspremnik"
 
@@ -88,6 +99,21 @@ msgstr "nije odabrano"
 #, python-brace-format
 msgid "{name} {value}"
 msgstr "{name} {value}"
+
+#. Translators: Documentation for report notification script.
+#, fuzzy
+msgid ""
+"Reports the notification in a message. If pressed twice, moves the focus to "
+"it. If pressed three times, copies its content to the clipboard."
+msgstr ""
+"Izvještava o informacijskoj traci u poruci, stavki kalendara ili prozoru "
+"zadatka. Ako se pritisne dvaput, fokusira ga. Ako se pritisne triput, kopira "
+"sadržaj u međuspremnik."
+
+#. Translators: Message reported when calling the script to report notification bar.
+#, fuzzy
+msgid "No notification"
+msgstr "Nema informacijske trake"
 
 #. Translators: Documentation for report info bar script.
 msgid ""
@@ -107,7 +133,6 @@ msgstr "Nema informacijske trake"
 msgid "Moves the focus to the message body"
 msgstr "Premješta fokus u polje poruke"
 
-#. Translators: Documentation for Attachments script.
 msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
@@ -115,17 +140,21 @@ msgstr ""
 "Izvještava o broju privitaka i njihove nazive u prozoru poruke. Ako se "
 "pritisne dvaput, premješta fokus na njega."
 
+#. Translators: Reported when calling a test command
 msgid "Test case path not defined."
 msgstr "Put testnog slučaja nije definiran."
 
+#. Translators: Reported when calling a test command
 msgid "Test mode offf"
 msgstr "Testni modus je isključen"
 
 #. None or 0
+#. Translators: Reported when calling a test command
 msgid "Test mode is off."
 msgstr "Testni modus je isključen."
 
-#. Translators: Input help mode message for report a header's field command. in outlook message, calendar item or task window
+#. Translators: Input help mode message for report a header's field command. in outlook message, calendar
+#. item or task window
 #, python-format
 msgid ""
 "Reports the header field %s in a message, calendar item or task window. If "
@@ -137,21 +166,25 @@ msgstr ""
 "Ako se pritisne triput, kopira sadržaj u međuspremnik."
 
 #. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
 msgid "Outlook Extended"
 msgstr "Prošireni Outlook"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-msgid ""
-"Extended support and features for Microsoft Outlook:\n"
-"- Provide gestures to read and navigate to headers, information bar and "
-"attachments in messages, calendar items, tasks.\n"
-"- Improve result reading in address book.\n"
-"- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+msgid "Extended support and features for Microsoft Outlook."
 msgstr ""
-"Proširena podrška i funkcionalnost za Microsoft Outlook:\n"
-"- Omogućuje geste za čitanje i kretanje na zaglavlja, traku informacija te "
-"priloge u porukama, elemente kalendara i zadatke.\n"
-"- Unapređeno čitanje rezultata u adresnoj knjizi.\n"
-"- Čita prečace kontrol+q/kontrol+u kao pročitano/nepročitano."
+
+#~ msgid ""
+#~ "Extended support and features for Microsoft Outlook:\n"
+#~ "- Provide gestures to read and navigate to headers, information bar and "
+#~ "attachments in messages, calendar items, tasks.\n"
+#~ "- Improve result reading in address book.\n"
+#~ "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
+#~ msgstr ""
+#~ "Proširena podrška i funkcionalnost za Microsoft Outlook:\n"
+#~ "- Omogućuje geste za čitanje i kretanje na zaglavlja, traku informacija "
+#~ "te priloge u porukama, elemente kalendara i zadatke.\n"
+#~ "- Unapređeno čitanje rezultata u adresnoj knjizi.\n"
+#~ "- Čita prečace kontrol+q/kontrol+u kao pročitano/nepročitano."
