@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.4\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2020-01-03 15:05+1000\n"
-"PO-Revision-Date: 2022-06-19 04:03+0100\n"
+"PO-Revision-Date: 2023-04-01 18:25+0100\n"
 "Last-Translator: Nikola Jović <wwenikola123@gmail.com>\n"
 "Language-Team: Serbian <wwenikola123@gmail.com>\n"
 "Language: sr\n"
@@ -71,9 +71,8 @@ msgid "Fake root"
 msgstr "Fake root"
 
 #. Translators: The name for a button in the notification bar to display more or less information.
-#, fuzzy
 msgid "More or less information"
-msgstr "Nema trake sa informacijama"
+msgstr "Više ili manje informacija"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
@@ -98,19 +97,16 @@ msgid "{name} {value}"
 msgstr "{name} {value}"
 
 #. Translators: Documentation for report notification script.
-#, fuzzy
 msgid ""
 "Reports the notification in a message. If pressed twice, moves the focus to "
 "it. If pressed three times, copies its content to the clipboard."
 msgstr ""
-"Prijavljuje traku sa informacijama u prozoru poruke, stavke kalendara ili "
-"prozoru sa zadatkom. Ako se pritisne dva puta, premešta fokus na nju. Ako se "
-"pritisne tri  puta, kopira njen sadržaj u privremenu memoriju."
+"Prijavljuje obaveštenje u poruci. Ako se pritisne dva puta, pomera fokus na "
+"njega. Ako se pritisne tri puta, kopira njegov sadržaj u privremenu memoriju."
 
 #. Translators: Message reported when calling the script to report notification bar.
-#, fuzzy
 msgid "No notification"
-msgstr "Nema trake sa informacijama"
+msgstr "Nema obaveštenja"
 
 #. Translators: Documentation for report info bar script.
 msgid ""
@@ -171,7 +167,7 @@ msgstr "Outlook dodaci"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid "Extended support and features for Microsoft Outlook."
-msgstr ""
+msgstr "Dodatna podrška i opcije za Microsoft Outlook."
 
 #~ msgid ""
 #~ "Extended support and features for Microsoft Outlook:\n"
