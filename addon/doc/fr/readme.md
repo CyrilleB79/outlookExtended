@@ -5,8 +5,8 @@
 * Télécharger [version stable][1]
 * Télécharger [version de développement][2]
 
-Cette extension améliore l’utilisation de Microsoft Outlook par la
-vocalisation de certaines commandes et l’ajout de commandes supplémentaires.
+This addon improves the use of Microsoft Outlook by vocalizing some native
+commands, adding extra commands and adds extra features.
 
 ## Commandes
 
@@ -26,14 +26,28 @@ vocalisation de certaines commandes et l’ajout de commandes supplémentaires.
 * NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
   (disposition ordinateur portable): Déplace le focus dans le corps du
   message.
-* Control+Alt+Gauche et Control+Alt+Droite: Dans la liste des résultats de
-  recherche du carnet d’adresses, navigue entre les champs de la ligne
-  sélectionnée.
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
+  Reports the notification in a message window. If pressed twice, moves the
+  focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: Dans la liste des messages, marque le message ou le groupe de
   messages sélectionné comme lu.
 * Control+U: Dans la liste des messages, marque le message ou le groupe de
   messages sélectionné comme non lu.
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area. In this notification
+  area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area
+  appear, disappear or be updated. You can then press NVDA+shif+N /
+  NVDA+control+shift+N once to have it read and twice to jump to this
+  area. Then move with arrows on the recipient buttons and press a button to
+  remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation
+  commands to read the content of each column.
+  
 ## Notes
 
 Tous les gestes de commandes peuvent être modifiés dans la boîte de dialogue
@@ -50,6 +64,19 @@ modifier dans les situations suivantes :
   avec votre disposition de clavier locale.
 
 ## Journal des modifications
+
+### Version 2.0
+
+* Improve the user experience with notifications appearing when entering
+  e-mail addresses which are not valid anymore or which send automatic out
+  of office replies: a sound alerts when such notifications appear or are
+  updated, a gesture allows to read it or to move to it, and navigation in
+  this area with arrows is made more easy.
+
+### Version 1.10
+
+* Compatibility with NVDA 2023.1.
+* Ajout de localisations.
 
 ### Version 1.9
 
@@ -124,6 +151,6 @@ modifier dans les situations suivantes :
 
 [[!tag dev stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
+[1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
 
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
+[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

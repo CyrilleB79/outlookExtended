@@ -5,8 +5,8 @@
 * Preuzmite [stabilnu verziju][1]
 * Preuzmite [verziju u razvoju][2]
 
-Ovaj dodatak olakšava korišćenje programa Microsoft Outlook izgovaranjem
-nekih postojećih i dodavanjem novih komandi.
+This addon improves the use of Microsoft Outlook by vocalizing some native
+commands, adding extra commands and adds extra features.
 
 ## Komande
 
@@ -24,13 +24,28 @@ nekih postojećih i dodavanjem novih komandi.
   puta, premešta fokus na priloge.
 * NVDA+Shift+M (desktop raspored) / NVDA+Control+Shift+M (laptop raspored):
   Premešta fokus na telo poruke.
-* Control+Alt+levo i Control+Alt+desno: U listi rezultata pretrage
-  kontakata, kreće se po poljima trenutno odabranog rezultata.
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
+  Reports the notification in a message window. If pressed twice, moves the
+  focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: U listi poruka, označava trenutno odabrane poruke kao
   pročitane.
 * Control+U: U listi poruka, označava trenutno odabrane poruke kao
   nepročitane.
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area. In this notification
+  area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area
+  appear, disappear or be updated. You can then press NVDA+shif+N /
+  NVDA+control+shift+N once to have it read and twice to jump to this
+  area. Then move with arrows on the recipient buttons and press a button to
+  remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation
+  commands to read the content of each column.
+  
 ## Napomene
 
 Sve prečice se mogu menjati u dijalogu za podešavanje ulaznih komandi. Možda
@@ -45,6 +60,19 @@ Sve prečice se mogu menjati u dijalogu za podešavanje ulaznih komandi. Možda
   prečice za 11. i 12. polje ako koristite drugi raspored tastature.
 
 ## Lista promena
+
+### Version 2.0
+
+* Improve the user experience with notifications appearing when entering
+  e-mail addresses which are not valid anymore or which send automatic out
+  of office replies: a sound alerts when such notifications appear or are
+  updated, a gesture allows to read it or to move to it, and navigation in
+  this area with arrows is made more easy.
+
+### Version 1.10
+
+* Compatibility with NVDA 2023.1.
+* Updated localizations.
 
 ### Version 1.9
 
@@ -114,6 +142,6 @@ Sve prečice se mogu menjati u dijalogu za podešavanje ulaznih komandi. Možda
 
 [[!tag dev stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
+[1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
 
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
+[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

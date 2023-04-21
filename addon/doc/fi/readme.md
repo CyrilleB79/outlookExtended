@@ -6,7 +6,7 @@
 * Lataa [kehitysversio][2]
 
 Tämä lisäosa parantaa Microsoft Outlookin käyttöä puhumalla olemassa olevia
-näppäinkomentoja sekä lisäämällä uusia.
+näppäinkomentoja sekä lisäämällä uusia komentoja ja ominaisuuksia.
 
 ## Näppäinkomennot
 
@@ -24,13 +24,29 @@ näppäinkomentoja sekä lisäämällä uusia.
   liitetiedostojen luetteloon.
 * NVDA+Vaihto+M (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+M (kannettavan
   näppäimistöasettelu): Siirtää kohdistuksen viestirunkoon.
-* Ctrl+Alt+Nuoli vasemmalle ja Ctrl+Alt+Nuoli oikealle: Liikkuu valittuna
-  olevan rivin kenttien välillä osoitekirjan hakutulosluettelossa.
+* NVDA+Vaihto+N (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+Vaihto+N
+  (kannettavan näppäimistöasettelu): Puhuu viesti-ikkunan
+  ilmoituksen. Kahdesti painettaessa kohdistus siirretään siihen. Kolmesti
+  painettaessa sen sisältö kopioidaan leikepöydälle.
 * Ctrl+Q: Merkitsee valitun viestin/valitut viestit luetuiksi
   viestiluettelossa.
 * Ctrl+U: Merkitsee valitun viestin/valitut viestit lukemattomiksi
   viestiluettelossa.
 
+## Lisäparannukset
+
+* Kun To-, Cc- tai Bcc-kenttiin syöttämäsi vastaanottaja lähettää
+  automaattisia poissaolovastauksia tai ei ole enää Exchange-palvelimella,
+  Outlook ilmoittaa siitä ilmoitusalueella. Siinä on myös painikkeet, joilla
+  nämä vastaanottajat voidaan poistaa. Tämä lisäosa ilmoittaa kilahduksella,
+  kun ilmoitusalue tulee näkyviin, häviää näkyvistä tai päivittyy. Voit
+  sitten painaa kerran NVDA+Vaihto+N/NVDA+Ctrl+Vaihto+N lukeaksesi sen tai
+  kahdesti siirtyäksesi siihen. Liiku sitten nuolilla
+  vastaanottajapainikkeissa ja paina haluamaasi painiketta poistaaksesi
+  kyseisen vastaanottajan.
+* Voit käyttää osoitekirjan tulosluettelossa vaakasuuntaisia
+  taulukkonavigointikomentoja lukeaksesi kunkin sarakkeen sisällön.
+  
 ## Huomautuksia
 
 Kaikkia näppäinkomentoja on mahdollista muokata NVDA:n
@@ -47,6 +63,20 @@ seuraavissa tilanteissa:
   kanssa.
 
 ## Muutosloki
+
+### Versio 2.0
+
+* Paranneltu näkyviin tulevien ilmoitusten käyttäjäkokemusta kirjoitettaessa
+  sähköpostiosoitteita, jotka eivät ole enää käytössä tai lähettävät
+  automaattisia poissaolovastauksia: ääni ilmoittaa, kun sellaisia
+  ilmoituksia tulee näkyviin tai päivittyy, näppäinkomento mahdollistaa sen
+  lukemisen tai siirtymisen siihen ja nuolinäppäimillä liikkuminen tällä
+  alueella on helpompaa.
+
+### Versio 1.10
+
+* Yhteensopivuus NVDA 2023.1:lle.
+* Lokalisointeja päivitetty.
 
 ### Versio 1.9
 
@@ -114,6 +144,6 @@ seuraavissa tilanteissa:
 
 [[!tag dev stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
+[1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
 
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
+[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

@@ -5,7 +5,8 @@
 * 下载 [稳定版][1]
 * 下载 [开发板][2]
 
-此插件主要通过发出一些命令并添加额外的命令来改进Microsoft Outlook的使用体验。
+This addon improves the use of Microsoft Outlook by vocalizing some native
+commands, adding extra commands and adds extra features.
 
 ## 命令
 
@@ -16,10 +17,26 @@
 * NVDA+shift+A (台式机方按) / NVDA+control+shift+A (笔记本方案):
   在消息窗口中朗读附件的编号和名称。按两次，则将焦点移动到附件。
 * NVDA + shift + M（台机布局）/ NVDA + control + shift + M（笔电布局）：将焦点移到邮件正文。
-* Control + Alt +左光标和Control + Alt +右光标：在地址簿搜索结果列表中，在当前选定行的编辑框之间浏览。
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
+  Reports the notification in a message window. If pressed twice, moves the
+  focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: 在消息列表中，将所选消息或消息组标记为已读。
 * Control + U：在消息列表中，将选定的消息或一组消息标记为未读。
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area. In this notification
+  area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area
+  appear, disappear or be updated. You can then press NVDA+shif+N /
+  NVDA+control+shift+N once to have it read and twice to jump to this
+  area. Then move with arrows on the recipient buttons and press a button to
+  remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation
+  commands to read the content of each column.
+  
 ## 注意
 
 可以在NVDA命令手势对话框中修改所有手势。您可能希望修改它们，尤其是在以下情况下：
@@ -28,6 +45,19 @@
 * 读取标题的默认手势对应于Alt与字母数字键盘第一行的键组合。如果它们与本地键盘布局不匹配，您可能需要重新映射读取标题11和12的手势。
 
 ## 更新日志
+
+### Version 2.0
+
+* Improve the user experience with notifications appearing when entering
+  e-mail addresses which are not valid anymore or which send automatic out
+  of office replies: a sound alerts when such notifications appear or are
+  updated, a gesture allows to read it or to move to it, and navigation in
+  this area with arrows is made more easy.
+
+### Version 1.10
+
+* Compatibility with NVDA 2023.1.
+* 新增本地化。
 
 ### Version 1.9
 
@@ -93,6 +123,6 @@
 
 [[!tag dev stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
+[1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
 
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
+[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

@@ -5,8 +5,8 @@
 * Preuzmi [stabilnu verziju][1]
 * Preuzmi [razvojnu verziju][2]
 
-Ovaj dodatak poboljšava upotrebu Microsoft Outlooka. Izgovara neke naredbe i
-dodaje dodatne naredbe.
+Ovaj dodatak poboljšava upotrebu Microsoft Outlooka izgovaranjem nekih
+izvornih naredbi, dodaje dodatne naredbe i dodaje dodatne funkcije.
 
 ## Naredbe
 
@@ -23,13 +23,29 @@ dodaje dodatne naredbe.
   pritisne dvaput, premješta fokus na njega.
 * NVDA+šift+M (desktop raspored) / NVDA+kontrol+šift+M (laptop raspored):
   Premješta fokus u polje poruke.
-* Kontrol+Alt+lijevo i kontrol+Alt+desno: u popisu pretrage adresara, kreći
-  se između polja trenutačno odabranog retka.
+* NVDA+šift+I (desktop raspored) / NVDA+kontrol+šift+N (laptop raspored):
+  Izvještava obavijest u prozoru poruke. Ako se pritisne dvaput, pomiče
+  fokus na njega. Ako se pritisne tri puta, kopira njegov sadržaj u
+  međuspremnik.
 * Kontrol+Q: u popisu poruka, označi odabranu poruku ili grupu poruka kao
   pročitane.
 * Kontrol+U: u popisu poruka, označi odabranu poruku ili grupu poruka kao
   nepročitane.
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area. In this notification
+  area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area
+  appear, disappear or be updated. You can then press NVDA+shif+N /
+  NVDA+control+shift+N once to have it read and twice to jump to this
+  area. Then move with arrows on the recipient buttons and press a button to
+  remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation
+  commands to read the content of each column.
+  
 ## Napomene
 
 Sve se geste mogu izmijeniti u dijaloškom okviru NVDA gesta naredbi. Moguće
@@ -44,6 +60,19 @@ ih je promijeniti za sljedeće situacije:
   rasporedom lokalne tipkovnice.
 
 ## Dnevnik promjena
+
+### Verzija 2.0
+
+* Poboljšano korisničko iskustvo s obavijestima koje se pojavljuju prilikom
+  unosa e-mail adresa koje više ne važe ili koje šalju automatske odgovore o
+  odsutnosti: zvučno upozorenje kada se takve obavijesti pojave ili
+  ažuriraju, gesta omogućuje čitanje ili pomicanje na nju, a navigacija u
+  ovom području pomoću strelica je jednostavnija.
+
+### Verzija 1.10
+
+* Kompatibilnost s NVDA verzijom 2023.1.
+* Prijevodi su aktualizirani.
 
 ### Verzija 1.9
 
@@ -111,6 +140,6 @@ ih je promijeniti za sljedeće situacije:
 
 [[!tag dev stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
+[1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
 
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
+[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

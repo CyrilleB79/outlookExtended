@@ -5,8 +5,8 @@
 * Descargar [versión estable][1]
 * Descargar [versión de desenvolvemento][2]
 
-Este complemento mellora o uso de Microsoft Outlook falando certas ordes e
-engadindo atallos adicionais.
+This addon improves the use of Microsoft Outlook by vocalizing some native
+commands, adding extra commands and adds extra features.
 
 ## Ordes de teclado
 
@@ -24,14 +24,28 @@ engadindo atallos adicionais.
   xanela de mensaxe. Se se preme dúas veces, move o foco cara eles.
 * NVDA+shift+M (distribución de escritorio) / NVDA+control+shift+M
   (distribución portátil): Move o foco ó corpo da mensaxe.
-* Control+Alt+Esquerda e Control+Alt+Dereita: na lista de resultados de
-  busca na libreta de enderezos, navega entre os campos da liña actualmente
-  seleccionada.
+* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
+  Reports the notification in a message window. If pressed twice, moves the
+  focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: na lista de mensaxes, marca como lida a mensaxe ou o grupo de
   mensaxes seleccionado.
 * Control+U: na lista de mensaxes, marca como non lida a mensaxe ou o grupo
   de mensaxes seleccionado.
 
+## Additional improvements
+
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area. In this notification
+  area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area
+  appear, disappear or be updated. You can then press NVDA+shif+N /
+  NVDA+control+shift+N once to have it read and twice to jump to this
+  area. Then move with arrows on the recipient buttons and press a button to
+  remove the corresponding recipient.
+* In the address book's result list, you can use horizontal table navigation
+  commands to read the content of each column.
+  
 ## Notas
 
 Todos os xestos pódense modificar dende o diálogo Xestos de entrada de
@@ -46,6 +60,19 @@ NVDA. Poderías querer modificalos especialmente nas seguintes situacións:
   túa distribución de teclado local.
 
 ## Rexistro de trocos
+
+### Version 2.0
+
+* Improve the user experience with notifications appearing when entering
+  e-mail addresses which are not valid anymore or which send automatic out
+  of office replies: a sound alerts when such notifications appear or are
+  updated, a gesture allows to read it or to move to it, and navigation in
+  this area with arrows is made more easy.
+
+### Version 1.10
+
+* Compatibility with NVDA 2023.1.
+* Traducións actualizadas.
 
 ### Versión 1.9
 
@@ -117,6 +144,6 @@ NVDA. Poderías querer modificalos especialmente nas seguintes situacións:
 
 [[!tag dev stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
+[1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
 
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
+[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev
