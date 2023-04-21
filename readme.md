@@ -31,6 +31,11 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 2.1
+
+* Removed the dev channel.
+* Updated localizations.
+
 ### Version 2.0
 
 * Improve the user experience with notifications appearing when entering e-mail addresses which are not valid anymore or which send automatic out of office replies:
