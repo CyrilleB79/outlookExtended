@@ -3,7 +3,6 @@
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
 * Compatibilidad con NVDA: de 2019.3 en adelante
 * Descargar [versión estable][1]
-* Descargar [versión de desarrollo][2]
 
 Este complemento mejora el uso de Microsoft Outlook verbalizando algunas
 órdenes y añadiendo órdenes y funciones extra.
@@ -63,6 +62,11 @@ NVDA. Puedes querer modificarlos en las siguientes situaciones:
   encajan con tu distribución de teclado.
 
 ## Registro de cambios
+
+### Versión 2.1
+
+* Se ha eliminado el canal de desarrollo.
+* Traducciones actualizadas.
 
 ### Versión 2.0
 
@@ -149,5 +153,3 @@ NVDA. Puedes querer modificarlos en las siguientes situaciones:
 [[!tag dev stable]]
 
 [1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
-
-[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

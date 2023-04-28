@@ -3,7 +3,6 @@
 * Автори: Cyrille Bougot, Ralf Kefferpuetz
 * Съвместимост с NVDA: от 2019.3 и по-нови
 * Изтегляне на [стабилна версия][1]
-* Изтегляне на [тестова версия][2]
 
 Тази добавка подобрява използването на Microsoft Outlook чрез озвучаване на
 някои команди, добавяне на допълнителни команди и добавяне на допълнителни
@@ -67,6 +66,11 @@
   подредба.
 
 ## Списък с промените
+
+### Версия 2.1
+
+* Премахнат е тестовият канал.
+* Обновени преводи.
 
 ### Версия 2.0
 
@@ -153,5 +157,3 @@
 [[!tag dev stable]]
 
 [1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
-
-[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

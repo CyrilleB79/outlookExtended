@@ -3,10 +3,10 @@
 * Auteurs : Cyrille Bougot, Ralf Kefferpuetz
 * Compatibilité NVDA: 2019.3 et ultérieure
 * Télécharger [version stable][1]
-* Télécharger [version de développement][2]
 
-This addon improves the use of Microsoft Outlook by vocalizing some native
-commands, adding extra commands and adds extra features.
+Cette extension améliore l’utilisation de Microsoft Outlook par la
+vocalisation de certaines commandes et l’ajout de commandes et
+fonctionnalités supplémentaires.
 
 ## Commandes
 
@@ -26,27 +26,31 @@ commands, adding extra commands and adds extra features.
 * NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
   (disposition ordinateur portable): Déplace le focus dans le corps du
   message.
-* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
-  Reports the notification in a message window. If pressed twice, moves the
-  focus to it. If pressed three times, copies its content to the clipboard.
+* NVDA+shift+N (disposition ordinateur de bureau) / NVDA+control+shift+N
+  (disposition ordinateur portable) : annonce la notification dans une
+  fenêtre de message. Si vous appuyez deux fois, déplace le focus dessus. Si
+  vous appuyez trois fois, copie son contenu dans le presse-papiers.
 * Control+Q: Dans la liste des messages, marque le message ou le groupe de
   messages sélectionné comme lu.
 * Control+U: Dans la liste des messages, marque le message ou le groupe de
   messages sélectionné comme non lu.
 
-## Additional improvements
+## Améliorations supplémentaires
 
-* When the recipient you have entered in the To, Cc or Bcc fields sends
-  automatic out of office replies or is not present anymore on the Exchange
-  server, Outlook report it in the notification area. In this notification
-  area, you also have buttons to remove the address of these recipients.
-  This add-on will inform you with a ding when this notification area
-  appear, disappear or be updated. You can then press NVDA+shif+N /
-  NVDA+control+shift+N once to have it read and twice to jump to this
-  area. Then move with arrows on the recipient buttons and press a button to
-  remove the corresponding recipient.
-* In the address book's result list, you can use horizontal table navigation
-  commands to read the content of each column.
+* Lorsque le destinataire que vous avez saisi dans les champs À, Cc ou Cci
+  envoie des réponses automatiques d'absence ou n'est plus présent sur le
+  serveur Exchange, Outlook le signale dans la zone de notification. Dans
+  cette zone de notification, vous disposez également de boutons pour
+  supprimer l'adresse de ces destinataires. Cet extension vous informera par
+  un ding lorsque cette zone de notification apparaîtra, disparaîtra ou sera
+  mise à jour. Vous pouvez ensuite appuyer sur NVDA+shift+N /
+  NVDA+control+shift+N une fois pour le lire et deux fois pour accéder à
+  cette zone. Déplacez-vous ensuite avec les flèches sur les boutons des
+  destinataires et appuyez sur un bouton pour supprimer le destinataire
+  correspondant.
+* Dans la liste des résultats du carnet d'adresses, vous pouvez utiliser les
+  commandes de navigation horizontale dans un tableau pour lire le contenu
+  de chaque colonne.
   
 ## Notes
 
@@ -65,17 +69,23 @@ modifier dans les situations suivantes :
 
 ## Journal des modifications
 
+### Version 2.1
+
+* Suppression du canal de développement.
+* Ajout de localisations.
+
 ### Version 2.0
 
-* Improve the user experience with notifications appearing when entering
-  e-mail addresses which are not valid anymore or which send automatic out
-  of office replies: a sound alerts when such notifications appear or are
-  updated, a gesture allows to read it or to move to it, and navigation in
-  this area with arrows is made more easy.
+* Amélioration de l'expérience utilisateur avec les notifications
+  apparaissant lors de la saisie d'adresses e-mail qui ne sont plus valides
+  ou qui envoient des réponses automatiques d'absence : un son alerte
+  lorsque de telles notifications apparaissent ou sont mises à jour, un
+  geste permet de la lire ou de s'y déplacer, et la navigation dans cette
+  zone avec des flèches est facilitée.
 
 ### Version 1.10
 
-* Compatibility with NVDA 2023.1.
+* Compatibilité avec NVDA 2023.1.
 * Ajout de localisations.
 
 ### Version 1.9
@@ -152,5 +162,3 @@ modifier dans les situations suivantes :
 [[!tag dev stable]]
 
 [1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
-
-[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

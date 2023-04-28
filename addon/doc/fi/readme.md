@@ -3,7 +3,6 @@
 * Tekijät: Cyrille Bougot, Ralf Kefferpuetz
 * Yhteensopivuus: NVDA 2019.3 ja sitä uudemmat
 * Lataa [vakaa versio][1]
-* Lataa [kehitysversio][2]
 
 Tämä lisäosa parantaa Microsoft Outlookin käyttöä puhumalla olemassa olevia
 näppäinkomentoja sekä lisäämällä uusia komentoja ja ominaisuuksia.
@@ -63,6 +62,11 @@ seuraavissa tilanteissa:
   kanssa.
 
 ## Muutosloki
+
+### Versio 2.1
+
+* Dev-kanava poistettu.
+* Lokalisointeja päivitetty.
 
 ### Versio 2.0
 
@@ -145,5 +149,3 @@ seuraavissa tilanteissa:
 [[!tag dev stable]]
 
 [1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
-
-[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev
