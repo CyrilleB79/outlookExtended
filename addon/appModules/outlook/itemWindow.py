@@ -6,10 +6,8 @@
 
 from logHandler import log
 try:
-	import controlTypes
-	from . import compa
-	controlTypes = compa.convertControlTypes(controlTypes)
-except ModuleNotFoundError:
+	from .compa import CTWRAPPER as controlTypes
+except ImportError:
 	# stub
 	from enum import IntEnum
 

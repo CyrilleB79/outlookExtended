@@ -28,15 +28,18 @@ from nvdaBuiltin.appModules.outlook import *  # noqa: F401, F403
 from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModule
 
 from .itemWindow import OutlookItemWindow, NotInMessageWindowError, HeaderFieldNotFoundeError
-from . import compa
+from .compa import CTWRAPPER as controlTypes
 
 from scriptHandler import getLastScriptRepeatCount, script
 import winUser
 from logHandler import log
 import api
-import controlTypes
 import ui
-from speech import speech
+try:
+	from speech import speech
+except ImportError:
+	# Import for older version of NVDA such as 2019.3.1
+	import speech
 from NVDAObjects import NVDAObject
 from NVDAObjects.window import Window
 from NVDAObjects.IAccessible import List, getNVDAObjectFromEvent
@@ -58,8 +61,6 @@ import threading
 from time import sleep
 
 import addonHandler
-
-controlTypes = compa.convertControlTypes(controlTypes)
 
 addonHandler.initTranslation()
 
