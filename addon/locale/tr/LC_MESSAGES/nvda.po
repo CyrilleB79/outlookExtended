@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: 'OutlookExtended' '1.0-dev'\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2021-06-25 06:48+0300\n"
-"Last-Translator: Cyrille Bougot <cyrille.bougot2@laposte.net>\n"
+"PO-Revision-Date: 2023-05-01 21:17+0300\n"
+"Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: cagrid@hotmail.com\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
@@ -55,11 +55,11 @@ msgstr "Seçili ileti yok"
 
 #. Translators: To announce the message or group status: unread
 msgid "unread"
-msgstr "Okunmamış"
+msgstr "okunmamış"
 
 #. Translators: To announce the message or group status: read
 msgid "read"
-msgstr "Okunmuş"
+msgstr "okunmuş"
 
 #. Supersedes _moveToRow in behaviors.py to disable row navigation because need to be debugged:
 #. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you
@@ -70,12 +70,11 @@ msgstr "Adres defterinde sütun dolaşımı desteklenmiyor"
 
 #. Translators: The name of a fake NVDA object used for tests.
 msgid "Fake root"
-msgstr ""
+msgstr "Sahte kök"
 
 #. Translators: The name for a button in the notification bar to display more or less information.
-#, fuzzy
 msgid "More or less information"
-msgstr "Bİlgi çubuğu yok"
+msgstr "Az ya da çok bilgi"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
@@ -89,10 +88,10 @@ msgstr "Panoya kopyalandı"
 
 #. Translators: A checkbox state
 msgid "checked"
-msgstr "İşaretli"
+msgstr "işaretli"
 
 msgid "unchecked"
-msgstr "İşaretli değil"
+msgstr "işaretli değil"
 
 #. Translators: To report name and value of a heaeder's field
 #, python-brace-format
@@ -100,19 +99,16 @@ msgid "{name} {value}"
 msgstr "{name} {value}"
 
 #. Translators: Documentation for report notification script.
-#, fuzzy
 msgid ""
 "Reports the notification in a message. If pressed twice, moves the focus to "
 "it. If pressed three times, copies its content to the clipboard."
 msgstr ""
-"Bir iletideki, takvim öğesindeki  ya da görevler penceresindeki bilgi "
-"çubuğunu okur. İki kez basılırsa odağı bilgi çubuğuna taşır. Üç kez "
-"basılırsa içeriğini panoya kopyalar."
+"Bildirimi bir mesaj içinde bildirir. İki kez basılırsa, odağı ona taşır. Üç "
+"kez basılırsa, içeriğini panoya kopyalar."
 
 #. Translators: Message reported when calling the script to report notification bar.
-#, fuzzy
 msgid "No notification"
-msgstr "Bİlgi çubuğu yok"
+msgstr "Bildirim yok"
 
 #. Translators: Documentation for report info bar script.
 msgid ""
@@ -137,7 +133,7 @@ msgid ""
 "pressed twice, moves the focus to it."
 msgstr ""
 "İleti penceresinde eklenti sayısı ve adlarını okur. İki kez basılırsa odağı "
-"eklenti bölümüne taşır"
+"eklenti bölümüne taşır."
 
 #. Translators: Reported when calling a test command
 msgid "Test case path not defined."
@@ -149,9 +145,8 @@ msgstr "Test modu kapalı"
 
 #. None or 0
 #. Translators: Reported when calling a test command
-#, fuzzy
 msgid "Test mode is off."
-msgstr "Test modu kapalı"
+msgstr "Test modu kapalı."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar
 #. item or task window
@@ -161,7 +156,7 @@ msgid ""
 "pressed twice, moves the focus to this field if possible. If pressed three "
 "times, copies its content to the clipboard."
 msgstr ""
-"bir iletide, takvim öğesinde ya da görevler penceresinde  %s başlık alanını "
+"Bir iletide, takvim öğesinde ya da görevler penceresinde  %s başlık alanını "
 "okur.  İki kez basıldığında, mümkünse odağı ilgili alana taşır. Üç kez "
 "basılırsa alan içeriğini panoya kopyalar."
 
@@ -174,7 +169,7 @@ msgstr "Genişletilmiş Outlook Desteği"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid "Extended support and features for Microsoft Outlook."
-msgstr ""
+msgstr "Microsoft Outlook için genişletilmiş destek ve özellikler."
 
 #~ msgid ""
 #~ "Extended support and features for Microsoft Outlook:\n"

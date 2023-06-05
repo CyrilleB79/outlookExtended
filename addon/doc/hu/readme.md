@@ -3,7 +3,6 @@
 * Készítők: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA compatibility: 2019.3 and beyond
 * [stabil verzió][1] letöltése
-* [fejlesztői verzió][2] letöltése
 
 This addon improves the use of Microsoft Outlook by vocalizing some native
 commands, adding extra commands and adds extra features.
@@ -58,6 +57,11 @@ ablakában.
   parancsot, hogy kövesse a logikát.
 
 ## Változások
+
+### Version 2.1
+
+* Removed the dev channel.
+* Updated localizations.
 
 ### Version 2.0
 
@@ -141,5 +145,3 @@ ablakában.
 [[!tag dev stable]]
 
 [1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
-
-[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

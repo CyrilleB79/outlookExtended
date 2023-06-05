@@ -3,7 +3,6 @@
 * Autores: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA compatibility: 2019.3 and beyond
 * Baixe a [versão estável][1]
-* Baixe a [versão em desenvolvimento][2]
 
 This addon improves the use of Microsoft Outlook by vocalizing some native
 commands, adding extra commands and adds extra features.
@@ -61,6 +60,11 @@ do NVDA. Pode querer alterá-los especialmente nas seguintes situações:
   12, se não corresponderem ao leiaute do teclado local.
 
 ## Registro de alterações (Change log)
+
+### Version 2.1
+
+* Removed the dev channel.
+* Localizações (traduções) atualizadas.
 
 ### Version 2.0
 
@@ -146,5 +150,3 @@ do NVDA. Pode querer alterá-los especialmente nas seguintes situações:
 [[!tag dev stable]]
 
 [1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
-
-[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

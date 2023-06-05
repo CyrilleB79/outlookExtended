@@ -3,7 +3,6 @@
 * 作者: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA compatibility: 2019.3 and beyond
 * 下载 [稳定版][1]
-* 下载 [开发板][2]
 
 This addon improves the use of Microsoft Outlook by vocalizing some native
 commands, adding extra commands and adds extra features.
@@ -45,6 +44,11 @@ commands, adding extra commands and adds extra features.
 * 读取标题的默认手势对应于Alt与字母数字键盘第一行的键组合。如果它们与本地键盘布局不匹配，您可能需要重新映射读取标题11和12的手势。
 
 ## 更新日志
+
+### Version 2.1
+
+* Removed the dev channel.
+* 新增本地化。
 
 ### Version 2.0
 
@@ -124,5 +128,3 @@ commands, adding extra commands and adds extra features.
 [[!tag dev stable]]
 
 [1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
-
-[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev

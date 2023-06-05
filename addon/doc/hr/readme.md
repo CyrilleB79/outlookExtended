@@ -3,7 +3,6 @@
 * Autori: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA kompatibilnost: 2019.3 i novije verzije
 * Preuzmi [stabilnu verziju][1]
-* Preuzmi [razvojnu verziju][2]
 
 Ovaj dodatak poboljšava upotrebu Microsoft Outlooka izgovaranjem nekih
 izvornih naredbi, dodaje dodatne naredbe i dodaje dodatne funkcije.
@@ -60,6 +59,11 @@ ih je promijeniti za sljedeće situacije:
   rasporedom lokalne tipkovnice.
 
 ## Dnevnik promjena
+
+### Verzija 2.1
+
+* Uklonjen je kanal razvoja.
+* Prijevodi su aktualizirani.
 
 ### Verzija 2.0
 
@@ -141,5 +145,3 @@ ih je promijeniti za sljedeće situacije:
 [[!tag dev stable]]
 
 [1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended
-
-[2]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended-dev
