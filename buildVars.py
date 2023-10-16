@@ -27,7 +27,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("Extended support and features for Microsoft Outlook."),
 	# version
-	"addon_version": "2.2",
+	"addon_version": "2.3",
 	# Author(s)
 	"addon_author": (
 		"Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>"
