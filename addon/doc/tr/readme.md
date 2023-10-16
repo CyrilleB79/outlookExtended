@@ -1,11 +1,11 @@
 # geliştirilmiş Outlook desteği #
 
 * Yazarlar: Cyrille Bougot, Ralf Kefferpuetz
-* NVDA compatibility: 2019.3 and beyond
+* NVDA uyumluluğu: 2019.3 ve üzeri sürümler
 * [kararlı sürüm][1]ü indir
 
-This addon improves the use of Microsoft Outlook by vocalizing some native
-commands, adding extra commands and adds extra features.
+Bu eklenti, bazı yerel komutları seslendirerek, ekstra komutlar ve ekstra
+özellikler ekleyerek Microsoft Outlook'un kullanımını geliştirir.
 
 ## Komutlar
 
@@ -22,27 +22,27 @@ commands, adding extra commands and adds extra features.
   basıldığında odağı eklere taşır.
 * NVDA+shift+M (masaüstü düzeni) / NVDA+kontrol+shift+M (dizüstü düzeni):
   Odağı ileti gövdesine taşır.
-* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout):
-  Reports the notification in a message window. If pressed twice, moves the
-  focus to it. If pressed three times, copies its content to the clipboard.
+* NVDA+shift+N (masaüstü düzeni) / NVDA+control+shift+N (dizüstü bilgisayar
+  düzeni): Bildirimi bir mesaj penceresinde bildirir. İki kez basılırsa,
+  odağı ona taşır. Üç kez basıldığında içeriğini panoya kopyalar.
 * Kontrol+Q: İleti listesinde, seçilen iletiyi veya ileti grubunu okundu
   olarak işaretler.
 * Kontrol+U: İleti listesinde, seçilen iletileri veya ileti grubunu okunmadı
   olarak işaretler.
 
-## Additional improvements
+## Ek iyileştirmeler
 
-* When the recipient you have entered in the To, Cc or Bcc fields sends
-  automatic out of office replies or is not present anymore on the Exchange
-  server, Outlook report it in the notification area. In this notification
-  area, you also have buttons to remove the address of these recipients.
-  This add-on will inform you with a ding when this notification area
-  appear, disappear or be updated. You can then press NVDA+shif+N /
-  NVDA+control+shift+N once to have it read and twice to jump to this
-  area. Then move with arrows on the recipient buttons and press a button to
-  remove the corresponding recipient.
-* In the address book's result list, you can use horizontal table navigation
-  commands to read the content of each column.
+* Kime, Bilgi veya Gizli alanlarına girdiğiniz alıcı, otomatik ofis dışında
+  yanıtları gönderdiğinde veya artık Exchange sunucusunda bulunmadığında,
+  Outlook bunu bildirim alanında bildirir. Bu bildirim alanında, bu
+  alıcıların adreslerini kaldırmak için düğmeleriniz de vardır. Bu eklenti,
+  bu bildirim alanı göründüğünde, kaybolduğunda veya güncellendiğinde sizi
+  bir ding ile bilgilendirecektir. Daha sonra NVDA+shift+N /
+  NVDA+kontrol+shift+N tuşlarına bir kez basarak okutabilir ve iki kez bu
+  alana atlayabilirsiniz. Ardından, alıcı düğmeleri üzerindeki oklarla
+  hareket edin ve ilgili alıcıyı kaldırmak için bir düğmeye basın.
+* Adres defterinin sonuç listesinde, her sütunun içeriğini okumak için yatay
+  tablo gezinme komutlarını kullanabilirsiniz.
   
 ## Notlar
 
@@ -60,42 +60,43 @@ gerekebilir:
 
 ## Değişiklikler
 
-### Version 2.1
+### Sürüm 2.1
 
-* Removed the dev channel.
+* Geliştirici kanalı kaldırıldı.
 * Çeviriler güncellendi.
 
-### Version 2.0
+### Sürüm 2.0
 
-* Improve the user experience with notifications appearing when entering
-  e-mail addresses which are not valid anymore or which send automatic out
-  of office replies: a sound alerts when such notifications appear or are
-  updated, a gesture allows to read it or to move to it, and navigation in
-  this area with arrows is made more easy.
+* Artık geçerli olmayan veya ofis dışında otomatik yanıtlar gönderen e-posta
+  adreslerini girerken görünen bildirimlerle kullanıcı deneyimini
+  iyileştirir: bu tür bildirimler göründüğünde veya güncellendiğinde sesli
+  uyarılar, okumaya veya ona taşınmaya olanak tanıyan bir hareket, ve bu
+  alanda oklar ile gezinme daha kolay hale getirilmiştir.
 
-### Version 1.10
+### Sürüm 1.10
 
-* Compatibility with NVDA 2023.1.
+* Eklenti NVDA 2023.1 ile uyumlu hâle getirildi.
 * Çeviriler güncellendi.
 
-### Version 1.9
+### Sürüm 1.9
 
-* Compatibility with NVDA 2022.1.
-* Dropped compatibility for versions of NVDA below 2019.3.
-* The release is now performed thanks to a GitHub action instead of
-  appVeyor.
-* Fixed the announcement when the user triple-presses alt+number shortcuts.
-* Fixed an issue preventing from reading calendar items headers of some
-  versions of Outlook 365.
-* Improvement of the test environment of the add-on: navigation in the fake
-  root dialog.
+* Eklenti NVDA 2022.1 ile uyumlu hâle getirildi.
+* NVDA sürümleri için uyumluluk 2019.3'ün altına düşürüldü.
+* Sürüm artık appVeyor yerine bir GitHub eylemi sayesinde
+  gerçekleştiriliyor.
+* Kullanıcı alt+sayı kısayollarına üç kez bastığında çıkan duyuru
+  düzeltildi.
+* Outlook 365'in bazı sürümlerinin takvim öğeleri başlıklarının okunmasını
+  engelleyen bir sorun düzeltildi.
+* Eklentinin test ortamının iyileştirilmesi: sahte kök iletişim kutusunda
+  gezinme.
 * Çeviriler güncellendi.
 
-### Version 1.8
+### Sürüm 1.8
 
 * Çeviriler güncellendi.
-* Ensure that all the variable from the original Outlook appModule are still
-  available.
+* Orijinal Outlook appModule'deki tüm değişkenlerin hala kullanılabilir
+  durumda olduğundan emin olun.
 
 ### Sürüm 1.7
 
