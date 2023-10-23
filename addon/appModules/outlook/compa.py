@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # NVDA add-on: Outlook Extended
-# Copyright (C) 2021 Cyrille Bougot
+# Copyright (C) 2021-2023 Cyrille Bougot
 # This file is covered by the GNU General Public License.
 
 # Reworked compatibility wrapper for controlTypes. Original author: Łukasz Golonka
@@ -24,6 +24,10 @@ class EnhancedGetter(object):
 			except AttributeError:
 				continue
 		raise AttributeError("Attribute {} not found!".format(attrName))
+
+	def __call__(self, *args, **kwargs):
+		enum = getattr(self.mod, self.attrCommonPrefix.capitalize())
+		return enum(*args, **kwargs)
 
 
 class ControlTypesCompatWrapper(object):
