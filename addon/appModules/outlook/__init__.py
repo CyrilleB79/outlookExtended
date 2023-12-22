@@ -29,6 +29,7 @@ from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModu
 
 from .itemWindow import OutlookItemWindow, NotInMessageWindowError, HeaderFieldNotFoundeError
 from .compa import CTWRAPPER as controlTypes
+from .funcExecutor import executeWithSpeakOnDemand
 
 from scriptHandler import getLastScriptRepeatCount, script
 import winUser
@@ -65,6 +66,12 @@ import addonHandler
 addonHandler.initTranslation()
 
 ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
+
+try:
+	speech.SpeechMode.onDemand
+	speakOnDemand = {'speakOnDemand': True}
+except AttributeError:
+	speakOnDemand = {}
 
 # Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 # Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
@@ -489,6 +496,33 @@ class NotificationPane:
 		return '\n'.join(r.text for r in self.rows)
 
 
+def createAllScript_reportHeaderField(cls):
+	for n in range(1, len(cls._headerFieldKeyMap) + 1):
+		setattr(
+			cls,
+			f"script_reportHeaderField{n}",
+			createScript_reportHeaderField(cls, n),
+		)
+	return cls
+
+
+def createScript_reportHeaderField(cls, n):
+	@script(
+		description=_(
+			# Translators: Input help mode message for report a header's field command. in outlook message, calendar
+			# item or task window
+			"Reports the header field %s in a message, calendar item or task window. If pressed twice, moves"
+			" the focus to this field if possible. If pressed three times, copies its content to the clipboard."
+		) % str(n),
+		**speakOnDemand,
+	)
+	def script_reportHeaderField_generic(self, gesture):
+		log.info(f'zzz {n} - {gesture}')
+		return self.reportHeaderFieldN(n, gesture)
+	return script_reportHeaderField_generic
+
+
+@createAllScript_reportHeaderField
 class AppModule(AppModule):
 
 	scriptCategory = ADDON_SUMMARY
@@ -616,7 +650,8 @@ class AppModule(AppModule):
 			"Reports the notification in a message. If pressed twice, moves the focus to it."
 			" If pressed three times, copies its content to the clipboard."
 		),
-		gestures=["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"]
+		gestures=["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"],
+		**speakOnDemand,
 	)
 	def script_reportNotification(self, gesture):
 		obj = self.getNotificationObj()
@@ -644,7 +679,8 @@ class AppModule(AppModule):
 			"Reports the information bar in a message, calendar item or task window."
 			" If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
 		),
-		gestures=["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"]
+		gestures=["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"],
+		**speakOnDemand,
 	)
 	def script_reportInfoBar(self, gesture):
 		obj = self.getInfoBarObj()
@@ -683,7 +719,8 @@ class AppModule(AppModule):
 			"Reports the number and the names of attachments in a message window."
 			" If pressed twice, moves the focus to it.",
 		),
-		gestures=["kb(desktop):NVDA+shift+A", "kb(laptop):NVDA+control+shift+A"]
+		gestures=["kb(desktop):NVDA+shift+A", "kb(laptop):NVDA+control+shift+A"],
+		**speakOnDemand,
 	)
 	def script_attachments(self, gesture):
 		obj = api.getFocusObject()
@@ -716,7 +753,7 @@ class AppModule(AppModule):
 			def announceAttachments():
 				attachmentList = ', '.join(namesGen)
 				msg = f"{windowName}: {self.nAttachments}. {attachmentList}"
-				core.callLater(0, ui.message, msg)
+				core.callLater(0, executeWithSpeakOnDemand, ui.message, msg)
 			threading.Thread(target=announceAttachments).start()
 
 	def getAttachmentInfos2016(self):
@@ -889,22 +926,5 @@ class AppModule(AppModule):
 
 	@staticmethod
 	def _createScript_reportHeaderField(n):
-		def _genericScript_reportHeaderField(self, gesture):
-			return self.reportHeaderFieldN(n, gesture)
-		_genericScript_reportHeaderField.__doc__ = _(
-			# Translators: Input help mode message for report a header's field command. in outlook message, calendar
-			# item or task window
-			"Reports the header field %s in a message, calendar item or task window. If pressed twice, moves"
-			" the focus to this field if possible. If pressed three times, copies its content to the clipboard."
-		) % str(n)
-		return _genericScript_reportHeaderField
-
-	@classmethod
-	def createAllScript_reportHeaderField(cls):
-		for n in range(1, len(cls._headerFieldKeyMap) + 1):
-			scriptName = f"script_reportHeaderField{n}"
-			scriptFun = AppModule._createScript_reportHeaderField(n)
-			setattr(cls, scriptName, scriptFun)
-
-
-AppModule.createAllScript_reportHeaderField()
+		#zzzzzz
+		return script_reportHeaderField_generic
