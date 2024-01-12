@@ -62,6 +62,9 @@ from time import sleep
 
 import addonHandler
 
+# Save NVDA translation before overriding it
+nvdaTranslation = _
+
 addonHandler.initTranslation()
 
 ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
@@ -600,8 +603,10 @@ class AppModule(AppModule):
 	def speakObject(self, obj):
 		if obj.role == controlTypes.Role.CHECKBOX:
 			name = obj.name
-			# Translators: A checkbox state
-			value = _('checked') if controlTypes.State.CHECKED in obj.states else _('unchecked')
+			value = (
+				nvdaTranslation('checked') if controlTypes.State.CHECKED in obj.states
+				else nvdaTranslation('not checked')
+			)
 		else:
 			name, value = obj.name, obj.value
 		# Translators: To report name and value of a heaeder's field
@@ -678,8 +683,8 @@ class AppModule(AppModule):
 		obj.setFocus()
 
 	@script(
-		# Translators: Documentation for Attachments script.
 		description=_(
+			# Translators: Documentation for Attachments script.
 			"Reports the number and the names of attachments in a message window."
 			" If pressed twice, moves the focus to it.",
 		),
