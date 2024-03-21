@@ -31,6 +31,11 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 2.4
+
+* Compatibility with NVDA 2024.1.
+* Relevant commands are now usable in on-demand speech mode.
+
 ### Version 2.2
 
 * Restored compatibiliity with NVDA 2019.3.1.
