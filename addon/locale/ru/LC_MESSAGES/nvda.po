@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-09-13 16:32+1000\n"
-"PO-Revision-Date: 2021-08-03 16:11+0200\n"
+"PO-Revision-Date: 2024-05-12 12:35+0300\n"
 "Last-Translator: Eugene Kornev <kornev@elitagroup.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
@@ -31,7 +31,7 @@ msgstr "="
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
-msgstr "пометить сообщение как прочитанное"
+msgstr "Пометить сообщение как прочитанное"
 
 #. Translators: Documentation for mark as unread script.
 msgid "Mark a message as unread"
@@ -68,12 +68,11 @@ msgstr "Навигация по столбцам не поддерживаетс
 
 #. Translators: The name of a fake NVDA object used for tests.
 msgid "Fake root"
-msgstr ""
+msgstr "Поддельный корень"
 
 #. Translators: The name for a button in the notification bar to display more or less information.
-#, fuzzy
 msgid "More or less information"
-msgstr "Нет информационной панели"
+msgstr "Больше или меньше информации"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
@@ -98,7 +97,6 @@ msgid "{name} {value}"
 msgstr "{name} {value}"
 
 #. Translators: Documentation for report notification script.
-#, fuzzy
 msgid ""
 "Reports the notification in a message. If pressed twice, moves the focus to "
 "it. If pressed three times, copies its content to the clipboard."
@@ -108,7 +106,6 @@ msgstr ""
 "копирует их содержимое в буфер обмена."
 
 #. Translators: Message reported when calling the script to report notification bar.
-#, fuzzy
 msgid "No notification"
 msgstr "Нет информационной панели"
 
@@ -139,7 +136,7 @@ msgstr ""
 
 #. Translators: Reported when calling a test command
 msgid "Test case path not defined."
-msgstr "Тестовый путь не определён"
+msgstr "Тестовый путь не определён."
 
 #. Translators: Reported when calling a test command
 msgid "Test mode offf"
@@ -147,9 +144,8 @@ msgstr "Тестовый режим выключен"
 
 #. None or 0
 #. Translators: Reported when calling a test command
-#, fuzzy
 msgid "Test mode is off."
-msgstr "Тестовый режим выключен"
+msgstr "Тестовый режим выключен."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar
 #. item or task window
@@ -172,7 +168,7 @@ msgstr "Outlook Extended"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid "Extended support and features for Microsoft Outlook."
-msgstr ""
+msgstr "Расширенная поддержка и функции Microsoft Outlook."
 
 #~ msgid ""
 #~ "Extended support and features for Microsoft Outlook:\n"
@@ -185,5 +181,5 @@ msgstr ""
 #~ "- Предоставляет жесты для чтения и активации заголовков, информационной "
 #~ "панели и вложений в сообщениях, событиях календаря и задачах.\n"
 #~ "- Улучшает чтение результатов в адресной книге.\n"
-#~ "- Озвучивает команды Пометить как прочитанное/не прочитанное ctrl+q/ctrl"
-#~ "+u."
+#~ "- Озвучивает команды Пометить как прочитанное/не прочитанное ctrl+q/"
+#~ "ctrl+u."
