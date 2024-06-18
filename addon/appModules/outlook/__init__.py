@@ -60,6 +60,7 @@ from locationHelper import RectLTWH
 import re
 import threading
 from time import sleep
+from html import escape
 
 import addonHandler
 
@@ -86,6 +87,46 @@ confspec = {
 	'testCasePath': 'string(default="")',
 }
 config.conf.spec["outlookExtended"] = confspec
+
+# List of statuses as defined in Outlook.
+# To view all existing statuses:
+# - open the calendar view
+# - select an item, e.g. appointment or meeting
+# - open context menu and select "Show as"
+# All the possible statuses are listed in the submenu.
+STATUS_LIST = [
+	# Translators: Outlook's native string for status
+	_("Busy"),
+	# Translators: Outlook's native string for status
+	_("Out of Office"),
+	# Translators: Outlook's native string for status
+	_("Free"),
+	# Translators: Outlook's native string for status
+	_("Working Elsewhere"),
+	# Translators: Outlook's native string for status
+	_("Tentative"),
+]
+RE_STATUS_SPLITTER_STR = r', (?=' + '|'.join(f'(?:{re.escape(s)})' for s in STATUS_LIST) + '|(?:No Information))'
+RE_STATUS_SPLITTER = re.compile(RE_STATUS_SPLITTER_STR)
+
+
+def mkhi(itemType, htmlContent, attribDic={}):
+	"""Creates an HTML item encapsulating other htmlContent with itemType tag with the attributes in attribDic.
+	If the content to encapsulate is single text instead, use mkhiText instead.
+	"""
+	if len(htmlContent) == 0:
+		raise
+	assert htmlContent[0] == '<' and htmlContent[-1] == '>'
+	sAttribs = ''.join(f' {n}={v}' for n, v in attribDic.items())
+	return f'<{itemType}{sAttribs}>{htmlContent}</{itemType}>'
+
+
+def mkhiText(itemType, textContent, attribDic={}):
+	"""Creates an HTML item encapsulating a single text with itemType tag with the attributes in attribDic.
+	"""
+
+	sAttribs = ''.join(f' {n}={v}' for n, v in attribDic.items())
+	return f'<{itemType}{sAttribs}>{escape(textContent)}</{itemType}>'
 
 
 class ElemWithReadStatus:
@@ -707,6 +748,11 @@ class AppModule(AppModule):
 			else:
 				attachmentsList, handle, namesGen, windowName = self.getAttachmentInfos2013()
 		except LookupError:
+			try:
+				self.viewAttendeesStatus()
+				return
+			except LookupError:
+				pass
 			self.errorBeep()
 			return
 		self.nAttachments = len(attachmentsList)
@@ -731,10 +777,67 @@ class AppModule(AppModule):
 				core.callLater(0, lambda: executeWithSpeakOnDemand(ui.message, msg))
 			threading.Thread(target=announceAttachments).start()
 
+	def viewAttendeesStatus(self):
+		fg = api.getForegroundObject()
+		cidAttendeesStatus = 4720  # value: 'All Attendees Status'; windowClassName: 'AfxWndW'
+		handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttendeesStatus, visible=True)
+		obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
+		if obj.role != controlTypes.Role.STATICTEXT:
+			raise LookupError('Unexpected object found')
+		try:
+			msgContent = self._statusFormatter(obj.name)
+			tryFallback = False
+		except RuntimeError:
+			tryFallback = True
+		except Exception:
+			tryFallback = True
+			log.exception('Attendees status formatting error; use fallback formatting.')
+		if tryFallback:
+			log.debug(RE_STATUS_SPLITTER_STR)
+			msgContent = self._statusFormatter(obj.name, fallback=True)
+		ui.browseableMessage(
+			msgContent,
+			# Translators: Title of the browseable message displaying the status of all attendees.
+			title=_("All Attendees Status"),
+			isHtml=True,
+		)
+
+	def _statusFormatter(self, name, fallback=False):
+		ALL_ATTENDEES_NAME_START = 'All Attendees Status; '
+		if name.startswith(ALL_ATTENDEES_NAME_START):
+			name = name[len(ALL_ATTENDEES_NAME_START):]
+		else:
+			log.debugWarning(f'Unexpected name for "All attendees status": {name}')
+		formatted = []
+		firstLine = True
+		for line in name.split('; '):
+			if firstLine:
+				# 
+				formatted.append(mkhiText('h2', line))
+				firstLine = False
+			else:
+				if fallback:
+					reSplitter = re.compile(", ")
+				else:
+					reSplitter = RE_STATUS_SPLITTER
+				attendeeName, *items = reSplitter.split(line)
+				if len(items) == 0:
+					log.debug(f'Empty item list for the following line:\n{line}')
+					if not fallback:
+						raise RuntimeError(
+							"Cannot format all attendees status. Either the translations of statuses are not correct, or "
+							"Outlook's UI languages differs from the language used in Outlook extended add-on."
+						)
+				formatted.append(mkhiText('h3', attendeeName))
+				listContent = '\r\n'.join(mkhiText('li', item) for item in items)
+				if listContent:
+					formatted.append(mkhi('ul', listContent))
+		return '\r\n'.join(formatted)
+
 	def getAttachmentInfos2016(self):
 		fg = api.getForegroundObject()
 		cidAttachments = 4306
-		handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttachments)
+		handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttachments, visible=True)
 		obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 		try:
 			o = obj
