@@ -10,7 +10,11 @@ This addon improves the use of Microsoft Outlook with NVDA: it vocalizes some na
 
 * Alt+1 to Alt+9, Alt+0, Alt+-, Alt+=: Reports the header field 1 to 12 in a message, calendar item or task window. If pressed twice, moves the focus to this field if possible. If pressed three times, copies its content to the clipboard.
 * NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout): Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
-* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout): Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it.
+* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+  
+    * In a message window: reports the number and the names of attachments; if pressed twice, moves the focus to it.
+    * In a meeting window, in the all attendees tab: display in a browseable message the attendees status on the time slot of the meeting.
+
 * NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout): Moves the focus to the message body.
 * NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout): Reports the notification in a message window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: in the message list, marks the selected message or group of messages as read.
@@ -30,6 +34,10 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 * The default gestures to read headers correspond to Alt combined with the keys of the first row of the alpha-numeric keyboard. You may need to re-map the gestures tor read header 11 and 12 if they do not match your local keyboard layout.
 
 ## Change log
+
+### Version 3.0
+
+* In a meeting window, in the all attendees tab, pressing NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout) now displays in a browseable message the attendees status on the time slot of the meeting.
 
 ### Version 2.4
 
