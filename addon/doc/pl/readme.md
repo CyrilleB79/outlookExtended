@@ -4,8 +4,8 @@
 * NVDA compatibility: 2019.3 and beyond
 * Pobierz [Wersja stabilna][1]
 
-This addon improves the use of Microsoft Outlook by vocalizing some native
-commands, adding extra commands and adds extra features.
+This addon improves the use of Microsoft Outlook with NVDA: it vocalizes
+some native commands and adds extra commands and features.
 
 ## Skróty klawiszowe
 
@@ -21,10 +21,13 @@ commands, adding extra commands and adds extra features.
   przeniesiony na jeden z wyżej wymienionych elementów. Jeżeli skrót jest
   naciśnięty trzykrotnie, odczytany komunikat zostanie skopiowany do
   schowka.
-* NVDA+shift+A (układ dla komputerów stacjonarnych) / NVDA+control+shift+A
-  (ukłąd dla komputerów przenosnych): Odczytuje nazwy i liczbę załączników w
-  oknie wiadomości. Jeżeli skrót jest naciśnięty dwukrotnie, fokus zostanie
-  skierowany na tę informację.
+* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+  
+    * In a message window: reports the number and the names of attachments;
+      if pressed twice, moves the focus to it.
+    * In a meeting window, in the all attendees tab: display in a browseable
+      message the attendees status on the time slot of the meeting.
+
 * NVDA+shift+M (układ dla komputerów stacjonarnych) / NVDA+control+shift+M
   (układ dla komputerów przenośnych): Przemieszcza fokus do tekstu
   wiadomości.
@@ -40,13 +43,13 @@ commands, adding extra commands and adds extra features.
 
 * When the recipient you have entered in the To, Cc or Bcc fields sends
   automatic out of office replies or is not present anymore on the Exchange
-  server, Outlook report it in the notification area. In this notification
-  area, you also have buttons to remove the address of these recipients.
-  This add-on will inform you with a ding when this notification area
-  appear, disappear or be updated. You can then press NVDA+shif+N /
-  NVDA+control+shift+N once to have it read and twice to jump to this
-  area. Then move with arrows on the recipient buttons and press a button to
-  remove the corresponding recipient.
+  server, Outlook report it in the notification area of the message
+  window. In this notification area, you also have buttons to remove the
+  address of these recipients.  This add-on will inform you with a ding when
+  this notification area appears, disappears or is updated. You can then
+  press NVDA+shif+N / NVDA+control+shift+N once to have it read and twice to
+  jump to this area. Then move with the arrows on the recipient buttons and
+  press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation
   commands to read the content of each column.
   
@@ -65,6 +68,27 @@ NVDA. Możesz je zmodyfikować, szczególnie w następujących sytuacjach:
 
 ## Lista zmian
 
+### Version 3.0
+
+* In a meeting window, in the all attendees tab, pressing NVDA+shift+A
+  (desktop layout) / NVDA+control+shift+A (laptop layout) now displays in a
+  browseable message the attendees status on the time slot of the meeting.
+
+### Version 2.4
+
+* Compatibility with NVDA 2024.1.
+* Relevant commands are now usable in on-demand speech mode.
+
+### Version 2.3
+
+* Note: From now on, translation updates will not appear anymore in the
+  change log.
+
+### Version 2.2
+
+* Restored compatibiliity with NVDA 2019.3.1.
+* Zaktualizowane lokalizacje.
+
 ### Version 2.1
 
 * Removed the dev channel.
@@ -72,7 +96,7 @@ NVDA. Możesz je zmodyfikować, szczególnie w następujących sytuacjach:
 
 ### Version 2.0
 
-* Improve the user experience with notifications appearing when entering
+* Improve the user experience with the notifications appearing when entering
   e-mail addresses which are not valid anymore or which send automatic out
   of office replies: a sound alerts when such notifications appear or are
   updated, a gesture allows to read it or to move to it, and navigation in

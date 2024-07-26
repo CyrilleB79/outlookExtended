@@ -1,11 +1,11 @@
-# geliştirilmiş Outlook desteği #
+# Geliştirilmiş Outlook desteği #
 
 * Yazarlar: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA uyumluluğu: 2019.3 ve üzeri sürümler
 * [kararlı sürüm][1]ü indir
 
-Bu eklenti, bazı yerel komutları seslendirerek, ekstra komutlar ve ekstra
-özellikler ekleyerek Microsoft Outlook'un kullanımını geliştirir.
+Bu eklenti, Microsoft Outlook'un NVDA ile kullanımını geliştirir: bazı yerel
+komutları seslendirir ve ekstra komutlar ve özellikler ekler.
 
 ## Komutlar
 
@@ -17,9 +17,14 @@ Bu eklenti, bazı yerel komutları seslendirerek, ekstra komutlar ve ekstra
   iletinin, takvim öğesinin veya görev penceresinin bilgi çubuğunu okur. İki
   kez basıldığında odağı bilgi çubuğuna taşır. Üç kez basıldığında bilgi
   çubuğunun içeriğini panoya kopyalar.
-* NVDA+shift+A (masaüstü düzeni) / NVDA+kontrol+shift+A (dizüstü düzeni):
-  İleti penceresindeki eklerin sayısını ve adlarını söyler. İki kez
-  basıldığında odağı eklere taşır.
+* NVDA+shift+A (masaüstü düzeni) / NVDA+control+shift+A (dizüstü düzeni):
+  
+    * Mesaj penceresinde: eklerin sayısını ve adlarını söyler; iki kez
+      basıldığında odağı eklere taşır.
+    * Bir toplantı penceresinde, tüm katılımcılar sekmesinde: toplantının
+      zaman dilimindeki katılımcıların durumunu göz atılabilir bir mesajda
+      görüntüler.
+
 * NVDA+shift+M (masaüstü düzeni) / NVDA+kontrol+shift+M (dizüstü düzeni):
   Odağı ileti gövdesine taşır.
 * NVDA+shift+N (masaüstü düzeni) / NVDA+control+shift+N (dizüstü bilgisayar
@@ -32,15 +37,16 @@ Bu eklenti, bazı yerel komutları seslendirerek, ekstra komutlar ve ekstra
 
 ## Ek iyileştirmeler
 
-* Kime, Bilgi veya Gizli alanlarına girdiğiniz alıcı, otomatik ofis dışında
-  yanıtları gönderdiğinde veya artık Exchange sunucusunda bulunmadığında,
-  Outlook bunu bildirim alanında bildirir. Bu bildirim alanında, bu
-  alıcıların adreslerini kaldırmak için düğmeleriniz de vardır. Bu eklenti,
-  bu bildirim alanı göründüğünde, kaybolduğunda veya güncellendiğinde sizi
-  bir ding ile bilgilendirecektir. Daha sonra NVDA+shift+N /
-  NVDA+kontrol+shift+N tuşlarına bir kez basarak okutabilir ve iki kez bu
-  alana atlayabilirsiniz. Ardından, alıcı düğmeleri üzerindeki oklarla
-  hareket edin ve ilgili alıcıyı kaldırmak için bir düğmeye basın.
+* Kime, Bilgi veya Gizli alanlarına girdiğiniz alıcı otomatik olarak ofis
+  dışında yanıtları gönderdiğinde veya artık Exchange sunucusunda
+  bulunmadığında, Outlook bunu ileti penceresinin bildirim alanında
+  bildirir. Bu bildirim alanında, bu alıcıların adresini kaldırmak için
+  düğmeler de vardır. Bu eklenti, bu bildirim alanı göründüğünde,
+  kaybolduğunda veya güncellendiğinde sizi bir ding sesi ile
+  bilgilendirecektir. Daha sonra okunması için NVDA+shift+N /
+  NVDA+control+shift+N tuşlarına bir kez ve bu alana atlamak için iki kez
+  basabilirsiniz. Ardından, alıcı düğmelerinin üzerindeki oklarla hareket
+  edin ve ilgili alıcıyı kaldırmak için bir düğmeye basın.
 * Adres defterinin sonuç listesinde, her sütunun içeriğini okumak için yatay
   tablo gezinme komutlarını kullanabilirsiniz.
   
@@ -60,6 +66,27 @@ gerekebilir:
 
 ## Değişiklikler
 
+### Sürüm 3.0
+
+* Bir toplantı penceresinde, tüm katılımcılar sekmesinde, NVDA+shift+A
+  (masaüstü düzeni) / NVDA+control+shift+A (dizüstü düzeni) tuşlarına
+  basıldığında artık toplantının zaman dilimindeki katılımcıların durumu göz
+  atılabilir bir mesajda görüntüleniyor.
+
+### Sürüm 2.4
+
+* Eklenti NVDA 2024.1 ile uyumlu hâle getirildi.
+* İlgili komutlar artık isteğe bağlı konuşma modunda kullanılabilir.
+
+### Sürüm 2.3
+
+* Not: Artık çeviri güncellemeleri değişiklik günlüğünde görünmeyecek.
+
+### Sürüm 2.2
+
+* NVDA 2019.3.1 ile uyumluluk geri getirildi.
+* Çeviriler güncellendi.
+
 ### Sürüm 2.1
 
 * Geliştirici kanalı kaldırıldı.
@@ -67,11 +94,11 @@ gerekebilir:
 
 ### Sürüm 2.0
 
-* Artık geçerli olmayan veya ofis dışında otomatik yanıtlar gönderen e-posta
-  adreslerini girerken görünen bildirimlerle kullanıcı deneyimini
-  iyileştirir: bu tür bildirimler göründüğünde veya güncellendiğinde sesli
-  uyarılar, okumaya veya ona taşınmaya olanak tanıyan bir hareket, ve bu
-  alanda oklar ile gezinme daha kolay hale getirilmiştir.
+* Artık geçerli olmayan veya otomatik ofis dışı yanıtları gönderen e-posta
+  adreslerini girerken görünen bildirimlerle kullanıcı deneyimi
+  iyileştirildi: bu tür bildirimler göründüğünde veya güncellendiğinde sesli
+  uyarılar, bir hareket onu okumaya veya ona geçmeye izin verir ve bu alanda
+  oklarla gezinme daha kolay hale getirilir.
 
 ### Sürüm 1.10
 

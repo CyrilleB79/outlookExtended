@@ -4,9 +4,8 @@
 * Compatibilité NVDA: 2019.3 et ultérieure
 * Télécharger [version stable][1]
 
-Cette extension améliore l’utilisation de Microsoft Outlook par la
-vocalisation de certaines commandes et l’ajout de commandes et
-fonctionnalités supplémentaires.
+This addon improves the use of Microsoft Outlook with NVDA: it vocalizes
+some native commands and adds extra commands and features.
 
 ## Commandes
 
@@ -19,10 +18,13 @@ fonctionnalités supplémentaires.
   message, un élément de calendrier ou une fenêtre de tâche. Une double
   pression y déplace le focus. Une triple pression copie son contenu dans le
   presse-papiers.
-* NVDA+maj+A (disposition ordinateur de bureau) / NVDA+control+maj+A
-  (disposition ordinateur portable): Annonce le nombre et le nom des pièces
-  jointes dans une fenêtre de message. Une double pression y déplace le
-  focus.
+* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+  
+    * In a message window: reports the number and the names of attachments;
+      if pressed twice, moves the focus to it.
+    * In a meeting window, in the all attendees tab: display in a browseable
+      message the attendees status on the time slot of the meeting.
+
 * NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
   (disposition ordinateur portable): Déplace le focus dans le corps du
   message.
@@ -37,17 +39,15 @@ fonctionnalités supplémentaires.
 
 ## Améliorations supplémentaires
 
-* Lorsque le destinataire que vous avez saisi dans les champs À, Cc ou Cci
-  envoie des réponses automatiques d'absence ou n'est plus présent sur le
-  serveur Exchange, Outlook le signale dans la zone de notification. Dans
-  cette zone de notification, vous disposez également de boutons pour
-  supprimer l'adresse de ces destinataires. Cet extension vous informera par
-  un ding lorsque cette zone de notification apparaîtra, disparaîtra ou sera
-  mise à jour. Vous pouvez ensuite appuyer sur NVDA+shift+N /
-  NVDA+control+shift+N une fois pour le lire et deux fois pour accéder à
-  cette zone. Déplacez-vous ensuite avec les flèches sur les boutons des
-  destinataires et appuyez sur un bouton pour supprimer le destinataire
-  correspondant.
+* When the recipient you have entered in the To, Cc or Bcc fields sends
+  automatic out of office replies or is not present anymore on the Exchange
+  server, Outlook report it in the notification area of the message
+  window. In this notification area, you also have buttons to remove the
+  address of these recipients.  This add-on will inform you with a ding when
+  this notification area appears, disappears or is updated. You can then
+  press NVDA+shif+N / NVDA+control+shift+N once to have it read and twice to
+  jump to this area. Then move with the arrows on the recipient buttons and
+  press a button to remove the corresponding recipient.
 * Dans la liste des résultats du carnet d'adresses, vous pouvez utiliser les
   commandes de navigation horizontale dans un tableau pour lire le contenu
   de chaque colonne.
@@ -69,6 +69,27 @@ modifier dans les situations suivantes :
 
 ## Journal des modifications
 
+### Version 3.0
+
+* In a meeting window, in the all attendees tab, pressing NVDA+shift+A
+  (desktop layout) / NVDA+control+shift+A (laptop layout) now displays in a
+  browseable message the attendees status on the time slot of the meeting.
+
+### Version 2.4
+
+* Compatibility with NVDA 2024.1.
+* Relevant commands are now usable in on-demand speech mode.
+
+### Version 2.3
+
+* Note: From now on, translation updates will not appear anymore in the
+  change log.
+
+### Version 2.2
+
+* Restored compatibiliity with NVDA 2019.3.1.
+* Ajout de localisations.
+
 ### Version 2.1
 
 * Suppression du canal de développement.
@@ -76,12 +97,11 @@ modifier dans les situations suivantes :
 
 ### Version 2.0
 
-* Amélioration de l'expérience utilisateur avec les notifications
-  apparaissant lors de la saisie d'adresses e-mail qui ne sont plus valides
-  ou qui envoient des réponses automatiques d'absence : un son alerte
-  lorsque de telles notifications apparaissent ou sont mises à jour, un
-  geste permet de la lire ou de s'y déplacer, et la navigation dans cette
-  zone avec des flèches est facilitée.
+* Improve the user experience with the notifications appearing when entering
+  e-mail addresses which are not valid anymore or which send automatic out
+  of office replies: a sound alerts when such notifications appear or are
+  updated, a gesture allows to read it or to move to it, and navigation in
+  this area with arrows is made more easy.
 
 ### Version 1.10
 
