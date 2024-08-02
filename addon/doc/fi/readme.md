@@ -4,8 +4,9 @@
 * Yhteensopivuus: NVDA 2019.3 ja sitä uudemmat
 * Lataa [vakaa versio][1]
 
-This addon improves the use of Microsoft Outlook with NVDA: it vocalizes
-some native commands and adds extra commands and features.
+Tämä lisäosa parantaa Microsoft Outlookin käyttöä NVDA:n kanssa puhumalla
+olemassa olevia näppäinkomentoja sekä lisäämällä uusia komentoja ja
+ominaisuuksia.
 
 ## Näppäinkomennot
 
@@ -17,12 +18,13 @@ some native commands and adds extra commands and features.
   (kannettavan näppäimistöasettelu): Puhuu viestin, kalenterimerkinnän tai
   tehtäväikkunan tietopalkin. Kahdesti painettaessa kohdistus siirretään
   siihen. Kolmesti painettaessa sen sisältö kopioidaan leikepöydälle.
-* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+* NVDA+Vaihto+A (pöytäkoneen näppäinasettelu) / NVDA+Ctrl+Vaihto+A
+  (kannettavan näppäinasettelu):
   
-    * In a message window: reports the number and the names of attachments;
-      if pressed twice, moves the focus to it.
-    * In a meeting window, in the all attendees tab: display in a browseable
-      message the attendees status on the time slot of the meeting.
+    * Lukee viesti-ikkunassa liitteiden määrän ja nimet. Kahdesti
+      painettaessa kohdistus siirretään liitetiedostojen luetteloon.
+    * Kokousikkunan "Kaikki osallistujat" -välilehdessä: näytä osallistujien
+      tila erillisessä ikkunassa kokouksen ajalta.
 
 * NVDA+Vaihto+M (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+M (kannettavan
   näppäimistöasettelu): Siirtää kohdistuksen viestirunkoon.
@@ -37,15 +39,15 @@ some native commands and adds extra commands and features.
 
 ## Lisäparannukset
 
-* When the recipient you have entered in the To, Cc or Bcc fields sends
-  automatic out of office replies or is not present anymore on the Exchange
-  server, Outlook report it in the notification area of the message
-  window. In this notification area, you also have buttons to remove the
-  address of these recipients.  This add-on will inform you with a ding when
-  this notification area appears, disappears or is updated. You can then
-  press NVDA+shif+N / NVDA+control+shift+N once to have it read and twice to
-  jump to this area. Then move with the arrows on the recipient buttons and
-  press a button to remove the corresponding recipient.
+* Kun To-, Cc- tai Bcc-kenttiin syöttämäsi vastaanottaja lähettää
+  automaattisia poissaolovastauksia tai ei ole enää Exchange-palvelimella,
+  Outlook ilmoittaa siitä viesti-ikkunan ilmoitusalueella. Siinä on myös
+  painikkeet, joilla nämä vastaanottajat voidaan poistaa. Tämä lisäosa
+  ilmoittaa kilahduksella, kun ilmoitusalue tulee näkyviin, häviää näkyvistä
+  tai päivittyy. Voit sitten painaa kerran NVDA+Vaihto+N/NVDA+Ctrl+Vaihto+N
+  lukeaksesi sen tai kahdesti siirtyäksesi siihen. Liiku sitten nuolilla
+  vastaanottajapainikkeissa ja paina haluamaasi painiketta poistaaksesi
+  kyseisen vastaanottajan.
 * Voit käyttää osoitekirjan tulosluettelossa vaakasuuntaisia
   taulukkonavigointikomentoja lukeaksesi kunkin sarakkeen sisällön.
   
@@ -66,25 +68,25 @@ seuraavissa tilanteissa:
 
 ## Muutosloki
 
-### Version 3.0
+### Versio 3.0
 
-* In a meeting window, in the all attendees tab, pressing NVDA+shift+A
-  (desktop layout) / NVDA+control+shift+A (laptop layout) now displays in a
-  browseable message the attendees status on the time slot of the meeting.
+* Kokousikkunan "kaikki osallistujat" -välilehdessä näytetään nyt
+  osallistujien tila erillisessä ikkunassa kokouksen ajalta painettaessa
+  NVDA+Vaihto+A (pöytäkoneen näppäinasettelu) / NVDA+Ctrl+Vaihto+A
+  (kannettavan näppäinasettelu).
 
-### Version 2.4
+### Versio 2.4
 
-* Compatibility with NVDA 2024.1.
-* Relevant commands are now usable in on-demand speech mode.
+* Yhteensopivuus NVDA 2024.1:lle.
+* Olennaiset komennot ovat nyt käytettävissä pyydettäessä-puhetilassa.
 
-### Version 2.3
+### Versio 2.3
 
-* Note: From now on, translation updates will not appear anymore in the
-  change log.
+* Huomautus: Tästä lähtien käännöspäivitykset eivät enää näy muutoslokissa.
 
-### Version 2.2
+### Versio 2.2
 
-* Restored compatibiliity with NVDA 2019.3.1.
+* Palautettu NVDA 2019.3.1:n yhteensopivuus.
 * Lokalisointeja päivitetty.
 
 ### Versio 2.1
@@ -94,11 +96,12 @@ seuraavissa tilanteissa:
 
 ### Versio 2.0
 
-* Improve the user experience with the notifications appearing when entering
-  e-mail addresses which are not valid anymore or which send automatic out
-  of office replies: a sound alerts when such notifications appear or are
-  updated, a gesture allows to read it or to move to it, and navigation in
-  this area with arrows is made more easy.
+* Paranneltu näkyviin tulevien ilmoitusten käyttäjäkokemusta kirjoitettaessa
+  sähköpostiosoitteita, jotka eivät ole enää käytössä tai lähettävät
+  automaattisia poissaolovastauksia: ääni ilmoittaa, kun tällaiset
+  ilmoitukset tulevat näkyviin tai päivittyvät, näppäinkomento mahdollistaa
+  niiden lukemisen tai siirtymisen niihin, ja nuolinäppäimillä liikkuminen
+  tällä alueella on tehty helpommaksi.
 
 ### Versio 1.10
 
