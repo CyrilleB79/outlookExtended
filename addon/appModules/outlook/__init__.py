@@ -106,8 +106,10 @@ STATUS_LIST = [
 	# Translators: Outlook's native string for status
 	_("Tentative"),
 ]
-RE_STATUS_SPLITTER_STR = r', (?=' + '|'.join(f'(?:{re.escape(s)})' for s in STATUS_LIST) + '|(?:No Information))'
+RE_STATUS_SPLITTER_STR = r', (?=' + '|'.join(f'(?:{re.escape(s)})' for s in STATUS_LIST) + r')'
 RE_STATUS_SPLITTER = re.compile(RE_STATUS_SPLITTER_STR)
+
+STR_NO_INFO = 'No Information'
 
 
 def mkhi(itemType, htmlContent, attribDic={}):
@@ -812,7 +814,6 @@ class AppModule(AppModule):
 		firstLine = True
 		for line in name.split('; '):
 			if firstLine:
-				# 
 				formatted.append(mkhiText('h2', line))
 				firstLine = False
 			else:
@@ -829,9 +830,16 @@ class AppModule(AppModule):
 							"Outlook's UI languages differs from the language used in Outlook extended add-on."
 						)
 				formatted.append(mkhiText('h3', attendeeName))
-				listContent = '\r\n'.join(mkhiText('li', item) for item in items)
-				if listContent:
-					formatted.append(mkhi('ul', listContent))
+				if len(items) == 1 and items[0] == STR_NO_INFO:
+					# Translators: A status used in the attendees status report.
+					# If possible for you, you can use Outlook's translation visible in the tooltip popping up when
+					# hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
+					# hatched rectangle (no information available) for people external to your organization.
+					formatted.append(mkhiText('p', _('No Information')))
+				else:				
+					listContent = [mkhiText('li', item) for item in items]
+					if listContent:
+						formatted.append(mkhi('ul', '\r\n'.join(listContent)))
 		return '\r\n'.join(formatted)
 
 	def getAttachmentInfos2016(self):
