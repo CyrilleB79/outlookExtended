@@ -3,15 +3,18 @@
 * Authors: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA compatibility: 2019.3 and beyond
 * Download [stable version][1]
-* Download [development version][2]
 
-This addon improves the use of Microsoft Outlook by vocalizing some native commands, adding extra commands and adds extra features.
+This addon improves the use of Microsoft Outlook with NVDA: it vocalizes some native commands and adds extra commands and features.
 
 ## Commands
 
 * Alt+1 to Alt+9, Alt+0, Alt+-, Alt+=: Reports the header field 1 to 12 in a message, calendar item or task window. If pressed twice, moves the focus to this field if possible. If pressed three times, copies its content to the clipboard.
 * NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout): Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
-* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout): Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it.
+* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+  
+    * In a message window: reports the number and the names of attachments; if pressed twice, moves the focus to it.
+    * In a meeting window, in the all attendees tab: display in a browseable message the attendees status on the time slot of the meeting.
+
 * NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout): Moves the focus to the message body.
 * NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout): Reports the notification in a message window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: in the message list, marks the selected message or group of messages as read.
@@ -19,8 +22,8 @@ This addon improves the use of Microsoft Outlook by vocalizing some native comma
 
 ## Additional improvements
 
-* When the recipient you have entered in the To, Cc or Bcc fields sends automatic out of office replies or is not present anymore on the Exchange server, Outlook report it in the notification area. In this notification area, you also have buttons to remove the address of these recipients.
-  This add-on will inform you with a ding when this notification area appear, disappear or be updated. You can then press NVDA+shif+N / NVDA+control+shift+N once to have it read and twice to jump to this area. Then move with arrows on the recipient buttons and press a button to remove the corresponding recipient.
+* When the recipient you have entered in the To, Cc or Bcc fields sends automatic out of office replies or is not present anymore on the Exchange server, Outlook report it in the notification area of the message window. In this notification area, you also have buttons to remove the address of these recipients.
+  This add-on will inform you with a ding when this notification area appears, disappears or is updated. You can then press NVDA+shif+N / NVDA+control+shift+N once to have it read and twice to jump to this area. Then move with the arrows on the recipient buttons and press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation commands to read the content of each column.
   
 ## Notes
@@ -32,9 +35,32 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 3.0
+
+* In a meeting window, in the all attendees tab, pressing NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout) now displays in a browseable message the attendees status on the time slot of the meeting.
+
+### Version 2.4
+
+* Compatibility with NVDA 2024.1.
+* Relevant commands are now usable in on-demand speech mode.
+
+### Version 2.3
+
+* Note: From now on, translation updates will not appear anymore in the change log.
+
+### Version 2.2
+
+* Restored compatibiliity with NVDA 2019.3.1.
+* Updated localizations.
+
+### Version 2.1
+
+* Removed the dev channel.
+* Updated localizations.
+
 ### Version 2.0
 
-* Improve the user experience with notifications appearing when entering e-mail addresses which are not valid anymore or which send automatic out of office replies:
+* Improve the user experience with the notifications appearing when entering e-mail addresses which are not valid anymore or which send automatic out of office replies:
   a sound alerts when such notifications appear or are updated, a gesture allows to read it or to move to it, and navigation in this area with arrows is made more easy.
 
 ### Version 1.10
@@ -100,6 +126,4 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 * Initial release.
 
-[1]: https://addons.nvda-project.org/files/get.php?file=outlookextended
-
-[2]: https://addons.nvda-project.org/files/get.php?file=outlookextended-dev
+[1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended

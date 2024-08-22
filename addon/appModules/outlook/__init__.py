@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # NVDA add-on: Outlook Extended
-# Copyright (C) 2018-2023 Cyrille Bougot, Ralf Kefferpuetz
+# Copyright (C) 2018-2024 Cyrille Bougot, Ralf Kefferpuetz
 # This file is covered by the GNU General Public License.
 # See the file COPYING.txt for more details.
 
@@ -28,15 +28,19 @@ from nvdaBuiltin.appModules.outlook import *  # noqa: F401, F403
 from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModule
 
 from .itemWindow import OutlookItemWindow, NotInMessageWindowError, HeaderFieldNotFoundeError
-from . import compa
+from .compa import CTWRAPPER as controlTypes
+from .speechOnDemand import getSpeechOnDemandParameter, executeWithSpeakOnDemand
 
 from scriptHandler import getLastScriptRepeatCount, script
 import winUser
 from logHandler import log
 import api
-import controlTypes
 import ui
-from speech import speech
+try:
+	from speech import speech
+except ImportError:
+	# Import for older version of NVDA such as 2019.3.1
+	import speech
 from NVDAObjects import NVDAObject
 from NVDAObjects.window import Window
 from NVDAObjects.IAccessible import List, getNVDAObjectFromEvent
@@ -56,14 +60,19 @@ from locationHelper import RectLTWH
 import re
 import threading
 from time import sleep
+from html import escape
 
 import addonHandler
 
-controlTypes = compa.convertControlTypes(controlTypes)
+# Save NVDA translation before overriding it
+nvdaTranslation = _
 
 addonHandler.initTranslation()
 
 ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
+
+# Define speakOnDemand parameter for all scripts needing it
+speakOnDemandParam = getSpeechOnDemandParameter()
 
 # Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 # Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
@@ -78,6 +87,46 @@ confspec = {
 	'testCasePath': 'string(default="")',
 }
 config.conf.spec["outlookExtended"] = confspec
+
+# List of statuses as defined in Outlook.
+# To view all existing statuses:
+# - open the calendar view
+# - select an item, e.g. appointment or meeting
+# - open context menu and select "Show as"
+# All the possible statuses are listed in the submenu.
+STATUS_LIST = [
+	# Translators: Outlook's native string for status
+	_("Busy"),
+	# Translators: Outlook's native string for status
+	_("Out of Office"),
+	# Translators: Outlook's native string for status
+	_("Free"),
+	# Translators: Outlook's native string for status
+	_("Working Elsewhere"),
+	# Translators: Outlook's native string for status
+	_("Tentative"),
+]
+RE_STATUS_SPLITTER_STR = r', (?=' + '|'.join(f'(?:{re.escape(s)})' for s in STATUS_LIST) + '|(?:No Information))'
+RE_STATUS_SPLITTER = re.compile(RE_STATUS_SPLITTER_STR)
+
+
+def mkhi(itemType, htmlContent, attribDic={}):
+	"""Creates an HTML item encapsulating other htmlContent with itemType tag with the attributes in attribDic.
+	If the content to encapsulate is single text instead, use mkhiText instead.
+	"""
+	if len(htmlContent) == 0:
+		raise
+	assert htmlContent[0] == '<' and htmlContent[-1] == '>'
+	sAttribs = ''.join(f' {n}={v}' for n, v in attribDic.items())
+	return f'<{itemType}{sAttribs}>{htmlContent}</{itemType}>'
+
+
+def mkhiText(itemType, textContent, attribDic={}):
+	"""Creates an HTML item encapsulating a single text with itemType tag with the attributes in attribDic.
+	"""
+
+	sAttribs = ''.join(f' {n}={v}' for n, v in attribDic.items())
+	return f'<{itemType}{sAttribs}>{escape(textContent)}</{itemType}>'
 
 
 class ElemWithReadStatus:
@@ -389,7 +438,7 @@ class NotificationChecker(threading.Thread):
 		self.outlookAppModule = None
 
 	def stopped(self):
-		return self._stop.isSet()
+		return self._stop.is_set()
 
 	def run(self):
 		oldInfoSet = set()
@@ -599,8 +648,10 @@ class AppModule(AppModule):
 	def speakObject(self, obj):
 		if obj.role == controlTypes.Role.CHECKBOX:
 			name = obj.name
-			# Translators: A checkbox state
-			value = _('checked') if controlTypes.State.CHECKED in obj.states else _('unchecked')
+			value = (
+				nvdaTranslation('checked') if controlTypes.State.CHECKED in obj.states
+				else nvdaTranslation('not checked')
+			)
 		else:
 			name, value = obj.name, obj.value
 		# Translators: To report name and value of a heaeder's field
@@ -615,7 +666,8 @@ class AppModule(AppModule):
 			"Reports the notification in a message. If pressed twice, moves the focus to it."
 			" If pressed three times, copies its content to the clipboard."
 		),
-		gestures=["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"]
+		gestures=["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"],
+		**speakOnDemandParam,
 	)
 	def script_reportNotification(self, gesture):
 		obj = self.getNotificationObj()
@@ -643,7 +695,8 @@ class AppModule(AppModule):
 			"Reports the information bar in a message, calendar item or task window."
 			" If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
 		),
-		gestures=["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"]
+		gestures=["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"],
+		**speakOnDemandParam,
 	)
 	def script_reportInfoBar(self, gesture):
 		obj = self.getInfoBarObj()
@@ -677,12 +730,13 @@ class AppModule(AppModule):
 		obj.setFocus()
 
 	@script(
-		# Translators: Documentation for Attachments script.
 		description=_(
+			# Translators: Documentation for Attachments script.
 			"Reports the number and the names of attachments in a message window."
 			" If pressed twice, moves the focus to it.",
 		),
-		gestures=["kb(desktop):NVDA+shift+A", "kb(laptop):NVDA+control+shift+A"]
+		gestures=["kb(desktop):NVDA+shift+A", "kb(laptop):NVDA+control+shift+A"],
+		**speakOnDemandParam,
 	)
 	def script_attachments(self, gesture):
 		obj = api.getFocusObject()
@@ -694,6 +748,11 @@ class AppModule(AppModule):
 			else:
 				attachmentsList, handle, namesGen, windowName = self.getAttachmentInfos2013()
 		except LookupError:
+			try:
+				self.viewAttendeesStatus()
+				return
+			except LookupError:
+				pass
 			self.errorBeep()
 			return
 		self.nAttachments = len(attachmentsList)
@@ -715,13 +774,70 @@ class AppModule(AppModule):
 			def announceAttachments():
 				attachmentList = ', '.join(namesGen)
 				msg = f"{windowName}: {self.nAttachments}. {attachmentList}"
-				core.callLater(0, ui.message, msg)
+				core.callLater(0, lambda: executeWithSpeakOnDemand(ui.message, msg))
 			threading.Thread(target=announceAttachments).start()
+
+	def viewAttendeesStatus(self):
+		fg = api.getForegroundObject()
+		cidAttendeesStatus = 4720  # value: 'All Attendees Status'; windowClassName: 'AfxWndW'
+		handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttendeesStatus, visible=True)
+		obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
+		if obj.role != controlTypes.Role.STATICTEXT:
+			raise LookupError('Unexpected object found')
+		try:
+			msgContent = self._statusFormatter(obj.name)
+			tryFallback = False
+		except RuntimeError:
+			tryFallback = True
+		except Exception:
+			tryFallback = True
+			log.exception('Attendees status formatting error; use fallback formatting.')
+		if tryFallback:
+			log.debug(RE_STATUS_SPLITTER_STR)
+			msgContent = self._statusFormatter(obj.name, fallback=True)
+		ui.browseableMessage(
+			msgContent,
+			# Translators: Title of the browseable message displaying the status of all attendees.
+			title=_("All Attendees Status"),
+			isHtml=True,
+		)
+
+	def _statusFormatter(self, name, fallback=False):
+		ALL_ATTENDEES_NAME_START = 'All Attendees Status; '
+		if name.startswith(ALL_ATTENDEES_NAME_START):
+			name = name[len(ALL_ATTENDEES_NAME_START):]
+		else:
+			log.debugWarning(f'Unexpected name for "All attendees status": {name}')
+		formatted = []
+		firstLine = True
+		for line in name.split('; '):
+			if firstLine:
+				# 
+				formatted.append(mkhiText('h2', line))
+				firstLine = False
+			else:
+				if fallback:
+					reSplitter = re.compile(", ")
+				else:
+					reSplitter = RE_STATUS_SPLITTER
+				attendeeName, *items = reSplitter.split(line)
+				if len(items) == 0:
+					log.debug(f'Empty item list for the following line:\n{line}')
+					if not fallback:
+						raise RuntimeError(
+							"Cannot format all attendees status. Either the translations of statuses are not correct, or "
+							"Outlook's UI languages differs from the language used in Outlook extended add-on."
+						)
+				formatted.append(mkhiText('h3', attendeeName))
+				listContent = '\r\n'.join(mkhiText('li', item) for item in items)
+				if listContent:
+					formatted.append(mkhi('ul', listContent))
+		return '\r\n'.join(formatted)
 
 	def getAttachmentInfos2016(self):
 		fg = api.getForegroundObject()
 		cidAttachments = 4306
-		handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttachments)
+		handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttachments, visible=True)
 		obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 		try:
 			o = obj
@@ -888,15 +1004,18 @@ class AppModule(AppModule):
 
 	@staticmethod
 	def _createScript_reportHeaderField(n):
-		def _genericScript_reportHeaderField(self, gesture):
+		@script(
+			description=_(
+				# Translators: Input help mode message for report a header's field command. in outlook message, calendar
+				# item or task window
+				"Reports the header field %s in a message, calendar item or task window. If pressed twice, moves"
+				" the focus to this field if possible. If pressed three times, copies its content to the clipboard."
+			) % str(n),
+			**speakOnDemandParam,
+		)
+		def script_reportHeaderField(self, gesture):
 			return self.reportHeaderFieldN(n, gesture)
-		_genericScript_reportHeaderField.__doc__ = _(
-			# Translators: Input help mode message for report a header's field command. in outlook message, calendar
-			# item or task window
-			"Reports the header field %s in a message, calendar item or task window. If pressed twice, moves"
-			" the focus to this field if possible. If pressed three times, copies its content to the clipboard."
-		) % str(n)
-		return _genericScript_reportHeaderField
+		return script_reportHeaderField
 
 	@classmethod
 	def createAllScript_reportHeaderField(cls):
