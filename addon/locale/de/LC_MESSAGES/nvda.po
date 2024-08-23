@@ -29,6 +29,26 @@ msgstr "-"
 msgid "="
 msgstr "="
 
+#. Translators: Outlook's native string for status
+msgid "Busy"
+msgstr ""
+
+#. Translators: Outlook's native string for status
+msgid "Out of Office"
+msgstr ""
+
+#. Translators: Outlook's native string for status
+msgid "Free"
+msgstr ""
+
+#. Translators: Outlook's native string for status
+msgid "Working Elsewhere"
+msgstr ""
+
+#. Translators: Outlook's native string for status
+msgid "Tentative"
+msgstr ""
+
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
 msgstr "Nachricht als Gelesen markieren"
@@ -84,13 +104,6 @@ msgstr "Nicht in einem Nachrichtenfenster"
 msgid "Copied to clipboard"
 msgstr "In Zwischenablage kopiert"
 
-#. Translators: A checkbox state
-msgid "checked"
-msgstr "Ausgewählt"
-
-msgid "unchecked"
-msgstr "Nicht ausgewählt"
-
 #. Translators: To report name and value of a heaeder's field
 #, python-brace-format
 msgid "{name} {value}"
@@ -128,12 +141,25 @@ msgstr "Keine Informationsleiste"
 msgid "Moves the focus to the message body"
 msgstr "Verschiebt den Fokus zum Nachrichtentext"
 
+#. Translators: Documentation for Attachments script.
 msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
 msgstr ""
 "Meldet die Anzahl und die Namen der Anlagen in einem Nachrichtenfenster. "
 "Wenn Sie sie zweimal drücken, wird der Fokus auf diesen verschoben."
+
+#. Translators: Title of the browseable message displaying the status of all attendees.
+msgid "All Attendees Status"
+msgstr ""
+
+#. Translators: A status used in the attendees status report.
+#. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
+#. hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
+#. hatched rectangle (no information available) for people external to your organization.
+#, fuzzy
+msgid "No Information"
+msgstr "Keine Informationsleiste"
 
 #. Translators: Reported when calling a test command
 msgid "Test case path not defined."
@@ -171,6 +197,12 @@ msgstr "Erweiterte Outlook-Funktionen"
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid "Extended support and features for Microsoft Outlook."
 msgstr "Erweiterte Unterstützung und Funktionen für Microsoft Outlook."
+
+#~ msgid "checked"
+#~ msgstr "Ausgewählt"
+
+#~ msgid "unchecked"
+#~ msgstr "Nicht ausgewählt"
 
 #~ msgid ""
 #~ "Extended support and features for Microsoft Outlook:\n"
