@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: outlookExtended\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2023-04-01 11:54+0200\n"
+"PO-Revision-Date: 2024-08-27 16:19+0300\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: Jani Kinnunen <jani.kinnunen@wippies.fi>\n"
 "Language: fi\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.11\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
@@ -32,23 +32,23 @@ msgstr "="
 
 #. Translators: Outlook's native string for status
 msgid "Busy"
-msgstr ""
+msgstr "Varattu"
 
 #. Translators: Outlook's native string for status
 msgid "Out of Office"
-msgstr ""
+msgstr "Poissa"
 
 #. Translators: Outlook's native string for status
 msgid "Free"
-msgstr ""
+msgstr "Vapaa"
 
 #. Translators: Outlook's native string for status
 msgid "Working Elsewhere"
-msgstr ""
+msgstr "Työskentelee muualla"
 
 #. Translators: Outlook's native string for status
 msgid "Tentative"
-msgstr ""
+msgstr "Alustava"
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
@@ -150,15 +150,14 @@ msgstr ""
 
 #. Translators: Title of the browseable message displaying the status of all attendees.
 msgid "All Attendees Status"
-msgstr ""
+msgstr "Kaikkien osallistujien tila"
 
 #. Translators: A status used in the attendees status report.
 #. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
 #. hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
 #. hatched rectangle (no information available) for people external to your organization.
-#, fuzzy
 msgid "No Information"
-msgstr "Ei tietopalkkia"
+msgstr "Ei tietoja"
 
 #. Translators: Reported when calling a test command
 msgid "Test case path not defined."

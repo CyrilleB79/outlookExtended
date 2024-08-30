@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-09-13 16:32+1000\n"
-"PO-Revision-Date: 2024-07-15 16:20+0300\n"
+"PO-Revision-Date: 2024-08-23 23:59+0300\n"
 "Last-Translator: Ruslan Kolodyazhni <rupelodn@gmail.com>\n"
 "Language-Team: Translators <nvda-translations@groups.io>\n"
 "Language: ru_RU\n"
@@ -31,23 +31,23 @@ msgstr "="
 
 #. Translators: Outlook's native string for status
 msgid "Busy"
-msgstr ""
+msgstr "Занято"
 
 #. Translators: Outlook's native string for status
 msgid "Out of Office"
-msgstr ""
+msgstr "Не на рабочем месте"
 
 #. Translators: Outlook's native string for status
 msgid "Free"
-msgstr ""
+msgstr "Свободен"
 
 #. Translators: Outlook's native string for status
 msgid "Working Elsewhere"
-msgstr ""
+msgstr "Работа в другом месте"
 
 #. Translators: Outlook's native string for status
 msgid "Tentative"
-msgstr ""
+msgstr "Предварительно"
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
@@ -150,15 +150,14 @@ msgstr ""
 
 #. Translators: Title of the browseable message displaying the status of all attendees.
 msgid "All Attendees Status"
-msgstr ""
+msgstr "Состояние всех участников"
 
 #. Translators: A status used in the attendees status report.
 #. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
 #. hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
 #. hatched rectangle (no information available) for people external to your organization.
-#, fuzzy
 msgid "No Information"
-msgstr "Нет информационной панели"
+msgstr "Нет Информации"
 
 #. Translators: Reported when calling a test command
 msgid "Test case path not defined."
@@ -195,9 +194,3 @@ msgstr "Расширенный Outlook"
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 msgid "Extended support and features for Microsoft Outlook."
 msgstr "Расширенная поддержка и функции Microsoft Outlook."
-
-#~ msgid "checked"
-#~ msgstr "отмечено"
-
-#~ msgid "unchecked"
-#~ msgstr "не отмечено"

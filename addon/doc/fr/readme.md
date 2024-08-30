@@ -4,8 +4,9 @@
 * Compatibilité NVDA: 2019.3 et ultérieure
 * Télécharger [version stable][1]
 
-This addon improves the use of Microsoft Outlook with NVDA: it vocalizes
-some native commands and adds extra commands and features.
+Cette extension améliore l’utilisation de Microsoft Outlook avec NVDA : elle
+vocalise certaines commandes et ajoute des commandes et fonctionnalités
+supplémentaires.
 
 ## Commandes
 
@@ -18,12 +19,14 @@ some native commands and adds extra commands and features.
   message, un élément de calendrier ou une fenêtre de tâche. Une double
   pression y déplace le focus. Une triple pression copie son contenu dans le
   presse-papiers.
-* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+* NVDA+maj+A (disposition ordinateur de bureau) / NVDA+control+maj+A
+  (disposition ordinateur portable):
   
-    * In a message window: reports the number and the names of attachments;
-      if pressed twice, moves the focus to it.
-    * In a meeting window, in the all attendees tab: display in a browseable
-      message the attendees status on the time slot of the meeting.
+    * Dans une fenêtre de message, annonce le nombre et le nom des pièces
+      jointes; une double pression y déplace le focus.
+    * Dans une fenêtre de réunion, dans l'onglet tous les participants :
+      affiche en mode navigation le statut des participants sur la plage
+      horaire de la réunion.
 
 * NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
   (disposition ordinateur portable): Déplace le focus dans le corps du
@@ -39,15 +42,17 @@ some native commands and adds extra commands and features.
 
 ## Améliorations supplémentaires
 
-* When the recipient you have entered in the To, Cc or Bcc fields sends
-  automatic out of office replies or is not present anymore on the Exchange
-  server, Outlook report it in the notification area of the message
-  window. In this notification area, you also have buttons to remove the
-  address of these recipients.  This add-on will inform you with a ding when
-  this notification area appears, disappears or is updated. You can then
-  press NVDA+shif+N / NVDA+control+shift+N once to have it read and twice to
-  jump to this area. Then move with the arrows on the recipient buttons and
-  press a button to remove the corresponding recipient.
+* Lorsque le destinataire que vous avez saisi dans les champs À, Cc ou Cci
+  envoie des réponses automatiques d'absence ou n'est plus présent sur le
+  serveur Exchange, Outlook le signale dans la zone de notification de la
+  fenêtre de message. Dans cette zone de notification, vous disposez
+  également de boutons pour supprimer l'adresse de ces destinataires. Cet
+  extension vous informera par un ding lorsque cette zone de notification
+  apparaîtra, disparaîtra ou sera mise à jour. Vous pouvez ensuite appuyer
+  sur NVDA+shift+N / NVDA+control+shift+N une fois pour le lire et deux fois
+  pour accéder à cette zone. Déplacez-vous ensuite avec les flèches sur les
+  boutons des destinataires et appuyez sur un bouton pour supprimer le
+  destinataire correspondant.
 * Dans la liste des résultats du carnet d'adresses, vous pouvez utiliser les
   commandes de navigation horizontale dans un tableau pour lire le contenu
   de chaque colonne.
@@ -71,23 +76,25 @@ modifier dans les situations suivantes :
 
 ### Version 3.0
 
-* In a meeting window, in the all attendees tab, pressing NVDA+shift+A
-  (desktop layout) / NVDA+control+shift+A (laptop layout) now displays in a
-  browseable message the attendees status on the time slot of the meeting.
+* Dans une fenêtre de réunion, dans l'onglet Tous les participants, un appui
+  sur NVDA+shift+A (disposition ordinateur de bureau) / NVDA+control+shift+A
+  (disposition ordinateur portable) affiche désormais en mode navigation le
+  statut des participants sur le créneau horaire de la réunion.
 
 ### Version 2.4
 
-* Compatibility with NVDA 2024.1.
-* Relevant commands are now usable in on-demand speech mode.
+* Compatibilité avec NVDA 2024.1.
+* Les commandes pertinentes sont désormais utilisables en mode vocal à la
+  demande.
 
 ### Version 2.3
 
-* Note: From now on, translation updates will not appear anymore in the
-  change log.
+* Remarque : À partir de maintenant, les mises à jour de traduction
+  n'apparaîtront plus dans le journal des modifications.
 
 ### Version 2.2
 
-* Restored compatibiliity with NVDA 2019.3.1.
+* Compatibilité restaurée avec NVDA 2019.3.1.
 * Ajout de localisations.
 
 ### Version 2.1
@@ -97,11 +104,12 @@ modifier dans les situations suivantes :
 
 ### Version 2.0
 
-* Improve the user experience with the notifications appearing when entering
-  e-mail addresses which are not valid anymore or which send automatic out
-  of office replies: a sound alerts when such notifications appear or are
-  updated, a gesture allows to read it or to move to it, and navigation in
-  this area with arrows is made more easy.
+* Amélioration de l'expérience utilisateur avec les notifications
+  apparaissant lors de la saisie d'adresses e-mail qui ne sont plus valides
+  ou qui envoient des réponses automatiques d'absence du bureau : un son
+  alerte lorsque de telles notifications apparaissent ou sont mises à jour,
+  un geste permet de les lire ou de s'y déplacer , et la navigation dans
+  cette zone avec les flèches est rendue plus facile.
 
 ### Version 1.10
 
