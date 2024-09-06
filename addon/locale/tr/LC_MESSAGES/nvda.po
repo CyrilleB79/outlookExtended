@@ -5,18 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'OutlookExtended' '1.0-dev'\n"
+"Project-Id-Version: Genişletilmiş Outlook Desteği\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2023-05-01 21:17+0300\n"
+"PO-Revision-Date: 2024-08-31 23:13+0300\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: cagrid@hotmail.com\n"
-"Language: tr\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
@@ -33,23 +33,23 @@ msgstr "-"
 
 #. Translators: Outlook's native string for status
 msgid "Busy"
-msgstr ""
+msgstr "Meşgul"
 
 #. Translators: Outlook's native string for status
 msgid "Out of Office"
-msgstr ""
+msgstr "Ofis Dışında"
 
 #. Translators: Outlook's native string for status
 msgid "Free"
-msgstr ""
+msgstr "Ücretsiz"
 
 #. Translators: Outlook's native string for status
 msgid "Working Elsewhere"
-msgstr ""
+msgstr "Başka Yerde Çalış"
 
 #. Translators: Outlook's native string for status
 msgid "Tentative"
-msgstr ""
+msgstr "Geçici olarak"
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
@@ -151,15 +151,14 @@ msgstr ""
 
 #. Translators: Title of the browseable message displaying the status of all attendees.
 msgid "All Attendees Status"
-msgstr ""
+msgstr "Tüm Katılımcıların Durumu"
 
 #. Translators: A status used in the attendees status report.
 #. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
 #. hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
 #. hatched rectangle (no information available) for people external to your organization.
-#, fuzzy
 msgid "No Information"
-msgstr "Bİlgi çubuğu yok"
+msgstr "Bilgi Yok"
 
 #. Translators: Reported when calling a test command
 msgid "Test case path not defined."
