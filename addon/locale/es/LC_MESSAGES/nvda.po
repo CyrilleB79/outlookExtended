@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: outlookExtended 1.0-dev\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
 "POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2023-03-31 17:12+0200\n"
-"Last-Translator: José Manuel Delicado <jmdaweb@hotmail.com>\n"
+"PO-Revision-Date: 2024-08-23 17:26+0200\n"
+"Last-Translator: José Manuel Delicado <jm.delicado@nvda.es>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
@@ -28,6 +28,26 @@ msgstr "'"
 #. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
 msgstr "¡"
+
+#. Translators: Outlook's native string for status
+msgid "Busy"
+msgstr "Ocupado"
+
+#. Translators: Outlook's native string for status
+msgid "Out of Office"
+msgstr "Fuera de la oficina"
+
+#. Translators: Outlook's native string for status
+msgid "Free"
+msgstr "Disponible"
+
+#. Translators: Outlook's native string for status
+msgid "Working Elsewhere"
+msgstr "Trabajando en cualquier parte"
+
+#. Translators: Outlook's native string for status
+msgid "Tentative"
+msgstr "Provisional"
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
@@ -84,13 +104,6 @@ msgstr "No estás en una ventana de mensaje"
 msgid "Copied to clipboard"
 msgstr "Copiado al portapapeles"
 
-#. Translators: A checkbox state
-msgid "checked"
-msgstr "marcada"
-
-msgid "unchecked"
-msgstr "sin marcar"
-
 #. Translators: To report name and value of a heaeder's field
 #, python-brace-format
 msgid "{name} {value}"
@@ -127,12 +140,24 @@ msgstr "No se encuentra la barra de información"
 msgid "Moves the focus to the message body"
 msgstr "Mueve el foco al cuerpo del mensaje"
 
+#. Translators: Documentation for Attachments script.
 msgid ""
 "Reports the number and the names of attachments in a message window. If "
 "pressed twice, moves the focus to it."
 msgstr ""
 "Anuncia el número y los nombres de los adjuntos en una ventana de mensaje. "
 "Si se pulsa dos veces, mueve el foco hasta allí."
+
+#. Translators: Title of the browseable message displaying the status of all attendees.
+msgid "All Attendees Status"
+msgstr "Estado de todos los asistentes"
+
+#. Translators: A status used in the attendees status report.
+#. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
+#. hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
+#. hatched rectangle (no information available) for people external to your organization.
+msgid "No Information"
+msgstr "Sin información"
 
 #. Translators: Reported when calling a test command
 msgid "Test case path not defined."

@@ -4,8 +4,8 @@
 * Compatibilidad con NVDA: de 2019.3 en adelante
 * Descargar [versión estable][1]
 
-Este complemento mejora el uso de Microsoft Outlook verbalizando algunas
-órdenes y añadiendo órdenes y funciones extra.
+Este complemento mejora el uso de Microsoft Outlook con NVDA: verbaliza
+algunas órdenes nativas y añade órdenes y funciones extra.
 
 ## Órdenes
 
@@ -19,8 +19,14 @@ Este complemento mejora el uso de Microsoft Outlook verbalizando algunas
   el foco hasta allí. Si se pulsa tres veces, copia su contenido al
   portapapeles.
 * NVDA+shift+A (distribución de escritorio) / NVDA+control+shift+A
-  (distribución portátil): indica el número y los nombres de los adjuntos en
-  una ventana de mensaje. Si se pulsa dos veces, mueve el foco hasta allí.
+  (distribución portátil):
+  
+    * En una ventana de mensaje: indica el número y los nombres de los
+      adjuntos. Si se pulsa dos veces, mueve el foco hasta allí.
+    * En una ventana de reunión, en la pestaña Todos los asistentes: mostrar
+      en un mensaje explorable los estados de los asistentes en la franja
+      horaria de la reunión.
+
 * NVDA+shift+M (distribución de escritorio) / NVDA+control+shift+M
   (distribución portátil): mueve el foco al cuerpo del mensaje.
 * NVDA+shift+N (distribución de escritorio) / NVDA+control+shift+N
@@ -36,14 +42,15 @@ Este complemento mejora el uso de Microsoft Outlook verbalizando algunas
 
 * Cuando el destinatario introducido en los campos Para, CC o CCO envía
   respuestas automáticas por desconexión o ya no está presente en el
-  servidor Exchange, Outlook lo anuncia en el área de notificaciones. En
-  esta zona de notificaciones, también hay botones para eliminar la
-  dirección de estos destinatarios. Este complemento informará con un pitido
-  cuando aparezca el área de notificaciones, desaparezca o se actualice. En
-  ese momento, se puede pulsar una vez NVDA+shift+N o NVDA+control+shift+N
-  para leerla o dos veces para saltar a ella. Después, se puede usar el
-  desplazamiento con las flechas para moverse por los botones del
-  destinatario y pulsar uno para eliminar al destinatario correspondiente.
+  servidor Exchange, Outlook lo anuncia en el área de notificaciones de la
+  ventana de mensaje. En esta zona de notificaciones, también hay botones
+  para eliminar la dirección de estos destinatarios. Este complemento
+  informará con un pitido cuando aparezca el área de notificaciones,
+  desaparezca o se actualice. En ese momento, se puede pulsar una vez
+  NVDA+shift+N o NVDA+control+shift+N para leerla o dos veces para saltar a
+  ella. Después, se puede usar el desplazamiento con las flechas para
+  moverse por los botones del destinatario y pulsar uno para eliminar al
+  destinatario correspondiente.
 * En la lista de resultados de la libreta de direcciones, se pueden usar
   órdenes de navegación horizontal por tablas para leer el contenido de cada
   columna.
@@ -62,6 +69,28 @@ NVDA. Puedes querer modificarlos en las siguientes situaciones:
   encajan con tu distribución de teclado.
 
 ## Registro de cambios
+
+### Versión 3.0
+
+* En una ventana de reunión, en la pestaña Todos los asistentes, si se pulsa
+  NVDA+shift+a (disposición de escritorio)/NVDA+control+shift+a (disposición
+  portátil) ahora se muestran los estados de todos los asistentes en un
+  mensaje explorable en la franja horaria de la reunión.
+
+### Versión 2.4
+
+* Compatibilidad con NVDA 2024.1.
+* Las órdenes relevantes ahora se pueden usar en el modo de voz a petición.
+
+### Versión 2.3
+
+* Nota: de ahora en adelante, ya no aparecerán las actualizaciones de
+  traducciones en el registro de cambios.
+
+### Versión 2.2
+
+* Se restaura la compatibilidad con NVDA 2019.3.1.
+* Traducciones actualizadas.
 
 ### Versión 2.1
 

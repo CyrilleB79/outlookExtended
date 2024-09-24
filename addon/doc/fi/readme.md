@@ -4,8 +4,9 @@
 * Yhteensopivuus: NVDA 2019.3 ja sitä uudemmat
 * Lataa [vakaa versio][1]
 
-Tämä lisäosa parantaa Microsoft Outlookin käyttöä puhumalla olemassa olevia
-näppäinkomentoja sekä lisäämällä uusia komentoja ja ominaisuuksia.
+Tämä lisäosa parantaa Microsoft Outlookin käyttöä NVDA:n kanssa puhumalla
+olemassa olevia näppäinkomentoja sekä lisäämällä uusia komentoja ja
+ominaisuuksia.
 
 ## Näppäinkomennot
 
@@ -17,10 +18,14 @@ näppäinkomentoja sekä lisäämällä uusia komentoja ja ominaisuuksia.
   (kannettavan näppäimistöasettelu): Puhuu viestin, kalenterimerkinnän tai
   tehtäväikkunan tietopalkin. Kahdesti painettaessa kohdistus siirretään
   siihen. Kolmesti painettaessa sen sisältö kopioidaan leikepöydälle.
-* NVDA+Vaihto+A (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+Vaihto+A
-  (kannettavan näppäimistöasettelu): Lukee viesti-ikkunassa liitteiden
-  lukumäärän ja nimet. Kahdesti painettaessa kohdistus siirretään
-  liitetiedostojen luetteloon.
+* NVDA+Vaihto+A (pöytäkoneen näppäinasettelu) / NVDA+Ctrl+Vaihto+A
+  (kannettavan näppäinasettelu):
+  
+    * Lukee viesti-ikkunassa liitteiden määrän ja nimet. Kahdesti
+      painettaessa kohdistus siirretään liitetiedostojen luetteloon.
+    * Kokousikkunan "Kaikki osallistujat" -välilehdessä: näytä osallistujien
+      tila erillisessä ikkunassa kokouksen ajalta.
+
 * NVDA+Vaihto+M (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+M (kannettavan
   näppäimistöasettelu): Siirtää kohdistuksen viestirunkoon.
 * NVDA+Vaihto+N (pöytäkoneen näppäimistöasettelu) / NVDA+Ctrl+Vaihto+N
@@ -36,11 +41,11 @@ näppäinkomentoja sekä lisäämällä uusia komentoja ja ominaisuuksia.
 
 * Kun To-, Cc- tai Bcc-kenttiin syöttämäsi vastaanottaja lähettää
   automaattisia poissaolovastauksia tai ei ole enää Exchange-palvelimella,
-  Outlook ilmoittaa siitä ilmoitusalueella. Siinä on myös painikkeet, joilla
-  nämä vastaanottajat voidaan poistaa. Tämä lisäosa ilmoittaa kilahduksella,
-  kun ilmoitusalue tulee näkyviin, häviää näkyvistä tai päivittyy. Voit
-  sitten painaa kerran NVDA+Vaihto+N/NVDA+Ctrl+Vaihto+N lukeaksesi sen tai
-  kahdesti siirtyäksesi siihen. Liiku sitten nuolilla
+  Outlook ilmoittaa siitä viesti-ikkunan ilmoitusalueella. Siinä on myös
+  painikkeet, joilla nämä vastaanottajat voidaan poistaa. Tämä lisäosa
+  ilmoittaa kilahduksella, kun ilmoitusalue tulee näkyviin, häviää näkyvistä
+  tai päivittyy. Voit sitten painaa kerran NVDA+Vaihto+N/NVDA+Ctrl+Vaihto+N
+  lukeaksesi sen tai kahdesti siirtyäksesi siihen. Liiku sitten nuolilla
   vastaanottajapainikkeissa ja paina haluamaasi painiketta poistaaksesi
   kyseisen vastaanottajan.
 * Voit käyttää osoitekirjan tulosluettelossa vaakasuuntaisia
@@ -63,6 +68,27 @@ seuraavissa tilanteissa:
 
 ## Muutosloki
 
+### Versio 3.0
+
+* Kokousikkunan "kaikki osallistujat" -välilehdessä näytetään nyt
+  osallistujien tila erillisessä ikkunassa kokouksen ajalta painettaessa
+  NVDA+Vaihto+A (pöytäkoneen näppäinasettelu) / NVDA+Ctrl+Vaihto+A
+  (kannettavan näppäinasettelu).
+
+### Versio 2.4
+
+* Yhteensopivuus NVDA 2024.1:lle.
+* Olennaiset komennot ovat nyt käytettävissä pyydettäessä-puhetilassa.
+
+### Versio 2.3
+
+* Huomautus: Tästä lähtien käännöspäivitykset eivät enää näy muutoslokissa.
+
+### Versio 2.2
+
+* Palautettu NVDA 2019.3.1:n yhteensopivuus.
+* Lokalisointeja päivitetty.
+
 ### Versio 2.1
 
 * Dev-kanava poistettu.
@@ -72,10 +98,10 @@ seuraavissa tilanteissa:
 
 * Paranneltu näkyviin tulevien ilmoitusten käyttäjäkokemusta kirjoitettaessa
   sähköpostiosoitteita, jotka eivät ole enää käytössä tai lähettävät
-  automaattisia poissaolovastauksia: ääni ilmoittaa, kun sellaisia
-  ilmoituksia tulee näkyviin tai päivittyy, näppäinkomento mahdollistaa sen
-  lukemisen tai siirtymisen siihen ja nuolinäppäimillä liikkuminen tällä
-  alueella on helpompaa.
+  automaattisia poissaolovastauksia: ääni ilmoittaa, kun tällaiset
+  ilmoitukset tulevat näkyviin tai päivittyvät, näppäinkomento mahdollistaa
+  niiden lukemisen tai siirtymisen niihin, ja nuolinäppäimillä liikkuminen
+  tällä alueella on tehty helpommaksi.
 
 ### Versio 1.10
 

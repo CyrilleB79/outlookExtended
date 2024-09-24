@@ -4,9 +4,9 @@
 * Compatibilité NVDA: 2019.3 et ultérieure
 * Télécharger [version stable][1]
 
-Cette extension améliore l’utilisation de Microsoft Outlook par la
-vocalisation de certaines commandes et l’ajout de commandes et
-fonctionnalités supplémentaires.
+Cette extension améliore l’utilisation de Microsoft Outlook avec NVDA : elle
+vocalise certaines commandes et ajoute des commandes et fonctionnalités
+supplémentaires.
 
 ## Commandes
 
@@ -20,9 +20,14 @@ fonctionnalités supplémentaires.
   pression y déplace le focus. Une triple pression copie son contenu dans le
   presse-papiers.
 * NVDA+maj+A (disposition ordinateur de bureau) / NVDA+control+maj+A
-  (disposition ordinateur portable): Annonce le nombre et le nom des pièces
-  jointes dans une fenêtre de message. Une double pression y déplace le
-  focus.
+  (disposition ordinateur portable):
+  
+    * Dans une fenêtre de message, annonce le nombre et le nom des pièces
+      jointes; une double pression y déplace le focus.
+    * Dans une fenêtre de réunion, dans l'onglet tous les participants :
+      affiche en mode navigation le statut des participants sur la plage
+      horaire de la réunion.
+
 * NVDA+maj+M (disposition ordinateur de bureau) / NVDA+control+maj+M
   (disposition ordinateur portable): Déplace le focus dans le corps du
   message.
@@ -39,15 +44,15 @@ fonctionnalités supplémentaires.
 
 * Lorsque le destinataire que vous avez saisi dans les champs À, Cc ou Cci
   envoie des réponses automatiques d'absence ou n'est plus présent sur le
-  serveur Exchange, Outlook le signale dans la zone de notification. Dans
-  cette zone de notification, vous disposez également de boutons pour
-  supprimer l'adresse de ces destinataires. Cet extension vous informera par
-  un ding lorsque cette zone de notification apparaîtra, disparaîtra ou sera
-  mise à jour. Vous pouvez ensuite appuyer sur NVDA+shift+N /
-  NVDA+control+shift+N une fois pour le lire et deux fois pour accéder à
-  cette zone. Déplacez-vous ensuite avec les flèches sur les boutons des
-  destinataires et appuyez sur un bouton pour supprimer le destinataire
-  correspondant.
+  serveur Exchange, Outlook le signale dans la zone de notification de la
+  fenêtre de message. Dans cette zone de notification, vous disposez
+  également de boutons pour supprimer l'adresse de ces destinataires. Cet
+  extension vous informera par un ding lorsque cette zone de notification
+  apparaîtra, disparaîtra ou sera mise à jour. Vous pouvez ensuite appuyer
+  sur NVDA+shift+N / NVDA+control+shift+N une fois pour le lire et deux fois
+  pour accéder à cette zone. Déplacez-vous ensuite avec les flèches sur les
+  boutons des destinataires et appuyez sur un bouton pour supprimer le
+  destinataire correspondant.
 * Dans la liste des résultats du carnet d'adresses, vous pouvez utiliser les
   commandes de navigation horizontale dans un tableau pour lire le contenu
   de chaque colonne.
@@ -69,6 +74,29 @@ modifier dans les situations suivantes :
 
 ## Journal des modifications
 
+### Version 3.0
+
+* Dans une fenêtre de réunion, dans l'onglet Tous les participants, un appui
+  sur NVDA+shift+A (disposition ordinateur de bureau) / NVDA+control+shift+A
+  (disposition ordinateur portable) affiche désormais en mode navigation le
+  statut des participants sur le créneau horaire de la réunion.
+
+### Version 2.4
+
+* Compatibilité avec NVDA 2024.1.
+* Les commandes pertinentes sont désormais utilisables en mode vocal à la
+  demande.
+
+### Version 2.3
+
+* Remarque : À partir de maintenant, les mises à jour de traduction
+  n'apparaîtront plus dans le journal des modifications.
+
+### Version 2.2
+
+* Compatibilité restaurée avec NVDA 2019.3.1.
+* Ajout de localisations.
+
 ### Version 2.1
 
 * Suppression du canal de développement.
@@ -78,10 +106,10 @@ modifier dans les situations suivantes :
 
 * Amélioration de l'expérience utilisateur avec les notifications
   apparaissant lors de la saisie d'adresses e-mail qui ne sont plus valides
-  ou qui envoient des réponses automatiques d'absence : un son alerte
-  lorsque de telles notifications apparaissent ou sont mises à jour, un
-  geste permet de la lire ou de s'y déplacer, et la navigation dans cette
-  zone avec des flèches est facilitée.
+  ou qui envoient des réponses automatiques d'absence du bureau : un son
+  alerte lorsque de telles notifications apparaissent ou sont mises à jour,
+  un geste permet de les lire ou de s'y déplacer , et la navigation dans
+  cette zone avec les flèches est rendue plus facile.
 
 ### Version 1.10
 
