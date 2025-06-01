@@ -35,6 +35,10 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 3.2
+
+* Compatibility with NVDA 2024.1.
+
 ### Version 3.0
 
 * In a meeting window, in the all attendees tab, pressing NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout) now displays in a browseable message the attendees status on the time slot of the meeting.
