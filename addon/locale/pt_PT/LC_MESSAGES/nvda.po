@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'OutlookExtended' '1.0-dev'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2019-02-21 00:29+0000\n"
-"PO-Revision-Date: 2023-07-28 14:43+0100\n"
+"PO-Revision-Date: 2025-01-04 22:17+0000\n"
 "Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa portuguesa do NVDA <ampa4374@gmail.com; rui."
 "fontes@tiflotecnia.pt>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../../appModules\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -26,33 +26,33 @@ msgstr ""
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
 #. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "-"
-msgstr "'"
+msgstr "-"
 
 #. Translators: The key just ont the left of the backspace key.
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
 #. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
 msgid "="
-msgstr "«"
+msgstr "="
 
 #. Translators: Outlook's native string for status
 msgid "Busy"
-msgstr ""
+msgstr "Ocupado"
 
 #. Translators: Outlook's native string for status
 msgid "Out of Office"
-msgstr ""
+msgstr "Fora do office"
 
 #. Translators: Outlook's native string for status
 msgid "Free"
-msgstr ""
+msgstr "Grátis"
 
 #. Translators: Outlook's native string for status
 msgid "Working Elsewhere"
-msgstr ""
+msgstr "Trabalhar Noutro Lugar"
 
 #. Translators: Outlook's native string for status
 msgid "Tentative"
-msgstr ""
+msgstr "Tentativa"
 
 #. Translators: Documentation for mark as read script.
 msgid "Mark a message as read"
@@ -155,15 +155,14 @@ msgstr ""
 
 #. Translators: Title of the browseable message displaying the status of all attendees.
 msgid "All Attendees Status"
-msgstr ""
+msgstr "Todos os participantes Estado"
 
 #. Translators: A status used in the attendees status report.
 #. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
 #. hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
 #. hatched rectangle (no information available) for people external to your organization.
-#, fuzzy
 msgid "No Information"
-msgstr "Sem barra de informação"
+msgstr "Nenhuma informação"
 
 #. Translators: Reported when calling a test command
 msgid "Test case path not defined."
