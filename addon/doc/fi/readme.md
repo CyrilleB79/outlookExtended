@@ -20,7 +20,7 @@ ominaisuuksia.
   siihen. Kolmesti painettaessa sen sisältö kopioidaan leikepöydälle.
 * NVDA+Vaihto+A (pöytäkoneen näppäinasettelu) / NVDA+Ctrl+Vaihto+A
   (kannettavan näppäinasettelu):
-  
+
     * Lukee viesti-ikkunassa liitteiden määrän ja nimet. Kahdesti
       painettaessa kohdistus siirretään liitetiedostojen luetteloon.
     * Kokousikkunan "Kaikki osallistujat" -välilehdessä: näytä osallistujien
@@ -50,7 +50,7 @@ ominaisuuksia.
   kyseisen vastaanottajan.
 * Voit käyttää osoitekirjan tulosluettelossa vaakasuuntaisia
   taulukkonavigointikomentoja lukeaksesi kunkin sarakkeen sisällön.
-  
+
 ## Huomautuksia
 
 Kaikkia näppäinkomentoja on mahdollista muokata NVDA:n

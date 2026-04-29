@@ -19,7 +19,7 @@ some native commands and adds extra commands and features.
   trykker to gange, flyttes fokus til den. Hvis du trykker tre gange,
   kopierer du indholdet til udklipsholderen.
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  
+
     * In a message window: reports the number and the names of attachments;
       if pressed twice, moves the focus to it.
     * In a meeting window, in the all attendees tab: display in a browseable
@@ -48,7 +48,7 @@ some native commands and adds extra commands and features.
   press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation
   commands to read the content of each column.
-  
+
 ## Bemærkninger
 
 Alle kommandoer kan ændres i dialogboksen for inputbevægelser. Du skal i

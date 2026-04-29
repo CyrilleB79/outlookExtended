@@ -11,9 +11,9 @@ import cases
 class FakeNVDAObject(object):
 	def __init__(self, **attributes):
 		super(FakeNVDAObject, self).__init__()
-		for (k, v) in attributes.items():
-			if k == 'cid':
-				k = 'windowControlID'
+		for k, v in attributes.items():
+			if k == "cid":
+				k = "windowControlID"
 			setattr(self, k, v)
 
 

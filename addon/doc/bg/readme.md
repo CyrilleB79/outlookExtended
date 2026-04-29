@@ -18,7 +18,7 @@ some native commands and adds extra commands and features.
   прозореца на задачите. Двукратното натискане премества фокуса в
   нея. Трикратното натискане копира съдържанието й в клипборда.
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  
+
     * In a message window: reports the number and the names of attachments;
       if pressed twice, moves the focus to it.
     * In a meeting window, in the all attendees tab: display in a browseable
@@ -49,7 +49,7 @@ some native commands and adds extra commands and features.
 * В списъка с резултати на адресната книга можете да използвате команди за
   хоризонтална навигация в таблица, за да прочетете съдържанието на всяка
   колона.
-  
+
 ## Бележки
 
 Всички жестове/команди могат да се променят в диалоговия прозорец на NVDA

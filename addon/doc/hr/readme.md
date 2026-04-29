@@ -18,7 +18,7 @@ some native commands and adds extra commands and features.
   zadatka. Ako se pritisne dvaput, fokusira ga. Ako se pritisne triput,
   kopira sadržaj u međuspremnik.
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  
+
     * In a message window: reports the number and the names of attachments;
       if pressed twice, moves the focus to it.
     * In a meeting window, in the all attendees tab: display in a browseable
@@ -48,7 +48,7 @@ some native commands and adds extra commands and features.
   press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation
   commands to read the content of each column.
-  
+
 ## Napomene
 
 Sve se geste mogu izmijeniti u dijaloškom okviru NVDA gesta naredbi. Moguće

@@ -19,7 +19,7 @@ some native commands and adds extra commands and features.
   ili zadatka. Ako se pritisne dva puta, premešta fokus na traku. Ako se
   pritisne tri puta, kopira njen sadržaj u privremenu memoriju.
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  
+
     * In a message window: reports the number and the names of attachments;
       if pressed twice, moves the focus to it.
     * In a meeting window, in the all attendees tab: display in a browseable
@@ -48,7 +48,7 @@ some native commands and adds extra commands and features.
   press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation
   commands to read the content of each column.
-  
+
 ## Napomene
 
 Sve prečice se mogu menjati u dijalogu za podešavanje ulaznih komandi. Možda

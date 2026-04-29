@@ -4,6 +4,7 @@
 # See the file COPYING for more details.
 # Copyright (C) 2020 Cyrille Bougot
 
+
 class LogHandler:
 	def debug(*args):
 		pass

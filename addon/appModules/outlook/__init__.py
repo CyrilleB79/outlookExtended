@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # NVDA add-on: Outlook Extended
-# Copyright (C) 2018-2024 Cyrille Bougot, Ralf Kefferpuetz
+# Copyright (C) 2018-2026 Cyrille Bougot, Ralf Kefferpuetz
 # This file is covered by the GNU General Public License.
 # See the file COPYING.txt for more details.
 
@@ -25,7 +25,7 @@
 from nvdaBuiltin.appModules.outlook import *  # noqa: F401, F403
 
 # Import here explecitely used variables from original outlook appModule for clarity.
-from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModule
+from nvdaBuiltin.appModules.outlook import UIAGridRow, AddressBookEntry, AppModule as BuiltinAppModule
 
 from .itemWindow import OutlookItemWindow, NotInMessageWindowError, HeaderFieldNotFoundeError
 from .compa import CTWRAPPER as controlTypes
@@ -36,6 +36,7 @@ import winUser
 from logHandler import log
 import api
 import ui
+
 try:
 	from speech import speech
 except ImportError:
@@ -84,7 +85,7 @@ KEY_HEADER_FIELD11 = _("-")
 KEY_HEADER_FIELD12 = _("=")
 
 confspec = {
-	'testCasePath': 'string(default="")',
+	"testCasePath": 'string(default="")',
 }
 config.conf.spec["outlookExtended"] = confspec
 
@@ -106,10 +107,10 @@ STATUS_LIST = [
 	# Translators: Outlook's native string for status
 	_("Tentative"),
 ]
-RE_STATUS_SPLITTER_STR = r', (?=' + '|'.join(f'(?:{re.escape(s)})' for s in STATUS_LIST) + r')'
+RE_STATUS_SPLITTER_STR = r", (?=" + "|".join(f"(?:{re.escape(s)})" for s in STATUS_LIST) + r")"
 RE_STATUS_SPLITTER = re.compile(RE_STATUS_SPLITTER_STR)
 
-STR_NO_INFO = 'No Information'
+STR_NO_INFO = "No Information"
 
 
 def mkhi(itemType, htmlContent, attribDic={}):
@@ -118,26 +119,24 @@ def mkhi(itemType, htmlContent, attribDic={}):
 	"""
 	if len(htmlContent) == 0:
 		raise
-	assert htmlContent[0] == '<' and htmlContent[-1] == '>'
-	sAttribs = ''.join(f' {n}={v}' for n, v in attribDic.items())
-	return f'<{itemType}{sAttribs}>{htmlContent}</{itemType}>'
+	assert htmlContent[0] == "<" and htmlContent[-1] == ">"
+	sAttribs = "".join(f" {n}={v}" for n, v in attribDic.items())
+	return f"<{itemType}{sAttribs}>{htmlContent}</{itemType}>"
 
 
 def mkhiText(itemType, textContent, attribDic={}):
-	"""Creates an HTML item encapsulating a single text with itemType tag with the attributes in attribDic.
-	"""
+	"""Creates an HTML item encapsulating a single text with itemType tag with the attributes in attribDic."""
 
-	sAttribs = ''.join(f' {n}={v}' for n, v in attribDic.items())
-	return f'<{itemType}{sAttribs}>{escape(textContent)}</{itemType}>'
+	sAttribs = "".join(f" {n}={v}" for n, v in attribDic.items())
+	return f"<{itemType}{sAttribs}>{escape(textContent)}</{itemType}>"
 
 
 class ElemWithReadStatus:
-
 	scriptCategory = ADDON_SUMMARY
 
 	@script(
 		# Translators: Documentation for mark as read script.
-		description=_("Mark a message as read")
+		description=_("Mark a message as read"),
 	)
 	def script_markAsRead(self, gesture):
 		gesture.send()
@@ -145,7 +144,7 @@ class ElemWithReadStatus:
 
 	@script(
 		# Translators: Documentation for mark as unread script.
-		description=_("Mark a message as unread")
+		description=_("Mark a message as unread"),
 	)
 	def script_markAsUnread(self, gesture):
 		gesture.send()
@@ -196,14 +195,14 @@ class UIAWithReadStatus(UIA, ElemWithReadStatus):
 	pass
 
 
-class List(List):
+class AddressBookList(List):
 	def getHeader(self):
 		try:
 			return self.header
 		except AttributeError:
 			# handle = findDescendantWindow(api.getForegroundObject().windowHandle, controlID=138,
 			# className='SysHeader32')
-			handle = findDescendantWindow(self.parent.windowHandle, controlID=138, className='SysHeader32')
+			handle = findDescendantWindow(self.parent.windowHandle, controlID=138, className="SysHeader32")
 			self.header = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 			self.allowIAccessibleChildIDAndChildCountForPositionInfo = True
 			return self.header
@@ -217,8 +216,7 @@ class List(List):
 		return len(self.children)
 
 
-class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBookEntry):
-
+class AddressBookEntryWithCells(RowWithoutCellObjects, RowWithFakeNavigation, AddressBookEntry):  # ignore[reportIncompatibleMethodOverride]
 	def _getColumnLocation(self, column):
 		colHeader = self.parent.getHeader().getChild(column - 1)
 		return RectLTWH(
@@ -235,8 +233,8 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBook
 		@rtype: str
 		"""
 		colNames = [c.name for c in self.parent.getHeader().children]
-		colPatterns = [fr"{name} (?P<C{col+1}>.*?)" for col, name in enumerate(colNames)]
-		sep = ', '
+		colPatterns = [rf"{name} (?P<C{col + 1}>.*?)" for col, name in enumerate(colNames)]
+		sep = ", "
 		pattern = f"^{colPatterns[0]}{''.join(['(?:' + sep + cp + ')?' for cp in colPatterns[1:]])}$"
 		m = re.match(pattern, self.name)
 		if not m:
@@ -272,11 +270,10 @@ class AddressBookEntry(RowWithoutCellObjects, RowWithFakeNavigation, AddressBook
 		# press control again.
 
 		# Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
-		ui.message(_('Column navigation not supported in the address book'))
+		ui.message(_("Column navigation not supported in the address book"))
 
 
 class FakeRootDialog(Window):
-
 	role = controlTypes.Role.DIALOG
 	# Translators: The name of a fake NVDA object used for tests.
 	name = _("Fake root")
@@ -296,7 +293,7 @@ class FakeRootDialog(Window):
 			return None
 		return _FakeObject(parent=self, index=index, obj=self.childObjList[index])
 
-	def _get_firstChild(self):
+	def _get_firstChild(self):  # ignore[reportIncompatibleMethodOverride]
 		return self._makeFakeObject(0)
 
 	def _get_children(self):
@@ -307,13 +304,12 @@ class FakeRootDialog(Window):
 
 
 class _FakeObject(NVDAObject):
-
 	def __init__(self, parent, index, obj):
 		super().__init__()
 		self.parent = parent
 		self.index = index
 		for k in dir(obj):
-			if not k.startswith('_'):
+			if not k.startswith("_"):
 				setattr(self, k, getattr(obj, k))
 		self.role = controlTypes.Role(self.role)
 		self.states = {controlTypes.State(s) for s in self.states}
@@ -335,9 +331,8 @@ class _FakeObject(NVDAObject):
 
 
 class UIANotificationZoneButton(UIA):
-
 	@script(
-		gestures=['kb:upArrow', 'kb:downArrow'],
+		gestures=["kb:upArrow", "kb:downArrow"],
 	)
 	def script_cancelGesture(self, gesture):
 		# A script to cancel the upArrow or downArrow in the notification zone,
@@ -345,16 +340,16 @@ class UIANotificationZoneButton(UIA):
 		pass
 
 	@script(
-		gesture='kb:leftArrow',
+		gesture="kb:leftArrow",
 	)
 	def script_previousButton(self, gesture):
-		self.sendGestureIfOtherButton(gesture, 'backward')
+		self.sendGestureIfOtherButton(gesture, "backward")
 
 	@script(
-		gesture='kb:rightArrow',
+		gesture="kb:rightArrow",
 	)
 	def script_nextButton(self, gesture):
-		self.sendGestureIfOtherButton(gesture, 'forward')
+		self.sendGestureIfOtherButton(gesture, "forward")
 
 	def sendGestureIfOtherButton(self, gesture, direction):
 		obj = self.walkObj(
@@ -390,25 +385,26 @@ class UIANotificationZoneButton(UIA):
 		if isRootObj(oStart):
 			# If root object is reach, no object satisfying the condition has been found.
 			return None
-		if direction == 'forward':
-			propList = ['firstChild', 'next', 'parent']
-		elif direction == 'backward':
-			propList = ['lastChild', 'previous', 'parent']
+		if direction == "forward":
+			propList = ["firstChild", "next", "parent"]
+		elif direction == "backward":
+			propList = ["lastChild", "previous", "parent"]
+		else:
+			raise RuntimeError(f"Unexpected direction argument: {direction}")
 		if ignoreChildren:
 			del propList[0]
 		for prop in propList:
 			o = getattr(oStart, prop)
 			if o:
-				isParent = prop == 'parent'
+				isParent = prop == "parent"
 				if stopCondition(o) and not isParent:
 					return o
 				else:
 					return self.walkObj(o, direction, stopCondition, isRootObj, ignoreChildren=isParent)
-		raise RuntimeError('Unexpected object tree structure')
+		raise RuntimeError("Unexpected object tree structure")
 
 
 class UIARecipientButton(UIANotificationZoneButton):
-
 	def _get_name(self):
 		try:
 			return self.firstChild.name
@@ -420,10 +416,9 @@ class UIARecipientButton(UIANotificationZoneButton):
 
 
 class UIAMoreInfoButton(UIANotificationZoneButton):
-
 	def _get_name(self):
 		# Translators: The name for a button in the notification bar to display more or less information.
-		return _('More or less information')
+		return _("More or less information")
 
 	def reportFocus(self):
 		ui.message(self.name)
@@ -450,18 +445,23 @@ class NotificationChecker(threading.Thread):
 				try:
 					notif = self.outlookAppModule.getNotificationObj()
 				except AttributeError:  # In case self.outlookAppModule is set to None.
-					log.debugWarning('No link to Outlook appModule.')
+					log.debugWarning("No link to Outlook appModule.")
 				else:
 					fg = api.getForegroundObject()
 					fgHwnd = fg.windowHandle if fg else 0
 					if notif:
 						infoSet = {
 							# Old version: beeps whenever the notification bar content changes (names added or deleted)
-							o.name for o in notif.children if (
-								(o.role == controlTypes.Role.BUTTON and o.UIAElement.currentAutomationID == 'RecipientButton')
+							o.name
+							for o in notif.children
+							if (
+								(
+									o.role == controlTypes.Role.BUTTON
+									and o.UIAElement.currentAutomationID == "RecipientButton"
+								)
 								or (
 									o.role == controlTypes.Role.STATICTEXT
-									and o.UIAElement.currentAutomationID == 'MailTipItemPreText'
+									and o.UIAElement.currentAutomationID == "MailTipItemPreText"
 								)
 							)
 						}
@@ -469,8 +469,10 @@ class NotificationChecker(threading.Thread):
 						infoSet = set()
 					if fgHwnd == oldFgHwnd and infoSet != oldInfoSet:
 						focus = api.getFocusObject()
-						if focus.windowClassName == 'RichEdit20WPT':
-							nvwave.playWaveFile(os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"))
+						if focus.windowClassName == "RichEdit20WPT":
+							nvwave.playWaveFile(
+								os.path.join(addonHandler.getCodeAddon().path, "waves", "notify.wav"),
+							)
 					oldInfoSet = infoSet
 					oldFgHwnd = fgHwnd
 			except Exception as e:
@@ -481,11 +483,12 @@ class NotificationChecker(threading.Thread):
 
 class NotificationPaneElement:
 	def __init__(self, name, location):
+		super().__init__()
 		self.name = name
 		self.location = location
 
 	def __repr__(self):
-		return '{name} - \nL={left}, T={top}, W= {width}, H={height}\n'.format(
+		return "{name} - \nL={left}, T={top}, W= {width}, H={height}\n".format(
 			name=self.name,
 			left=self.location.left,
 			top=self.location.top,
@@ -496,6 +499,7 @@ class NotificationPaneElement:
 
 class NotificationPaneRow:
 	def __init__(self, obj):
+		super().__init__()
 		self.elements = [obj]
 		self._bottom = None
 
@@ -507,7 +511,7 @@ class NotificationPaneRow:
 
 	def add(self, elem):
 		if self.bottom != elem.location.bottom:
-			log.error('{} != {}'.format(self.bottom, elem.bottom))
+			log.error("{} != {}".format(self.bottom, elem.bottom))
 		self.elements.append(elem)
 
 	@property
@@ -515,14 +519,15 @@ class NotificationPaneRow:
 		textList = []
 		for elem in self.elements:
 			name = elem.name
-			if textList and re.match(r'^\w.*$', name, re.U):
-				name = ' ' + name
+			if textList and re.match(r"^\w.*$", name, re.U):
+				name = " " + name
 			textList.append(name)
-		return ''.join(textList)
+		return "".join(textList)
 
 
 class NotificationPane:
 	def __init__(self, pane):
+		super().__init__()
 		self.rows = []
 		for obj in pane.children:
 			name = obj.name
@@ -536,18 +541,20 @@ class NotificationPane:
 
 	@property
 	def text(self):
-		return '\n'.join(r.text for r in self.rows)
+		return "\n".join(r.text for r in self.rows)
 
 
-class AppModule(AppModule):
-
+class AppModule(BuiltinAppModule):
 	scriptCategory = ADDON_SUMMARY
 
 	_headerFieldKeyMap = {str(i): i for i in range(1, 10)}
-	_headerFieldKeyMap.update({
-		'0': 10,
-		KEY_HEADER_FIELD11: 11,
-		KEY_HEADER_FIELD12: 12})
+	_headerFieldKeyMap.update(
+		{
+			"0": 10,
+			KEY_HEADER_FIELD11: 11,
+			KEY_HEADER_FIELD12: 12,
+		},
+	)
 
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
@@ -565,25 +572,25 @@ class AppModule(AppModule):
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		super().chooseNVDAObjectOverlayClasses(obj, clsList)
 		if obj.role == controlTypes.Role.LISTITEM and obj.windowClassName == "OUTEXVLB":
-			clsList.insert(0, AddressBookEntry)
+			clsList.insert(0, AddressBookEntryWithCells)
 			return
 		if obj.role == controlTypes.Role.LIST and obj.windowClassName == "OUTEXVLB":
-			clsList.insert(0, List)
+			clsList.insert(0, AddressBookList)
 			return
 		if UIAGridRow in clsList:
 			clsList.insert(0, UIAGridRowWithReadStatus)
 			return
 		if UIA in clsList:
-			if obj.role == controlTypes.Role.GROUPING and obj.parent.windowClassName == 'OutlookGrid':
+			if obj.role == controlTypes.Role.GROUPING and obj.parent.windowClassName == "OutlookGrid":
 				clsList.insert(0, UIAWithReadStatus)
-			elif obj.UIAElement.currentAutomationID == 'RecipientButton':
+			elif obj.UIAElement.currentAutomationID == "RecipientButton":
 				clsList.insert(0, UIARecipientButton)
-			elif obj.UIAElement.currentAutomationID == 'MoreInfo':
+			elif obj.UIAElement.currentAutomationID == "MoreInfo":
 				clsList.insert(0, UIAMoreInfoButton)
 
 	def reportHeaderFieldN(self, nField, gesture):
 		# Calendar view: Alt+digit is used command to set up number of days in the view
-		if api.getFocusObject().windowClassName in ['DayViewWnd', 'WeekViewWnd']:
+		if api.getFocusObject().windowClassName in ["DayViewWnd", "WeekViewWnd"]:
 			gesture.send()
 			return
 		nRepeat = getLastScriptRepeatCount()
@@ -594,7 +601,7 @@ class AppModule(AppModule):
 			# To activate it, open NVDA console and type:
 			# import globalVars
 			# globalVars.olexDebug = True
-			debug = getattr(globalVars, 'olexDebug', False)
+			debug = getattr(globalVars, "olexDebug", False)
 			# Get OutlookItem dialog
 			try:
 				rootDialog = self.getFakeRootDialog()
@@ -608,9 +615,9 @@ class AppModule(AppModule):
 			ui.message(_("Not in a message window"))
 			return
 		try:
-			obj, name = self.olItemWindow.getHeaderFieldObject(nField)
+			obj, _name = self.olItemWindow.getHeaderFieldObject(nField)
 		except HeaderFieldNotFoundeError as e:
-			log.debug(f'Header not found: {e}')
+			log.debug(f"Header not found: {e}")
 			self.errorBeep()
 			return
 		self.reportObject(obj, nRepeat)
@@ -651,8 +658,9 @@ class AppModule(AppModule):
 		if obj.role == controlTypes.Role.CHECKBOX:
 			name = obj.name
 			value = (
-				nvdaTranslation('checked') if controlTypes.State.CHECKED in obj.states
-				else nvdaTranslation('not checked')
+				nvdaTranslation("checked")
+				if controlTypes.State.CHECKED in obj.states
+				else nvdaTranslation("not checked")
 			)
 		else:
 			name, value = obj.name, obj.value
@@ -666,7 +674,7 @@ class AppModule(AppModule):
 		description=_(
 			# Translators: Documentation for report notification script.
 			"Reports the notification in a message. If pressed twice, moves the focus to it."
-			" If pressed three times, copies its content to the clipboard."
+			" If pressed three times, copies its content to the clipboard.",
 		),
 		gestures=["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"],
 		**speakOnDemandParam,
@@ -695,7 +703,7 @@ class AppModule(AppModule):
 		description=_(
 			# Translators: Documentation for report info bar script.
 			"Reports the information bar in a message, calendar item or task window."
-			" If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
+			" If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.",
 		),
 		gestures=["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"],
 		**speakOnDemandParam,
@@ -711,7 +719,7 @@ class AppModule(AppModule):
 	@script(
 		# Translators: Documentation for move to message body script.
 		description=_("Moves the focus to the message body"),
-		gestures=["kb(desktop):NVDA+shift+M", "kb(laptop):NVDA+control+shift+M"]
+		gestures=["kb(desktop):NVDA+shift+M", "kb(laptop):NVDA+control+shift+M"],
 	)
 	def script_focusToMessageBody(self, gesture):
 		try:
@@ -742,7 +750,7 @@ class AppModule(AppModule):
 	)
 	def script_attachments(self, gesture):
 		obj = api.getFocusObject()
-		appVersionMaj = int(obj.appModule.productVersion.split('.')[0])
+		appVersionMaj = int(obj.appModule.productVersion.split(".")[0])
 
 		try:
 			if appVersionMaj >= 16:  # Outlook 2016+
@@ -760,32 +768,38 @@ class AppModule(AppModule):
 		self.nAttachments = len(attachmentsList)
 		# double press, set focus in field
 		if getLastScriptRepeatCount() == 1 and self.nAttachments > 0:
-			self.focusInfo['firstObj'].setFocus()
-			winUser.setForegroundWindow(self.focusInfo['handle'])
+			self.focusInfo["firstObj"].setFocus()
+			winUser.setForegroundWindow(self.focusInfo["handle"])
 		# single press
 		else:
-			self.focusInfo = {'handle': handle}
+			self.focusInfo = {"handle": handle}
 			try:
-				self.focusInfo['firstObj'] = attachmentsList[0]
+				self.focusInfo["firstObj"] = attachmentsList[0]
 			except IndexError:
-				self.focusInfo['firstObj'] = None
+				self.focusInfo["firstObj"] = None
 
 			# Launch the attachments announcement code in a different thread since it can take time in the case of
 			# numerous attachments (above 17 on my machine).
 			# In this case, getLastScriptRepeatCount() after double press will return 0 instead of 1.
 			def announceAttachments():
-				attachmentList = ', '.join(namesGen)
+				attachmentList = ", ".join(namesGen)
 				msg = f"{windowName}: {self.nAttachments}. {attachmentList}"
 				core.callLater(0, lambda: executeWithSpeakOnDemand(ui.message, msg))
+
 			threading.Thread(target=announceAttachments).start()
 
 	def viewAttendeesStatus(self):
 		fg = api.getForegroundObject()
 		cidAttendeesStatus = 4720  # value: 'All Attendees Status'; windowClassName: 'AfxWndW'
-		handle = findDescendantWindow(fg.windowHandle, className=None, controlID=cidAttendeesStatus, visible=True)
+		handle = findDescendantWindow(
+			fg.windowHandle,
+			className=None,
+			controlID=cidAttendeesStatus,
+			visible=True,
+		)
 		obj = getNVDAObjectFromEvent(handle, winUser.OBJID_CLIENT, 0)
 		if obj.role != controlTypes.Role.STATICTEXT:
-			raise LookupError('Unexpected object found')
+			raise LookupError("Unexpected object found")
 		try:
 			msgContent = self._statusFormatter(obj.name)
 			tryFallback = False
@@ -793,7 +807,7 @@ class AppModule(AppModule):
 			tryFallback = True
 		except Exception:
 			tryFallback = True
-			log.exception('Attendees status formatting error; use fallback formatting.')
+			log.exception("Attendees status formatting error; use fallback formatting.")
 		if tryFallback:
 			log.debug(RE_STATUS_SPLITTER_STR)
 			msgContent = self._statusFormatter(obj.name, fallback=True)
@@ -805,16 +819,16 @@ class AppModule(AppModule):
 		)
 
 	def _statusFormatter(self, name, fallback=False):
-		ALL_ATTENDEES_NAME_START = 'All Attendees Status; '
+		ALL_ATTENDEES_NAME_START = "All Attendees Status; "
 		if name.startswith(ALL_ATTENDEES_NAME_START):
-			name = name[len(ALL_ATTENDEES_NAME_START):]
+			name = name[len(ALL_ATTENDEES_NAME_START) :]
 		else:
 			log.debugWarning(f'Unexpected name for "All attendees status": {name}')
 		formatted = []
 		firstLine = True
-		for line in name.split('; '):
+		for line in name.split("; "):
 			if firstLine:
-				formatted.append(mkhiText('h2', line))
+				formatted.append(mkhiText("h2", line))
 				firstLine = False
 			else:
 				if fallback:
@@ -823,24 +837,24 @@ class AppModule(AppModule):
 					reSplitter = RE_STATUS_SPLITTER
 				attendeeName, *items = reSplitter.split(line)
 				if len(items) == 0:
-					log.debug(f'Empty item list for the following line:\n{line}')
+					log.debug(f"Empty item list for the following line:\n{line}")
 					if not fallback:
 						raise RuntimeError(
 							"Cannot format all attendees status. Either the translations of statuses are not correct, or "
-							"Outlook's UI languages differs from the language used in Outlook extended add-on."
+							"Outlook's UI languages differs from the language used in Outlook extended add-on.",
 						)
-				formatted.append(mkhiText('h3', attendeeName))
+				formatted.append(mkhiText("h3", attendeeName))
 				if len(items) == 1 and items[0] == STR_NO_INFO:
 					# Translators: A status used in the attendees status report.
 					# If possible for you, you can use Outlook's translation visible in the tooltip popping up when
 					# hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
 					# hatched rectangle (no information available) for people external to your organization.
-					formatted.append(mkhiText('p', _('No Information')))
-				else:				
-					listContent = [mkhiText('li', item) for item in items]
+					formatted.append(mkhiText("p", _("No Information")))
+				else:
+					listContent = [mkhiText("li", item) for item in items]
 					if listContent:
-						formatted.append(mkhi('ul', '\r\n'.join(listContent)))
-		return '\r\n'.join(formatted)
+						formatted.append(mkhi("ul", "\r\n".join(listContent)))
+		return "\r\n".join(formatted)
 
 	def getAttachmentInfos2016(self):
 		fg = api.getForegroundObject()
@@ -882,14 +896,14 @@ class AppModule(AppModule):
 				bFoundWindow = True
 
 				def makeGenChildren(o):
-					"""Define a generator to get children since the .children property does not work
-					"""
+					"""Define a generator to get children since the .children property does not work"""
 
 					o = o.firstChild
 					while o is not None:
 						if o.role == controlTypes.Role.BUTTON:
 							yield o
 						o = o.next
+
 				attachmentsList = [o for o in makeGenChildren(obj)]
 				namesGen = (a.name for a in attachmentsList)
 				bResult = True
@@ -903,7 +917,7 @@ class AppModule(AppModule):
 			return [], handle, [], obj.name
 
 	def getInfoBarControlId(self):
-		majVer = int(self.productVersion.split('.')[0])
+		majVer = int(self.productVersion.split(".")[0])
 		if majVer <= 11:
 			cid = 4105  # Outlook 2003
 		else:
@@ -914,7 +928,12 @@ class AppModule(AppModule):
 		try:
 			cid = self.getInfoBarControlId()
 			obj = getNVDAObjectFromEvent(
-				findDescendantWindow(api.getForegroundObject().windowHandle, visible=True, className=None, controlID=cid),
+				findDescendantWindow(
+					api.getForegroundObject().windowHandle,
+					visible=True,
+					className=None,
+					controlID=cid,
+				),
 				winUser.OBJID_CLIENT,
 				0,
 			)
@@ -936,19 +955,20 @@ class AppModule(AppModule):
 		return obj
 
 	def initializeTestCases(self):
-		debugTcPath = config.conf['outlookExtended']['testCasePath']
+		debugTcPath = config.conf["outlookExtended"]["testCasePath"]
 		isTest = bool(debugTcPath)
 		if isTest:
 			if self.testCases is None:
 				sys.path.append(debugTcPath)
 				from cases import tcObjectPropertyDic
 				from fakeObjects import FakeRootWindow
+
 				del sys.path[-1]
 				self.testCases = tcObjectPropertyDic
 				self.FakeRootWindow = FakeRootWindow
 		else:
 			# Translators: Reported when calling a test command
-			ui.message(_('Test case path not defined.'))
+			ui.message(_("Test case path not defined."))
 		return isTest
 
 	# Test scripts
@@ -974,14 +994,14 @@ class AppModule(AppModule):
 			self.tcName = list(self.testCases.keys())[self.tcNumber - 1]
 			ui.message(self.tcName)
 		else:
-			self.tcName = ''
+			self.tcName = ""
 			# Translators: Reported when calling a test command
-			ui.message(_('Test mode offf'))
+			ui.message(_("Test mode offf"))
 
 	def script_navigatorObject_toFakeRootDialog(self, gesture):
 		if not self.tcNumber:  # None or 0
 			# Translators: Reported when calling a test command
-			ui.message(_('Test mode is off.'))
+			ui.message(_("Test mode is off."))
 			return
 		obj = self.getFakeRootDialog()
 		api.setNavigatorObject(obj)
@@ -995,10 +1015,13 @@ class AppModule(AppModule):
 			cid = 4265
 			obj = getNVDAObjectFromEvent(
 				findDescendantWindow(fgObj.windowHandle, visible=True, className=None, controlID=cid),
-				winUser.OBJID_WINDOW, 0)
+				winUser.OBJID_WINDOW,
+				0,
+			)
 
 			def getChildWithRole(o, role):
 				return [oc for oc in obj.children if oc.role == role][0]
+
 			obj = getChildWithRole(obj, controlTypes.Role.PANE)
 			obj = getChildWithRole(obj, controlTypes.Role.PANE)
 			obj = getChildWithRole(obj, controlTypes.Role.PANE)
@@ -1017,12 +1040,14 @@ class AppModule(AppModule):
 				# Translators: Input help mode message for report a header's field command. in outlook message, calendar
 				# item or task window
 				"Reports the header field %s in a message, calendar item or task window. If pressed twice, moves"
-				" the focus to this field if possible. If pressed three times, copies its content to the clipboard."
-			) % str(n),
+				" the focus to this field if possible. If pressed three times, copies its content to the clipboard.",
+			)
+			% str(n),
 			**speakOnDemandParam,
 		)
 		def script_reportHeaderField(self, gesture):
 			return self.reportHeaderFieldN(n, gesture)
+
 		return script_reportHeaderField
 
 	@classmethod

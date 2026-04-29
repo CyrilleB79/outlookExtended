@@ -20,7 +20,7 @@ some native commands and adds extra commands and features.
   das Informationsfeld. Dreimaliges Drücken kopiert den Inhalt des Feldes in
   die Zwischenablage.
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  
+
     * In a message window: reports the number and the names of attachments;
       if pressed twice, moves the focus to it.
     * In a meeting window, in the all attendees tab: display in a browseable
@@ -51,7 +51,7 @@ some native commands and adds extra commands and features.
 * In der Ergebnisliste des Adressbuchs können Sie die horizontale
   Tabellennavigation verwenden, um den Inhalt der einzelnen Spalten
   vorzulesen.
-  
+
 ## Anmerkungen
 
 Alle Tastenbefehle können im Dialogfeld "Eingaben" geändert

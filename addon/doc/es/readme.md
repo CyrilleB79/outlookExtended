@@ -20,7 +20,7 @@ algunas órdenes nativas y añade órdenes y funciones extra.
   portapapeles.
 * NVDA+shift+A (distribución de escritorio) / NVDA+control+shift+A
   (distribución portátil):
-  
+
     * En una ventana de mensaje: indica el número y los nombres de los
       adjuntos. Si se pulsa dos veces, mueve el foco hasta allí.
     * En una ventana de reunión, en la pestaña Todos los asistentes: mostrar
@@ -54,7 +54,7 @@ algunas órdenes nativas y añade órdenes y funciones extra.
 * En la lista de resultados de la libreta de direcciones, se pueden usar
   órdenes de navegación horizontal por tablas para leer el contenido de cada
   columna.
-  
+
 ## Notas
 
 Todos los gestos pueden cambiarse en el diálogo Gestos de entrada de

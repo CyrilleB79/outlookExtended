@@ -18,7 +18,7 @@ komutları seslendirir ve ekstra komutlar ve özellikler ekler.
   kez basıldığında odağı bilgi çubuğuna taşır. Üç kez basıldığında bilgi
   çubuğunun içeriğini panoya kopyalar.
 * NVDA+shift+A (masaüstü düzeni) / NVDA+control+shift+A (dizüstü düzeni):
-  
+
     * Mesaj penceresinde: eklerin sayısını ve adlarını söyler; iki kez
       basıldığında odağı eklere taşır.
     * Bir toplantı penceresinde, tüm katılımcılar sekmesinde: toplantının
@@ -49,7 +49,7 @@ komutları seslendirir ve ekstra komutlar ve özellikler ekler.
   edin ve ilgili alıcıyı kaldırmak için bir düğmeye basın.
 * Adres defterinin sonuç listesinde, her sütunun içeriğini okumak için yatay
   tablo gezinme komutlarını kullanabilirsiniz.
-  
+
 ## Notlar
 
 Tüm komutlar NVDA'nın girdi hareketleri iletişim kutusundan

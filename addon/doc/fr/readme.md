@@ -21,7 +21,7 @@ supplémentaires.
   presse-papiers.
 * NVDA+maj+A (disposition ordinateur de bureau) / NVDA+control+maj+A
   (disposition ordinateur portable):
-  
+
     * Dans une fenêtre de message, annonce le nombre et le nom des pièces
       jointes; une double pression y déplace le focus.
     * Dans une fenêtre de réunion, dans l'onglet tous les participants :
@@ -56,7 +56,7 @@ supplémentaires.
 * Dans la liste des résultats du carnet d'adresses, vous pouvez utiliser les
   commandes de navigation horizontale dans un tableau pour lire le contenu
   de chaque colonne.
-  
+
 ## Notes
 
 Tous les gestes de commandes peuvent être modifiés dans la boîte de dialogue

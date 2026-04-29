@@ -13,8 +13,7 @@ import core
 
 
 def isSpeechOnDemandFeatureAvailable():
-	"""Indicates if the speech on-demand feature is available in the current version of NVDA.
-	"""
+	"""Indicates if the speech on-demand feature is available in the current version of NVDA."""
 
 	try:
 		# NVDA >= 2024.1
@@ -34,7 +33,7 @@ def getSpeechOnDemandParameter():
 
 	if isSpeechOnDemandFeatureAvailable():
 		# Define on-demand parameter only if the feature is available.
-		return {'speakOnDemand': True}
+		return {"speakOnDemand": True}
 	else:
 		return {}
 
@@ -52,7 +51,7 @@ def executeWithSpeakOnDemand(f, *args, **kwargs):
 	"""
 
 	if threading.get_ident() != core.mainThreadId:
-		raise RuntimeError('This function should only be executed from the main thread.')
+		raise RuntimeError("This function should only be executed from the main thread.")
 
 	if not isSpeechOnDemandFeatureAvailable() or speech.getState().speechMode != speech.SpeechMode.onDemand:
 		return f(*args, **kwargs)

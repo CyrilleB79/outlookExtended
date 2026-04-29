@@ -21,7 +21,7 @@ vocaliza alguns comandos nativos e adiciona comandos e recursos extras.
   para a área de transferência.
 * NVDA+shift+A (layout de desktop) / NVDA+control+shift+A (layout de
   laptop):
-  
+
     * Em uma janela de mensagem: informa o número e os nomes dos anexos; se
       pressionado duas vezes, move o foco para ele. NVDA+shift+A (leiaute de
       computador de mesa) / NVDA+control+shift+A (leiaute de computador
@@ -61,7 +61,7 @@ vocaliza alguns comandos nativos e adiciona comandos e recursos extras.
 * Na lista de resultados do catálogo de endereços, você pode usar os
   comandos de navegação da tabela horizontal para ler o conteúdo de cada
   coluna.
-  
+
 ## Notas
 
 Todos os comandos (gestos) podem ser modificados no diálogo definir comandos

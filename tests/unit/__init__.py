@@ -24,42 +24,45 @@ from itemWindow import OutlookItemWindow  # noqa: E402 - Needed here after path 
 
 
 class TestOutlookItemWindow(unittest.TestCase):
-
+	@staticmethod
 	def makeTestIsWindowType(test):
 		def test_function(self):
 			fakeRoot = FakeRootWindow(test)
 			oiw = OutlookItemWindow(rootDialog=fakeRoot)
-			windowType = test.split('_')[0]
-			self.assertTrue(getattr(oiw, 'is' + windowType)())
+			windowType = test.split("_")[0]
+			self.assertTrue(getattr(oiw, "is" + windowType)())
+
 		return test_function
 
 	for test in cases.tcObjectPropertyDic.keys():
-		locals()['testIs%s' % test] = makeTestIsWindowType(test)
+		locals()["testIs%s" % test] = makeTestIsWindowType(test)
 	del makeTestIsWindowType
 
+	@staticmethod
 	def makeTestGetWindowTypeFields(test):
 		def test_function(self):
 			fakeRoot = FakeRootWindow(test)
 			oiw = OutlookItemWindow(rootDialog=fakeRoot)
-			windowType = test.split('_')[0]
-			cid = getattr(oiw, 'get' + windowType + 'HeaderFields')()
+			windowType = test.split("_")[0]
+			cid = getattr(oiw, "get" + windowType + "HeaderFields")()
 			cids = cases.tcHeaderFieldDic[test]
 			if not isinstance(cid, tuple):
 				cids = (cids,)
 			try:
 				self.assertTrue(cid in cids)
 			except Exception:
-				print('=== cid ===')
+				print("=== cid ===")
 				print(cid)
-				print('=== cids ===')
+				print("=== cids ===")
 				print(cids)
 				raise
+
 		return test_function
 
 	for test in cases.tcObjectPropertyDic.keys():
-		locals()['testGet%sHeaderFields' % test] = makeTestGetWindowTypeFields(test)
+		locals()["testGet%sHeaderFields" % test] = makeTestGetWindowTypeFields(test)
 	del makeTestGetWindowTypeFields
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	unittest.main()

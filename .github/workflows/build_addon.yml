@@ -4,7 +4,7 @@ on:
   push:
     tags: ["*"]
     # To build on main/master branch, uncomment the following line:
-    # branches: [ main , master ]
+    branches: [ main , master, linting]
 
   pull_request:
     branches: [ main, master ]
@@ -85,7 +85,7 @@ jobs:
         changeLog += '\n'
         print(f'===> ChangeLog:\n<<<{changeLog}>>>\n')
         open('changelog.md', 'w', encoding='utf-8').write(changeLog)
-      shell: python 
+      shell: python
 
     - name: Calculate sha256
       run: |

@@ -14,7 +14,7 @@ some native commands and adds extra commands and features.
 * NVDA+shift+I (台式机方按) / NVDA+control+shift+I (笔记本方按):
   案一次，朗读消息，日历项目或任务窗口中的信息栏。按两次，则将焦点移动到上述项目。按三次，则将其内容复制到剪贴板。
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  
+
     * In a message window: reports the number and the names of attachments;
       if pressed twice, moves the focus to it.
     * In a meeting window, in the all attendees tab: display in a browseable
@@ -40,7 +40,7 @@ some native commands and adds extra commands and features.
   press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation
   commands to read the content of each column.
-  
+
 ## 注意
 
 可以在NVDA命令手势对话框中修改所有手势。您可能希望修改它们，尤其是在以下情况下：

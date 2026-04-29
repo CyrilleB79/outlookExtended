@@ -18,7 +18,7 @@ some native commands and adds extra commands and features.
   finestra attività. Se premuto due volte, sposta il focus su di essa. Se
   premuto tre volte, ne copia il contenuto negli appunti.
 * NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
-  
+
     * In a message window: reports the number and the names of attachments;
       if pressed twice, moves the focus to it.
     * In a meeting window, in the all attendees tab: display in a browseable
@@ -47,7 +47,7 @@ some native commands and adds extra commands and features.
   press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation
   commands to read the content of each column.
-  
+
 ## Note
 
 Tutti i comandi possono essere modificati nella finestra Gesti e Tasti di
