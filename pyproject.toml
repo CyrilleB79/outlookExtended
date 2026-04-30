@@ -3,11 +3,11 @@ requires = ["setuptools~=80.9", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "addonTemplate"
+name = "outlookExtended"
 dynamic = ["version"]
-description = "NVDA add-on template"
+description = "Outlook Extended"
 maintainers = [
-	{name = "NV Access", email = "info@nvaccess.org"},
+	{name = "Cyrille Bougot", email = "cyrille.bougot2@laposte.net"},
 ]
 requires-python = ">=3.13,<3.14"
 classifiers = [
