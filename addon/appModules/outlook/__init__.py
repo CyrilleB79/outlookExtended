@@ -216,7 +216,7 @@ class AddressBookList(List):
 		return len(self.children)
 
 
-class AddressBookEntryWithCells(RowWithoutCellObjects, RowWithFakeNavigation, AddressBookEntry):  # ignore[reportIncompatibleMethodOverride]
+class AddressBookEntryWithCells(RowWithoutCellObjects, RowWithFakeNavigation, AddressBookEntry):
 	def _getColumnLocation(self, column):
 		colHeader = self.parent.getHeader().getChild(column - 1)
 		return RectLTWH(
