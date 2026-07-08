@@ -102,6 +102,9 @@ uv.lock
 7. If you create releases with the GitHub workflow, pushing a tag, update the `changelog.md` file with the release description you want to be displayed in on your GitHub release page.
 8. In the `[project]` section of `pyproject.toml`, update your project information.
 
+Alternatively, you can integrate this template in your add-on using Git.
+For more details, read [integrating the add-on template using Git](docs/managementFromGit/updatingExistingAddons.md).
+
 #### Add-on manifest specification
 
 An add-on manifest generated manually or via `buildVars.py` must include the following information:
