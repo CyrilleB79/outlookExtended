@@ -110,8 +110,8 @@ exclude = [
 # Tell pyright where to load python code from
 extraPaths = [
 	"./addon",
-	"../nvda/source",
-	"../nvda/.venv/Lib/site-packages",
+	# "../nvda/source",
+	# "../nvda/.venv/Lib/site-packages",
 ]
 
 # General config
