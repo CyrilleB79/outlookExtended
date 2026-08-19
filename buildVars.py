@@ -27,10 +27,10 @@ It provides commands to read, move to, or copy various parts of a message such a
 It also improves navigation within the application and provides more feedback when performing certain actions.
 """),
 	# version
-	addon_version="3.3",
+	addon_version="3.4",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""* Compatibility with NVDA 2026.1."""),
+	addon_changelog=_("""* Gestures for desktop layout to read or move to attachments, information bar, notification and message body have been modified to match the ones of laptop layout."""),
 	# Author(s)
 	addon_author=(
 		"Cyrille Bougot <cyrille.bougot2@laposte.net>, Ralf Kefferpuetz <ralf.kefferpuetz@elra-consulting.de>"
@@ -44,7 +44,7 @@ It also improves navigation within the application and provides more feedback wh
 	# Minimum NVDA version supported (e.g. "2019.3.0", minor version is optional)
 	addon_minimumNVDAVersion="2019.3.0",
 	# Last NVDA version supported/tested (e.g. "2024.4.0", ideally more recent than minimum version)
-	addon_lastTestedNVDAVersion="2026.1.0",
+	addon_lastTestedNVDAVersion="2026.2.0",
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!

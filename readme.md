@@ -41,6 +41,10 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 
 ## Change log
 
+### Version 3.4
+
+* Gestures for desktop layout to read or move to attachments, information bar, notification and message body have been modified to match the ones of laptop layout.
+
 ### Version 3.3
 
 * Compatibility with NVDA 2026.1.
