@@ -5,7 +5,7 @@
 # See the file COPYING.txt for more details.
 
 # Known bugs (not resolved):
-# 1. Double-press NVDA+Shift+A to go to attachments may not always work when mail has 20 attachments or so
+# 1. Double-press NVDA+control+shift+A to go to attachments may not always work when mail has 20 attachments or so
 # (Outlook 2016), especially when e-mail has just been opened.
 
 # Possible enhancements
@@ -15,7 +15,7 @@
 # window.
 # 4. Implement column navigation in address book: debug column navigation (scroll the list, access other
 # children thant the ones visible...)
-# 5. Allow to get back to message body even when an attachment preview is displayed when calling NVDA+Shift+M
+# 5. Allow to get back to message body even when an attachment preview is displayed when calling NVDA+control+chift+M
 
 
 # TODO: (zzz)
@@ -676,7 +676,7 @@ class AppModule(BuiltinAppModule):
 			"Reports the notification in a message. If pressed twice, moves the focus to it."
 			" If pressed three times, copies its content to the clipboard.",
 		),
-		gestures=["kb(desktop):NVDA+shift+N", "kb(laptop):NVDA+control+shift+N"],
+		gesture="kb:NVDA+control+shift+N",
 		**speakOnDemandParam,
 	)
 	def script_reportNotification(self, gesture):
@@ -695,7 +695,7 @@ class AppModule(BuiltinAppModule):
 			winUser.setForegroundWindow(obj.windowHandle)
 		elif nRepeat == 2:
 			api.copyToClip(self.notificationText)
-			# Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
+			# Translators: When user triple press NVDA+control+shift+N to copy the notification text to clipboard
 			ui.message(_("Copied to clipboard"))
 			winUser.setForegroundWindow(self.lastFocus.windowHandle)
 
@@ -705,7 +705,7 @@ class AppModule(BuiltinAppModule):
 			"Reports the information bar in a message, calendar item or task window."
 			" If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.",
 		),
-		gestures=["kb(desktop):NVDA+shift+I", "kb(laptop):NVDA+control+shift+I"],
+		gesture="kb:NVDA+control+shift+I",
 		**speakOnDemandParam,
 	)
 	def script_reportInfoBar(self, gesture):
@@ -719,7 +719,7 @@ class AppModule(BuiltinAppModule):
 	@script(
 		# Translators: Documentation for move to message body script.
 		description=_("Moves the focus to the message body"),
-		gestures=["kb(desktop):NVDA+shift+M", "kb(laptop):NVDA+control+shift+M"],
+		gesture="kb:NVDA+control+shift+M",
 	)
 	def script_focusToMessageBody(self, gesture):
 		try:
@@ -745,7 +745,7 @@ class AppModule(BuiltinAppModule):
 			"Reports the number and the names of attachments in a message window."
 			" If pressed twice, moves the focus to it.",
 		),
-		gestures=["kb(desktop):NVDA+shift+A", "kb(laptop):NVDA+control+shift+A"],
+		gesture="kb:NVDA+control+shift+A",
 		**speakOnDemandParam,
 	)
 	def script_attachments(self, gesture):

@@ -9,21 +9,22 @@ This addon improves the use of Microsoft Outlook with NVDA: it vocalizes some na
 ## Commands
 
 * Alt+1 to Alt+9, Alt+0, Alt+-, Alt+=: Reports the header field 1 to 12 in a message, calendar item or task window. If pressed twice, moves the focus to this field if possible. If pressed three times, copies its content to the clipboard.
-* NVDA+shift+I (desktop layout) / NVDA+control+shift+I (laptop layout): Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
-* NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout):
+* `NVDA+control+shift+I`: Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
+* `NVDA+control+shift+A`:
 
     * In a message window: reports the number and the names of attachments; if pressed twice, moves the focus to it.
     * In a meeting window, in the all attendees tab: display in a browseable message the attendees status on the time slot of the meeting.
+    This is only useful and working in older Outlook versions where the information of the all attendees tab is not completely accessible.
 
-* NVDA+shift+M (desktop layout) / NVDA+control+shift+M (laptop layout): Moves the focus to the message body.
-* NVDA+shift+N (desktop layout) / NVDA+control+shift+N (laptop layout): Reports the notification in a message window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
+* `NVDA+control+shift+M`: Moves the focus to the message body.
+* `NVDA+control+shift+N`: Reports the notification in a message window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.
 * Control+Q: in the message list, marks the selected message or group of messages as read.
 * Control+U: in the message list, marks the selected message or group of messages as unread.
 
 ## Additional improvements
 
 * When the recipient you have entered in the To, Cc or Bcc fields sends automatic out of office replies or is not present anymore on the Exchange server, Outlook report it in the notification area of the message window. In this notification area, you also have buttons to remove the address of these recipients.
-  This add-on will inform you with a ding when this notification area appears, disappears or is updated. You can then press NVDA+shif+N / NVDA+control+shift+N once to have it read and twice to jump to this area. Then move with the arrows on the recipient buttons and press a button to remove the corresponding recipient.
+  This add-on will inform you with a ding when this notification area appears, disappears or is updated. You can then press `NVDA+control+shift+N` once to have it read and twice to jump to this area. Then move with the arrows on the recipient buttons and press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation commands to read the content of each column.
 
 ## Notes
