@@ -2,9 +2,10 @@
 
 * Authors: Cyrille Bougot, Ralf Kefferpuetz
 * NVDA compatibility: 2019.3 and beyond
-* Download [stable version][1]
 
-This addon improves the use of Microsoft Outlook with NVDA: it vocalizes some native commands and adds extra commands and features.
+This add-on improves the use of Microsoft Outlook with NVDA.
+It provides commands to read, move to, or copy various parts of a message such as message headers, attachments, information bar, notification or message body.
+It also improves navigation within the application and provides more feedback when performing certain actions.
 
 ## Commands
 
@@ -13,7 +14,7 @@ This addon improves the use of Microsoft Outlook with NVDA: it vocalizes some na
 * `NVDA+control+shift+A`:
 
     * In a message window: reports the number and the names of attachments; if pressed twice, moves the focus to it.
-    * In a meeting window, in the all attendees tab: display in a browseable message the attendees status on the time slot of the meeting.
+    * In a meeting window, in the all attendees tab: displays in a browseable message the attendees status for the meeting time slot.
     This is only useful and working in older Outlook versions where the information of the all attendees tab is not completely accessible.
 
 * `NVDA+control+shift+M`: Moves the focus to the message body.
@@ -23,8 +24,11 @@ This addon improves the use of Microsoft Outlook with NVDA: it vocalizes some na
 
 ## Additional improvements
 
-* When the recipient you have entered in the To, Cc or Bcc fields sends automatic out of office replies or is not present anymore on the Exchange server, Outlook report it in the notification area of the message window. In this notification area, you also have buttons to remove the address of these recipients.
-  This add-on will inform you with a ding when this notification area appears, disappears or is updated. You can then press `NVDA+control+shift+N` once to have it read and twice to jump to this area. Then move with the arrows on the recipient buttons and press a button to remove the corresponding recipient.
+* When the recipient you have entered in the To, Cc or Bcc fields sends automatic out of office replies or is no longer present on the Exchange server, Outlook reports it in the notification area of the message window.
+  In this notification area, you also have buttons to remove the address of these recipients.
+  This add-on alerts you with a ding whenever this notification area appears, disappears or is updated.
+  You can then press `NVDA+control+shift+N` once to have it read or twice to jump to this area.
+  Then move with the arrows on the recipient buttons and press a button to remove the corresponding recipient.
 * In the address book's result list, you can use horizontal table navigation commands to read the content of each column.
 
 ## Notes
@@ -32,7 +36,8 @@ This addon improves the use of Microsoft Outlook with NVDA: it vocalizes some na
 All the gestures can be modified in the NVDA command gestures dialog. You may want to modify them especially in the following situations:
 
 * The default gestures to mark messages as read or unread are the ones for Outlook english version. If they differ from the ones of your Outlook local version, you will have to change them accordingly.
-* The default gestures to read headers correspond to Alt combined with the keys of the first row of the alpha-numeric keyboard. You may need to re-map the gestures tor read header 11 and 12 if they do not match your local keyboard layout.
+* The default gestures for reading headers user `alt` combined with the keys in the first row of the alphanumeric keyboard.
+  You may need to re-map the gestures to read headers 11 and 12 if they do not match your local keyboard layout.
 
 ## Change log
 
@@ -134,5 +139,3 @@ All the gestures can be modified in the NVDA command gestures dialog. You may wa
 ### Version 1.0
 
 * Initial release.
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=outlookextended

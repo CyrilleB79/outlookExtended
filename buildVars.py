@@ -22,7 +22,10 @@ addon_info = AddonInfo(
 	addon_summary=_("Outlook Extended"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
-	addon_description=_("Extended support and features for Microsoft Outlook."),
+	addon_description=_("""This add-on improves the use of Microsoft Outlook with NVDA.
+It provides commands to read, move to, or copy various parts of a message such as message headers, attachments, information bar, notification or message body.
+It also improves navigation within the application and provides more feedback when performing certain actions.
+"""),
 	# version
 	addon_version="3.3",
 	# Brief changelog for this version
