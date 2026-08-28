@@ -1,0 +1,979 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en">
+<file id="readme.md" original="https://raw.githubusercontent.com/CyrilleB79/outlookExtended/c10957752c0d1ff2f1802cda27f1a5cce1156489/readme.md">
+<skeleton>
+# $(ID:cbf5fbd5-2019-4505-a416-4a63c86204cd)
+
+* $(ID:76bbdcd9-a5e2-4917-bf24-0b8ebd4a241e)
+* $(ID:03c855bd-8f04-402f-9d3a-69c8ee476ad8)
+
+$(ID:2324f1f7-20f2-45c8-8ed5-8d2faf24a0a7)
+$(ID:15cb20b4-6139-4bdd-be94-8f5a4c234b59)
+$(ID:84bfdb45-b80d-4007-a2b8-7a2ebe4e0ca9)
+
+## $(ID:17aba84b-98cb-4984-ae75-02860fe05ec1)
+
+* $(ID:8e94017d-0f98-4c29-9d7a-ef64617563ad)
+* $(ID:63e368f9-f9b4-4903-b7ec-cb25b478667f)
+* $(ID:7946401c-4608-4cd0-83e3-25691916af89)
+
+    * $(ID:9d1b6dd4-566d-473c-ba54-393c3abcd31a)
+    * $(ID:616b9563-583b-4458-b4f4-9d3e8ae306b7)
+$(ID:83633eeb-38f8-4473-b353-7018b960a9fb)
+
+* $(ID:40b62dcd-e498-42ba-b8dd-92cb44ea26b6)
+* $(ID:19ddb6fc-ef18-4f3d-bf7b-ac6659dffa66)
+* $(ID:e70668b9-819d-4705-8960-66756bda6a93)
+* $(ID:70e681e5-ae33-433b-aae5-6e0ab3556e29)
+
+## $(ID:0182e817-e07c-45ad-8cb8-4e92cfb07b72)
+
+* $(ID:f647f742-e15f-4c0a-b70e-fcdb7bc879e6)
+$(ID:96f7f835-f1a5-4380-ac87-54b99b71de12)
+$(ID:5758645c-092d-441f-8f85-0f58702367e3)
+$(ID:7d8374f5-42c1-4f19-89fc-6d6f82c6d279)
+$(ID:a1315a29-f0bd-4687-9023-eb915a8f2de3)
+* $(ID:9b90dfe6-e6ba-4e0d-bbe4-91a76b5351a1)
+
+## $(ID:7bd3b22d-35f8-4014-85fa-a9f0a7e98fba)
+
+$(ID:5cad6447-614a-4489-bb95-d7a9d0fcda5b)
+
+* $(ID:60400807-11fa-4961-b41a-3c588faa89f6)
+* $(ID:ecfa998a-aea8-432b-bba2-369c02152059)
+$(ID:12dfd057-dd27-47ef-b76a-9dc47aaa53ce)
+
+## $(ID:e4196dc0-2140-46e0-af55-037482d1ecc4)
+
+### $(ID:d03fb899-94e6-4aad-b9ea-fc1a1f849cd3)
+
+* $(ID:865c2c40-4edb-4a71-acea-8aabac7b911c)
+
+### $(ID:8c847095-7fba-43a2-8ee2-5b1669c7c4af)
+
+* $(ID:483c7518-886c-4a92-bfeb-1ed9bee1f3a7)
+
+### $(ID:204e8f0b-89c9-4377-a467-f15c366cf01e)
+
+* $(ID:24d7ffaf-f219-42a4-851b-b8a00ad9c39d)
+
+### $(ID:0ee160d9-5964-4307-afe8-cbd5cae68083)
+
+* $(ID:f0049682-f0e1-4498-bae0-10cec34c21fe)
+
+### $(ID:bdb8fe50-b928-4861-8e5a-7d37872444f5)
+
+* $(ID:7b7d790c-5ced-4dbe-a19d-884db0999138)
+* $(ID:df54c823-68d2-45c3-b118-d8962fdb22ff)
+
+### $(ID:75f016c9-48e1-40d9-8de6-2fd1edb934e7)
+
+* $(ID:b89e0bcf-ec73-4515-93e2-cc5a34f654ca)
+
+### $(ID:71f8a1d3-efac-4f11-b54f-8babf9f28b45)
+
+* $(ID:e0d31235-ad54-498a-9208-74d632d2a953)
+* $(ID:a23ddf35-a50b-4440-a84d-500688588005)
+
+### $(ID:6bef2629-b030-40a1-9304-3fc3e118522e)
+
+* $(ID:1e64ae9e-f565-4ec4-8fb2-f9fd56edce58)
+* $(ID:9890abad-4b41-45f2-afbe-c6be23f17c9a)
+
+### $(ID:10d45bbd-fda8-4cda-81d9-0a8472d45a9f)
+
+* $(ID:8bfdba41-d7a9-4a7c-9f32-ea84bee040bb)
+$(ID:c3ff4fb1-b688-489b-b300-59116c6d1c97)
+
+### $(ID:f7a23783-dab5-4786-beca-4f49cc904fe3)
+
+* $(ID:2ca21df2-f1a1-4ad5-94d1-70e8d9c8d302)
+* $(ID:6220d8ec-8dc5-4036-94ac-def7d051f885)
+
+### $(ID:38bde6c8-bf17-45bf-9995-534b482f8518)
+
+* $(ID:5c84d31b-20a0-412e-841a-24c50b96d067)
+* $(ID:693756f3-f9e3-4f9c-b1d5-1a76cac6ca82)
+* $(ID:f538798d-8c46-4001-9d48-b26770712198)
+* $(ID:b461d705-adee-41ab-8761-07936edbe5bb)
+* $(ID:b45ee890-7b77-4e8b-a2b0-65f3c0190f60)
+* $(ID:7aa8880f-178e-428d-bc7c-eec646c6d69f)
+* $(ID:39f52490-48b8-462c-895f-e3c7b3a72964)
+
+### $(ID:e01f1d8b-6c8e-47d4-8596-727b2ce4261f)
+
+* $(ID:74c1cf1c-6375-4ba6-9027-4831594fc5f6)
+* $(ID:2a406b53-1ae7-4971-a050-fda8e00d3fbd)
+
+### $(ID:623bdbcc-f84f-4056-9de8-f5d6868b3750)
+
+* $(ID:73b631c7-7616-43cd-a34a-8815465d3b47)
+* $(ID:dbc973a8-581f-4895-9e04-8cc5a44ecf5e)
+
+### $(ID:7a032187-6a2c-4324-80e4-2c7ec1d4c70f)
+
+* $(ID:f0a4c8fb-309a-4030-8142-a789734655ee)
+* $(ID:ac4260ac-90e3-43a1-a284-cd1acb5721a5)
+* $(ID:49631c2a-769d-42c9-b960-7902a91d7d7d)
+* $(ID:3a5b8b07-af7c-47f3-97e7-c6436442de29)
+
+### $(ID:44874b4c-39c7-40f1-a28d-fba49e791c3a)
+
+* $(ID:787e3d09-25f6-4b92-8b83-72702c2cf216)
+* $(ID:d33fcdb2-7083-460f-ab0b-70aeb3bafe07)
+
+### $(ID:e146f991-3feb-48cd-bdca-59ef2a5ad12d)
+
+* $(ID:ef75333d-e09b-48b7-b3bd-41ea1933d3d1)
+* $(ID:9bc3ee76-d6b6-45c2-b697-7715867c15f2)
+* $(ID:ca297db1-e760-49c4-952d-125e6e9090d9)
+
+### $(ID:07836d12-0a92-4a1d-9e03-95612eac56af)
+
+* $(ID:99ce49e5-ffc0-4f05-b4a4-d5db180fbc00)
+* $(ID:c1121506-39b7-4263-b7c1-200f62b8a7d9)
+* $(ID:c9bec4c9-aa96-4b04-a22d-774125522ad2)
+* $(ID:4ab8b3b9-ecd6-4d21-9a99-c468a5676380)
+
+### $(ID:83772e72-b4eb-4952-9aab-34bde378c59f)
+
+* $(ID:0d6d126e-7f18-4cc0-b9a9-8461ef2836c1)
+* $(ID:88c9c68a-2e69-4b7c-aa59-97421c411985)
+
+### $(ID:42dc4684-e64b-41e3-bc1d-a1c6d5c7ad52)
+
+* $(ID:0967551b-aa3d-4f78-82a8-9b9efbfda88a)
+
+### $(ID:d152d1ec-1e66-458d-862c-be19ae477f6a)
+
+* $(ID:20a916b5-b954-4828-8578-1507ff03693d)
+
+</skeleton>
+<unit id="cbf5fbd5-2019-4505-a416-4a63c86204cd">
+<notes>
+<note appliesTo="source">line: 2</note>
+<note appliesTo="source">prefix: # </note>
+</notes>
+<segment>
+<source>Outlook extended</source>
+</segment>
+</unit>
+<unit id="76bbdcd9-a5e2-4917-bf24-0b8ebd4a241e">
+<notes>
+<note appliesTo="source">line: 4</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Authors: Cyrille Bougot, Ralf Kefferpuetz</source>
+</segment>
+</unit>
+<unit id="03c855bd-8f04-402f-9d3a-69c8ee476ad8">
+<notes>
+<note appliesTo="source">line: 5</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>NVDA compatibility: 2019.3 and beyond</source>
+</segment>
+</unit>
+<unit id="2324f1f7-20f2-45c8-8ed5-8d2faf24a0a7">
+<notes>
+<note appliesTo="source">line: 7</note>
+</notes>
+<segment>
+<source>This add-on improves the use of Microsoft Outlook with NVDA.</source>
+</segment>
+</unit>
+<unit id="15cb20b4-6139-4bdd-be94-8f5a4c234b59">
+<notes>
+<note appliesTo="source">line: 8</note>
+</notes>
+<segment>
+<source>It provides commands to read, move to, or copy various parts of a message such as message headers, attachments, information bar, notification or message body.</source>
+</segment>
+</unit>
+<unit id="84bfdb45-b80d-4007-a2b8-7a2ebe4e0ca9">
+<notes>
+<note appliesTo="source">line: 9</note>
+</notes>
+<segment>
+<source>It also improves navigation within the application and provides more feedback when performing certain actions.</source>
+</segment>
+</unit>
+<unit id="17aba84b-98cb-4984-ae75-02860fe05ec1">
+<notes>
+<note appliesTo="source">line: 11</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Commands</source>
+</segment>
+</unit>
+<unit id="8e94017d-0f98-4c29-9d7a-ef64617563ad">
+<notes>
+<note appliesTo="source">line: 13</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Alt+1 to Alt+9, Alt+0, Alt+-, Alt+=: Reports the header field 1 to 12 in a message, calendar item or task window. If pressed twice, moves the focus to this field if possible. If pressed three times, copies its content to the clipboard.</source>
+</segment>
+</unit>
+<unit id="63e368f9-f9b4-4903-b7ec-cb25b478667f">
+<notes>
+<note appliesTo="source">line: 14</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>`NVDA+control+shift+I`: Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.</source>
+</segment>
+</unit>
+<unit id="7946401c-4608-4cd0-83e3-25691916af89">
+<notes>
+<note appliesTo="source">line: 15</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>`NVDA+control+shift+A`:</source>
+</segment>
+</unit>
+<unit id="9d1b6dd4-566d-473c-ba54-393c3abcd31a">
+<notes>
+<note appliesTo="source">line: 17</note>
+<note appliesTo="source">prefix:     * </note>
+</notes>
+<segment>
+<source>In a message window: reports the number and the names of attachments; if pressed twice, moves the focus to it.</source>
+</segment>
+</unit>
+<unit id="616b9563-583b-4458-b4f4-9d3e8ae306b7">
+<notes>
+<note appliesTo="source">line: 18</note>
+<note appliesTo="source">prefix:     * </note>
+</notes>
+<segment>
+<source>In a meeting window, in the all attendees tab: displays in a browseable message the attendees status for the meeting time slot.</source>
+</segment>
+</unit>
+<unit id="83633eeb-38f8-4473-b353-7018b960a9fb">
+<notes>
+<note appliesTo="source">line: 19</note>
+</notes>
+<segment>
+<source>    This is only useful and working in older Outlook versions where the information of the all attendees tab is not completely accessible.</source>
+</segment>
+</unit>
+<unit id="40b62dcd-e498-42ba-b8dd-92cb44ea26b6">
+<notes>
+<note appliesTo="source">line: 21</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>`NVDA+control+shift+M`: Moves the focus to the message body.</source>
+</segment>
+</unit>
+<unit id="19ddb6fc-ef18-4f3d-bf7b-ac6659dffa66">
+<notes>
+<note appliesTo="source">line: 22</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>`NVDA+control+shift+N`: Reports the notification in a message window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard.</source>
+</segment>
+</unit>
+<unit id="e70668b9-819d-4705-8960-66756bda6a93">
+<notes>
+<note appliesTo="source">line: 23</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Control+Q: in the message list, marks the selected message or group of messages as read.</source>
+</segment>
+</unit>
+<unit id="70e681e5-ae33-433b-aae5-6e0ab3556e29">
+<notes>
+<note appliesTo="source">line: 24</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Control+U: in the message list, marks the selected message or group of messages as unread.</source>
+</segment>
+</unit>
+<unit id="0182e817-e07c-45ad-8cb8-4e92cfb07b72">
+<notes>
+<note appliesTo="source">line: 26</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Additional improvements</source>
+</segment>
+</unit>
+<unit id="f647f742-e15f-4c0a-b70e-fcdb7bc879e6">
+<notes>
+<note appliesTo="source">line: 28</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>When the recipient you have entered in the To, Cc or Bcc fields sends automatic out of office replies or is no longer present on the Exchange server, Outlook reports it in the notification area of the message window.</source>
+</segment>
+</unit>
+<unit id="96f7f835-f1a5-4380-ac87-54b99b71de12">
+<notes>
+<note appliesTo="source">line: 29</note>
+</notes>
+<segment>
+<source>  In this notification area, you also have buttons to remove the address of these recipients.</source>
+</segment>
+</unit>
+<unit id="5758645c-092d-441f-8f85-0f58702367e3">
+<notes>
+<note appliesTo="source">line: 30</note>
+</notes>
+<segment>
+<source>  This add-on alerts you with a ding whenever this notification area appears, disappears or is updated.</source>
+</segment>
+</unit>
+<unit id="7d8374f5-42c1-4f19-89fc-6d6f82c6d279">
+<notes>
+<note appliesTo="source">line: 31</note>
+</notes>
+<segment>
+<source>  You can then press `NVDA+control+shift+N` once to have it read or twice to jump to this area.</source>
+</segment>
+</unit>
+<unit id="a1315a29-f0bd-4687-9023-eb915a8f2de3">
+<notes>
+<note appliesTo="source">line: 32</note>
+</notes>
+<segment>
+<source>  Then move with the arrows on the recipient buttons and press a button to remove the corresponding recipient.</source>
+</segment>
+</unit>
+<unit id="9b90dfe6-e6ba-4e0d-bbe4-91a76b5351a1">
+<notes>
+<note appliesTo="source">line: 33</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>In the address book's result list, you can use horizontal table navigation commands to read the content of each column.</source>
+</segment>
+</unit>
+<unit id="7bd3b22d-35f8-4014-85fa-a9f0a7e98fba">
+<notes>
+<note appliesTo="source">line: 35</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Notes</source>
+</segment>
+</unit>
+<unit id="5cad6447-614a-4489-bb95-d7a9d0fcda5b">
+<notes>
+<note appliesTo="source">line: 37</note>
+</notes>
+<segment>
+<source>All the gestures can be modified in the NVDA command gestures dialog. You may want to modify them especially in the following situations:</source>
+</segment>
+</unit>
+<unit id="60400807-11fa-4961-b41a-3c588faa89f6">
+<notes>
+<note appliesTo="source">line: 39</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>The default gestures to mark messages as read or unread are the ones for Outlook english version. If they differ from the ones of your Outlook local version, you will have to change them accordingly.</source>
+</segment>
+</unit>
+<unit id="ecfa998a-aea8-432b-bba2-369c02152059">
+<notes>
+<note appliesTo="source">line: 40</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>The default gestures for reading headers user `alt` combined with the keys in the first row of the alphanumeric keyboard.</source>
+</segment>
+</unit>
+<unit id="12dfd057-dd27-47ef-b76a-9dc47aaa53ce">
+<notes>
+<note appliesTo="source">line: 41</note>
+</notes>
+<segment>
+<source>  You may need to re-map the gestures to read headers 11 and 12 if they do not match your local keyboard layout.</source>
+</segment>
+</unit>
+<unit id="e4196dc0-2140-46e0-af55-037482d1ecc4">
+<notes>
+<note appliesTo="source">line: 43</note>
+<note appliesTo="source">prefix: ## </note>
+</notes>
+<segment>
+<source>Change log</source>
+</segment>
+</unit>
+<unit id="d03fb899-94e6-4aad-b9ea-fc1a1f849cd3">
+<notes>
+<note appliesTo="source">line: 45</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 3.4</source>
+</segment>
+</unit>
+<unit id="865c2c40-4edb-4a71-acea-8aabac7b911c">
+<notes>
+<note appliesTo="source">line: 47</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Gestures for desktop layout to read or move to attachments, information bar, notification and message body have been modified to match the ones of laptop layout.</source>
+</segment>
+</unit>
+<unit id="8c847095-7fba-43a2-8ee2-5b1669c7c4af">
+<notes>
+<note appliesTo="source">line: 49</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 3.3</source>
+</segment>
+</unit>
+<unit id="483c7518-886c-4a92-bfeb-1ed9bee1f3a7">
+<notes>
+<note appliesTo="source">line: 51</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Compatibility with NVDA 2026.1.</source>
+</segment>
+</unit>
+<unit id="204e8f0b-89c9-4377-a467-f15c366cf01e">
+<notes>
+<note appliesTo="source">line: 53</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 3.2</source>
+</segment>
+</unit>
+<unit id="24d7ffaf-f219-42a4-851b-b8a00ad9c39d">
+<notes>
+<note appliesTo="source">line: 55</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Compatibility with NVDA 2025.1.</source>
+</segment>
+</unit>
+<unit id="0ee160d9-5964-4307-afe8-cbd5cae68083">
+<notes>
+<note appliesTo="source">line: 57</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 3.0</source>
+</segment>
+</unit>
+<unit id="f0049682-f0e1-4498-bae0-10cec34c21fe">
+<notes>
+<note appliesTo="source">line: 59</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>In a meeting window, in the all attendees tab, pressing NVDA+shift+A (desktop layout) / NVDA+control+shift+A (laptop layout) now displays in a browseable message the attendees status on the time slot of the meeting.</source>
+</segment>
+</unit>
+<unit id="bdb8fe50-b928-4861-8e5a-7d37872444f5">
+<notes>
+<note appliesTo="source">line: 61</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 2.4</source>
+</segment>
+</unit>
+<unit id="7b7d790c-5ced-4dbe-a19d-884db0999138">
+<notes>
+<note appliesTo="source">line: 63</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Compatibility with NVDA 2024.1.</source>
+</segment>
+</unit>
+<unit id="df54c823-68d2-45c3-b118-d8962fdb22ff">
+<notes>
+<note appliesTo="source">line: 64</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Relevant commands are now usable in on-demand speech mode.</source>
+</segment>
+</unit>
+<unit id="75f016c9-48e1-40d9-8de6-2fd1edb934e7">
+<notes>
+<note appliesTo="source">line: 66</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 2.3</source>
+</segment>
+</unit>
+<unit id="b89e0bcf-ec73-4515-93e2-cc5a34f654ca">
+<notes>
+<note appliesTo="source">line: 68</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Note: From now on, translation updates will not appear anymore in the change log.</source>
+</segment>
+</unit>
+<unit id="71f8a1d3-efac-4f11-b54f-8babf9f28b45">
+<notes>
+<note appliesTo="source">line: 70</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 2.2</source>
+</segment>
+</unit>
+<unit id="e0d31235-ad54-498a-9208-74d632d2a953">
+<notes>
+<note appliesTo="source">line: 72</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Restored compatibiliity with NVDA 2019.3.1.</source>
+</segment>
+</unit>
+<unit id="a23ddf35-a50b-4440-a84d-500688588005">
+<notes>
+<note appliesTo="source">line: 73</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Updated localizations.</source>
+</segment>
+</unit>
+<unit id="6bef2629-b030-40a1-9304-3fc3e118522e">
+<notes>
+<note appliesTo="source">line: 75</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 2.1</source>
+</segment>
+</unit>
+<unit id="1e64ae9e-f565-4ec4-8fb2-f9fd56edce58">
+<notes>
+<note appliesTo="source">line: 77</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Removed the dev channel.</source>
+</segment>
+</unit>
+<unit id="9890abad-4b41-45f2-afbe-c6be23f17c9a">
+<notes>
+<note appliesTo="source">line: 78</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Updated localizations.</source>
+</segment>
+</unit>
+<unit id="10d45bbd-fda8-4cda-81d9-0a8472d45a9f">
+<notes>
+<note appliesTo="source">line: 80</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 2.0</source>
+</segment>
+</unit>
+<unit id="8bfdba41-d7a9-4a7c-9f32-ea84bee040bb">
+<notes>
+<note appliesTo="source">line: 82</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Improve the user experience with the notifications appearing when entering e-mail addresses which are not valid anymore or which send automatic out of office replies:</source>
+</segment>
+</unit>
+<unit id="c3ff4fb1-b688-489b-b300-59116c6d1c97">
+<notes>
+<note appliesTo="source">line: 83</note>
+</notes>
+<segment>
+<source>  a sound alerts when such notifications appear or are updated, a gesture allows to read it or to move to it, and navigation in this area with arrows is made more easy.</source>
+</segment>
+</unit>
+<unit id="f7a23783-dab5-4786-beca-4f49cc904fe3">
+<notes>
+<note appliesTo="source">line: 85</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.10</source>
+</segment>
+</unit>
+<unit id="2ca21df2-f1a1-4ad5-94d1-70e8d9c8d302">
+<notes>
+<note appliesTo="source">line: 87</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Compatibility with NVDA 2023.1.</source>
+</segment>
+</unit>
+<unit id="6220d8ec-8dc5-4036-94ac-def7d051f885">
+<notes>
+<note appliesTo="source">line: 88</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Updated localizations.</source>
+</segment>
+</unit>
+<unit id="38bde6c8-bf17-45bf-9995-534b482f8518">
+<notes>
+<note appliesTo="source">line: 90</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.9</source>
+</segment>
+</unit>
+<unit id="5c84d31b-20a0-412e-841a-24c50b96d067">
+<notes>
+<note appliesTo="source">line: 92</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Compatibility with NVDA 2022.1.</source>
+</segment>
+</unit>
+<unit id="693756f3-f9e3-4f9c-b1d5-1a76cac6ca82">
+<notes>
+<note appliesTo="source">line: 93</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Dropped compatibility for versions of NVDA below 2019.3.</source>
+</segment>
+</unit>
+<unit id="f538798d-8c46-4001-9d48-b26770712198">
+<notes>
+<note appliesTo="source">line: 94</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>The release is now performed thanks to a GitHub action instead of appVeyor.</source>
+</segment>
+</unit>
+<unit id="b461d705-adee-41ab-8761-07936edbe5bb">
+<notes>
+<note appliesTo="source">line: 95</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Fixed the announcement when the user triple-presses alt+number shortcuts.</source>
+</segment>
+</unit>
+<unit id="b45ee890-7b77-4e8b-a2b0-65f3c0190f60">
+<notes>
+<note appliesTo="source">line: 96</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Fixed an issue preventing from reading calendar items headers of some versions of Outlook 365.</source>
+</segment>
+</unit>
+<unit id="7aa8880f-178e-428d-bc7c-eec646c6d69f">
+<notes>
+<note appliesTo="source">line: 97</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Improvement of the test environment of the add-on: navigation in the fake root dialog.</source>
+</segment>
+</unit>
+<unit id="39f52490-48b8-462c-895f-e3c7b3a72964">
+<notes>
+<note appliesTo="source">line: 98</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Updated localizations.</source>
+</segment>
+</unit>
+<unit id="e01f1d8b-6c8e-47d4-8596-727b2ce4261f">
+<notes>
+<note appliesTo="source">line: 100</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.8</source>
+</segment>
+</unit>
+<unit id="74c1cf1c-6375-4ba6-9027-4831594fc5f6">
+<notes>
+<note appliesTo="source">line: 102</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Updated localizations.</source>
+</segment>
+</unit>
+<unit id="2a406b53-1ae7-4971-a050-fda8e00d3fbd">
+<notes>
+<note appliesTo="source">line: 103</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Ensure that all the variable from the original Outlook appModule are still available.</source>
+</segment>
+</unit>
+<unit id="623bdbcc-f84f-4056-9de8-f5d6868b3750">
+<notes>
+<note appliesTo="source">line: 105</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.7</source>
+</segment>
+</unit>
+<unit id="73b631c7-7616-43cd-a34a-8815465d3b47">
+<notes>
+<note appliesTo="source">line: 107</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Update compatibility for NVDA 2021.1.</source>
+</segment>
+</unit>
+<unit id="dbc973a8-581f-4895-9e04-8cc5a44ecf5e">
+<notes>
+<note appliesTo="source">line: 108</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Updated localizations.</source>
+</segment>
+</unit>
+<unit id="7a032187-6a2c-4324-80e4-2c7ec1d4c70f">
+<notes>
+<note appliesTo="source">line: 110</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.6</source>
+</segment>
+</unit>
+<unit id="f0a4c8fb-309a-4030-8142-a789734655ee">
+<notes>
+<note appliesTo="source">line: 112</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Fixed various issues when reading messages headers in Outlook 365.</source>
+</segment>
+</unit>
+<unit id="ac4260ac-90e3-43a1-a284-cd1acb5721a5">
+<notes>
+<note appliesTo="source">line: 113</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Fixed an error in announce attachments script when a braille keyboard is used.</source>
+</segment>
+</unit>
+<unit id="49631c2a-769d-42c9-b960-7902a91d7d7d">
+<notes>
+<note appliesTo="source">line: 114</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Added a unit test framework.</source>
+</segment>
+</unit>
+<unit id="3a5b8b07-af7c-47f3-97e7-c6436442de29">
+<notes>
+<note appliesTo="source">line: 115</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Updated localizations.</source>
+</segment>
+</unit>
+<unit id="44874b4c-39c7-40f1-a28d-fba49e791c3a">
+<notes>
+<note appliesTo="source">line: 117</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.5</source>
+</segment>
+</unit>
+<unit id="787e3d09-25f6-4b92-8b83-72702c2cf216">
+<notes>
+<note appliesTo="source">line: 119</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Reading the information bar is now working with NVDA 2019.3.</source>
+</segment>
+</unit>
+<unit id="d33fcdb2-7083-460f-ab0b-70aeb3bafe07">
+<notes>
+<note appliesTo="source">line: 120</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Table navigation in the address book results is now working with NVDA 2019.3.</source>
+</segment>
+</unit>
+<unit id="e146f991-3feb-48cd-bdca-59ef2a5ad12d">
+<notes>
+<note appliesTo="source">line: 122</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.4</source>
+</segment>
+</unit>
+<unit id="ef75333d-e09b-48b7-b3bd-41ea1933d3d1">
+<notes>
+<note appliesTo="source">line: 124</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>The script to move focus to headers is working again.</source>
+</segment>
+</unit>
+<unit id="9bc3ee76-d6b6-45c2-b697-7715867c15f2">
+<notes>
+<note appliesTo="source">line: 125</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>The script to move to attachments is now working when more attachments are present.</source>
+</segment>
+</unit>
+<unit id="ca297db1-e760-49c4-952d-125e6e9090d9">
+<notes>
+<note appliesTo="source">line: 126</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Added localizations.</source>
+</segment>
+</unit>
+<unit id="07836d12-0a92-4a1d-9e03-95612eac56af">
+<notes>
+<note appliesTo="source">line: 128</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.3</source>
+</segment>
+</unit>
+<unit id="99ce49e5-ffc0-4f05-b4a4-d5db180fbc00">
+<notes>
+<note appliesTo="source">line: 130</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Fixed message headers reading for newer Office 365 release.</source>
+</segment>
+</unit>
+<unit id="c1121506-39b7-4263-b7c1-200f62b8a7d9">
+<notes>
+<note appliesTo="source">line: 131</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Updates to support newer versions of NVDA (Python 2 and 3 compatible).</source>
+</segment>
+</unit>
+<unit id="c9bec4c9-aa96-4b04-a22d-774125522ad2">
+<notes>
+<note appliesTo="source">line: 132</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Added localizations.</source>
+</segment>
+</unit>
+<unit id="4ab8b3b9-ecd6-4d21-9a99-c468a5676380">
+<notes>
+<note appliesTo="source">line: 133</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Releases performed now with appveyor.</source>
+</segment>
+</unit>
+<unit id="83772e72-b4eb-4952-9aab-34bde378c59f">
+<notes>
+<note appliesTo="source">line: 135</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.2</source>
+</segment>
+</unit>
+<unit id="0d6d126e-7f18-4cc0-b9a9-8461ef2836c1">
+<notes>
+<note appliesTo="source">line: 137</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Fixed header reading when forwarding meeting.</source>
+</segment>
+</unit>
+<unit id="88c9c68a-2e69-4b7c-aa59-97421c411985">
+<notes>
+<note appliesTo="source">line: 138</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Added localizations.</source>
+</segment>
+</unit>
+<unit id="42dc4684-e64b-41e3-bc1d-a1c6d5c7ad52">
+<notes>
+<note appliesTo="source">line: 140</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.1</source>
+</segment>
+</unit>
+<unit id="0967551b-aa3d-4f78-82a8-9b9efbfda88a">
+<notes>
+<note appliesTo="source">line: 142</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Added localizations.</source>
+</segment>
+</unit>
+<unit id="d152d1ec-1e66-458d-862c-be19ae477f6a">
+<notes>
+<note appliesTo="source">line: 144</note>
+<note appliesTo="source">prefix: ### </note>
+</notes>
+<segment>
+<source>Version 1.0</source>
+</segment>
+</unit>
+<unit id="20a916b5-b954-4828-8578-1507ff03693d">
+<notes>
+<note appliesTo="source">line: 146</note>
+<note appliesTo="source">prefix: * </note>
+</notes>
+<segment>
+<source>Initial release.</source>
+</segment>
+</unit>
+</file>
+</xliff>
