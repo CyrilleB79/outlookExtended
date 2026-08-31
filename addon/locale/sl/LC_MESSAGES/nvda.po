@@ -1,61 +1,95 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the outlookExtended package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: outlookExtended 1.0-dev\n"
-"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
-"POT-Creation-Date: 2019-02-20 16:32+1000\n"
-"PO-Revision-Date: 2022-06-14 16:15+0100\n"
-"Last-Translator: Jožef Gregorc <jozko.gregorc@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: sl\n"
+"Project-Id-Version: nvdaaddons\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2026-08-28 13:06+0000\n"
+"PO-Revision-Date: 2026-08-28 13:44\n"
+"Last-Translator: \n"
+"Language-Team: Slovenian\n"
+"Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
+"X-Crowdin-Project: nvdaaddons\n"
+"X-Crowdin-Project-ID: 780748\n"
+"X-Crowdin-Language: sl\n"
+"X-Crowdin-File: outlookExtended.pot\n"
+"X-Crowdin-File-ID: 380\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
 #. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#: addon\appModules\outlook\__init__.py:81
 msgid "-"
 msgstr "'"
 
 #. Translators: The key just ont the left of the backspace key.
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
 #. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#: addon\appModules\outlook\__init__.py:85
 msgid "="
 msgstr "+"
 
+#. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:100
+msgid "Busy"
+msgstr ""
+
+#. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:102
+msgid "Out of Office"
+msgstr ""
+
+#. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:104
+msgid "Free"
+msgstr ""
+
+#. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:106
+msgid "Working Elsewhere"
+msgstr ""
+
+#. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:108
+msgid "Tentative"
+msgstr ""
+
 #. Translators: Documentation for mark as read script.
+#: addon\appModules\outlook\__init__.py:139
 msgid "Mark a message as read"
 msgstr "Označi sporočilo kot prebrano"
 
 #. Translators: Documentation for mark as unread script.
+#: addon\appModules\outlook\__init__.py:147
 msgid "Mark a message as unread"
 msgstr "Označi sporočilo kot neprebrano"
 
 #. Translators: To what the mark as read/unread applies to
+#: addon\appModules\outlook\__init__.py:163
 #, python-format
 msgid "Messages group: %s"
 msgstr "Skupina sporočil: %s"
 
 #. Translators: To what the mark as read/unread applies to
+#: addon\appModules\outlook\__init__.py:166
 #, python-format
 msgid "Messages: %s"
 msgstr "Sporočila: %s"
 
 #. Translators: Error when mark as read/unread shortcut is called with no message selected
+#: addon\appModules\outlook\__init__.py:169
 msgid "No message selected"
 msgstr "Brez označenega sporočila"
 
 #. Translators: To announce the message or group status: unread
+#: addon\appModules\outlook\__init__.py:178
 msgid "unread"
 msgstr "neprebrano"
 
 #. Translators: To announce the message or group status: read
+#: addon\appModules\outlook\__init__.py:181
 msgid "read"
 msgstr "prebrano"
 
@@ -63,125 +97,124 @@ msgstr "prebrano"
 #. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you
 #. press control again.
 #. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
+#: addon\appModules\outlook\__init__.py:273
 msgid "Column navigation not supported in the address book"
 msgstr "Krmiljenje po stolpcih ni podprto v adresarju"
 
 #. Translators: The name of a fake NVDA object used for tests.
+#: addon\appModules\outlook\__init__.py:279
 msgid "Fake root"
 msgstr "Lažna pot"
 
 #. Translators: The name for a button in the notification bar to display more or less information.
-#, fuzzy
+#: addon\appModules\outlook\__init__.py:421
 msgid "More or less information"
-msgstr "Brez informacijske vrstice"
+msgstr ""
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
+#: addon\appModules\outlook\__init__.py:615
+#: addon\appModules\outlook\__init__.py:738
 msgid "Not in a message window"
 msgstr "ni v oknu sporočila"
 
 #. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
-#. Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
+#. Translators: When user triple press NVDA+control+shift+N to copy the notification text to clipboard
+#: addon\appModules\outlook\__init__.py:653
+#: addon\appModules\outlook\__init__.py:699
 msgid "Copied to clipboard"
 msgstr "Preslikano v odložišče"
 
-#. Translators: A checkbox state
-msgid "checked"
-msgstr "izbrano"
-
-msgid "unchecked"
-msgstr "ni izbrano"
-
 #. Translators: To report name and value of a heaeder's field
+#: addon\appModules\outlook\__init__.py:668
 #, python-brace-format
 msgid "{name} {value}"
 msgstr "{name} {value}"
 
 #. Translators: Documentation for report notification script.
-#, fuzzy
-msgid ""
-"Reports the notification in a message. If pressed twice, moves the focus to "
-"it. If pressed three times, copies its content to the clipboard."
+#: addon\appModules\outlook\__init__.py:676
+msgid "Reports the notification in a message. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
 msgstr ""
-"Sporoča informacijsko vrstico v sporočilu, postavki koledarja ali oknu "
-"opravila. Dvojni pritisk premakne žarišče na njo. Trojni pritisk preslika "
-"vsebino vrstice v odložišče."
 
 #. Translators: Message reported when calling the script to report notification bar.
-#, fuzzy
+#: addon\appModules\outlook\__init__.py:686
 msgid "No notification"
-msgstr "Brez informacijske vrstice"
+msgstr ""
 
 #. Translators: Documentation for report info bar script.
-msgid ""
-"Reports the information bar in a message, calendar item or task window. If "
-"pressed twice, moves the focus to it. If pressed three times, copies its "
-"content to the clipboard."
-msgstr ""
-"Sporoča informacijsko vrstico v sporočilu, postavki koledarja ali oknu "
-"opravila. Dvojni pritisk premakne žarišče na njo. Trojni pritisk preslika "
-"vsebino vrstice v odložišče."
+#: addon\appModules\outlook\__init__.py:705
+msgid "Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
+msgstr "Sporoča informacijsko vrstico v sporočilu, postavki koledarja ali oknu opravila. Dvojni pritisk premakne žarišče na njo. Trojni pritisk preslika vsebino vrstice v odložišče."
 
 #. Translators: When the info bar is not present
+#: addon\appModules\outlook\__init__.py:715
 msgid "No information bar"
 msgstr "Brez informacijske vrstice"
 
 #. Translators: Documentation for move to message body script.
+#: addon\appModules\outlook\__init__.py:721
 msgid "Moves the focus to the message body"
 msgstr "Premakne žarišče na telo sporočila"
 
-msgid ""
-"Reports the number and the names of attachments in a message window. If "
-"pressed twice, moves the focus to it."
+#. Translators: Documentation for Attachments script.
+#: addon\appModules\outlook\__init__.py:745
+msgid "Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it."
+msgstr "Sporoča število in imena prilog v oknu sporočila. Dvojni pritisk premakne žarišče na to."
+
+#. Translators: Title of the browseable message displaying the status of all attendees.
+#: addon\appModules\outlook\__init__.py:817
+msgid "All Attendees Status"
 msgstr ""
-"Sporoča število in imena prilog v oknu sporočila. Dvojni pritisk premakne "
-"žarišče na to."
+
+#. Translators: A status used in the attendees status report.
+#. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
+#. hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
+#. hatched rectangle (no information available) for people external to your organization.
+#: addon\appModules\outlook\__init__.py:852
+msgid "No Information"
+msgstr ""
 
 #. Translators: Reported when calling a test command
+#: addon\appModules\outlook\__init__.py:971
 msgid "Test case path not defined."
 msgstr "Cilj testnega primera ni določen."
 
 #. Translators: Reported when calling a test command
+#: addon\appModules\outlook\__init__.py:999
 msgid "Test mode offf"
 msgstr "Testni način izključen"
 
 #. None or 0
 #. Translators: Reported when calling a test command
+#: addon\appModules\outlook\__init__.py:1004
 msgid "Test mode is off."
 msgstr "Testni način je izključen"
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar
 #. item or task window
+#: addon\appModules\outlook\__init__.py:1042
 #, python-format
-msgid ""
-"Reports the header field %s in a message, calendar item or task window. If "
-"pressed twice, moves the focus to this field if possible. If pressed three "
-"times, copies its content to the clipboard."
-msgstr ""
-"Sporoča polje z glavo %s v sporočilu, v postavki koledarja ali oknu "
-"opravila. Dvojni pritisk premakne žarišče na to polje, če je mogoče. Trojni "
-"pritisk preslika vsebino polja v odložišče."
+msgid "Reports the header field %s in a message, calendar item or task window. If pressed twice, moves the focus to this field if possible. If pressed three times, copies its content to the clipboard."
+msgstr "Sporoča polje z glavo %s v sporočilu, v postavki koledarja ali oknu opravila. Dvojni pritisk premakne žarišče na to polje, če je mogoče. Trojni pritisk preslika vsebino polja v odložišče."
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:22
 msgid "Outlook Extended"
 msgstr "Outlook Razširjen"
 
 #. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-msgid "Extended support and features for Microsoft Outlook."
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:25
+msgid "This add-on improves the use of Microsoft Outlook with NVDA.\n"
+"It provides commands to read, move to, or copy various parts of a message such as message headers, attachments, information bar, notification or message body.\n"
+"It also improves navigation within the application and provides more feedback when performing certain actions.\n"
 msgstr ""
 
-#~ msgid ""
-#~ "Extended support and features for Microsoft Outlook:\n"
-#~ "- Provide gestures to read and navigate to headers, information bar and "
-#~ "attachments in messages, calendar items, tasks.\n"
-#~ "- Improve result reading in address book.\n"
-#~ "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
-#~ msgstr ""
-#~ "Razširjena podpora in zmožnosti za Microsoft Outlook:\n"
-#~ "- Oskrbuje kretnje za branje in krmiljenje po glavah, informacijski "
-#~ "vrstici in prilogah v sporočilih, postavkah koledarja, opravilih.\n"
-#~ "- Izboljša rezultate branja v adresarju.\n"
-#~ "- Izgovori oznako kot prebrano/neprebrano ob uporabi ukazov ctrl+q/ctrl+u."
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:33
+msgid "* Gestures for desktop layout to read or move to attachments, information bar, notification and message body have been modified to match the ones of laptop layout."
+msgstr ""
+

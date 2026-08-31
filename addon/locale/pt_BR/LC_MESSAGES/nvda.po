@@ -1,89 +1,95 @@
-# Brazilian Portuguese translation of outlookExtended.
-# Copyright (C) 2020-2021 NVDA Contributors.
-# This file is distributed under the same license as the NVDA package.
-# Rui Fontes <rui.fontes@tiflotecnia.com>, 2019.
-# Ângelo Abrantes <ampa4374@gmail.com>, 2019-2020.
-# Tiago Melo Casal <tcasal@intervox.nce.ufrj.br>, 2020-2021.
-# Josevan Barbosa Fernandes <josevanfernandes@yahoo.com.br>, 2024-2025.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: OutlookExtended\n"
-"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
-"POT-Creation-Date: 2020-01-03 15:05+1000\n"
-"PO-Revision-Date: 2025-01-10 21:21-0300\n"
-"Last-Translator: Josevan Fernandes <josevanfernandes@yahoo.com.br>\n"
-"Language-Team: NVDA Brazilian Portuguese translation team (Equipe de "
-"tradução do NVDA para Português Brasileiro) <clever97@gmail.com>\n"
+"Project-Id-Version: nvdaaddons\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2026-08-28 13:06+0000\n"
+"PO-Revision-Date: 2026-08-31 03:02\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.5\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../../../appModules\n"
-"X-Poedit-SearchPath-0: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: nvdaaddons\n"
+"X-Crowdin-Project-ID: 780748\n"
+"X-Crowdin-Language: pt-BR\n"
+"X-Crowdin-File: outlookExtended.pot\n"
+"X-Crowdin-File-ID: 380\n"
 
 #. Translators: The key ont the right of the "0" key in the alpha-numeric part of the keyboard.
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
 #. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#: addon\appModules\outlook\__init__.py:81
 msgid "-"
 msgstr "-"
 
 #. Translators: The key just ont the left of the backspace key.
 #. Note: In the translated documentation (/website/addons/outlookExtended.xx.po in the
 #. screenReaderTranslations repo), do not forget to modify the commands section accordingly.
+#: addon\appModules\outlook\__init__.py:85
 msgid "="
 msgstr "="
 
 #. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:100
 msgid "Busy"
 msgstr "Ocupado"
 
 #. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:102
 msgid "Out of Office"
 msgstr "Fora do Office"
 
 #. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:104
 msgid "Free"
 msgstr "Disponível"
 
 #. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:106
 msgid "Working Elsewhere"
 msgstr "Trabalhando em outro lugar"
 
 #. Translators: Outlook's native string for status
+#: addon\appModules\outlook\__init__.py:108
 msgid "Tentative"
 msgstr "Tentativa"
 
 #. Translators: Documentation for mark as read script.
+#: addon\appModules\outlook\__init__.py:139
 msgid "Mark a message as read"
 msgstr "Marcar uma mensagem como lida"
 
 #. Translators: Documentation for mark as unread script.
+#: addon\appModules\outlook\__init__.py:147
 msgid "Mark a message as unread"
 msgstr "Marcar uma mensagem como não lida"
 
 #. Translators: To what the mark as read/unread applies to
+#: addon\appModules\outlook\__init__.py:163
 #, python-format
 msgid "Messages group: %s"
 msgstr "Grupo de mensagens: %s"
 
 #. Translators: To what the mark as read/unread applies to
+#: addon\appModules\outlook\__init__.py:166
 #, python-format
 msgid "Messages: %s"
 msgstr "Mensagens: %s"
 
 #. Translators: Error when mark as read/unread shortcut is called with no message selected
+#: addon\appModules\outlook\__init__.py:169
 msgid "No message selected"
 msgstr "Nenhuma mensagem selecionada"
 
 #. Translators: To announce the message or group status: unread
+#: addon\appModules\outlook\__init__.py:178
 msgid "unread"
 msgstr "não lida"
 
 #. Translators: To announce the message or group status: read
+#: addon\appModules\outlook\__init__.py:181
 msgid "read"
 msgstr "lida"
 
@@ -91,75 +97,72 @@ msgstr "lida"
 #. when pressing Ctrl+Alt+downarrow, the focus moves visually but NVDA takes updated focus only when you
 #. press control again.
 #. Translators: When trying to move by column in address book (Alt+Ctrl+Up/DownArrow)
+#: addon\appModules\outlook\__init__.py:273
 msgid "Column navigation not supported in the address book"
 msgstr "Navegação por coluna não suportada no catálogo de endereços"
 
 #. Translators: The name of a fake NVDA object used for tests.
+#: addon\appModules\outlook\__init__.py:279
 msgid "Fake root"
 msgstr "Raiz falsa"
 
 #. Translators: The name for a button in the notification bar to display more or less information.
+#: addon\appModules\outlook\__init__.py:421
 msgid "More or less information"
 msgstr "Mais ou menos informaçõesSem barra de informação"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
+#: addon\appModules\outlook\__init__.py:615
+#: addon\appModules\outlook\__init__.py:738
 msgid "Not in a message window"
 msgstr "Não está numa janela de mensagem"
 
 #. Translators: When user triple presses Alt+Number to copy a header's field to clipboard
-#. Translators: When user triple press NVDA+shift+N to copy the notification text to clipboard
+#. Translators: When user triple press NVDA+control+shift+N to copy the notification text to clipboard
+#: addon\appModules\outlook\__init__.py:653
+#: addon\appModules\outlook\__init__.py:699
 msgid "Copied to clipboard"
 msgstr "Copiado para a área de transferência"
 
 #. Translators: To report name and value of a heaeder's field
+#: addon\appModules\outlook\__init__.py:668
 #, python-brace-format
 msgid "{name} {value}"
 msgstr "{name} {value}"
 
 #. Translators: Documentation for report notification script.
-msgid ""
-"Reports the notification in a message. If pressed twice, moves the focus to "
-"it. If pressed three times, copies its content to the clipboard."
-msgstr ""
-"Relata a notificação em uma mensagem. Se pressionado duas vezes, move o foco "
-"para ela. Se pressionado três vezes, copia seu conteúdo para a área de "
-"transferência.Relata a barra de informações em uma mensagem, item de "
-"calendário ou janela de tarefa. Se pressionado duas vezes, move o foco para "
-"ela. Se pressionado três vezes, copia seu conteúdo para a área de "
-"transferência."
+#: addon\appModules\outlook\__init__.py:676
+msgid "Reports the notification in a message. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
+msgstr "Relata a notificação em uma mensagem. Se pressionado duas vezes, move o foco para ela. Se pressionado três vezes, copia seu conteúdo para a área de transferência.Relata a barra de informações em uma mensagem, item de calendário ou janela de tarefa. Se pressionado duas vezes, move o foco para ela. Se pressionado três vezes, copia seu conteúdo para a área de transferência."
 
 #. Translators: Message reported when calling the script to report notification bar.
+#: addon\appModules\outlook\__init__.py:686
 msgid "No notification"
 msgstr "Nenhuma notificaçãoSem barra de informação"
 
 #. Translators: Documentation for report info bar script.
-msgid ""
-"Reports the information bar in a message, calendar item or task window. If "
-"pressed twice, moves the focus to it. If pressed three times, copies its "
-"content to the clipboard."
-msgstr ""
-"Relata a barra de informações em uma mensagem, item de calendário ou janela "
-"de tarefa. Se pressionado duas vezes, move o foco para ela. Se pressionado "
-"três vezes, copia seu conteúdo para a área de transferência."
+#: addon\appModules\outlook\__init__.py:705
+msgid "Reports the information bar in a message, calendar item or task window. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
+msgstr "Relata a barra de informações em uma mensagem, item de calendário ou janela de tarefa. Se pressionado duas vezes, move o foco para ela. Se pressionado três vezes, copia seu conteúdo para a área de transferência."
 
 #. Translators: When the info bar is not present
+#: addon\appModules\outlook\__init__.py:715
 msgid "No information bar"
 msgstr "Sem barra de informação"
 
 #. Translators: Documentation for move to message body script.
+#: addon\appModules\outlook\__init__.py:721
 msgid "Moves the focus to the message body"
 msgstr "Move o foco para o corpo da mensagem"
 
 #. Translators: Documentation for Attachments script.
-msgid ""
-"Reports the number and the names of attachments in a message window. If "
-"pressed twice, moves the focus to it."
-msgstr ""
-"Informa o número e os nomes dos anexos em uma janela de mensagem. Se "
-"pressionado duas vezes, move o foco para ele."
+#: addon\appModules\outlook\__init__.py:745
+msgid "Reports the number and the names of attachments in a message window. If pressed twice, moves the focus to it."
+msgstr "Informa o número e os nomes dos anexos em uma janela de mensagem. Se pressionado duas vezes, move o foco para ele."
 
 #. Translators: Title of the browseable message displaying the status of all attendees.
+#: addon\appModules\outlook\__init__.py:817
 msgid "All Attendees Status"
 msgstr "Status de todos os participantes"
 
@@ -167,61 +170,51 @@ msgstr "Status de todos os participantes"
 #. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
 #. hovering the hatched rectangle with the mouse in the attendees status graphic. You can get an
 #. hatched rectangle (no information available) for people external to your organization.
+#: addon\appModules\outlook\__init__.py:852
 msgid "No Information"
 msgstr "Nenhuma informaçãoSem barra de informação"
 
 #. Translators: Reported when calling a test command
+#: addon\appModules\outlook\__init__.py:971
 msgid "Test case path not defined."
 msgstr "Caminho do caso de teste não definido."
 
 #. Translators: Reported when calling a test command
+#: addon\appModules\outlook\__init__.py:999
 msgid "Test mode offf"
 msgstr "Desligado modo de teste"
 
 #. None or 0
 #. Translators: Reported when calling a test command
+#: addon\appModules\outlook\__init__.py:1004
 msgid "Test mode is off."
 msgstr "O modo de teste está desabilitado."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar
 #. item or task window
+#: addon\appModules\outlook\__init__.py:1042
 #, python-format
-msgid ""
-"Reports the header field %s in a message, calendar item or task window. If "
-"pressed twice, moves the focus to this field if possible. If pressed three "
-"times, copies its content to the clipboard."
-msgstr ""
-"Informa o campo de cabeçalho %s em uma mensagem, item de calendário ou "
-"janela de tarefa. Se pressionado duas vezes, move o foco para este campo, se "
-"possível. Se pressionado três vezes, copia seu conteúdo para a área de "
-"transferência."
+msgid "Reports the header field %s in a message, calendar item or task window. If pressed twice, moves the focus to this field if possible. If pressed three times, copies its content to the clipboard."
+msgstr "Informa o campo de cabeçalho %s em uma mensagem, item de calendário ou janela de tarefa. Se pressionado duas vezes, move o foco para este campo, se possível. Se pressionado três vezes, copia seu conteúdo para a área de transferência."
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:22
 msgid "Outlook Extended"
 msgstr "Outlook Estendido"
 
 #. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-msgid "Extended support and features for Microsoft Outlook."
-msgstr "Suporte e recursos estendidos para o Microsoft Outlook."
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:25
+msgid "This add-on improves the use of Microsoft Outlook with NVDA.\n"
+"It provides commands to read, move to, or copy various parts of a message such as message headers, attachments, information bar, notification or message body.\n"
+"It also improves navigation within the application and provides more feedback when performing certain actions.\n"
+msgstr ""
 
-#~ msgid "checked"
-#~ msgstr "marcada"
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:33
+msgid "* Gestures for desktop layout to read or move to attachments, information bar, notification and message body have been modified to match the ones of laptop layout."
+msgstr ""
 
-#~ msgid "unchecked"
-#~ msgstr "desmarcada"
-
-#~ msgid ""
-#~ "Extended support and features for Microsoft Outlook:\n"
-#~ "- Provide gestures to read and navigate to headers, information bar and "
-#~ "attachments in messages, calendar items, tasks.\n"
-#~ "- Improve result reading in address book.\n"
-#~ "- Vocalize mark as read/unread ctrl+q/ctrl+u commands."
-#~ msgstr ""
-#~ "Suporte e recursos estendidos para o Microsoft Outlook:\n"
-#~ "- Fornece comandos (gestos) para ler e navegar para cabeçalhos, barra de "
-#~ "informações e anexos em mensagens, itens de calendário, tarefas.\n"
-#~ "- Melhora a leitura dos resultados no catálogo de endereços.\n"
-#~ "- Vocaliza marcar como lida/não lida de comandos ctrl+q/ctrl+u."
