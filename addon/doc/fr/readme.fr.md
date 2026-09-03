@@ -1,26 +1,26 @@
 # Outlook extended #
 
-* Auteurs : Cyrille Bougot, Ralf Kefferpuetz
-* Compatibilité NVDA: 2019.3 et ultérieure
+* Auteurs : Cyrille Bougot, Ralf Kefferpuetz
+* Compatibilité NVDA : 2019.3 et ultérieure
 
 Cette extension améliore l’utilisation de Microsoft Outlook avec NVDA.
-Elle fournit des commandes permettant de lire, de se déplacer vers ou de copier différentes parties d'un message telles que les en-têtes de message, les pièces jointes, la barre d'informations, les notifications ou le corps du message.
+    Elle fournit des commandes permettant de lire, de se déplacer vers ou de copier différentes parties d'un message telles que les en-têtes de message, les pièces jointes, la barre d'informations, les notifications ou le corps du message.
 Elle améliore également la navigation au sein de l'application et fournit davantage de retours d'information lors de l'exécution de certaines actions.
 
 ## Commandes
 
-* Alt+1 à Alt+9, Alt+0, Alt+), alt+=: Annonce le champ d’en-tête 1 à 12 dans un message, un élément de calendrier ou une tâche. Un double appui déplace le focus dans ce champ si possible. Un triple appui copie son contenu dans le presse-papiers.
-* `NVDA+control+maj+I` : Annonce la barre d'information dans un message, un élément de calendrier ou une fenêtre de tâche. Un double appui y déplace le focus. Un triple appui copie son contenu dans le presse-papiers.
-* `NVDA+control+maj+A` :
+* Alt+1 à Alt+9, Alt+0, Alt+), alt+= : Annonce le champ d’en-tête 1 à 12 dans un message, un élément de calendrier ou une tâche. Un double appui déplace le focus dans ce champ si possible. Un triple appui copie son contenu dans le presse-papiers.
+* `NVDA+contrôle+maj+I` : Annonce la barre d'information dans un message, un élément de calendrier ou une fenêtre de tâche. Un double appui y déplace le focus. Un triple appui copie son contenu dans le presse-papiers.
+* `NVDA+contrôle+maj+A` :
 
-    * Dans une fenêtre de message, annonce le nombre et le nom des pièces jointes ; un double appui y déplace le focus.
-    * Dans une fenêtre de réunion, dans l'onglet tous les participants : affiche en mode navigation le statut des participants sur la plage horaire de la réunion.
+    * Dans une fenêtre de message, annonce le nombre et le nom des pièces jointes ; un double appui y déplace le focus.
+    * Dans une fenêtre de réunion, dans l'onglet tous les participants : affiche en mode navigation le statut des participants sur la plage horaire de la réunion.
     Ce n'est utile et fonctionnel que dans les anciennes versions d'Outlook où les informations de l'onglet « Tous les participants » ne sont pas entièrement accessibles.
 
-* `NVDA+control+maj+M` : Déplace le focus dans le corps du message.
-* `NVDA+control+shift+N` : annonce la notification dans une fenêtre de message. Un double appui y déplace le focus. Un triple appui copie son contenu dans le presse-papiers.
-* Control+Q: Dans la liste des messages, marque le message ou le groupe de messages sélectionné comme lu.
-* Control+U: Dans la liste des messages, marque le message ou le groupe de messages sélectionné comme non lu.
+* `NVDA+contrôle+maj+M` : Déplace le focus dans le corps du message.
+* `NVDA+contrôle+maj+N` : annonce la notification dans une fenêtre de message. Un double appui y déplace le focus. Un triple appui copie son contenu dans le presse-papiers.
+* Contrôle+Q : Dans la liste des messages, marque le message ou le groupe de messages sélectionné comme lu.
+* Contrôle+U : Dans la liste des messages, marque le message ou le groupe de messages sélectionné comme non lu.
 
 ## Améliorations supplémentaires
 
@@ -33,7 +33,7 @@ Elle améliore également la navigation au sein de l'application et fournit dava
 
 ## Notes
 
-Tous les gestes de commandes peuvent être modifiés dans la boîte de dialogue Gestes de commandes de NVDA. Vous pourriez en particulier souhaiter les modifier dans les situations suivantes :
+Tous les gestes de commandes peuvent être modifiés dans la boîte de dialogue Gestes de commandes de NVDA. Vous pourriez en particulier souhaiter les modifier dans les situations suivantes :
 
 * Les raccourcis par défaut pour marquer un message comme lu ou non lu sont ceux de la version anglaise d’Outlook. S’ils sont différents de ceux de votre version locale d’Outlook, vous devrez les modifier en conséquence.
 * Les geste de commande par défaut pour lire les en-têtes utilisent `alt` en combinaison avec les touches de la première ligne du clavier alpha-numérique.
@@ -55,7 +55,7 @@ Tous les gestes de commandes peuvent être modifiés dans la boîte de dialogue 
 
 ### Version 3.0
 
-* Dans une fenêtre de réunion, dans l'onglet Tous les participants, un appui sur NVDA+shift+A (disposition ordinateur de bureau) / NVDA+control+shift+A (disposition ordinateur portable) affiche désormais en mode navigation le statut des participants sur le créneau horaire de la réunion.
+* Dans une fenêtre de réunion, dans l'onglet Tous les participants, un appui sur NVDA+maj+A (disposition ordinateur de bureau) / NVDA+contrôle+maj+A (disposition ordinateur portable) affiche désormais en mode navigation le statut des participants sur le créneau horaire de la réunion.
 
 ### Version 2.4
 
@@ -78,7 +78,7 @@ Tous les gestes de commandes peuvent être modifiés dans la boîte de dialogue 
 
 ### Version 2.0
 
-* Amélioration de l'expérience utilisateur avec les notifications apparaissant lors de la saisie d'adresses e-mail qui ne sont plus valides ou qui envoient des réponses automatiques d'absence du bureau :
+* Amélioration de l'expérience utilisateur avec les notifications apparaissant lors de la saisie d'adresses e-mail qui ne sont plus valides ou qui envoient des réponses automatiques d'absence du bureau :
   un son alerte lorsque de telles notifications apparaissent ou sont mises à jour, un geste permet de les lire ou de s'y déplacer , et la navigation dans cette zone avec les flèches est rendue plus facile.
 
 ### Version 1.10
@@ -93,7 +93,7 @@ Tous les gestes de commandes peuvent être modifiés dans la boîte de dialogue 
 * La release est maintenant effectuée grâce à une action GitHub au lieu d'appVeyor.
 * Correction de l'annonce lorsque l'utilisateur appuie trois fois sur les raccourcis alt+chiffre.
 * Correction d'un problème empêchant la lecture des en-têtes des éléments de calendrier de certaines versions d'Outlook 365.
-* Amélioration de l'environnement de test de l'extension : navigation dans la boîte de dialogue fake root.
+* Amélioration de l'environnement de test de l'extension : navigation dans la boîte de dialogue fake root.
 * Ajout de localisations.
 
 ### Version 1.8
