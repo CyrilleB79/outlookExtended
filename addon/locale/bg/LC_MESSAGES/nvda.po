@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-08-28 13:06+0000\n"
-"PO-Revision-Date: 2026-09-04 11:59\n"
+"PO-Revision-Date: 2026-09-15 00:25\n"
 "Last-Translator: \n"
 "Language-Team: Bulgarian\n"
 "Language: bg_BG\n"
@@ -210,11 +210,13 @@ msgstr "Разширена функционалност за Outlook (Outlook Ex
 msgid "This add-on improves the use of Microsoft Outlook with NVDA.\n"
 "It provides commands to read, move to, or copy various parts of a message such as message headers, attachments, information bar, notification or message body.\n"
 "It also improves navigation within the application and provides more feedback when performing certain actions.\n"
-msgstr ""
+msgstr "Тази добавка подобрява използването на Microsoft Outlook с NVDA.\n"
+"Предоставя команди за четене, преместване или копиране на различни части от съобщение, като заглавки на съобщения, прикачени файлове, информационна лента, известие или тяло на съобщение.\n"
+"Освен това подобрява навигацията в приложението и осигурява повече обратна връзка при извършване на определени действия.\n"
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:33
 msgid "* Gestures for desktop layout to read or move to attachments, information bar, notification and message body have been modified to match the ones of laptop layout."
-msgstr ""
+msgstr "* Жестовете за настолната клавиатурна подредба за четене или преместване на прикачени файлове, лента с информация, известие и тяло на съобщението са променени, за да съответстват на тези от лаптоп клавиатурната подредба."
 

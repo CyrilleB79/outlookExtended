@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-08-28 13:06+0000\n"
-"PO-Revision-Date: 2026-09-01 11:48\n"
+"PO-Revision-Date: 2026-09-20 08:47\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -34,27 +34,27 @@ msgstr "="
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:100
 msgid "Busy"
-msgstr ""
+msgstr "Занято"
 
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:102
 msgid "Out of Office"
-msgstr ""
+msgstr "Нет на рабочем месте"
 
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:104
 msgid "Free"
-msgstr ""
+msgstr "Бесплатно"
 
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:106
 msgid "Working Elsewhere"
-msgstr ""
+msgstr "Работа в другом месте"
 
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:108
 msgid "Tentative"
-msgstr ""
+msgstr "Пробное"
 
 #. Translators: Documentation for mark as read script.
 #: addon\appModules\outlook\__init__.py:139
@@ -104,12 +104,12 @@ msgstr "Навигация по столбцам не поддерживаетс
 #. Translators: The name of a fake NVDA object used for tests.
 #: addon\appModules\outlook\__init__.py:279
 msgid "Fake root"
-msgstr ""
+msgstr "Поддельный корень"
 
 #. Translators: The name for a button in the notification bar to display more or less information.
 #: addon\appModules\outlook\__init__.py:421
 msgid "More or less information"
-msgstr ""
+msgstr "Больше или меньше информации"
 
 #. Translators: When trying to use Alt+Number shortcut but not in message.
 #. Translators: Error when trying to move focus in message body
@@ -134,12 +134,12 @@ msgstr "{name} {value}"
 #. Translators: Documentation for report notification script.
 #: addon\appModules\outlook\__init__.py:676
 msgid "Reports the notification in a message. If pressed twice, moves the focus to it. If pressed three times, copies its content to the clipboard."
-msgstr ""
+msgstr "Объявляет уведомление в виде сообщения. При двойном нажатии фокус перемещается на него. При тройном нажатии содержимое копируется в буфер обмена."
 
 #. Translators: Message reported when calling the script to report notification bar.
 #: addon\appModules\outlook\__init__.py:686
 msgid "No notification"
-msgstr ""
+msgstr "Нет уведомления"
 
 #. Translators: Documentation for report info bar script.
 #: addon\appModules\outlook\__init__.py:705
@@ -164,7 +164,7 @@ msgstr "Сообщает число и имена вложений в окне �
 #. Translators: Title of the browseable message displaying the status of all attendees.
 #: addon\appModules\outlook\__init__.py:817
 msgid "All Attendees Status"
-msgstr ""
+msgstr "Состояние всех участников"
 
 #. Translators: A status used in the attendees status report.
 #. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
@@ -172,7 +172,7 @@ msgstr ""
 #. hatched rectangle (no information available) for people external to your organization.
 #: addon\appModules\outlook\__init__.py:852
 msgid "No Information"
-msgstr ""
+msgstr "Информация отсутствует"
 
 #. Translators: Reported when calling a test command
 #: addon\appModules\outlook\__init__.py:971
@@ -188,7 +188,7 @@ msgstr "Тестовый режим выключен"
 #. Translators: Reported when calling a test command
 #: addon\appModules\outlook\__init__.py:1004
 msgid "Test mode is off."
-msgstr ""
+msgstr "Тестовый режим выключен."
 
 #. Translators: Input help mode message for report a header's field command. in outlook message, calendar
 #. item or task window
@@ -210,11 +210,13 @@ msgstr "Расширенный Outlook"
 msgid "This add-on improves the use of Microsoft Outlook with NVDA.\n"
 "It provides commands to read, move to, or copy various parts of a message such as message headers, attachments, information bar, notification or message body.\n"
 "It also improves navigation within the application and provides more feedback when performing certain actions.\n"
-msgstr ""
+msgstr "Это дополнение улучшает использование Microsoft Outlook с NVDA.\n"
+"Оно предоставляет команды для чтения, перемещения или копирования различных частей сообщения, таких как заголовки сообщения, вложения, информационная панель, уведомление или тело сообщения.\n"
+"Оно также улучшает навигацию внутри приложения и обеспечивает более информативную обратную связь при выполнении опредёленных действий.\n"
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:33
 msgid "* Gestures for desktop layout to read or move to attachments, information bar, notification and message body have been modified to match the ones of laptop layout."
-msgstr ""
+msgstr "* Жесты для рабочего стола, позволяющие читать или переходить к вложениям, информационной панели, уведомлениям и тексту сообщения, были изменены в соответствии с жестами для ноутбука."
 
