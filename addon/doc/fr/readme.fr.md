@@ -10,7 +10,7 @@ Elle améliore également la navigation au sein de l'application et fournit dava
 ## Commandes
 
 * Alt+1 à Alt+9, Alt+0, Alt+), alt+= : Annonce le champ d’en-tête 1 à 12 dans un message, un élément de calendrier ou une tâche. Un double appui déplace le focus dans ce champ si possible. Un triple appui copie son contenu dans le presse-papiers.
-* `NVDA+contrôle+maj+I` : Annonce la barre d'information dans un message, un élément de calendrier ou une fenêtre de tâche. Un double appui y déplace le focus. Un triple appui copie son contenu dans le presse-papiers.tâche. Un double appui y déplace le focus. Un triple appui copie son contenu dans le presse-papiers.
+* `NVDA+contrôle+maj+I` : Annonce la barre d'information dans un message, un élément de calendrier ou une fenêtre de tâche. Un double appui y déplace le focus. Un triple appui copie son contenu dans le presse-papiers.
 * `NVDA+contrôle+maj+A` :
 
     * Dans une fenêtre de message, annonce le nombre et le nom des pièces jointes ; un double appui y déplace le focus.
