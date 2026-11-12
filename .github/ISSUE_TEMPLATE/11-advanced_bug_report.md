@@ -10,8 +10,8 @@ assignees: ''
 <!-- Concise description of the issue -->
 
 ## Steps to Reproduce
-1. 
-2. 
+1.
+2.
 
 ## Actual Behavior
 <!-- What actually happens, including verbatim speech/braille output or error sounds -->
@@ -20,9 +20,9 @@ assignees: ''
 <!-- What should happen instead -->
 
 ## Environment
-- **Add-on Version:** 
-- **NVDA Version:** 
-- **Windows Version:** 
+- **Add-on Version:**
+- **NVDA Version:**
+- **Windows Version:**
 
 ## Logs & Attachments
 <!-- Attach NVDA log snippets or files here -->
