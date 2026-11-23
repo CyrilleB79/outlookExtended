@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-08-28 13:06+0000\n"
-"PO-Revision-Date: 2026-10-07 03:12\n"
+"PO-Revision-Date: 2026-11-16 23:52\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -34,27 +34,27 @@ msgstr "="
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:100
 msgid "Busy"
-msgstr ""
+msgstr "Beschäftigt"
 
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:102
 msgid "Out of Office"
-msgstr ""
+msgstr "Außer Haus"
 
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:104
 msgid "Free"
-msgstr ""
+msgstr "Frei"
 
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:106
 msgid "Working Elsewhere"
-msgstr ""
+msgstr "Arbeiten an einem anderen Ort"
 
 #. Translators: Outlook's native string for status
 #: addon\appModules\outlook\__init__.py:108
 msgid "Tentative"
-msgstr ""
+msgstr "Vorläufig"
 
 #. Translators: Documentation for mark as read script.
 #: addon\appModules\outlook\__init__.py:139
@@ -164,7 +164,7 @@ msgstr "Meldet die Anzahl und die Namen der Anlagen in einem Nachrichtenfenster.
 #. Translators: Title of the browseable message displaying the status of all attendees.
 #: addon\appModules\outlook\__init__.py:817
 msgid "All Attendees Status"
-msgstr ""
+msgstr "Status aller Teilnehmer"
 
 #. Translators: A status used in the attendees status report.
 #. If possible for you, you can use Outlook's translation visible in the tooltip popping up when
@@ -172,7 +172,7 @@ msgstr ""
 #. hatched rectangle (no information available) for people external to your organization.
 #: addon\appModules\outlook\__init__.py:852
 msgid "No Information"
-msgstr ""
+msgstr "Keine Informationen"
 
 #. Translators: Reported when calling a test command
 #: addon\appModules\outlook\__init__.py:971
@@ -210,11 +210,13 @@ msgstr "Erweiterte Outlook-Funktionen"
 msgid "This add-on improves the use of Microsoft Outlook with NVDA.\n"
 "It provides commands to read, move to, or copy various parts of a message such as message headers, attachments, information bar, notification or message body.\n"
 "It also improves navigation within the application and provides more feedback when performing certain actions.\n"
-msgstr ""
+msgstr "Dieses Add-on verbessert die Bedienung von Microsoft Outlook mit NVDA.\n"
+"Es stellt Befehle bereit, um verschiedene Teile einer Nachricht zu lesen, anzuspringen oder zu kopieren – wie etwa Kopfzeilen, Anhänge, die Informationsleiste, Benachrichtigungen oder den Nachrichtentext.\n"
+"Zudem verbessert es die Navigation innerhalb des Programms und gibt bei bestimmten Aktionen zusätzliche Rückmeldungen.\n"
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:33
 msgid "* Gestures for desktop layout to read or move to attachments, information bar, notification and message body have been modified to match the ones of laptop layout."
-msgstr ""
+msgstr "* Die Befehle für das Desktop-Layout zum Lesen oder Navigieren zu Anhängen, Informationsleiste, Benachrichtigungen und Nachrichtentext wurden an das Laptop-Layout angepasst."
 
